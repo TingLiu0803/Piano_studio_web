@@ -6,19 +6,20 @@ import { buildMetadata } from "@/lib/seo";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  return buildMetadata(locale, `/${locale}/trial`);
+  return buildMetadata(locale as Locale, `/${locale}/trial`);
 }
 
 export default async function TrialPage({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const localized = content[locale];
+  const typedLocale = locale as Locale;
+  const localized = content[typedLocale];
   const rawBookingUrl = siteConfig.bookingUrl?.trim();
   const hasBookingUrl =
     Boolean(rawBookingUrl) && !rawBookingUrl.includes("replace-this");
@@ -33,7 +34,7 @@ export default async function TrialPage({
         </p>
         <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">
           Booking is powered by {siteConfig.bookingProvider}. If you need help,
-          you can <Link href={`/${locale}/contact`}>send a message</Link>.
+          you can <Link href={`/${typedLocale}/contact`}>send a message</Link>.
         </p>
         <div className="text-sm text-[color:var(--background)]">
           {bookingUrl ? (
@@ -56,7 +57,7 @@ export default async function TrialPage({
           ) : (
             <p>
               The booking calendar is not available yet. Please{" "}
-              <Link href={`/${locale}/contact`}>send a message</Link> to request
+              <Link href={`/${typedLocale}/contact`}>send a message</Link> to request
               a trial time.
             </p>
           )}
@@ -73,7 +74,7 @@ export default async function TrialPage({
           </p>
           <div className="mt-6">
             <ContactForm
-              locale={locale}
+              locale={typedLocale}
               submitLabel={localized.trial.requestCta}
               successMessage={localized.contact.successMessage}
             />

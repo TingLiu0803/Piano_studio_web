@@ -5,19 +5,20 @@ import { buildMetadata } from "@/lib/seo";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  return buildMetadata(locale, `/${locale}/contact`);
+  return buildMetadata(locale as Locale, `/${locale}/contact`);
 }
 
 export default async function ContactPage({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const localized = content[locale];
+  const typedLocale = locale as Locale;
+  const localized = content[typedLocale];
 
   return (
     <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
@@ -28,7 +29,7 @@ export default async function ContactPage({
         </p>
         <div className="mt-6">
           <ContactForm
-            locale={locale}
+            locale={typedLocale}
             submitLabel={localized.contact.submitLabel}
             successMessage={localized.contact.successMessage}
           />

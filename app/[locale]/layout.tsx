@@ -8,19 +8,19 @@ import JsonLd from "@/components/JsonLd";
 
 type LocaleLayoutProps = {
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 };
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  if (!locales.includes(locale)) {
+  if (!locales.includes(locale as Locale)) {
     return {};
   }
-  return buildMetadata(locale, `/${locale}`);
+  return buildMetadata(locale as Locale, `/${locale}`);
 }
 
 export default async function LocaleLayout({
@@ -28,15 +28,16 @@ export default async function LocaleLayout({
   params,
 }: LocaleLayoutProps) {
   const { locale } = await params;
-  if (!locales.includes(locale)) {
+  if (!locales.includes(locale as Locale)) {
     notFound();
   }
-  const localized = content[locale];
+  const typedLocale = locale as Locale;
+  const localized = content[typedLocale];
 
   return (
     <div className="flex min-h-screen flex-col">
-      <JsonLd data={buildLocalBusinessJsonLd(locale)} />
-      <SiteHeader locale={locale} />
+      <JsonLd data={buildLocalBusinessJsonLd(typedLocale)} />
+      <SiteHeader locale={typedLocale} />
       <main className="flex-1 bg-[color:var(--background)]">
         <div className="mx-auto w-full max-w-6xl px-6 py-12 sm:py-16">
           <div className="mb-6 flex justify-end">
@@ -47,7 +48,7 @@ export default async function LocaleLayout({
           {children}
         </div>
       </main>
-      <SiteFooter locale={locale} />
+      <SiteFooter locale={typedLocale} />
     </div>
   );
 }

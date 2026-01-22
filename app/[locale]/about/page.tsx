@@ -4,19 +4,19 @@ import { buildMetadata } from "@/lib/seo";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  return buildMetadata(locale, `/${locale}/about`);
+  return buildMetadata(locale as Locale, `/${locale}/about`);
 }
 
 export default async function AboutPage({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const localized = content[locale];
+  const localized = content[locale as Locale];
 
   return (
     <div className="flex flex-col gap-12">
