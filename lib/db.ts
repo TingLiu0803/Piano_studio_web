@@ -2,7 +2,10 @@ import fs from "fs";
 import path from "path";
 import Database from "better-sqlite3";
 
-const dataDir = path.join(process.cwd(), "data");
+const isVercel = Boolean(process.env.VERCEL);
+const dataDir = isVercel
+  ? path.join("/tmp", "piano-studio-site")
+  : path.join(process.cwd(), "data");
 const dbPath = path.join(dataDir, "leads.db");
 
 function ensureDatabase() {

@@ -75,7 +75,11 @@ export async function POST(request: Request) {
       );
     }
 
-    insertLead({ name, email, phone, message, locale });
+    try {
+      insertLead({ name, email, phone, message, locale });
+    } catch (dbError) {
+      console.warn("Lead database write failed; continuing", dbError);
+    }
     await sendLeadEmail({ name, email, phone, message, locale });
 
     return NextResponse.json({ ok: true });
