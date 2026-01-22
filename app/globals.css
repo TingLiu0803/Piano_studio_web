@@ -1,28 +1,86 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light dark;
+  --background: #fbf7f2;
+  --foreground: #231d19;
+  --surface: #ffffff;
+  --surface-muted: #f5eee6;
+  --surface-inverse: #1f1914;
+  --surface-inverse-foreground: #fff8f1;
+  --border: #e5dbcf;
+  --muted-foreground: #6e6258;
+  --primary: #a0664a;
+  --primary-hover: #8c573f;
+  --primary-foreground: #fff8f1;
+  --accent: #d4a27b;
+  --accent-foreground: #3a261b;
+  --link: #8a5a40;
+  --link-hover: #754a35;
+  --tag: #f3e4d6;
+  --tag-foreground: #7c4d37;
+  --success: #2f7a5a;
+  --error: #b24a3b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-inverse: var(--surface-inverse);
+  --color-surface-inverse-foreground: var(--surface-inverse-foreground);
+  --color-border: var(--border);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --color-tag: var(--tag);
+  --color-tag-foreground: var(--tag-foreground);
+  --color-success: var(--success);
+  --color-error: var(--error);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f0c0a;
+    --foreground: #f2ebe4;
+    --surface: #1a1512;
+    --surface-muted: #241d18;
+    --surface-inverse: #f2e8dd;
+    --surface-inverse-foreground: #2a1f18;
+    --border: #342b25;
+    --muted-foreground: #b8a99b;
+    --primary: #d3a67b;
+    --primary-hover: #c1956b;
+    --primary-foreground: #1f1610;
+    --accent: #b57950;
+    --accent-foreground: #1f1610;
+    --link: #d7ad83;
+    --link-hover: #c79b71;
+    --tag: #2b231d;
+    --tag-foreground: #d9c7b5;
+    --success: #7fc8a5;
+    --error: #e39586;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--tag);
+  color: var(--accent-foreground);
 }
 
 a {

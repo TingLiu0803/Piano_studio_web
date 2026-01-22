@@ -6,7 +6,7 @@ export default function BilibiliGallery() {
       {siteConfig.bilibiliVideos.map((video) => (
         <div
           key={video.title}
-          className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+          className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] shadow-sm"
         >
           <div className="aspect-video w-full">
             <iframe

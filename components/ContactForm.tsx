@@ -51,38 +51,38 @@ export default function ContactForm({
           name="name"
           required
           placeholder="Name / 姓名"
-          className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm dark:border-zinc-800 dark:bg-zinc-900"
+          className="w-full rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted-foreground)]"
         />
         <input
           name="email"
           type="email"
           required
           placeholder="Email / 邮箱"
-          className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm dark:border-zinc-800 dark:bg-zinc-900"
+          className="w-full rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted-foreground)]"
         />
       </div>
       <input
         name="phone"
         placeholder="Phone (optional) / 电话"
-        className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm dark:border-zinc-800 dark:bg-zinc-900"
+        className="w-full rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted-foreground)]"
       />
       <textarea
         name="message"
         rows={5}
         placeholder="Tell us about the student / 简要说明学习需求"
-        className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm dark:border-zinc-800 dark:bg-zinc-900"
+        className="w-full rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted-foreground)]"
       />
       <button
         type="submit"
-        className="rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
+        className="rounded-full bg-[color:var(--primary)] px-6 py-3 text-sm font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
       >
         {submitLabel}
       </button>
       {status === "success" && (
-        <p className="text-sm text-emerald-600">{successMessage}</p>
+        <p className="text-sm text-[color:var(--success)]">{successMessage}</p>
       )}
       {status === "error" && (
-        <p className="text-sm text-red-600">
+        <p className="text-sm text-[color:var(--error)]">
           Something went wrong. Please try again.
         </p>
       )}

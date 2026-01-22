@@ -28,7 +28,7 @@ Update content and studio info in `content/site.ts`:
 
 - Business name, city, contact info
 - Bilibili embed URLs
-- Booking link (Cal.com or Calendly)
+- Booking link (Google Calendar appointment schedule)
 - Bilingual copy for each page
 
 ## Environment Variables
@@ -38,6 +38,13 @@ Create `.env.local`:
 ```
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_BOOKING_URL=https://calendar.google.com/calendar/appointments/schedules/your-schedule-id
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=your-gmail-address@gmail.com
+SMTP_PASS=your-app-password
+CONTACT_TO_EMAIL=mr.tingliu@gmail.com
+CONTACT_FROM_EMAIL=your-gmail-address@gmail.com
 ```
 
 ## Lead Capture Database

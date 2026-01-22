@@ -8,6 +8,21 @@ export const siteConfig = {
   region: "CA",
   country: "US",
   serviceArea: "San Jose and the SF Bay Area",
+  serviceAreas: [
+    "San Jose",
+    "Sunnyvale",
+    "Santa Clara",
+    "Cupertino",
+    "Mountain View",
+    "Palo Alto",
+    "Los Gatos",
+    "Saratoga",
+    "Campbell",
+    "Milpitas",
+    "South Bay",
+    "SF Bay Area",
+    "Online",
+  ],
   lessonFormats: ["In-person", "Online"],
   ageRange: "Ages 5+",
   pricingNote: "Contact for rates",
@@ -15,7 +30,11 @@ export const siteConfig = {
   phone: "650-575-7300",
   addressLine: "San Jose, CA 95110",
   timezone: "America/Los_Angeles",
-  bookingUrl: "https://cal.com/your-studio/free-trial",
+  bookingUrl:
+    process.env.NEXT_PUBLIC_BOOKING_URL ??
+    "https://calendar.google.com/calendar/appointments/schedules/replace-this",
+  bookingProvider: "Google Calendar",
+  socialLinks: [],
   bilibiliVideos: [
     {
       title: "Liszt Sonata In B Minor (Excerpt)",
@@ -54,6 +73,19 @@ export const content = {
       subtitle: "Piano Lessons Reimagined for Silicon Valley Minds",
       primaryCta: "Book a free trial lesson",
       secondaryCta: "View performances",
+      ctaNote: "Fast reply: most families get a response within the same day.",
+      stats: [
+        { value: "7+ years", label: "Teaching experience" },
+        { value: "50+ students", label: "Personally coached" },
+        { value: "2k followers", label: "Bilibili audience" },
+        { value: "1:1 only", label: "No group classes" },
+      ],
+      video: {
+        title: "Studio performance preview",
+        embedUrl:
+          "https://player.bilibili.com/player.html?bvid=BV1nYXPYHEQr&autoplay=0",
+        caption: "Watch a short performance and teaching style preview.",
+      },
     },
     highlights: [
       {
@@ -93,11 +125,18 @@ export const content = {
       performancesDescription:
         "I am honored to have 2k followers on Bilibili. Follow me to see more performances and videos.",
       testimonialsTitle: "Student and parent testimonials",
+      aboutTitle: "Meet your teacher",
+      aboutCta: "Read the full bio",
+      approachTitle: "What makes the studio different",
     },
     trial: {
       title: "Book a free trial lesson",
       description:
         "Choose a time that works for your family. You'll receive a confirmation email after submitting.",
+      requestTitle: "Prefer to request a time?",
+      requestDescription:
+        "Send a quick note with your availability and goals. I'll confirm or suggest times by email.",
+      requestCta: "Send a trial request",
     },
     contact: {
       title: "Contact the studio",
@@ -124,7 +163,7 @@ export const content = {
       description:
         "Private piano lessons in San Jose and the SF Bay Area. Bilingual one-on-one instruction with a focus on technique, artistry, and confidence.",
       keywords:
-        "piano lessons, piano teacher, private piano lessons, music lessons",
+        "piano lessons, piano teacher, private piano lessons, music lessons, San Jose piano lessons, South Bay piano teacher, online piano lessons",
     },
   },
   zh: {
@@ -140,6 +179,19 @@ export const content = {
       subtitle: "为硅谷思维重新设计的钢琴课程",
       primaryCta: "预约免费试听",
       secondaryCta: "观看演出视频",
+      ctaNote: "快速回复：大多数家庭当天即可收到答复。",
+      stats: [
+        { value: "7年以上", label: "教学经验" },
+        { value: "50+学生", label: "亲自指导" },
+        { value: "2000关注", label: "哔哩哔哩" },
+        { value: "仅一对一", label: "不设团课" },
+      ],
+      video: {
+        title: "演奏与教学预览",
+        embedUrl:
+          "https://player.bilibili.com/player.html?bvid=BV1nYXPYHEQr&autoplay=0",
+        caption: "观看一段演奏与教学风格预览。",
+      },
     },
     highlights: [
       {
@@ -174,10 +226,17 @@ export const content = {
       performancesDescription:
         "我在哔哩哔哩拥有约2000名关注者，欢迎关注查看更多演出与视频。",
       testimonialsTitle: "学生与家长评价",
+      aboutTitle: "认识老师",
+      aboutCta: "查看完整介绍",
+      approachTitle: "课程有什么不同",
     },
     trial: {
       title: "预约免费试听课",
       description: "选择适合您家庭的时间，提交后会收到确认邮件。",
+      requestTitle: "想先提交时间请求？",
+      requestDescription:
+        "告诉我您的时间安排与学习目标，我会通过邮件确认或推荐时间。",
+      requestCta: "提交试听请求",
     },
     contact: {
       title: "联系工作室",
@@ -202,7 +261,8 @@ export const content = {
         "Eric Liu Piano Studio | 湾区钢琴课，培养自信、理性与有品位的演奏",
       description:
         "圣何塞及旧金山湾区私人钢琴课程。一对一双语教学，注重技巧、艺术性与自信。",
-      keywords: "钢琴课, 钢琴老师, 私人钢琴课, 音乐课",
+      keywords:
+        "钢琴课, 钢琴老师, 私人钢琴课, 音乐课, 圣何塞钢琴课, 南湾钢琴老师, 线上钢琴课",
     },
   },
 };

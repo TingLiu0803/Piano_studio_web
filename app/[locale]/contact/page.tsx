@@ -21,9 +21,9 @@ export default async function ContactPage({
 
   return (
     <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-      <section className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+      <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
         <h1 className="text-3xl font-semibold">{localized.contact.title}</h1>
-        <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-300">
+        <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">
           {localized.contact.description}
         </p>
         <div className="mt-6">
@@ -35,9 +35,9 @@ export default async function ContactPage({
         </div>
       </section>
 
-      <aside className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+      <aside className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
         <h2 className="text-xl font-semibold">Studio details</h2>
-        <div className="mt-4 space-y-3 text-sm text-zinc-600 dark:text-zinc-300">
+        <div className="mt-4 space-y-3 text-sm text-[color:var(--muted-foreground)]">
           <p>{siteConfig.addressLine}</p>
           <p>{siteConfig.serviceArea}</p>
           <p>{siteConfig.email}</p>

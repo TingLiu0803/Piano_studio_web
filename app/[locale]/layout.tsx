@@ -37,10 +37,12 @@ export default async function LocaleLayout({
     <div className="flex min-h-screen flex-col">
       <JsonLd data={buildLocalBusinessJsonLd(locale)} />
       <SiteHeader locale={locale} />
-      <main className="flex-1 bg-zinc-50 dark:bg-black">
-        <div className="mx-auto w-full max-w-6xl px-6 py-12">
-          <div className="mb-6 text-xs uppercase tracking-[0.2em] text-zinc-400">
-            {localized.languageLabel}
+      <main className="flex-1 bg-[color:var(--background)]">
+        <div className="mx-auto w-full max-w-6xl px-6 py-12 sm:py-16">
+          <div className="mb-6 flex justify-end">
+            <span className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--muted-foreground)]">
+              {localized.languageLabel}
+            </span>
           </div>
           {children}
         </div>

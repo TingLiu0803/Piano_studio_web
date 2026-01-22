@@ -52,12 +52,19 @@ export function buildMetadata(locale: Locale, path: string): Metadata {
 
 export function buildLocalBusinessJsonLd(locale: Locale) {
   const localized = content[locale];
+  const areaServed = siteConfig.serviceAreas.map((area) => ({
+    "@type": "Place",
+    name: area,
+  }));
+  const sameAs =
+    siteConfig.socialLinks.length > 0 ? siteConfig.socialLinks : undefined;
+
   return {
     "@context": "https://schema.org",
     "@type": "MusicSchool",
     name: siteConfig.studioName,
     description: localized.seo.description,
-    areaServed: siteConfig.serviceArea,
+    areaServed,
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.addressLine,
@@ -68,5 +75,15 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
     telephone: siteConfig.phone,
     email: siteConfig.email,
     url: getBaseUrl(),
+    availableLanguage: ["English", "Chinese"],
+    priceRange: siteConfig.pricingNote,
+    offers: {
+      "@type": "Offer",
+      name: "Free trial piano lesson",
+      price: "0",
+      priceCurrency: "USD",
+      url: `${getBaseUrl()}/en/trial`,
+    },
+    sameAs,
   };
 }
