@@ -30,6 +30,10 @@ export const siteConfig = {
   phone: "650-575-7300",
   addressLine: "San Jose, CA 95110",
   timezone: "America/Los_Angeles",
+  geo: {
+    latitude: 37.3382,
+    longitude: -121.8863,
+  },
   bookingUrl:
     process.env.NEXT_PUBLIC_BOOKING_URL ??
     "https://calendar.google.com/calendar/appointments/schedules/replace-this",
@@ -75,8 +79,8 @@ export const content = {
       secondaryCta: "View performances",
       ctaNote: "Fast reply: most families get a response within the same day.",
       stats: [
-        { value: "8+ years", label: "Teaching experience" },
-        { value: "50+ students", label: "Personally coached" },
+        { value: "8+ years teaching", label: "Teaching experience" },
+        { value: "60+ students", label: "Personally coached" },
         { value: "2k followers", label: "Bilibili followers" },
         { value: "1:1 only", label: "No group classes" },
       ],
@@ -161,9 +165,9 @@ export const content = {
       title:
         "Eric Liu Piano Studio | Piano lessons in Bay Area for confident, intelligent, and tasteful playing",
       description:
-        "Private piano lessons in San Jose and the SF Bay Area. Bilingual one-on-one instruction with a focus on technique, artistry, and confidence.",
+        "Private piano lessons in San Jose, South Bay, and online across the SF Bay Area. Bilingual one-on-one instruction focused on technique, artistry, and confidence.",
       keywords:
-        "piano lessons, piano teacher, private piano lessons, music lessons, San Jose piano lessons, South Bay piano teacher, online piano lessons",
+        "piano lessons, piano teacher, private piano lessons, music lessons, San Jose piano lessons, South Bay piano teacher, Silicon Valley piano lessons, Sunnyvale piano teacher, online piano lessons",
     },
   },
   zh: {
@@ -260,7 +264,7 @@ export const content = {
       title:
         "Eric Liu Piano Studio | 湾区钢琴课，培养自信、理性与有品位的演奏",
       description:
-        "圣何塞及旧金山湾区私人钢琴课程。一对一双语教学，注重技巧、艺术性与自信。",
+        "圣何塞、南湾及湾区线上私人钢琴课程。一对一双语教学，注重技巧、艺术性与自信。",
       keywords:
         "钢琴课, 钢琴老师, 私人钢琴课, 音乐课, 圣何塞钢琴课, 南湾钢琴老师, 线上钢琴课",
     },

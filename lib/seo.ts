@@ -58,32 +58,64 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
   }));
   const sameAs =
     siteConfig.socialLinks.length > 0 ? siteConfig.socialLinks : undefined;
+  const baseUrl = getBaseUrl();
+  const aboutSnippet = localized.about.body.split("\n")[0];
+  const geo = siteConfig.geo
+    ? {
+        "@type": "GeoCoordinates",
+        latitude: siteConfig.geo.latitude,
+        longitude: siteConfig.geo.longitude,
+      }
+    : undefined;
 
   return {
     "@context": "https://schema.org",
-    "@type": "MusicSchool",
-    name: siteConfig.studioName,
-    description: localized.seo.description,
-    areaServed,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: siteConfig.addressLine,
-      addressLocality: siteConfig.city,
-      addressRegion: siteConfig.region,
-      addressCountry: siteConfig.country,
-    },
-    telephone: siteConfig.phone,
-    email: siteConfig.email,
-    url: getBaseUrl(),
-    availableLanguage: ["English", "Chinese"],
-    priceRange: siteConfig.pricingNote,
-    offers: {
-      "@type": "Offer",
-      name: "Free trial piano lesson",
-      price: "0",
-      priceCurrency: "USD",
-      url: `${getBaseUrl()}/en/trial`,
-    },
-    sameAs,
+    "@graph": [
+      {
+        "@type": "MusicSchool",
+        "@id": `${baseUrl}/#music-school`,
+        name: siteConfig.studioName,
+        description: localized.seo.description,
+        areaServed,
+        serviceArea: siteConfig.serviceArea,
+        serviceType: ["Piano lessons", "Online piano lessons"],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: siteConfig.addressLine,
+          addressLocality: siteConfig.city,
+          addressRegion: siteConfig.region,
+          addressCountry: siteConfig.country,
+        },
+        geo,
+        telephone: siteConfig.phone,
+        email: siteConfig.email,
+        url: baseUrl,
+        availableLanguage: ["English", "Chinese"],
+        priceRange: siteConfig.pricingNote,
+        offers: {
+          "@type": "Offer",
+          name: "Free trial piano lesson",
+          price: "0",
+          priceCurrency: "USD",
+          url: `${baseUrl}/en/trial`,
+        },
+        sameAs,
+        founder: {
+          "@id": `${baseUrl}/#teacher`,
+        },
+      },
+      {
+        "@type": "Person",
+        "@id": `${baseUrl}/#teacher`,
+        name: siteConfig.ownerName,
+        jobTitle: "Piano Teacher",
+        description: aboutSnippet,
+        url: baseUrl,
+        worksFor: {
+          "@id": `${baseUrl}/#music-school`,
+        },
+        sameAs,
+      },
+    ],
   };
 }

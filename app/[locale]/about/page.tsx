@@ -31,8 +31,7 @@ export default async function AboutPage({
               Studio focus
             </div>
             <p className="mt-2">
-              Technique, artistry, and confidence through structured practice
-              plans and supportive coaching.
+              Technique, decoding of music language, highly personalized coaching
             </p>
           </div>
           <div>
