@@ -3,6 +3,18 @@ import { type Locale, content, siteConfig } from "@/content/site";
 import ContactForm from "@/components/ContactForm";
 import { buildMetadata } from "@/lib/seo";
 
+function ensureGoogleCalendarEmbedUrl(url: string) {
+  try {
+    const parsed = new URL(url);
+    if (!parsed.searchParams.has("gv")) {
+      parsed.searchParams.set("gv", "true");
+    }
+    return parsed.toString();
+  } catch {
+    return url;
+  }
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -19,6 +31,12 @@ export default async function TrialPage({
 }) {
   const { locale } = await params;
   const localized = content[locale];
+  const rawBookingUrl = siteConfig.bookingUrl?.trim();
+  const hasBookingUrl =
+    Boolean(rawBookingUrl) && !rawBookingUrl.includes("replace-this");
+  const bookingUrl = hasBookingUrl
+    ? ensureGoogleCalendarEmbedUrl(rawBookingUrl)
+    : null;
 
   return (
     <div className="flex flex-col gap-8">
@@ -34,14 +52,38 @@ export default async function TrialPage({
       </section>
 
       <section className="overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] shadow-sm">
-        <div className="aspect-[4/3] w-full">
-          <iframe
-            src={siteConfig.bookingUrl}
-            title="Trial booking"
-            className="h-full w-full"
-            loading="lazy"
-          />
-        </div>
+        {bookingUrl ? (
+          <div className="aspect-[4/3] w-full">
+            <iframe
+              src={bookingUrl}
+              title="Trial booking"
+              className="h-full w-full"
+              loading="lazy"
+            />
+          </div>
+        ) : (
+          <div className="p-8 text-sm text-[color:var(--muted-foreground)]">
+            <p>
+              The booking calendar is not available yet. Please{" "}
+              <Link href={`/${locale}/contact`}>send a message</Link> to request
+              a trial time.
+            </p>
+          </div>
+        )}
+        {bookingUrl ? (
+          <div className="border-t border-[color:var(--border)] p-4 text-sm text-[color:var(--muted-foreground)]">
+            Trouble loading?{" "}
+            <a
+              href={bookingUrl}
+              className="text-[color:var(--foreground)] underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open the booking page in a new tab
+            </a>
+            .
+          </div>
+        ) : null}
       </section>
 
       <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">

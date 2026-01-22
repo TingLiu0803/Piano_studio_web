@@ -34,10 +34,8 @@ export const siteConfig = {
     latitude: 37.3382,
     longitude: -121.8863,
   },
-  bookingUrl:
-    process.env.NEXT_PUBLIC_BOOKING_URL ??
-    "https://calendar.google.com/calendar/appointments/schedules/replace-this",
-  bookingProvider: "Google Calendar",
+  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? "",
+  bookingProvider: "Google Calendar Appointment Schedule",
   socialLinks: [],
   bilibiliVideos: [
     {
@@ -112,7 +110,7 @@ export const content = {
     about: {
       title: "About the teacher",
       body:
-        "Software engineer turned pianist with over 8 years of experience and more than 50 students personally coached, I specialize in one-on-one piano lessons tailored to each individual's goals, learning style, and unique musical voice. I never follow one-size-fits-all methods -- and I never and will never teach group classes. Quality always comes first, and every customized lesson is designed to ensure meaningful progress without sacrificing artistic identity.\n\nTrained under renowned Bay Area pianist Erna Gulabyan at the San Francisco Conservatory and Frank Levy at Standford University, I continue to maintain a close relationship with them, grounding my teaching in both tradition and deep musical insight. As a professional software engineer with 4 years of Silicon Valley experience, I also bring a problem-solving mindset that helps students tackle technical and musical challenges with clarity, structure, and creativity.",
+        "Software engineer turned pianist with over 8 years of experience and more than 60 students personally coached, I specialize in one-on-one piano lessons tailored to each individual's goals, learning style, and unique musical voice. I never follow one-size-fits-all methods -- and I never and will never teach group classes. Quality always comes first, and every customized lesson is designed to ensure meaningful progress without sacrificing artistic identity.\n\nTrained under renowned Bay Area pianist Erna Gulabyan at the San Francisco Conservatory and Frank Levy at Standford University, I continue to maintain a close relationship with them, grounding my teaching in both tradition and deep musical insight. As a professional software engineer with 4 years of Silicon Valley experience, I also bring a problem-solving mindset that helps students tackle technical and musical challenges with clarity, structure, and creativity.",
     },
 
     services: {
