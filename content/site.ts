@@ -34,7 +34,9 @@ export const siteConfig = {
     latitude: 37.3382,
     longitude: -121.8863,
   },
-  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? "",
+  bookingUrl:
+    process.env.NEXT_PUBLIC_BOOKING_URL ??
+    "https://calendar.app.google/zF9wtvjGaaLZ76dS7",
   bookingProvider: "Google Calendar Appointment Schedule",
   socialLinks: [],
   bilibiliVideos: [
@@ -44,7 +46,7 @@ export const siteConfig = {
         "https://player.bilibili.com/player.html?bvid=BV1nYXPYHEQr&autoplay=0",
     },
     {
-      title: "Bach Partita No. 6 in E Minor (Excerpt)",
+      title: "Bach Partita No.1 in B-Flat Major (Excerpt)",
       embedUrl:
         "https://player.bilibili.com/player.html?bvid=BV1Pb4y1n7Uc&autoplay=0",
     },
@@ -77,7 +79,7 @@ export const content = {
       secondaryCta: "View performances",
       ctaNote: "Fast reply: most families get a response within the same day.",
       stats: [
-        { value: "8+ years teaching", label: "Teaching experience" },
+        { value: "8+ years teaching", label: "Engineer turned pianist" },
         { value: "60+ students", label: "Personally coached" },
         { value: "2k followers", label: "Bilibili followers" },
         { value: "1:1 only", label: "No group classes" },
@@ -86,14 +88,14 @@ export const content = {
         title: "Studio performance preview",
         embedUrl:
           "https://player.bilibili.com/player.html?bvid=BV1nYXPYHEQr&autoplay=0",
-        caption: "Watch a short performance and teaching style preview.",
+        caption: "Watch a short performance to see what you will learn.",
       },
     },
     highlights: [
       {
-        title: "Tailored curriculum",
+        title: "I made it as an adult — so you can too",
         description:
-          "Lesson plans adapted to each student's goals, learning style, and pace.",
+          "I became conservotory level advanced as an adult, so I specialize in helping adults overcome childhood regret and finally play for real.",
       },
       {
         title: "Technique and true understanding of music language",
@@ -192,7 +194,7 @@ export const content = {
         title: "演奏与教学预览",
         embedUrl:
           "https://player.bilibili.com/player.html?bvid=BV1nYXPYHEQr&autoplay=0",
-        caption: "观看一段演奏与教学风格预览。",
+        caption: "观看一段演奏，了解你将学到什么。",
       },
     },
     highlights: [

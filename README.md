@@ -33,7 +33,7 @@ Update content and studio info in `content/site.ts`:
 
 ## Environment Variables
 
-Create `.env.local`:
+Copy `env.example` to `.env.local` and fill in values:
 
 ```
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
@@ -46,6 +46,7 @@ SMTP_PASS=your-app-password
 CONTACT_TO_EMAIL=mr.tingliu@gmail.com
 CONTACT_FROM_EMAIL=your-gmail-address@gmail.com
 ```
+Set the same variables in your hosting provider for production.
 
 ## Lead Capture Database
 

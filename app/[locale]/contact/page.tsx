@@ -42,7 +42,6 @@ export default async function ContactPage({
           <p>{siteConfig.serviceArea}</p>
           <p>{siteConfig.email}</p>
           <p>{siteConfig.phone}</p>
-          <p>{siteConfig.timezone}</p>
         </div>
       </aside>
     </div>

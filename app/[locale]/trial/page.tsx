@@ -3,18 +3,6 @@ import { type Locale, content, siteConfig } from "@/content/site";
 import ContactForm from "@/components/ContactForm";
 import { buildMetadata } from "@/lib/seo";
 
-function ensureGoogleCalendarEmbedUrl(url: string) {
-  try {
-    const parsed = new URL(url);
-    if (!parsed.searchParams.has("gv")) {
-      parsed.searchParams.set("gv", "true");
-    }
-    return parsed.toString();
-  } catch {
-    return url;
-  }
-}
-
 export async function generateMetadata({
   params,
 }: {
@@ -34,9 +22,7 @@ export default async function TrialPage({
   const rawBookingUrl = siteConfig.bookingUrl?.trim();
   const hasBookingUrl =
     Boolean(rawBookingUrl) && !rawBookingUrl.includes("replace-this");
-  const bookingUrl = hasBookingUrl
-    ? ensureGoogleCalendarEmbedUrl(rawBookingUrl)
-    : null;
+  const bookingUrl = hasBookingUrl ? rawBookingUrl : null;
 
   return (
     <div className="flex flex-col gap-8">
@@ -49,41 +35,32 @@ export default async function TrialPage({
           Booking is powered by {siteConfig.bookingProvider}. If you need help,
           you can <Link href={`/${locale}/contact`}>send a message</Link>.
         </p>
-      </section>
-
-      <section className="overflow-hidden rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] shadow-sm">
-        {bookingUrl ? (
-          <div className="aspect-[4/3] w-full">
-            <iframe
-              src={bookingUrl}
-              title="Trial booking"
-              className="h-full w-full"
-              loading="lazy"
-            />
-          </div>
-        ) : (
-          <div className="p-8 text-sm text-[color:var(--muted-foreground)]">
+        <div className="text-sm text-[color:var(--background)]">
+          {bookingUrl ? (
+            <>
+              <p>
+                Click below to open the booking page in a new tab and reserve
+                your trial time.
+              </p>
+              <div className="mt-6">
+                <a
+                  href={bookingUrl}
+                  className="inline-flex items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-sm font-semibold shadow-sm transition hover:opacity-90"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Book a trial lesson
+                </a>
+              </div>
+            </>
+          ) : (
             <p>
               The booking calendar is not available yet. Please{" "}
               <Link href={`/${locale}/contact`}>send a message</Link> to request
               a trial time.
             </p>
-          </div>
-        )}
-        {bookingUrl ? (
-          <div className="border-t border-[color:var(--border)] p-4 text-sm text-[color:var(--muted-foreground)]">
-            Trouble loading?{" "}
-            <a
-              href={bookingUrl}
-              className="text-[color:var(--foreground)] underline"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open the booking page in a new tab
-            </a>
-            .
-          </div>
-        ) : null}
+          )}
+        </div>
       </section>
 
       <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
@@ -111,7 +88,6 @@ export default async function TrialPage({
             <p>{siteConfig.serviceArea}</p>
             <p>{siteConfig.email}</p>
             <p>{siteConfig.phone}</p>
-            <p>{siteConfig.timezone}</p>
           </div>
         </aside>
       </section>
