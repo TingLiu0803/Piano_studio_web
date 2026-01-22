@@ -132,7 +132,7 @@ export default async function LocaleHome({
               ))}
             </ul>
           </div>
-          <div className="rounded-3xl border border-[color:var(--accent)] bg-[color:var(--tag)] px-6 py-5 text-sm text-[color:var(--accent-foreground)]">
+          <div className="rounded-3xl border border-[color:var(--accent)] bg-[color:var(--accent)] px-6 py-5 text-sm text-[color:var(--accent-foreground)]">
             <div className="font-semibold">{localized.trial.title}</div>
             <p className="mt-2 text-[color:var(--accent-foreground)]">
               {localized.trial.description}
@@ -188,7 +188,7 @@ export default async function LocaleHome({
           <div className="flex flex-col items-start gap-3">
             <Link
               href={`/${locale}/trial`}
-              className="rounded-full bg-[color:var(--surface-inverse-foreground)] px-6 py-3 text-sm font-semibold text-[color:var(--surface-inverse)]"
+              className="rounded-full bg-[color:var(--primary)] px-6 py-3 text-sm font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
             >
               {localized.hero.primaryCta}
             </Link>

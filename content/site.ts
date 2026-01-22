@@ -75,9 +75,9 @@ export const content = {
       secondaryCta: "View performances",
       ctaNote: "Fast reply: most families get a response within the same day.",
       stats: [
-        { value: "7+ years", label: "Teaching experience" },
+        { value: "8+ years", label: "Teaching experience" },
         { value: "50+ students", label: "Personally coached" },
-        { value: "2k followers", label: "Bilibili audience" },
+        { value: "2k followers", label: "Bilibili followers" },
         { value: "1:1 only", label: "No group classes" },
       ],
       video: {
@@ -108,7 +108,7 @@ export const content = {
     about: {
       title: "About the teacher",
       body:
-        "With over 7 years of experience and more than 50 students personally coached, I specialize in one-on-one piano lessons tailored to each individual's goals, learning style, and unique musical voice. I never follow one-size-fits-all methods -- and I never and will never teach group classes. Quality always comes first, and every customized lesson is designed to ensure meaningful progress without sacrificing artistic identity.\n\nTrained under renowned Bay Area pianist Erna Gulabyan at the San Francisco Conservatory and Frank Levy at Standford University, I continue to maintain a close relationship with them, grounding my teaching in both tradition and deep musical insight. As a professional software engineer with 4 years of Silicon Valley experience, I also bring a problem-solving mindset that helps students tackle technical and musical challenges with clarity, structure, and creativity.",
+        "Software engineer turned pianist with over 8 years of experience and more than 50 students personally coached, I specialize in one-on-one piano lessons tailored to each individual's goals, learning style, and unique musical voice. I never follow one-size-fits-all methods -- and I never and will never teach group classes. Quality always comes first, and every customized lesson is designed to ensure meaningful progress without sacrificing artistic identity.\n\nTrained under renowned Bay Area pianist Erna Gulabyan at the San Francisco Conservatory and Frank Levy at Standford University, I continue to maintain a close relationship with them, grounding my teaching in both tradition and deep musical insight. As a professional software engineer with 4 years of Silicon Valley experience, I also bring a problem-solving mindset that helps students tackle technical and musical challenges with clarity, structure, and creativity.",
     },
 
     services: {
