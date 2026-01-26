@@ -84,7 +84,7 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "MusicSchool",
+        "@type": ["MusicSchool", "LocalBusiness"],
         "@id": `${baseUrl}/#music-school`,
         name: siteConfig.studioName,
         description: localized.seo.description,
@@ -111,10 +111,10 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
         priceRange: siteConfig.pricingNote,
         aggregateRating: {
           "@type": "AggregateRating",
-          ratingValue: "5",
-          reviewCount: "3",
-          bestRating: "5",
-          worstRating: "1",
+          ratingValue: siteConfig.reviews.averageRating,
+          reviewCount: siteConfig.reviews.totalCount,
+          bestRating: 5,
+          worstRating: 1,
         },
         offers: {
           "@type": "Offer",

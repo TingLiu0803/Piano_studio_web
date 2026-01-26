@@ -39,6 +39,11 @@ export const siteConfig = {
     "https://calendar.app.google/zF9wtvjGaaLZ76dS7",
   bookingProvider: "Google Calendar Appointment Schedule",
   socialLinks: [],
+  // Update these when you get new reviews on Google Business Profile
+  reviews: {
+    averageRating: 5, // Average rating (all your reviews are 5 stars)
+    totalCount: 3, // Total number of reviews - UPDATE THIS as you get more reviews
+  },
   bilibiliVideos: [
     {
       title: "Liszt Sonata In B Minor (Excerpt)",
