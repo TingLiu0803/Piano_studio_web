@@ -8,6 +8,17 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: "host",
+            value: "www.sanjosepianolesson.com",
+          },
+        ],
+        destination: "https://sanjosepianolesson.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
             value: "eric-liu-piano-studio-web.vercel.app",
           },
         ],
