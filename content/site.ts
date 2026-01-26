@@ -25,7 +25,7 @@ export const siteConfig = {
   ],
   lessonFormats: ["In-person", "Online"],
   ageRange: "Ages 5+",
-  pricingNote: "Contact for rates",
+  pricingNote: "Affordable rates - Contact for pricing",
   email: "mr.tingliu@gmail.com",
   phone: "650-575-7300",
   addressLine: "San Jose, CA 95110",
@@ -74,7 +74,7 @@ export const content = {
     },
     hero: {
       title: "Piano lessons in Bay Area for confident, intelligent, and tasteful playing",
-      subtitle: "Piano Lessons Reimagined for Silicon Valley Minds",
+      subtitle: "Conservatory-level pianist who made it as an adult. Affordable in depth piano lessons in San Jose, SF Bay Area, South Bay & online.",
       primaryCta: "Book a free trial lesson",
       secondaryCta: "View performances",
       ctaNote: "Fast reply: most families get a response within the same day.",
@@ -163,11 +163,31 @@ export const content = {
     ],
     seo: {
       title:
-        "Eric Liu Piano Studio | Piano lessons in Bay Area for confident, intelligent, and tasteful playing",
+        "Best Piano Teacher San Jose | Free Trial Piano Lessons for Adults & Children All Levels | South Bay",
       description:
-        "Private piano lessons in San Jose, South Bay, and online across the SF Bay Area. Bilingual one-on-one instruction focused on technique, artistry, and confidence.",
+        "Free trial piano lessons in San Jose & South Bay. Best piano teacher specializing in adult beginners. Affordable piano lessons online & in-person. Book your free trial class today!",
       keywords:
-        "piano lessons, piano teacher, private piano lessons, music lessons, San Jose piano lessons, South Bay piano teacher, Silicon Valley piano lessons, Sunnyvale piano teacher, online piano lessons",
+        "piano lessons san jose, piano lessons south bay, piano lessons bay area, piano lessons for beginner, piano lessons for adult beginner, best piano teacher, free trial piano lesson, online piano lessons, easy piano, simply piano alternative, affordable piano lessons, San Jose piano teacher, South Bay piano lessons, beginner piano lessons, adult piano lessons",
+      pages: {
+        trial: {
+          title:
+            "Free Trial Piano Lesson San Jose | Book Your Free Trial Class Today | South Bay",
+          description:
+            "Book a free trial piano lesson in San Jose & South Bay. No credit card required. Perfect for beginners and adult beginners. Experience the best piano teacher before committing. 100% conversion rate after trial.",
+        },
+        about: {
+          title:
+            "About Eric Liu | Best Piano Teacher San Jose | Conservatory-Level Adult Beginner Success Story",
+          description:
+            "Learn about Eric Liu, a conservatory-level pianist who achieved advanced playing as an adult (started after age 25). Best piano teacher in San Jose specializing in adult beginners. 8+ years teaching, 60+ students coached.",
+        },
+        contact: {
+          title:
+            "Contact Best Piano Teacher San Jose | Free Trial & Pricing Info | South Bay",
+          description:
+            "Contact Eric Liu Piano Studio in San Jose. Ask about free trial lessons, affordable rates, availability, and the best plan for beginners and adult beginners. Fast response guaranteed.",
+        },
+      },
     },
   },
   zh: {
@@ -262,11 +282,28 @@ export const content = {
     ],
     seo: {
       title:
-        "Eric Liu Piano Studio | 湾区钢琴课，培养自信、理性与有品位的演奏",
+        "圣何塞最佳钢琴老师 | 免费试听成人初学者钢琴课 | 南湾湾区",
       description:
-        "圣何塞、南湾及湾区线上私人钢琴课程。一对一双语教学，注重技巧、艺术性与自信。",
+        "圣何塞和南湾免费试听钢琴课。专为成人初学者提供的最佳钢琴老师。实惠的线上和线下钢琴课程。立即预约免费试听课！",
       keywords:
-        "钢琴课, 钢琴老师, 私人钢琴课, 音乐课, 圣何塞钢琴课, 南湾钢琴老师, 线上钢琴课",
+        "圣何塞钢琴课, 南湾钢琴课, 湾区钢琴课, 初学者钢琴课, 成人初学者钢琴课, 最佳钢琴老师, 免费试听钢琴课, 线上钢琴课, 简单钢琴, 实惠钢琴课, 圣何塞钢琴老师, 南湾钢琴老师",
+      pages: {
+        trial: {
+          title: "免费试听钢琴课圣何塞 | 立即预约免费试听课 | 南湾",
+          description:
+            "预约圣何塞和南湾的免费试听钢琴课。无需信用卡。非常适合初学者和成人初学者。在承诺之前体验最佳钢琴老师。试听后100%转化率。",
+        },
+        about: {
+          title: "关于Eric Liu | 圣何塞最佳钢琴老师 | 音乐学院水平成人初学者成功故事",
+          description:
+            "了解Eric Liu，一位在成年后达到音乐学院水平高级演奏的钢琴家（25岁后才开始认真学）。圣何塞最佳钢琴老师，专为成人初学者服务。8年以上教学经验，指导过60多名学生。",
+        },
+        contact: {
+          title: "联系圣何塞最佳钢琴老师 | 免费试听和价格信息 | 南湾",
+          description:
+            "联系圣何塞的Eric Liu钢琴工作室。咨询免费试听课、实惠价格、时间安排以及最适合初学者和成人初学者的计划。保证快速回复。",
+        },
+      },
     },
   },
 };

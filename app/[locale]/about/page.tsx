@@ -7,7 +7,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  return buildMetadata(locale as Locale, `/${locale}/about`);
+  return buildMetadata(locale as Locale, `/${locale}/about`, "about");
 }
 
 export default async function AboutPage({

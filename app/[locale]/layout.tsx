@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { locales, type Locale, content } from "@/content/site";
-import { buildLocalBusinessJsonLd, buildMetadata } from "@/lib/seo";
+import {
+  buildLocalBusinessJsonLd,
+  buildMetadata,
+  buildFaqJsonLd,
+} from "@/lib/seo";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
@@ -37,6 +41,7 @@ export default async function LocaleLayout({
   return (
     <div className="flex min-h-screen flex-col">
       <JsonLd data={buildLocalBusinessJsonLd(typedLocale)} />
+      <JsonLd data={buildFaqJsonLd(typedLocale)} />
       <SiteHeader locale={typedLocale} />
       <main className="flex-1 bg-[color:var(--background)]">
         <div className="mx-auto w-full max-w-6xl px-6 py-12 sm:py-16">

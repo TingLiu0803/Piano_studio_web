@@ -9,7 +9,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  return buildMetadata(locale as Locale, `/${locale}/trial`);
+  return buildMetadata(locale as Locale, `/${locale}/trial`, "trial");
 }
 
 export default async function TrialPage({
