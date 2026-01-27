@@ -109,13 +109,6 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
         url: baseUrl,
         availableLanguage: ["English", "Chinese"],
         priceRange: siteConfig.pricingNote,
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: siteConfig.reviews.averageRating,
-          reviewCount: siteConfig.reviews.totalCount,
-          bestRating: 5,
-          worstRating: 1,
-        },
         offers: {
           "@type": "Offer",
           name: "Free trial piano lesson",
