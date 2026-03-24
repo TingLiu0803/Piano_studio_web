@@ -38,7 +38,11 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_BOOKING_URL ??
     "https://calendar.app.google/zF9wtvjGaaLZ76dS7",
   bookingProvider: "Google Calendar Appointment Schedule",
-  socialLinks: [],
+  /** Public Google Business Profile or Maps place URL (set NEXT_PUBLIC_GOOGLE_BUSINESS_URL in production). */
+  googleBusinessProfileUrl:
+    process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL ??
+    "https://share.google/GOmPCiC3Zgpe8hAav",
+  socialLinks: [] as string[],
   // Update these when you get new reviews on Google Business Profile
   reviews: {
     averageRating: 5, // Average rating (all your reviews are 5 stars)
@@ -76,6 +80,11 @@ export const content = {
       about: "About",
       trial: "Free Trial",
       contact: "Contact",
+      lessonsMenu: "Lesson options",
+    },
+    footer: {
+      lessonPages: "Lesson pages",
+      googleBusiness: "Reviews on Google",
     },
     hero: {
       title: "Piano lessons in Bay Area for confident, intelligent, and tasteful playing",
@@ -83,6 +92,8 @@ export const content = {
       primaryCta: "Book a free trial lesson",
       secondaryCta: "View performances",
       ctaNote: "Fast reply: most families get a response within the same day.",
+      lessonsPageLink: "Piano lessons in San Jose & South Bay",
+      browseAllLessonTypes: "Browse all lesson types",
       stats: [
         { value: "8+ years teaching", label: "Engineer turned pianist" },
         { value: "60+ students", label: "Personally coached" },
@@ -137,6 +148,10 @@ export const content = {
       aboutTitle: "Meet your teacher",
       aboutCta: "Read the full bio",
       approachTitle: "What makes the studio different",
+      lessonHubTitle: "Choose your lesson type",
+      lessonHubDescription:
+        "Not sure where to start? Pick the page that matches you—each one explains format, areas served, and how to book a free trial.",
+      lessonHubCardCta: "Learn more",
     },
     trial: {
       title: "Book a free trial lesson",
@@ -168,29 +183,36 @@ export const content = {
     ],
     seo: {
       title:
-        "Best Piano Teacher San Jose | Free Trial Piano Lessons for Adults & Children All Levels | South Bay",
+        "Piano Lessons San Jose & South Bay | In-Person & Online 1:1 | Free Trial",
       description:
-        "Free trial piano lessons in San Jose & South Bay. Best piano teacher specializing in adult beginners. Affordable piano lessons online & in-person. Book your free trial class today!",
+        "In-person piano lessons in San Jose and the South Bay—plus online. Private 1:1 lessons for adults, adult beginners, and kids 5+. Free trial, no credit card. Book today.",
       keywords:
-        "piano lessons san jose, piano lessons south bay, piano lessons bay area, piano lessons for beginner, piano lessons for adult beginner, best piano teacher, free trial piano lesson, online piano lessons, easy piano, simply piano alternative, affordable piano lessons, San Jose piano teacher, South Bay piano lessons, beginner piano lessons, adult piano lessons",
+        "piano lessons san jose, san jose piano lessons, piano teacher san jose, piano teachers san jose, in person piano lessons near me, private piano lessons for adults, piano lessons for adults near me, piano lessons south bay, piano lessons bay area, piano lessons for beginner, piano lessons for adult beginner, online piano lessons, affordable piano lessons, South Bay piano lessons, beginner piano lessons, adult piano lessons, cheap piano lessons near me, piano classes san jose",
+      breadcrumbLabels: {
+        "piano-lessons-san-jose": "Piano lessons in San Jose",
+        "adult-piano-lessons": "Adult piano lessons",
+        "kids-piano-lessons": "Kids piano lessons",
+        "online-piano-lessons": "Online piano lessons",
+        "piano-teacher-san-jose": "Piano teacher in San Jose",
+      },
       pages: {
         trial: {
           title:
-            "Free Trial Piano Lesson San Jose | Book Your Free Trial Class Today | South Bay",
+            "Free Trial Piano Lesson San Jose | In-Person or Online | South Bay",
           description:
-            "Book a free trial piano lesson in San Jose & South Bay. No credit card required. Perfect for beginners and adult beginners. Experience the best piano teacher before committing. 100% conversion rate after trial.",
+            "Book a free 1:1 trial in San Jose or online. In-person South Bay piano lessons or remote lessons for busy adults. No credit card. Beginners and adult beginners welcome.",
         },
         about: {
           title:
-            "About Eric Liu | Best Piano Teacher San Jose | Conservatory-Level Adult Beginner Success Story",
+            "About Eric Liu | Piano Teacher San Jose | Adult Beginners & Kids 5+",
           description:
-            "Learn about Eric Liu, a conservatory-level pianist who achieved advanced playing as an adult (started after age 25). Best piano teacher in San Jose specializing in adult beginners. 8+ years teaching, 60+ students coached.",
+            "Conservatory-level pianist; advanced playing achieved as an adult. Private 1:1 piano lessons in San Jose & Bay Area—adults, kids, in-person or online. 8+ years teaching, 60+ students coached.",
         },
         contact: {
           title:
-            "Contact Best Piano Teacher San Jose | Free Trial & Pricing Info | South Bay",
+            "Contact Piano Lessons San Jose | Free Trial, Rates & Availability",
           description:
-            "Contact Eric Liu Piano Studio in San Jose. Ask about free trial lessons, affordable rates, availability, and the best plan for beginners and adult beginners. Fast response guaranteed.",
+            "Contact Eric Liu Piano Studio in San Jose. Ask about in-person or online lessons, free trial, rates, and scheduling for adults, kids, and beginners. Fast reply—most inquiries same day.",
         },
       },
     },
@@ -202,6 +224,11 @@ export const content = {
       about: "关于",
       trial: "免费试听",
       contact: "联系",
+      lessonsMenu: "课程类型",
+    },
+    footer: {
+      lessonPages: "课程页面",
+      googleBusiness: "Google 评价与商家信息",
     },
     hero: {
       title: "湾区钢琴课，培养自信、理性与有品位的演奏",
@@ -209,6 +236,8 @@ export const content = {
       primaryCta: "预约免费试听",
       secondaryCta: "观看演出视频",
       ctaNote: "快速回复：大多数家庭当天即可收到答复。",
+      lessonsPageLink: "圣何塞与南湾钢琴课程",
+      browseAllLessonTypes: "查看全部课程类型",
       stats: [
         { value: "7年以上", label: "教学经验" },
         { value: "50+学生", label: "亲自指导" },
@@ -258,6 +287,10 @@ export const content = {
       aboutTitle: "认识老师",
       aboutCta: "查看完整介绍",
       approachTitle: "课程有什么不同",
+      lessonHubTitle: "选择适合您的课程",
+      lessonHubDescription:
+        "不确定从哪开始？按您的情况选择页面—每种课程都会说明授课方式、服务区域以及如何预约免费试听。",
+      lessonHubCardCta: "了解更多",
     },
     trial: {
       title: "预约免费试听课",
@@ -287,26 +320,33 @@ export const content = {
     ],
     seo: {
       title:
-        "圣何塞最佳钢琴老师 | 免费试听成人初学者钢琴课 | 南湾湾区",
+        "圣何塞钢琴课 · 南湾湾区 | 线下与线上一对一 | 免费试听",
       description:
-        "圣何塞和南湾免费试听钢琴课。专为成人初学者提供的最佳钢琴老师。实惠的线上和线下钢琴课程。立即预约免费试听课！",
+        "圣何塞与南湾线下钢琴课，亦提供在线课程。成人与成人初学者、儿童（5岁+）一对一私教。免费试听，无需信用卡。",
       keywords:
-        "圣何塞钢琴课, 南湾钢琴课, 湾区钢琴课, 初学者钢琴课, 成人初学者钢琴课, 最佳钢琴老师, 免费试听钢琴课, 线上钢琴课, 简单钢琴, 实惠钢琴课, 圣何塞钢琴老师, 南湾钢琴老师",
+        "圣何塞钢琴课, 南湾钢琴课, 湾区钢琴课, 圣何塞钢琴老师, 钢琴老师, 成人钢琴课, 成人初学者, 钢琴课, 线上钢琴课, 一对一钢琴课, 钢琴老师推荐, 实惠钢琴课",
+      breadcrumbLabels: {
+        "piano-lessons-san-jose": "圣何塞钢琴课程",
+        "adult-piano-lessons": "成人钢琴课",
+        "kids-piano-lessons": "儿童钢琴课",
+        "online-piano-lessons": "线上钢琴课",
+        "piano-teacher-san-jose": "圣何塞钢琴老师",
+      },
       pages: {
         trial: {
-          title: "免费试听钢琴课圣何塞 | 立即预约免费试听课 | 南湾",
+          title: "免费试听钢琴课 | 圣何塞南湾 | 线下或线上",
           description:
-            "预约圣何塞和南湾的免费试听钢琴课。无需信用卡。非常适合初学者和成人初学者。在承诺之前体验最佳钢琴老师。试听后100%转化率。",
+            "预约圣何塞或线上免费一对一试听。南湾线下钢琴课或远程课程。无需信用卡。初学者与成人初学者欢迎。",
         },
         about: {
-          title: "关于Eric Liu | 圣何塞最佳钢琴老师 | 音乐学院水平成人初学者成功故事",
+          title: "关于 Eric Liu | 圣何塞钢琴老师 | 成人与儿童一对一",
           description:
-            "了解Eric Liu，一位在成年后达到音乐学院水平高级演奏的钢琴家（25岁后才开始认真学）。圣何塞最佳钢琴老师，专为成人初学者服务。8年以上教学经验，指导过60多名学生。",
+            "音乐学院水平演奏；成年后系统学习达到高阶。圣何塞与湾区私人钢琴课，成人、儿童、线下或线上一对一。8年以上教学经验。",
         },
         contact: {
-          title: "联系圣何塞最佳钢琴老师 | 免费试听和价格信息 | 南湾",
+          title: "联系钢琴课预约 | 圣何塞 | 试听与费用",
           description:
-            "联系圣何塞的Eric Liu钢琴工作室。咨询免费试听课、实惠价格、时间安排以及最适合初学者和成人初学者的计划。保证快速回复。",
+            "联系 Eric Liu 钢琴工作室：咨询线下/线上课程、免费试听、费用与时间安排。多数咨询当日回复。",
         },
       },
     },

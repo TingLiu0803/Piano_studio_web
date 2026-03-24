@@ -1,5 +1,6 @@
 import { type Locale, content, siteConfig } from "@/content/site";
 import ContactForm from "@/components/ContactForm";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -21,7 +22,9 @@ export default async function ContactPage({
   const localized = content[typedLocale];
 
   return (
-    <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+    <>
+      <BreadcrumbJsonLd locale={typedLocale} path={`/${typedLocale}/contact`} />
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
       <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
         <h1 className="text-3xl font-semibold">{localized.contact.title}</h1>
         <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">
@@ -43,8 +46,21 @@ export default async function ContactPage({
           <p>{siteConfig.serviceArea}</p>
           <p>{siteConfig.email}</p>
           <p>{siteConfig.phone}</p>
+          {siteConfig.googleBusinessProfileUrl ? (
+            <p>
+              <a
+                href={siteConfig.googleBusinessProfileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[color:var(--link)] underline-offset-4 transition hover:text-[color:var(--link-hover)] hover:underline"
+              >
+                {localized.footer.googleBusiness}
+              </a>
+            </p>
+          ) : null}
         </div>
       </aside>
     </div>
+    </>
   );
 }
