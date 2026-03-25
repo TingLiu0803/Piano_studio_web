@@ -3,6 +3,7 @@ import { type Locale, content, siteConfig } from "@/content/site";
 import { landingPageSlugs } from "@/content/landing-pages";
 import BilibiliGallery from "@/components/BilibiliGallery";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import GoogleReviewsPromo from "@/components/GoogleReviewsPromo";
 import { buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -88,6 +89,7 @@ export default async function LocaleHome({
               </div>
             ))}
           </div>
+          <GoogleReviewsPromo locale={locale as Locale} variant="strip" />
         </div>
         <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-xl">
           <div className="aspect-video overflow-hidden rounded-2xl border border-[color:var(--border)]">
@@ -207,6 +209,7 @@ export default async function LocaleHome({
         </div>
         <BilibiliGallery />
       </section>
+      <GoogleReviewsPromo locale={locale as Locale} variant="featured" />
       <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-10 shadow-sm">
         <h2 className="text-2xl font-semibold">
           {localized.sections.testimonialsTitle}

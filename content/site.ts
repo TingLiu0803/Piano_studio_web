@@ -68,7 +68,17 @@ export const siteConfig = {
       title: "Mozart Sonata K. 576, 2nd movement",
       embedUrl:
         "https://player.bilibili.com/player.html?bvid=BV1GXkNBrEUk&autoplay=0",
-    }
+    },
+    {
+      title: "Chopin: Nocturne in B major, Op. 62 No. 1",
+      embedUrl:
+        "https://player.bilibili.com/player.html?bvid=BV18u411o7uu&autoplay=0",
+    },
+    {
+      title: "Bach: Partita for Keyboard No. 6, BWV 830 (Excerpt)",
+      embedUrl:
+        "https://player.bilibili.com/player.html?bvid=BV1H24y1f7Ls&autoplay=0",
+    },
   ],
 };
 
@@ -85,6 +95,15 @@ export const content = {
     footer: {
       lessonPages: "Lesson pages",
       googleBusiness: "Reviews on Google",
+    },
+    googleReviews: {
+      eyebrow: "Verified on Google",
+      headline: "5-star rated studio",
+      body:
+        "Read public reviews from students and parents in the San Jose area—then book a free trial to see if the fit is right.",
+      cta: "See reviews on Google",
+      ratingSummary: "{rating} out of 5 · {count} reviews",
+      opensInNewTab: "Opens your Google Business profile in a new tab.",
     },
     hero: {
       title: "Piano lessons in Bay Area for confident, intelligent, and tasteful playing",
@@ -180,6 +199,16 @@ export const content = {
           "Eric is a fantastic piano teacher for our son, who started with no prior experience. He is very patient, flexible, and encouraging, which has made learning piano a truly positive experience.",
         name: "Thunyarat “Bam” Amornpetchkul",
       },
+      {
+        quote:
+          "Eric has many great insights on both techniques and musicality. He is also a patient instructor. 10/10.",
+        name: "Yudan Guo",
+      },
+      {
+        quote:
+          "Epic teacher! With great passion to both beginners and intermediate students.",
+        name: "Jeremy Lin",
+      },
     ],
     seo: {
       title:
@@ -229,6 +258,15 @@ export const content = {
     footer: {
       lessonPages: "课程页面",
       googleBusiness: "Google 评价与商家信息",
+    },
+    googleReviews: {
+      eyebrow: "Google 真实评价",
+      headline: "五星好评工作室",
+      body:
+        "欢迎查看圣何塞及周边学琴家庭在 Google 上的公开评价；也可先预约免费试听，亲自感受是否合适。",
+      cta: "在 Google 查看评价",
+      ratingSummary: "{rating} 分（满分 5）· {count} 条评价",
+      opensInNewTab: "将在新标签页打开 Google 商家资料。",
     },
     hero: {
       title: "湾区钢琴课，培养自信、理性与有品位的演奏",
@@ -316,6 +354,16 @@ export const content = {
         quote:
           "Eric是一位出色的钢琴老师。我的孩子之前没有任何基础，他非常耐心、灵活且善于鼓励，让学习钢琴成为一段非常积极的体验。",
         name: "成年学生",
+      },
+      {
+        quote:
+          "Eric在技巧与音乐性上都有很多独到见解，也是一位非常有耐心的老师。满分推荐。",
+        name: "Yudan Guo",
+      },
+      {
+        quote:
+          "非常棒的老师！对初学者与中级学员都充满热情。",
+        name: "Jeremy Lin",
       },
     ],
     seo: {

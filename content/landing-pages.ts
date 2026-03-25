@@ -41,7 +41,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           {
             heading: "Who takes lessons here",
             body:
-              "Adult beginners and adult restarters, kids and teens (ages 5+), and students preparing for exams or performances. If you are comparing “piano lessons near me” options, start with a free trial lesson and see the teaching style in action.",
+              "Adult beginners and restarters, kids and teens (ages 5+), intermediate and advanced students working on technique and repertoire, and anyone preparing for exams, auditions, or performances. If you are comparing “piano lessons near me” options, start with a free trial lesson and see the teaching style in action.",
           },
           {
             heading: "Service area",
@@ -53,18 +53,18 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
       "adult-piano-lessons": {
         seo: {
           title:
-            "Piano Lessons for Adults San Jose | Private Beginners & Restarters | Free Trial",
+            "Piano Lessons for Adults San Jose | Beginners to Advanced | Free Trial",
           description:
-            "Private piano lessons for adults in San Jose and the Bay Area: beginners, restarters, and serious hobbyists. In-person or online, one-on-one. Free trial—no credit card required.",
+            "Private piano lessons for adults in San Jose and the Bay Area: beginners, restarters, intermediate and advanced players, and serious hobbyists. In-person or online, one-on-one. Free trial—no credit card required.",
         },
         h1: "Piano lessons for adults in San Jose and the Bay Area",
         intro:
-          "If you typed “private piano lessons for adults” or “piano lessons for adults near me,” you are in the right place. I specialize in adult beginners and adult restarters—people who want real progress without gimmicks, and who value structured, patient coaching.",
+          "If you typed “private piano lessons for adults” or “piano lessons for adults near me,” you are in the right place. Many of my adults are beginners or restarters, but I also teach intermediate and advanced players who want serious coaching on technique, musicality, and repertoire—structured, patient, and goal-driven.",
         sections: [
           {
             heading: "Adult beginners and “I quit as a kid” restarters",
             body:
-              "I started seriously after age 25 and reached conservatory-level advanced playing as an adult, so I understand the mindset and scheduling realities of adult learners. Lessons emphasize technique, reading, and musicality—not rushing through method books.",
+              "I started seriously after age 25 and reached conservatory-level advanced playing as an adult, so I understand the mindset and scheduling realities of adult learners. Lessons emphasize technique, reading, and musicality—not rushing through method books. Intermediate and advanced adults get the same depth of coaching on repertoire, interpretation, and practice design.",
           },
           {
             heading: "In-person or online",
@@ -183,7 +183,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           {
             heading: "适合对象",
             body:
-              "成人初学者与重回钢琴的成人、儿童与青少年（5+），以及需要备考或比赛辅导的学生。若您在比较“钢琴老师”或“钢琴课”，欢迎先预约免费试听，直接感受教学方式。",
+              "成人初学者与重拾者、儿童与青少年（5+）、中级与高级学员（技巧与曲目深化），以及需要考级、试音、比赛或演出辅导的学生。若您在比较“钢琴老师”或“钢琴课”，欢迎先预约免费试听，直接感受教学方式。",
           },
           {
             heading: "服务区域",
@@ -195,18 +195,18 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
       "adult-piano-lessons": {
         seo: {
           title:
-            "成人钢琴课 圣何塞湾区 | 初学者与重拾钢琴 | 一对一免费试听",
+            "成人钢琴课 圣何塞湾区 | 初学到高级 | 一对一免费试听",
           description:
-            "面向成人初学者与成人重拾者的私人钢琴课。圣何塞湾区可线下或线上一对一。免费试听，无需信用卡。",
+            "面向成人初学者、重拾者及中高级学员的私人钢琴课。圣何塞湾区可线下或线上一对一。免费试听，无需信用卡。",
         },
         h1: "成人钢琴课（圣何塞与湾区）",
         intro:
-          "我专门指导成人初学者与“童年学过、想重新拾回”的人。以系统、耐心的方式教授技巧、读谱与音乐表现，而不是赶进度刷完一本教材。",
+          "许多成年学生是初学者或重拾者；我也教授中级与高级成人学员，在技巧、音乐性与曲目上做深度指导。课程系统、耐心、以目标为导向，而不是赶进度刷完一本教材。",
         sections: [
           {
             heading: "成人学习路径",
             body:
-              "我在25岁后才开始系统学习并达到音乐学院水平的高级演奏，理解成人学习者的时间与心理特点。课程强调技巧、读谱与音乐性。",
+              "我在25岁后才开始系统学习并达到音乐学院水平的高级演奏，理解成人学习者的时间与心理特点。课程强调技巧、读谱与音乐性。中级与高级学员同样在曲目、音乐表现与练习规划上获得深度指导。",
           },
           {
             heading: "线下或线上",
