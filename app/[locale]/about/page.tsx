@@ -1,4 +1,5 @@
 import { type Locale, content, siteConfig } from "@/content/site";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -19,7 +20,9 @@ export default async function AboutPage({
   const localized = content[locale as Locale];
 
   return (
-    <div className="flex flex-col gap-12">
+    <>
+      <BreadcrumbJsonLd locale={locale as Locale} path={`/${locale}/about`} />
+      <div className="flex flex-col gap-12">
       <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
         <h1 className="text-3xl font-semibold">{localized.about.title}</h1>
         <p className="mt-4 text-sm text-[color:var(--muted-foreground)]">
@@ -63,5 +66,6 @@ export default async function AboutPage({
         </div>
       </section>
     </div>
+    </>
   );
 }

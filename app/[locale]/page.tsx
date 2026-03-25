@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { type Locale, content, siteConfig } from "@/content/site";
+import { landingPageSlugs } from "@/content/landing-pages";
 import BilibiliGallery from "@/components/BilibiliGallery";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import GoogleReviewsPromo from "@/components/GoogleReviewsPromo";
 import { buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -21,7 +24,9 @@ export default async function LocaleHome({
   const localized = content[locale as Locale];
 
   return (
-    <div className="flex flex-col gap-20">
+    <>
+      <BreadcrumbJsonLd locale={locale as Locale} path={`/${locale}`} />
+      <div className="flex flex-col gap-20">
       <section className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
         <div className="flex flex-col gap-6">
           <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--tag-foreground)]">
@@ -38,6 +43,14 @@ export default async function LocaleHome({
           <p className="text-lg text-[color:var(--muted-foreground)]">
             {localized.hero.subtitle}
           </p>
+          <p>
+            <Link
+              href={`/${locale}/piano-lessons-san-jose`}
+              className="text-sm font-semibold text-[color:var(--link)] underline-offset-4 transition hover:text-[color:var(--link-hover)] hover:underline"
+            >
+              {localized.hero.lessonsPageLink}
+            </Link>
+          </p>
           <div className="flex flex-wrap gap-4">
             <Link
               href={`/${locale}/trial`}
@@ -51,6 +64,12 @@ export default async function LocaleHome({
             >
               {localized.hero.secondaryCta}
             </a>
+            <Link
+              href="#lesson-options"
+              className="rounded-full border border-[color:var(--accent)] bg-[color:var(--surface)] px-6 py-3 text-sm font-semibold text-[color:var(--foreground)] transition hover:border-[color:var(--foreground)]"
+            >
+              {localized.hero.browseAllLessonTypes}
+            </Link>
           </div>
           <p className="text-sm text-[color:var(--muted-foreground)]">
             {localized.hero.ctaNote}
@@ -70,6 +89,7 @@ export default async function LocaleHome({
               </div>
             ))}
           </div>
+          <GoogleReviewsPromo locale={locale as Locale} variant="strip" />
         </div>
         <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-xl">
           <div className="aspect-video overflow-hidden rounded-2xl border border-[color:var(--border)]">
@@ -85,6 +105,37 @@ export default async function LocaleHome({
             {localized.hero.video.caption}
           </p>
         </div>
+      </section>
+
+      <section
+        id="lesson-options"
+        className="scroll-mt-28 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-6 py-10 shadow-sm"
+      >
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)] md:text-3xl">
+            {localized.sections.lessonHubTitle}
+          </h2>
+          <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">
+            {localized.sections.lessonHubDescription}
+          </p>
+        </div>
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {landingPageSlugs.map((slug) => (
+            <li key={slug}>
+              <Link
+                href={`/${locale}/${slug}`}
+                className="flex h-full flex-col justify-between rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-5 text-left shadow-sm transition hover:border-[color:var(--foreground)] hover:shadow-md"
+              >
+                <span className="font-semibold text-[color:var(--foreground)]">
+                  {localized.seo.breadcrumbLabels?.[slug] ?? slug}
+                </span>
+                <span className="mt-3 text-xs font-medium text-[color:var(--link)]">
+                  {localized.sections.lessonHubCardCta} →
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="grid gap-6 md:grid-cols-3">
@@ -158,6 +209,7 @@ export default async function LocaleHome({
         </div>
         <BilibiliGallery />
       </section>
+      <GoogleReviewsPromo locale={locale as Locale} variant="featured" />
       <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-10 shadow-sm">
         <h2 className="text-2xl font-semibold">
           {localized.sections.testimonialsTitle}
@@ -197,5 +249,6 @@ export default async function LocaleHome({
         </div>
       </section>
     </div>
+    </>
   );
 }

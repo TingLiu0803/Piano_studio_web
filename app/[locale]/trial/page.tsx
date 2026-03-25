@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { type Locale, content, siteConfig } from "@/content/site";
 import ContactForm from "@/components/ContactForm";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -26,7 +27,9 @@ export default async function TrialPage({
   const bookingUrl = hasBookingUrl ? rawBookingUrl : null;
 
   return (
-    <div className="flex flex-col gap-8">
+    <>
+      <BreadcrumbJsonLd locale={typedLocale} path={`/${typedLocale}/trial`} />
+      <div className="flex flex-col gap-8">
       <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
         <h1 className="text-3xl font-semibold">{localized.trial.title}</h1>
         <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">
@@ -93,5 +96,6 @@ export default async function TrialPage({
         </aside>
       </section>
     </div>
+    </>
   );
 }

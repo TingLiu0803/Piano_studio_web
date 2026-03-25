@@ -13,10 +13,17 @@ export function getBaseUrl() {
   return DEFAULT_SITE_URL;
 }
 
+export type MetadataOverrides = {
+  title: string;
+  description: string;
+  keywords?: string;
+};
+
 export function buildMetadata(
   locale: Locale,
   path: string,
-  pageType?: "trial" | "about" | "contact"
+  pageType?: "trial" | "about" | "contact",
+  overrides?: MetadataOverrides
 ): Metadata {
   const baseUrl = getBaseUrl();
   const localized = content[locale];
@@ -29,19 +36,21 @@ export function buildMetadata(
     },
   };
 
-  // Use page-specific SEO if available, otherwise use default
   const pageSeo =
-    pageType && localized.seo.pages?.[pageType]
-      ? localized.seo.pages[pageType]
-      : null;
+    overrides?.title && overrides?.description
+      ? { title: overrides.title, description: overrides.description }
+      : pageType && localized.seo.pages?.[pageType]
+        ? localized.seo.pages[pageType]
+        : null;
   const title = pageSeo?.title ?? localized.seo.title;
   const description = pageSeo?.description ?? localized.seo.description;
+  const keywords = overrides?.keywords ?? localized.seo.keywords;
 
   return {
     metadataBase: new URL(baseUrl),
     title,
     description,
-    keywords: localized.seo.keywords,
+    keywords,
     alternates,
     openGraph: {
       type: "website",
@@ -68,8 +77,13 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
     "@type": "Place",
     name: area,
   }));
-  const sameAs =
-    siteConfig.socialLinks.length > 0 ? siteConfig.socialLinks : undefined;
+  const sameAsUrls = [
+    ...(siteConfig.googleBusinessProfileUrl
+      ? [siteConfig.googleBusinessProfileUrl]
+      : []),
+    ...siteConfig.socialLinks,
+  ];
+  const sameAs = sameAsUrls.length > 0 ? sameAsUrls : undefined;
   const baseUrl = getBaseUrl();
   const aboutSnippet = localized.about.body.split("\n")[0];
   const geo = siteConfig.geo
@@ -244,6 +258,13 @@ export function buildBreadcrumbJsonLd(locale: Locale, path: string) {
 
   if (pathSegments.length > 1) {
     const pageName = pathSegments[pathSegments.length - 1];
+    const breadcrumbLabels = localized.seo.breadcrumbLabels;
+    const fromMap =
+      breadcrumbLabels && pageName in breadcrumbLabels
+        ? breadcrumbLabels[
+            pageName as keyof typeof breadcrumbLabels
+          ]
+        : undefined;
     const pageLabel =
       pageName === "trial"
         ? localized.nav.trial
@@ -251,7 +272,7 @@ export function buildBreadcrumbJsonLd(locale: Locale, path: string) {
           ? localized.nav.about
           : pageName === "contact"
             ? localized.nav.contact
-            : pageName;
+            : fromMap ?? pageName;
 
     breadcrumbs.push({
       "@type": "ListItem",
