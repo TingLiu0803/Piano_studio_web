@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Terracotta matches site --primary-hover; high contrast for Google favicon -->
+  <rect width="512" height="512" rx="120" fill="#864c34"/>
+  <!-- Abstract piano keys: readable at 16px -->
+  <rect x="88" y="112" width="96" height="288" rx="20" fill="#fff9f2"/>
+  <rect x="208" y="112" width="96" height="288" rx="20" fill="#fff9f2"/>
+  <rect x="328" y="112" width="96" height="288" rx="20" fill="#fff9f2"/>
+  <rect x="172" y="112" width="64" height="160" rx="12" fill="#251f1b"/>
+  <rect x="292" y="112" width="64" height="160" rx="12" fill="#251f1b"/>
+</svg>
