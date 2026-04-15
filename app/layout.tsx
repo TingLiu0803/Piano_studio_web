@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
@@ -11,6 +12,13 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+export const metadata: Metadata = {
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon.png",
+  },
+};
 
 export default function RootLayout({
   children,

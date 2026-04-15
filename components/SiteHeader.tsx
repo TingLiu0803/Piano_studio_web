@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { type Locale, content, locales, siteConfig } from "@/content/site";
 import { landingPageSlugs } from "@/content/landing-pages";
+import PianoKeyboardMark from "@/components/PianoKeyboardMark";
 
 type SiteHeaderProps = {
   locale: Locale;
@@ -35,8 +36,9 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[color:var(--border)] bg-[color:var(--surface)] backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-        <Link href={`/${locale}`} className="text-lg font-semibold">
-          {siteConfig.studioName}
+        <Link href={`/${locale}`} className="inline-flex items-center gap-2 text-lg font-semibold">
+          <PianoKeyboardMark className="h-6 w-6 shrink-0" />
+          <span>{siteConfig.studioName}</span>
         </Link>
         <nav className="hidden items-center gap-1 text-sm font-medium sm:flex">
           <Link href={`/${locale}`} className="rounded-md px-2 py-1">
