@@ -20,13 +20,21 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
     <>
       <BreadcrumbJsonLd locale={locale} path={path} />
       <div className="flex flex-col gap-12">
-        <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
+        <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-lg">
           <h1 className="text-3xl font-semibold leading-tight text-[color:var(--foreground)] md:text-4xl">
             {data.h1}
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
             {data.intro}
           </p>
+          <a
+            href="https://www.musicnbrain.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-flex rounded-full border border-[color:var(--accent)] bg-[color:var(--tag)] px-4 py-2 text-xs font-semibold text-[color:var(--accent-foreground)]"
+          >
+            Partnered with MusicNBrain
+          </a>
         </section>
 
         {data.sections.map((section) => (

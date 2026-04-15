@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { type Locale, content, siteConfig } from "@/content/site";
 import { landingPageSlugs } from "@/content/landing-pages";
-import GoogleReviewsPromo from "@/components/GoogleReviewsPromo";
 
 type SiteFooterProps = {
   locale: Locale;
@@ -41,6 +40,14 @@ export default function SiteFooter({ locale }: SiteFooterProps) {
         <div className="flex flex-wrap gap-4">
           <span>{siteConfig.email}</span>
           <span>{siteConfig.phone}</span>
+          <a
+            href="https://www.musicnbrain.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-[color:var(--link)] underline-offset-4 transition hover:text-[color:var(--link-hover)] hover:underline"
+          >
+            MusicNBrain partnership
+          </a>
         </div>
         <p className="max-w-3xl text-xs leading-relaxed">
           {localized.seo.description}

@@ -89,6 +89,14 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
           <Link href={`/${locale}/contact`} className="rounded-md px-2 py-1">
             {localized.nav.contact}
           </Link>
+          <a
+            href="https://www.musicnbrain.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-md px-2 py-1 text-[color:var(--link)] transition hover:text-[color:var(--link-hover)]"
+          >
+            {localized.nav.musicnbrain}
+          </a>
           <Link
             href={`/${locale}/trial`}
             className="ml-1 rounded-full bg-[color:var(--primary)] px-4 py-2 text-xs font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
@@ -153,6 +161,15 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
           <Link href={`/${locale}/contact`} onClick={() => setIsOpen(false)}>
             {localized.nav.contact}
           </Link>
+          <a
+            href="https://www.musicnbrain.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-[color:var(--link)]"
+            onClick={() => setIsOpen(false)}
+          >
+            {localized.nav.musicnbrain}
+          </a>
           <Link
             href={`/${locale}/trial`}
             className="inline-flex items-center justify-center rounded-full bg-[color:var(--primary)] px-4 py-2 text-xs font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
