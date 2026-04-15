@@ -55,9 +55,9 @@ export const siteConfig = {
         "https://player.bilibili.com/player.html?bvid=BV1nYXPYHEQr&autoplay=0",
     },
     {
-      title: "Bach Partita No.1 in B-Flat Major (Excerpt)",
+      title: "Chopin Nocturne in C minor, Op.48 No.1 (Excerpt)",
       embedUrl:
-        "https://player.bilibili.com/player.html?bvid=BV1Pb4y1n7Uc&autoplay=0",
+        "https://player.bilibili.com/player.html?bvid=BV1TuDzB7EQS&autoplay=0",
     },
     {
       title: "Beethoven Piano Sonata No.28, Op.101 1st movement",
@@ -91,6 +91,7 @@ export const content = {
       trial: "Free Trial",
       contact: "Contact",
       lessonsMenu: "Lesson options",
+      musicnbrain: "MusicNBrain",
     },
     footer: {
       lessonPages: "Lesson pages",
@@ -171,6 +172,13 @@ export const content = {
       lessonHubDescription:
         "Not sure where to start? Pick the page that matches you—each one explains format, areas served, and how to book a free trial.",
       lessonHubCardCta: "Learn more",
+      partnershipTitle: "Partnership with MusicNBrain",
+      partnershipDescription:
+        "Our studio proudly supports MusicNBrain's mission to help young performers grow through real performance opportunities and community impact.",
+      partnershipBoardMemberTitle: "Board member introduction",
+      partnershipBoardMemberBody:
+        "I serve as one of the board members at MusicNBrain, and I bring that same nonprofit service mindset into every lesson, recital, and student pathway we build together.",
+      partnershipCta: "Visit MusicNBrain",
     },
     trial: {
       title: "Book a free trial lesson",
@@ -254,6 +262,7 @@ export const content = {
       trial: "免费试听",
       contact: "联系",
       lessonsMenu: "课程类型",
+      musicnbrain: "MusicNBrain",
     },
     footer: {
       lessonPages: "课程页面",
@@ -329,6 +338,13 @@ export const content = {
       lessonHubDescription:
         "不确定从哪开始？按您的情况选择页面—每种课程都会说明授课方式、服务区域以及如何预约免费试听。",
       lessonHubCardCta: "了解更多",
+      partnershipTitle: "与 MusicNBrain 的合作",
+      partnershipDescription:
+        "我们的工作室长期支持 MusicNBrain 的使命：通过真实舞台与社区参与，帮助年轻演奏者持续成长。",
+      partnershipBoardMemberTitle: "理事会成员介绍",
+      partnershipBoardMemberBody:
+        "我本人也是 MusicNBrain 的理事会成员之一，并将同样的公益服务理念带入每一节课程、每一次汇演与每一位学生的发展路径中。",
+      partnershipCta: "访问 MusicNBrain 官网",
     },
     trial: {
       title: "预约免费试听课",
@@ -348,12 +364,12 @@ export const content = {
       {
         quote:
           "Eric是一位非常优秀的老师！我跟他学习了约9个月，非常喜欢他的课程。他会根据我的个人需求量身规划每节课，并非常注重把扎实技术与音乐感结合起来。",
-        name: "西洛杉矶家长",
+        name: "Angad Singh",
       },
       {
         quote:
           "Eric是一位出色的钢琴老师。我的孩子之前没有任何基础，他非常耐心、灵活且善于鼓励，让学习钢琴成为一段非常积极的体验。",
-        name: "成年学生",
+        name: "Thunyarat “Bam” Amornpetchkul",
       },
       {
         quote:

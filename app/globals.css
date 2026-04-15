@@ -2,24 +2,24 @@
 
 :root {
   color-scheme: light;
-  --background: #fdfbf7;
-  --foreground: #251f1b;
+  --background: #f3f4f6;
+  --foreground: #1f2126;
   --surface: #ffffff;
-  --surface-muted: #f7f2ec;
-  --surface-inverse: #251f1b;
-  --surface-inverse-foreground: #fff9f2;
-  --border: #e8dfd6;
-  --muted-foreground: #6a5f57;
-  --primary: #9b5b3c;
-  --primary-hover: #864c34;
-  --primary-foreground: #fff6ee;
-  --accent: #d0a27c;
-  --accent-foreground: #3a2a21;
-  --link: #7d4c33;
-  --link-hover: #6a3f2a;
-  --tag: #f2e7db;
-  --tag-foreground: #7d4c33;
-  --success: #2f7a5a;
+  --surface-muted: #f7f8fb;
+  --surface-inverse: #1f2126;
+  --surface-inverse-foreground: #f8fafc;
+  --border: #d8dbe1;
+  --muted-foreground: #5a5f6b;
+  --primary: #f4c62c;
+  --primary-hover: #e3b114;
+  --primary-foreground: #1f2126;
+  --accent: #5ec2a9;
+  --accent-foreground: #0f2a24;
+  --link: #2f7e6f;
+  --link-hover: #26685c;
+  --tag: #e7faf5;
+  --tag-foreground: #2b6f62;
+  --success: #2f7e6f;
   --error: #b24a3b;
 }
 
@@ -54,6 +54,9 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+  background-image:
+    radial-gradient(circle at 8% 2%, rgba(94, 194, 169, 0.14), transparent 28%),
+    radial-gradient(circle at 94% 8%, rgba(244, 198, 44, 0.16), transparent 26%);
 }
 
 ::selection {

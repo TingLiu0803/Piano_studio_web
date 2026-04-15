@@ -27,7 +27,8 @@ export default async function LocaleHome({
     <>
       <BreadcrumbJsonLd locale={locale as Locale} path={`/${locale}`} />
       <div className="flex flex-col gap-20">
-      <section className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+      <section className="rounded-[2rem] border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-xl md:p-10">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="flex flex-col gap-6">
           <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--tag-foreground)]">
             <span className="rounded-full bg-[color:var(--tag)] px-3 py-1 text-[11px]">
@@ -37,7 +38,7 @@ export default async function LocaleHome({
               {siteConfig.pricingNote}
             </span>
           </div>
-          <h1 className="text-4xl font-semibold leading-tight text-[color:var(--foreground)] md:text-5xl">
+          <h1 className="text-4xl font-semibold leading-tight text-[color:var(--foreground)] md:text-6xl">
             {localized.hero.title}
           </h1>
           <p className="text-lg text-[color:var(--muted-foreground)]">
@@ -58,6 +59,14 @@ export default async function LocaleHome({
             >
               {localized.hero.primaryCta}
             </Link>
+            <a
+              href="https://www.musicnbrain.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-[color:var(--accent)] bg-[color:var(--surface)] px-6 py-3 text-sm font-semibold text-[color:var(--accent-foreground)] transition hover:border-[color:var(--link)]"
+            >
+              {localized.sections.partnershipCta}
+            </a>
             <a
               href="#bilibili-videos"
               className="rounded-full border border-[color:var(--border)] px-6 py-3 text-sm font-semibold transition hover:border-[color:var(--foreground)]"
@@ -91,7 +100,7 @@ export default async function LocaleHome({
           </div>
           <GoogleReviewsPromo locale={locale as Locale} variant="strip" />
         </div>
-        <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-xl">
+        <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-6 shadow-xl">
           <div className="aspect-video overflow-hidden rounded-2xl border border-[color:var(--border)]">
             <iframe
               src={localized.hero.video.embedUrl}
@@ -104,6 +113,42 @@ export default async function LocaleHome({
           <p className="mt-4 text-sm text-[color:var(--muted-foreground)]">
             {localized.hero.video.caption}
           </p>
+        </div>
+      </div>
+      </section>
+
+      <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-8 shadow-sm md:px-8">
+        <div className="grid gap-6 md:grid-cols-[1.15fr_0.85fr] md:items-center">
+          <div>
+            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] md:text-3xl">
+              {localized.sections.partnershipTitle}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
+              {localized.sections.partnershipDescription}
+            </p>
+            <h3 className="mt-5 text-lg font-semibold text-[color:var(--foreground)]">
+              {localized.sections.partnershipBoardMemberTitle}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
+              {localized.sections.partnershipBoardMemberBody}
+            </p>
+          </div>
+          <div className="rounded-2xl border border-[color:var(--accent)] bg-[color:var(--tag)] p-6">
+            <p className="text-sm font-semibold text-[color:var(--accent-foreground)]">
+              MusicNBrain
+            </p>
+            <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">
+              Events, recitals, workshops, and community impact opportunities for young performers.
+            </p>
+            <a
+              href="https://www.musicnbrain.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex rounded-full bg-[color:var(--link)] px-5 py-2 text-xs font-semibold text-white transition hover:bg-[color:var(--link-hover)]"
+            >
+              Open MusicNBrain website
+            </a>
+          </div>
         </div>
       </section>
 
