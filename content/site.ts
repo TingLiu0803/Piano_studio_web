@@ -55,9 +55,9 @@ export const siteConfig = {
         "https://player.bilibili.com/player.html?bvid=BV1nYXPYHEQr&autoplay=0",
     },
     {
-      title: "Bach Partita No.1 in B-Flat Major (Excerpt)",
+      title: "Chopin Nocturne in C minor, Op.48 No.1 (Excerpt)",
       embedUrl:
-        "https://player.bilibili.com/player.html?bvid=BV1Pb4y1n7Uc&autoplay=0",
+        "https://player.bilibili.com/player.html?bvid=BV1TuDzB7EQS&autoplay=0",
     },
     {
       title: "Beethoven Piano Sonata No.28, Op.101 1st movement",
@@ -364,12 +364,12 @@ export const content = {
       {
         quote:
           "Eric是一位非常优秀的老师！我跟他学习了约9个月，非常喜欢他的课程。他会根据我的个人需求量身规划每节课，并非常注重把扎实技术与音乐感结合起来。",
-        name: "西洛杉矶家长",
+        name: "Angad Singh",
       },
       {
         quote:
           "Eric是一位出色的钢琴老师。我的孩子之前没有任何基础，他非常耐心、灵活且善于鼓励，让学习钢琴成为一段非常积极的体验。",
-        name: "成年学生",
+        name: "Thunyarat “Bam” Amornpetchkul",
       },
       {
         quote:
