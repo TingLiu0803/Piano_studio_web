@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Next.js 16 (App Router)
 - Tailwind CSS v4
 - SQLite (local lead capture)
-- GA4 support via `NEXT_PUBLIC_GA_ID`
+- GA4 via `NEXT_PUBLIC_GA_ID`; optional Google Ads tag via `NEXT_PUBLIC_GOOGLE_ADS_ID` (`AW-…`)
 
 ## Configuration
 
@@ -38,6 +38,7 @@ Copy `env.example` to `.env.local` and fill in values:
 ```
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GOOGLE_ADS_ID=AW-737007274
 NEXT_PUBLIC_BOOKING_URL=https://calendar.google.com/calendar/appointments/schedules/your-schedule-id
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=465
