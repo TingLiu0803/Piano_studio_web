@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { locales, type Locale, content } from "@/content/site";
 import {
   buildLocalBusinessJsonLd,
@@ -9,6 +10,9 @@ import {
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/JsonLd";
+import GaClickCapture from "@/components/GaClickCapture";
+import StickyTrialCta from "@/components/StickyTrialCta";
+import AbExperimentReporter from "@/components/AbExperimentReporter";
 
 type LocaleLayoutProps = {
   children: React.ReactNode;
@@ -37,13 +41,22 @@ export default async function LocaleLayout({
   }
   const typedLocale = locale as Locale;
   const localized = content[typedLocale];
+  const headerList = await headers();
+  const stickyVariantRaw = headerList.get("x-ab-sticky-cta");
+  const stickyVariant: "treatment" | "control" =
+    stickyVariantRaw === "control" ? "control" : "treatment";
+  const stickyTreatment = stickyVariant === "treatment";
 
   return (
     <div className="flex min-h-screen flex-col">
       <JsonLd data={buildLocalBusinessJsonLd(typedLocale)} />
       <JsonLd data={buildFaqJsonLd(typedLocale)} />
+      <GaClickCapture />
+      <AbExperimentReporter variant={stickyVariant} />
       <SiteHeader locale={typedLocale} />
-      <main className="flex-1 bg-[color:var(--background)]">
+      <main
+        className={`flex-1 bg-[color:var(--background)]${stickyTreatment ? " pb-24 md:pb-0" : ""}`}
+      >
         <div className="mx-auto w-full max-w-6xl px-6 py-12 sm:py-16">
           <div className="mb-6 flex justify-end">
             <span className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--muted-foreground)]">
@@ -54,6 +67,11 @@ export default async function LocaleLayout({
         </div>
       </main>
       <SiteFooter locale={typedLocale} />
+      <StickyTrialCta
+        locale={typedLocale}
+        ctaLabel={localized.hero.primaryCta}
+        experimentTreatment={stickyTreatment}
+      />
     </div>
   );
 }

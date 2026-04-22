@@ -25,6 +25,22 @@ const nextConfig: NextConfig = {
         destination: "https://sanjosepianolesson.com/:path*",
         permanent: true,
       },
+      // Exact-match URL patterns → canonical lesson pages (consolidates signals)
+      {
+        source: "/:locale(en|zh)/san-jose-piano-lessons",
+        destination: "/:locale/piano-lessons-san-jose",
+        permanent: true,
+      },
+      {
+        source: "/:locale(en|zh)/adult-piano-lessons-san-jose",
+        destination: "/:locale/adult-piano-lessons",
+        permanent: true,
+      },
+      {
+        source: "/:locale(en|zh)/piano-teacher-sunnyvale",
+        destination: "/:locale/piano-teacher-san-jose",
+        permanent: true,
+      },
     ];
   },
 };

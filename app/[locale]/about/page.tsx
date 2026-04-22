@@ -26,9 +26,24 @@ export default async function AboutPage({
       <div className="flex flex-col gap-12">
       <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
         <h1 className="text-3xl font-semibold">{localized.about.title}</h1>
-        <p className="mt-4 text-sm text-[color:var(--muted-foreground)]">
-          {localized.about.body}
-        </p>
+        {(localized.about as { summaryBullets?: string[] }).summaryBullets
+          ?.length ? (
+          <ul className="mt-4 space-y-2 text-sm text-[color:var(--muted-foreground)]">
+            {(localized.about as { summaryBullets: string[] }).summaryBullets.map(
+              (line) => (
+                <li key={line} className="flex items-start gap-2">
+                  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[color:var(--accent)]" />
+                  <span>{line}</span>
+                </li>
+              ),
+            )}
+          </ul>
+        ) : null}
+        <div className="mt-6 space-y-4 text-sm text-[color:var(--muted-foreground)]">
+          {localized.about.body.split("\n\n").map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
         <div className="mt-6 rounded-2xl border border-[color:var(--accent)] bg-[color:var(--tag)] p-5">
           <h2 className="text-lg font-semibold text-[color:var(--foreground)]">
             {localized.sections.partnershipBoardMemberTitle}

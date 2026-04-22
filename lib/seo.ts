@@ -94,6 +94,21 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
       }
     : undefined;
 
+  const alternateName =
+    locale === "en"
+      ? [
+          "Private piano lessons in San Jose",
+          "San Jose piano lessons",
+          "San Jose piano teacher",
+        ]
+      : ["圣何塞私人钢琴课", "圣何塞钢琴课", "圣何塞钢琴老师"];
+  const slogan =
+    locale === "en"
+      ? "Private 1:1 piano lessons in San Jose, Sunnyvale & the South Bay"
+      : "圣何塞、森尼维尔与南湾一对一钢琴私教";
+  const teacherJobTitle =
+    locale === "en" ? "San Jose piano teacher" : "圣何塞钢琴老师";
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -101,14 +116,30 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
         "@type": ["MusicSchool", "LocalBusiness"],
         "@id": `${baseUrl}/#music-school`,
         name: siteConfig.studioName,
+        alternateName,
+        slogan,
         description: localized.seo.description,
         areaServed,
         serviceArea: siteConfig.serviceArea,
+        knowsAbout: [
+          locale === "en"
+            ? "Private piano lessons in San Jose"
+            : "圣何塞私人钢琴课",
+          locale === "en"
+            ? "Adult beginner piano instruction"
+            : "成人初学者钢琴教学",
+          locale === "en"
+            ? "Classical piano technique"
+            : "古典钢琴技巧",
+        ],
         serviceType: [
           "Piano lessons",
+          "Private piano lessons",
+          "In-person piano lessons",
           "Online piano lessons",
           "Piano lessons for beginners",
           "Piano lessons for adult beginners",
+          "Private piano lessons for adults",
         ],
         address: {
           "@type": "PostalAddress",
@@ -140,7 +171,7 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
         "@type": "Person",
         "@id": `${baseUrl}/#teacher`,
         name: siteConfig.ownerName,
-        jobTitle: "Piano Teacher",
+        jobTitle: teacherJobTitle,
         description: aboutSnippet,
         url: baseUrl,
         worksFor: {
@@ -153,9 +184,6 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
 }
 
 export function buildFaqJsonLd(locale: Locale) {
-  const localized = content[locale];
-  const baseUrl = getBaseUrl();
-
   const faqs = [
     {
       question:
@@ -184,18 +212,38 @@ export function buildFaqJsonLd(locale: Locale) {
           : "你们在哪些地区提供钢琴课？",
       answer:
         locale === "en"
-          ? "I offer piano lessons in San Jose, South Bay, and throughout the SF Bay Area including Sunnyvale, Santa Clara, Cupertino, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, and Milpitas. I also offer online piano lessons."
-          : "我在圣何塞、南湾和整个旧金山湾区提供钢琴课，包括森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔和米尔皮塔斯。我还提供在线钢琴课。",
+          ? "I offer in-person piano lessons in San Jose and the South Bay, including Sunnyvale, Santa Clara, Cupertino, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, and Milpitas—plus the wider SF Bay Area. Sunnyvale beginners and San Jose families are both common here; if you are comparing local teachers for adults or kids, book a free trial. I also offer online piano lessons."
+          : "我在圣何塞与南湾提供线下钢琴课，包括森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔、米尔皮塔斯及更广的旧金山湾区。森尼维尔与圣何塞的初学者家庭都很常见；若您在比较家附近的成人或儿童钢琴课，可先预约免费试听。我也提供线上钢琴课。",
     },
     {
       question:
         locale === "en"
-          ? "How much do piano lessons cost?"
-          : "钢琴课的费用是多少？",
+          ? "Do you offer private piano lessons for adults?"
+          : "你们提供成人钢琴私教吗？",
       answer:
         locale === "en"
-          ? "We offer affordable piano lessons with competitive rates. Contact us for specific pricing information. We also offer a free trial lesson so you can experience our teaching before committing."
-          : "我们提供价格实惠的钢琴课，价格具有竞争力。请联系我们了解具体价格信息。我们还提供免费试听课，这样您可以在承诺之前体验我们的教学。",
+          ? "Yes. Private piano lessons for adults are a core part of the studio—beginners, restarters, and advanced hobbyists. Lessons are one-on-one in San Jose / Sunnyvale area or online, with weekly assignments tailored to your schedule."
+          : "是的。成人钢琴私教是工作室的核心之一，涵盖初学者、重拾者与进阶爱好者。课程为圣何塞/森尼维尔及周边线上一对一，并按您的时间安排定制每周作业。",
+    },
+    {
+      question:
+        locale === "en"
+          ? "How much do piano lessons cost in San Jose?"
+          : "圣何塞钢琴课大概多少钱？",
+      answer:
+        locale === "en"
+          ? "Rates depend on lesson length, frequency, and whether you study in-person in San Jose / the South Bay or online. Message the studio for current tuition; most inquiries get a same-day reply. A free trial lesson lets you confirm fit before you commit."
+          : "费用会依课长、频率以及线下（圣何塞/南湾）或线上而有所不同。欢迎留言询问最新学费，多数咨询可当日回复。也可先预约免费试听，确认是否合适再决定。",
+    },
+    {
+      question:
+        locale === "en"
+          ? "Is it too late to learn piano as an adult?"
+          : "成年人学钢琴会不会太晚？",
+      answer:
+        locale === "en"
+          ? "No. Adults can build real technique and musicianship with consistent practice and clear coaching—I started seriously after 25 and advanced to conservatory-level repertoire. If you are an adult beginner or restarter in San Jose or nearby, a free trial is the fastest way to see whether the pacing and style fit your goals."
+          : "不会。只要有稳定练习与清晰指导，成年人同样可以建立扎实技巧与音乐表现——我本人25岁后才开始系统学习并持续进阶。若您是圣何塞或周边的成人初学者/重拾者，建议先预约免费试听，直接感受节奏与风格是否合适。",
     },
     {
       question:
@@ -210,12 +258,12 @@ export function buildFaqJsonLd(locale: Locale) {
     {
       question:
         locale === "en"
-          ? "What makes you the best piano teacher in San Jose?"
-          : "是什么让您成为圣何塞最好的钢琴老师？",
+          ? "How do I choose a piano teacher in the South Bay?"
+          : "在南湾如何挑选合适的钢琴老师？",
       answer:
         locale === "en"
-          ? "I'm a conservatory-level advanced pianist who achieved this level as an adult (started seriously after age 25). With 8+ years of teaching experience, 60+ students personally coached, and training under renowned Bay Area concert pianists, I specialize in helping adults overcome childhood regret and finally play piano for real. I offer affordable rates and focus on technique, musicality, and personalized instruction."
-          : "我是一名音乐学院水平的高级钢琴家，在成年后达到了这个水平（25岁后才开始认真学）。拥有8年以上的教学经验，亲自指导过60多名学生，并接受过湾区著名音乐会钢琴家的培训，我专门帮助成年人克服童年遗憾，最终真正学会弹钢琴。我提供实惠的价格，专注于技巧、音乐性和个性化教学。",
+          ? "Look for a San Jose / South Bay piano teacher who teaches the way you want to learn: clear weekly assignments, honest technique coaching, and repertoire you care about—not only method-book pages. Check credentials, listen to the teacher play, read reviews, then book a free trial. Fit matters more than hype; you want someone who diagnoses your playing and respects your time."
+          : "建议关注：是否有清晰的每周作业、是否诚实面对技巧问题、曲目安排是否贴近您的目标，而不是只赶教材页数。可查看资历与演奏、阅读评价，并务必预约试听。师生是否合拍，往往比宣传口号更重要。",
     },
     {
       question:
