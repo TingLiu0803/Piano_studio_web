@@ -7,7 +7,8 @@ export const siteConfig = {
   city: "San Jose",
   region: "CA",
   country: "US",
-  serviceArea: "San Jose and the SF Bay Area",
+  serviceArea:
+    "Private piano lessons in San Jose, Sunnyvale & South Bay (Cupertino, Santa Clara, Campbell, Milpitas, Mountain View, Palo Alto, Los Gatos, Saratoga); SF Bay Area & online",
   serviceAreas: [
     "San Jose",
     "Sunnyvale",
@@ -107,13 +108,15 @@ export const content = {
       opensInNewTab: "Opens your Google Business profile in a new tab.",
     },
     hero: {
-      title: "San Jose piano lessons that turn practice into real progress",
+      title: "Private piano lessons in San Jose — weekly progress you can hear",
       subtitle:
-        "Private 1:1 lessons for adults, restarters, and kids 5+ in San Jose & the South Bay—or online. Clear weekly plans, strong technique, and musicality you can hear. Free trial; most inquiries get a same-day reply.",
+        "San Jose piano teacher for adults, adult beginners, restarters, and kids 5+: in-person near San Jose & Sunnyvale or online. Private 1:1 only—clear weekly plans, strong technique, and musicality. Free trial; most inquiries get a same-day reply.",
       primaryCta: "Book a free trial lesson",
       secondaryCta: "View performances",
       ctaNote: "Fast reply: most families get a response within the same day.",
-      lessonsPageLink: "Piano lessons in San Jose & South Bay",
+      lessonsPageLink: "San Jose piano lessons (private 1:1, in-person & online)",
+      adultLessonsPageLink: "Private adult piano lessons in San Jose",
+      teacherPageLink: "San Jose piano teacher for adults & kids",
       browseAllLessonTypes: "Browse all lesson types",
       stats: [
         { value: "8+ years teaching", label: "Engineer turned pianist" },
@@ -149,7 +152,7 @@ export const content = {
     about: {
       title: "About the teacher",
       summaryBullets: [
-        "8+ years teaching · 60+ students coached · 1:1 only (no group classes)",
+        "San Jose piano teacher · 8+ years teaching · 60+ students coached · 1:1 only (no group classes)",
         "Adult beginners & restarters through advancing kids; auditions and exams when that fits your goals",
         "Classical training with a structured, engineer-style approach to practice and problem solving",
       ],
@@ -160,9 +163,9 @@ export const content = {
     services: {
       title: "Lesson options",
       items: [
-        "Private one-on-one lessons",
+        "Private piano lessons in San Jose (one student, one teacher—no group classes)",
         "Weekly or bi-weekly schedules",
-        "In-person and online formats",
+        "In-person across San Jose, Sunnyvale & South Bay, plus online",
         "Exam prep, auditions, and competitions",
       ],
     },
@@ -176,7 +179,7 @@ export const content = {
       approachTitle: "What you get in every lesson",
       lessonHubTitle: "Choose your lesson type",
       lessonHubDescription:
-        "Not sure where to start? Pick the page that matches you—each one explains format, areas served, and how to book a free trial.",
+        "Private lessons in San Jose and nearby South Bay cities—not sure where to start? Pick the page that matches you; each one spells out format, neighborhoods served, and how to book a free trial.",
       lessonHubCardCta: "Learn more",
       partnershipTitle: "Partnership with MusicNBrain",
       partnershipDescription:
@@ -230,13 +233,13 @@ export const content = {
     ],
     seo: {
       title:
-        "Piano Lessons San Jose & Bay Area | Private 1:1 | Free Trial — Fast Reply",
+        "Private Piano Lessons San Jose | San Jose Piano Teacher | Adults & Kids | Trial",
       description:
-        "Private piano lessons in San Jose & the South Bay (or online): adults, restarters, kids 5+. One teacher, one student—weekly plans, strong technique, real musicality. Free trial. Same-day replies on most inquiries.",
+        "Private piano lessons in San Jose and the South Bay: San Jose piano teacher for adults, beginners, and kids 5+ (Sunnyvale, Santa Clara, Cupertino, Campbell, and nearby). In-person or online. Weekly plans, technique & musicality. Free trial; same-day reply on most inquiries.",
       keywords:
-        "piano lessons san jose, san jose piano lessons, piano teacher san jose, piano teachers san jose, in person piano lessons near me, private piano lessons for adults, piano lessons for adults near me, piano lessons south bay, piano lessons bay area, piano lessons for beginner, piano lessons for adult beginner, online piano lessons, affordable piano lessons, South Bay piano lessons, beginner piano lessons, adult piano lessons, cheap piano lessons near me, piano classes san jose",
+        "piano lessons san jose, san jose piano lessons, piano teacher san jose, piano teachers san jose, in person piano lessons near me, private piano lessons for adults, piano lessons near me for adults, piano lessons for adults san jose, piano lessons for beginners sunnyvale, sunnyvale piano lessons, piano lessons south bay, piano lessons bay area, piano lessons for beginner, piano lessons for adult beginner, online piano lessons, affordable piano lessons, South Bay piano lessons, beginner piano lessons, adult piano lessons, piano classes, piano classes san jose",
       breadcrumbLabels: {
-        "piano-lessons-san-jose": "Piano lessons in San Jose",
+        "piano-lessons-san-jose": "San Jose piano lessons",
         "adult-piano-lessons": "Adult piano lessons",
         "kids-piano-lessons": "Kids piano lessons",
         "online-piano-lessons": "Online piano lessons",
@@ -251,9 +254,9 @@ export const content = {
         },
         about: {
           title:
-            "Eric Liu | San Jose Piano Teacher | Adults, Kids & Adult Beginners",
+            "Eric Liu | Piano Teacher San Jose & Sunnyvale | Private Lessons Adults & Kids",
           description:
-            "Meet Eric Liu: private 1:1 piano lessons in San Jose & Bay Area. Adult restarters, serious hobbyists, and kids 5+. Classical depth, structured practice, bilingual support. Read the full story.",
+            "Meet Eric Liu: private in-person and online piano lessons from San Jose—serving Sunnyvale, Santa Clara, and the South Bay. Adult beginners, restarters, and kids 5+. Classical depth, structured practice, bilingual support. Read the full story.",
         },
         contact: {
           title:
@@ -288,13 +291,15 @@ export const content = {
       opensInNewTab: "将在新标签页打开 Google 商家资料。",
     },
     hero: {
-      title: "圣何塞钢琴课：把练习变成看得见的进步",
+      title: "圣何塞私人钢琴课：把练习变成看得见的进步",
       subtitle:
-        "面向成人、重拾者与儿童（5岁+）的一对一私教，圣何塞/南湾线下或线上。每周清晰作业、扎实技巧与可感知的音乐表现。免费试听；多数咨询当天回复。",
+        "圣何塞钢琴老师：面向成人初学者、重拾者与儿童（5岁+）的一对一私教；圣何塞、森尼维尔及周边线下，亦可线上。每周清晰作业、扎实技巧与可感知的音乐表现。免费试听；多数咨询当天回复。",
       primaryCta: "预约免费试听",
       secondaryCta: "观看演出视频",
       ctaNote: "快速回复：大多数家庭当天即可收到答复。",
-      lessonsPageLink: "圣何塞与南湾钢琴课程",
+      lessonsPageLink: "圣何塞钢琴课程（一对一私教 · 线下与线上）",
+      adultLessonsPageLink: "圣何塞成人钢琴私教",
+      teacherPageLink: "圣何塞钢琴老师（成人与儿童）",
       browseAllLessonTypes: "查看全部课程类型",
       stats: [
         { value: "7年以上", label: "教学经验" },
@@ -326,7 +331,7 @@ export const content = {
     about: {
       title: "关于老师",
       summaryBullets: [
-        "7年以上教学 · 50+学生亲自指导 · 仅一对一（不设团课）",
+        "圣何塞钢琴老师 · 7年以上教学 · 50+学生亲自指导 · 仅一对一（不设团课）",
         "成人初学者与重拾者、儿童与进阶学员；可按目标准备考级、比赛与试音",
         "古典训练背景 + 结构化练习方法，帮助稳定突破技术与音乐难点",
       ],
@@ -336,9 +341,9 @@ export const content = {
     services: {
       title: "课程选项",
       items: [
-        "一对一私人课程",
+        "圣何塞私人钢琴课（仅一对一，不设团课）",
         "每周或隔周安排",
-        "线下与线上授课",
+        "圣何塞、森尼维尔及南湾线下，亦可线上",
         "考试准备、试音与比赛辅导",
       ],
     },
@@ -352,7 +357,7 @@ export const content = {
       approachTitle: "每节课您会收获什么",
       lessonHubTitle: "选择适合您的课程",
       lessonHubDescription:
-        "不确定从哪开始？按您的情况选择页面—每种课程都会说明授课方式、服务区域以及如何预约免费试听。",
+        "圣何塞与南湾私人钢琴课：不确定从哪开始？按您的情况选择页面—每种课程都会说明授课方式、服务区域以及如何预约免费试听。",
       lessonHubCardCta: "了解更多",
       partnershipTitle: "与 MusicNBrain 的合作",
       partnershipDescription:
@@ -404,13 +409,13 @@ export const content = {
     ],
     seo: {
       title:
-        "圣何塞钢琴课 · 南湾湾区 | 一对一私教 | 免费试听 · 当日回复",
+        "圣何塞私人钢琴课 | 圣何塞钢琴老师 | 成人与儿童 | 免费试听",
       description:
-        "圣何塞/南湾线下或线上：成人、重拾者、儿童（5岁+）一对一钢琴课。每周清晰作业、技巧与音乐表现并重。免费试听；多数咨询当天回复。",
+        "圣何塞私人钢琴课与南湾一对一教学：圣何塞钢琴老师，面向成人初学者、重拾者与儿童 5+（森尼维尔、圣克拉拉、库比蒂诺、坎贝尔等）。线下或线上；每周清晰作业，技巧与音乐表现并重。免费试听；多数咨询当天回复。",
       keywords:
-        "圣何塞钢琴课, 南湾钢琴课, 湾区钢琴课, 圣何塞钢琴老师, 钢琴老师, 成人钢琴课, 成人初学者, 钢琴课, 线上钢琴课, 一对一钢琴课, 钢琴老师推荐, 实惠钢琴课",
+        "圣何塞钢琴课, 森尼维尔钢琴课, 南湾钢琴课, 湾区钢琴课, 圣何塞钢琴老师, 成人钢琴私教, 钢琴老师, 成人初学者, 钢琴课, 线上钢琴课, 一对一钢琴课, 钢琴老师推荐, 实惠钢琴课",
       breadcrumbLabels: {
-        "piano-lessons-san-jose": "圣何塞钢琴课程",
+        "piano-lessons-san-jose": "圣何塞钢琴课",
         "adult-piano-lessons": "成人钢琴课",
         "kids-piano-lessons": "儿童钢琴课",
         "online-piano-lessons": "线上钢琴课",

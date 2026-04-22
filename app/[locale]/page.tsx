@@ -44,14 +44,35 @@ export default async function LocaleHome({
               <p className="text-lg text-[color:var(--muted-foreground)]">
                 {localized.hero.subtitle}
               </p>
-              <p>
+              <div className="flex flex-col gap-2 text-sm font-semibold sm:flex-row sm:flex-wrap sm:gap-x-5">
                 <Link
                   href={`/${locale}/piano-lessons-san-jose`}
-                  className="text-sm font-semibold text-[color:var(--link)] underline-offset-4 transition hover:text-[color:var(--link-hover)] hover:underline"
+                  data-ga-event="lesson_hub_nav_click"
+                  data-ga-slug="piano-lessons-san-jose"
+                  data-ga-placement="hero_keyword_links"
+                  className="text-[color:var(--link)] underline-offset-4 transition hover:text-[color:var(--link-hover)] hover:underline"
                 >
                   {localized.hero.lessonsPageLink}
                 </Link>
-              </p>
+                <Link
+                  href={`/${locale}/adult-piano-lessons`}
+                  data-ga-event="lesson_hub_nav_click"
+                  data-ga-slug="adult-piano-lessons"
+                  data-ga-placement="hero_keyword_links"
+                  className="text-[color:var(--link)] underline-offset-4 transition hover:text-[color:var(--link-hover)] hover:underline"
+                >
+                  {localized.hero.adultLessonsPageLink}
+                </Link>
+                <Link
+                  href={`/${locale}/piano-teacher-san-jose`}
+                  data-ga-event="lesson_hub_nav_click"
+                  data-ga-slug="piano-teacher-san-jose"
+                  data-ga-placement="hero_keyword_links"
+                  className="text-[color:var(--link)] underline-offset-4 transition hover:text-[color:var(--link-hover)] hover:underline"
+                >
+                  {localized.hero.teacherPageLink}
+                </Link>
+              </div>
               <div className="flex flex-wrap gap-3 sm:gap-4">
                 <Link
                   href={`/${locale}/trial`}

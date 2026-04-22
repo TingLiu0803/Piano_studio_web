@@ -29,13 +29,13 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
       "piano-lessons-san-jose": {
         seo: {
           title:
-            "Piano Lessons San Jose | South Bay & Online | 1:1 + Free Trial",
+            "Piano Lessons San Jose & Sunnyvale | In-Person Near Me + Online | 1:1",
           description:
-            "Private 1:1 piano lessons in San Jose & the South Bay—in-person or online. Kids 5+, adults, beginners to advanced. Weekly plans, technique & musicality. Free trial; most inquiries answered same day.",
+            "In-person piano lessons near San Jose and Sunnyvale, plus online: private 1:1 for kids 5+, adults, and beginners. If you searched piano classes or a local piano teacher, start here—weekly plans, technique & musicality. Free trial; most inquiries same day.",
         },
-        h1: "Piano lessons in San Jose and the South Bay",
+        h1: "San Jose piano lessons — private, one-on-one",
         intro:
-          "Whether you are searching for piano lessons in San Jose, piano classes near Campbell, or a South Bay piano teacher who only teaches one-on-one, this studio is built around you—not a generic method book. Lessons are in-person in San Jose and nearby communities, or online when that fits your schedule.",
+          "Private piano lessons in San Jose and the South Bay: if you are searching for piano lessons in San Jose, piano lessons for beginners in Sunnyvale, piano classes near Campbell, or in-person piano lessons near me with a teacher who only does one-on-one, this page is the clearest summary. Lessons are in-person in San Jose and nearby communities, or online when that fits your schedule.",
         sections: [
           {
             heading: "Why private 1:1 lessons",
@@ -64,20 +64,20 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
               "Online lessons for busy adults and families who prefer remote learning",
             ],
             body:
-              "Students come from San Jose, Sunnyvale, Santa Clara, Cupertino, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, Milpitas, and across the SF Bay Area. Online piano lessons are available for busy adults and families who prefer remote learning.",
+              "Students come from San Jose, Sunnyvale, Santa Clara, Cupertino, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, Milpitas, and across the SF Bay Area—including many looking for piano lessons near me for adults or piano lessons for beginners in Sunnyvale. Online piano lessons are available for busy adults and families who prefer remote learning.",
           },
         ],
       },
       "adult-piano-lessons": {
         seo: {
           title:
-            "Adult Piano Lessons San Jose | Beginners to Advanced | Free Trial",
+            "Private Piano Lessons for Adults | San Jose & Sunnyvale | Near Me + Online",
           description:
-            "Private adult piano lessons in San Jose & Bay Area: beginners, restarters, hobbyists, and advanced players. In-person or online 1:1. Patient, structured coaching—free trial, no credit card.",
+            "Piano lessons near me for adults in San Jose, Sunnyvale, and the South Bay: private 1:1 for beginners, restarters, hobbyists, and advanced players. In-person or online. Patient, structured coaching—free trial, no credit card.",
         },
-        h1: "Piano lessons for adults in San Jose and the Bay Area",
+        h1: "Private piano lessons for adults in San Jose and the Bay Area",
         intro:
-          "If you typed “private piano lessons for adults” or “piano lessons for adults near me,” you are in the right place. Many of my adults are beginners or restarters, but I also teach intermediate and advanced players who want serious coaching on technique, musicality, and repertoire—structured, patient, and goal-driven.",
+          "If you typed “private piano lessons for adults,” “piano lessons near me for adults,” or “piano lessons for adults San Jose,” you are in the right place. Many of my adults are beginners or restarters, but I also teach intermediate and advanced players who want serious coaching on technique, musicality, and repertoire—structured, patient, and goal-driven.",
         sections: [
           {
             heading: "Adult beginners and “I quit as a kid” restarters",
@@ -112,13 +112,13 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
       "kids-piano-lessons": {
         seo: {
           title:
-            "Kids Piano Lessons San Jose | Private 1:1 | South Bay",
+            "Kids Piano Lessons San Jose & Sunnyvale | Private 1:1 | In-Person + Online",
           description:
-            "Private piano lessons for kids & teens (5+) in San Jose & South Bay. Calm, structured 1:1 lessons—healthy technique, clear weekly assignments, optional exam prep. In-person or online. Free trial.",
+            "Private piano lessons for kids & teens (5+) in San Jose, Sunnyvale, and the South Bay. Calm, structured 1:1 lessons—healthy technique, clear weekly assignments, optional exam prep. Free trial.",
         },
         h1: "Piano lessons for kids and teens (ages 5+)",
         intro:
-          "Parents searching for piano classes in San Jose or a private piano teacher for children often want a calm, structured teacher who communicates clearly. I teach one-on-one only—no group classes—so each student gets attention tailored to their age and learning style.",
+          "Parents searching for piano classes in San Jose, piano classes near Sunnyvale, or a private piano teacher for children often want a calm, structured teacher who communicates clearly. I teach one-on-one only—no group classes—so each student gets attention tailored to their age and learning style.",
         sections: [
           {
             heading: "What parents can expect",
@@ -194,13 +194,13 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
       "piano-teacher-san-jose": {
         seo: {
           title:
-            "Piano Teacher San Jose | Private 1:1 | Adults & Kids 5+",
+            "Piano Teacher San Jose | In-Person & Online | Private Adults & Kids 5+",
           description:
-            "Find a San Jose piano teacher for serious 1:1 lessons—adults, restarters, and kids 5+. Classical training, structured practice, South Bay in-person or online. Free trial; fast replies.",
+            "Looking for a piano teacher in San Jose or nearby? Private 1:1 lessons for adults, restarters, and kids 5+—classical training, structured practice, Sunnyvale & South Bay in-person or online. Free trial; fast replies.",
         },
         h1: "Piano teacher in San Jose",
         intro:
-          "Whether you searched “piano teacher near me,” “piano music teachers near me,” or “San Jose piano teachers,” the goal is the same: find a teacher you trust, who teaches seriously, and who respects your time. I offer private lessons only—no group classes—rooted in classical training and practical coaching.",
+          "Whether you searched “piano teacher San Jose,” “piano teacher near me,” “piano music teachers near me,” or “San Jose piano teachers,” the goal is the same: find a teacher you trust, who teaches seriously, and who respects your time. I offer private lessons only—no group classes—rooted in classical training and practical coaching.",
         sections: [
           {
             heading: "Credentials and approach",
@@ -235,13 +235,13 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
       "piano-lessons-san-jose": {
         seo: {
           title:
-            "圣何塞钢琴课 | 南湾线上一对一 | 免费试听 · 当日回复",
+            "圣何塞与森尼维尔钢琴课 | 线下一对一 + 线上 | 免费试听",
           description:
-            "圣何塞/南湾私人钢琴课：线下或线上一对一，儿童与成人、初学到进阶。每周清晰作业、技巧与音乐表现并重。免费试听；多数咨询当天回复。",
+            "圣何塞、森尼维尔及南湾私人钢琴课：线下一对一或线上，儿童与成人、初学到进阶。每周清晰作业、技巧与音乐表现并重。免费试听；多数咨询当天回复。",
         },
-        h1: "圣何塞与南湾钢琴课程",
+        h1: "圣何塞钢琴课 — 私人一对一",
         intro:
-          "无论您在寻找圣何塞钢琴课、南湾钢琴老师，还是希望线上一对一，课程都以学生为中心——不使用千篇一律的教材。线下可在圣何塞及周边上课，也支持在线课程以配合日程。",
+          "圣何塞私人钢琴课与南湾教学：无论您在寻找圣何塞钢琴课、森尼维尔初学者课程、南湾钢琴老师，还是希望线上一对一，课程都以学生为中心——不使用千篇一律的教材。线下可在圣何塞及周边上课，也支持在线课程以配合日程。",
         sections: [
           {
             heading: "为何选择一对一",
@@ -270,20 +270,20 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
               "亦提供线上课程，适合通勤紧张的家庭与成人",
             ],
             body:
-              "学生来自圣何塞、森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔、米尔皮塔斯及整个湾区。也可选择线上钢琴课。",
+              "学生来自圣何塞、森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔、米尔皮塔斯及整个湾区，亦适合希望在家附近找到成人钢琴私教或森尼维尔初学者课程的家庭。也可选择线上钢琴课。",
           },
         ],
       },
       "adult-piano-lessons": {
         seo: {
           title:
-            "成人钢琴课 圣何塞/湾区 | 初学到高级 | 免费试听",
+            "成人钢琴私教 | 圣何塞与森尼维尔 | 线下线上皆可 | 免费试听",
           description:
-            "成人初学者、重拾者与进阶学员的一对一钢琴课：圣何塞/南湾线下或线上。系统、耐心、以目标为导向。免费试听，无需信用卡；多数咨询当天回复。",
+            "圣何塞、森尼维尔及南湾成人一对一钢琴课：初学者、重拾者与进阶学员。系统、耐心、以目标为导向。免费试听，无需信用卡；多数咨询当天回复。",
         },
-        h1: "成人钢琴课（圣何塞与湾区）",
+        h1: "成人钢琴私教（圣何塞与湾区）",
         intro:
-          "许多成年学生是初学者或重拾者；我也教授中级与高级成人学员，在技巧、音乐性与曲目上做深度指导。课程系统、耐心、以目标为导向，而不是赶进度刷完一本教材。",
+          "若您在寻找成人钢琴私教、家附近的成人钢琴课或圣何塞成人初学者课程，欢迎了解：许多成年学生是初学者或重拾者；我也教授中级与高级成人学员，在技巧、音乐性与曲目上做深度指导。课程系统、耐心、以目标为导向，而不是赶进度刷完一本教材。",
         sections: [
           {
             heading: "成人学习路径",
@@ -318,9 +318,9 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
       "kids-piano-lessons": {
         seo: {
           title:
-            "儿童钢琴课 圣何塞 | 一对一私教 | 南湾",
+            "儿童钢琴课 圣何塞与森尼维尔 | 一对一私教 | 南湾",
           description:
-            "圣何塞/南湾儿童与青少年（5岁+）私人钢琴课：健康手型、清晰作业、长期规划。不设团课。线下或线上。免费试听，欢迎家长先沟通目标。",
+            "圣何塞、森尼维尔及南湾儿童与青少年（5岁+）私人钢琴课：健康手型、清晰作业、长期规划。不设团课。线下或线上。免费试听，欢迎家长先沟通目标。",
         },
         h1: "儿童与青少年钢琴课（5岁+）",
         intro:
@@ -397,13 +397,13 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
       "piano-teacher-san-jose": {
         seo: {
           title:
-            "圣何塞钢琴老师 | 一对一私教 | 成人与儿童 5+",
+            "圣何塞钢琴老师 | 森尼维尔与南湾 | 一对一成人与儿童 5+",
           description:
-            "圣何塞私人钢琴老师 Eric Liu：一对一课程，古典训练+系统化练习。南湾线下或线上；成人初学者、重拾者与儿童 5+。免费试听，欢迎先看评价与简介。",
+            "圣何塞私人钢琴老师 Eric Liu：一对一课程，古典训练与系统化练习。森尼维尔及南湾线下或线上；成人初学者、重拾者与儿童 5+。免费试听，欢迎先看评价与简介。",
         },
         h1: "圣何塞钢琴老师",
         intro:
-          "若您在搜索“钢琴老师”“圣何塞钢琴老师”或“附近钢琴老师”，核心需求通常是：专业、可靠、沟通清晰。我仅提供一对一私教，不设团课，教学以古典训练与系统化练习为基础。",
+          "若您在搜索“圣何塞钢琴老师”“森尼维尔钢琴老师”或“附近钢琴老师”，核心需求通常是：专业、可靠、沟通清晰。我仅提供一对一私教，不设团课，教学以古典训练与系统化练习为基础。",
         sections: [
           {
             heading: "背景与风格",
