@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Locale } from "@/content/site";
+import { sendGaEvent } from "@/lib/analytics-events";
 
 type ContactFormProps = {
   locale: Locale;
@@ -39,6 +40,7 @@ export default function ContactForm({
     if (response.ok) {
       form.reset();
       setStatus("success");
+      sendGaEvent("contact_submit", { placement: "contact_form" });
     } else {
       setStatus("error");
     }
@@ -74,7 +76,7 @@ export default function ContactForm({
       />
       <button
         type="submit"
-        className="rounded-full bg-[color:var(--primary)] px-6 py-3 text-sm font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
+        className="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-sm font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)] sm:w-auto"
       >
         {submitLabel}
       </button>

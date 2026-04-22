@@ -39,17 +39,19 @@ export default async function TrialPage({
           Booking is powered by {siteConfig.bookingProvider}. If you need help,
           you can <Link href={`/${typedLocale}/contact`}>send a message</Link>.
         </p>
-        <div className="text-sm text-[color:var(--background)]">
+        <div className="text-sm text-[color:var(--foreground)]">
           {bookingUrl ? (
             <>
-              <p>
+              <p className="text-[color:var(--muted-foreground)]">
                 Click below to open the booking page in a new tab and reserve
                 your trial time.
               </p>
               <div className="mt-6">
                 <a
                   href={bookingUrl}
-                  className="inline-flex items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-sm font-semibold shadow-sm transition hover:opacity-90"
+                  data-ga-event="trial_booking_click"
+                  data-ga-placement="trial_calendar"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-sm font-semibold leading-snug text-[color:var(--primary-foreground)] shadow-sm transition hover:bg-[color:var(--primary-hover)]"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -58,7 +60,7 @@ export default async function TrialPage({
               </div>
             </>
           ) : (
-            <p>
+            <p className="text-[color:var(--muted-foreground)]">
               The booking calendar is not available yet. Please{" "}
               <Link href={`/${typedLocale}/contact`}>send a message</Link> to request
               a trial time.

@@ -107,8 +107,9 @@ export const content = {
       opensInNewTab: "Opens your Google Business profile in a new tab.",
     },
     hero: {
-      title: "Piano lessons in Bay Area for confident, intelligent, and tasteful playing",
-      subtitle: "Conservatory-level pianist who made it as an adult. Affordable in depth piano lessons in San Jose, SF Bay Area, South Bay & online.",
+      title: "San Jose piano lessons that turn practice into real progress",
+      subtitle:
+        "Private 1:1 lessons for adults, restarters, and kids 5+ in San Jose & the South Bay—or online. Clear weekly plans, strong technique, and musicality you can hear. Free trial; most inquiries get a same-day reply.",
       primaryCta: "Book a free trial lesson",
       secondaryCta: "View performances",
       ctaNote: "Fast reply: most families get a response within the same day.",
@@ -129,24 +130,29 @@ export const content = {
     },
     highlights: [
       {
-        title: "I made it as an adult — so you can too",
+        title: "A weekly plan you can actually follow",
         description:
-          "I became conservotory level advanced as an adult, so I specialize in helping adults overcome childhood regret and finally play for real.",
+          "Assignments match your schedule and goals—so home practice feels focused instead of overwhelming.",
       },
       {
-        title: "Technique and true understanding of music language",
+        title: "Technique and phrasing you keep for life",
         description:
-          "Hyper-focus on the balance between technique, musicality, and master the low level code of music",
+          "Healthy mechanics, confident reading, and musical line so pieces sound like yours—not a stiff replay.",
       },
       {
-        title: "Bilingual instruction",
+        title: "Parents and adults stay in the loop",
         description:
-          "English and Chinese support for students and parents.",
+          "English or Chinese check-ins when you want them, with clear notes on what to practice and why.",
       },
     ],
 
     about: {
       title: "About the teacher",
+      summaryBullets: [
+        "8+ years teaching · 60+ students coached · 1:1 only (no group classes)",
+        "Adult beginners & restarters through advancing kids; auditions and exams when that fits your goals",
+        "Classical training with a structured, engineer-style approach to practice and problem solving",
+      ],
       body:
         "Software engineer turned pianist, with 20+ years of classical training under concert pianists, 8+ years of teaching experience, and 60+ students personally coached, I specialize in one-on-one piano lessons tailored to each individual’s goals, learning style, and unique musical voice. I never follow one-size-fits-all methods — and I never teach group classes. Quality always comes first, and every customized lesson is designed to ensure meaningful progress without sacrificing artistic identity.\n\nTrained under renowned Bay Area pianist Erna Gulabyan (San Francisco Conservatory) and Frank Levy (Stanford University), I continue to maintain a close relationship with them, grounding my teaching in both tradition and deep musical insight. As a professional software engineer with 4 years of Silicon Valley experience, I also bring a problem-solving mindset that helps students tackle technical and musical challenges with clarity, structure, and creativity.",
     },
@@ -167,7 +173,7 @@ export const content = {
       testimonialsTitle: "Student and parent testimonials",
       aboutTitle: "Meet your teacher",
       aboutCta: "Read the full bio",
-      approachTitle: "What makes the studio different",
+      approachTitle: "What you get in every lesson",
       lessonHubTitle: "Choose your lesson type",
       lessonHubDescription:
         "Not sure where to start? Pick the page that matches you—each one explains format, areas served, and how to book a free trial.",
@@ -179,6 +185,10 @@ export const content = {
       partnershipBoardMemberBody:
         "I serve as one of the board members at MusicNBrain, and I bring that same nonprofit service mindset into every lesson, recital, and student pathway we build together.",
       partnershipCta: "Visit MusicNBrain",
+      readMoreDetails: "Read full detail",
+      midPageTrialTitle: "Ready to try a lesson?",
+      landingPartnerFooter:
+        "Nonprofit partner MusicNBrain supports youth performances and community pathways for students.",
     },
     trial: {
       title: "Book a free trial lesson",
@@ -220,9 +230,9 @@ export const content = {
     ],
     seo: {
       title:
-        "Piano Lessons San Jose & South Bay | In-Person & Online 1:1 | Free Trial",
+        "Piano Lessons San Jose & Bay Area | Private 1:1 | Free Trial — Fast Reply",
       description:
-        "In-person piano lessons in San Jose and the South Bay—plus online. Private 1:1 lessons for adults, adult beginners, and kids 5+. Free trial, no credit card. Book today.",
+        "Private piano lessons in San Jose & the South Bay (or online): adults, restarters, kids 5+. One teacher, one student—weekly plans, strong technique, real musicality. Free trial. Same-day replies on most inquiries.",
       keywords:
         "piano lessons san jose, san jose piano lessons, piano teacher san jose, piano teachers san jose, in person piano lessons near me, private piano lessons for adults, piano lessons for adults near me, piano lessons south bay, piano lessons bay area, piano lessons for beginner, piano lessons for adult beginner, online piano lessons, affordable piano lessons, South Bay piano lessons, beginner piano lessons, adult piano lessons, cheap piano lessons near me, piano classes san jose",
       breadcrumbLabels: {
@@ -235,21 +245,21 @@ export const content = {
       pages: {
         trial: {
           title:
-            "Free Trial Piano Lesson San Jose | In-Person or Online | South Bay",
+            "Book a Free Piano Trial | San Jose & South Bay | Online Option",
           description:
-            "Book a free 1:1 trial in San Jose or online. In-person South Bay piano lessons or remote lessons for busy adults. No credit card. Beginners and adult beginners welcome.",
+            "Reserve a free 1:1 trial with Eric Liu Piano Studio—in San Jose, nearby South Bay cities, or online. No credit card. See teaching style, ask questions, and pick a weekly time that fits.",
         },
         about: {
           title:
-            "About Eric Liu | Piano Teacher San Jose | Adult Beginners & Kids 5+",
+            "Eric Liu | San Jose Piano Teacher | Adults, Kids & Adult Beginners",
           description:
-            "Conservatory-level pianist; advanced playing achieved as an adult. Private 1:1 piano lessons in San Jose & Bay Area—adults, kids, in-person or online. 8+ years teaching, 60+ students coached.",
+            "Meet Eric Liu: private 1:1 piano lessons in San Jose & Bay Area. Adult restarters, serious hobbyists, and kids 5+. Classical depth, structured practice, bilingual support. Read the full story.",
         },
         contact: {
           title:
-            "Contact Piano Lessons San Jose | Free Trial, Rates & Availability",
+            "Contact San Jose Piano Studio | Rates, Schedule & Free Trial",
           description:
-            "Contact Eric Liu Piano Studio in San Jose. Ask about in-person or online lessons, free trial, rates, and scheduling for adults, kids, and beginners. Fast reply—most inquiries same day.",
+            "Message Eric Liu Piano Studio about availability, tuition, or the best lesson format. In-person San Jose / South Bay or online. Most families hear back the same day.",
         },
       },
     },
@@ -278,8 +288,9 @@ export const content = {
       opensInNewTab: "将在新标签页打开 Google 商家资料。",
     },
     hero: {
-      title: "湾区钢琴课，培养自信、理性与有品位的演奏",
-      subtitle: "为硅谷思维重新设计的钢琴课程",
+      title: "圣何塞钢琴课：把练习变成看得见的进步",
+      subtitle:
+        "面向成人、重拾者与儿童（5岁+）的一对一私教，圣何塞/南湾线下或线上。每周清晰作业、扎实技巧与可感知的音乐表现。免费试听；多数咨询当天回复。",
       primaryCta: "预约免费试听",
       secondaryCta: "观看演出视频",
       ctaNote: "快速回复：大多数家庭当天即可收到答复。",
@@ -300,20 +311,25 @@ export const content = {
     },
     highlights: [
       {
-        title: "量身定制课程",
-        description: "根据学生目标、学习方式与节奏定制课程计划。",
+        title: "每周可执行的练习路径",
+        description: "作业与目标对齐您的时间与阶段，让在家练习更聚焦、少内耗。",
       },
       {
-        title: "技术与音乐语言的真正理解",
-        description: "聚焦技术与音乐性的平衡，并掌握音乐的底层语言。",
+        title: "听得见的技巧与乐句",
+        description: "放松的发力、稳定的读谱与有表情的乐句，让曲目真正像“您的演奏”。",
       },
       {
-        title: "双语教学",
-        description: "提供中文与英文沟通，方便家长了解学习进度。",
+        title: "家长与成人都能跟上的沟通",
+        description: "需要时提供中英文沟通，学习目标与本周重点一目了然。",
       },
     ],
     about: {
       title: "关于老师",
+      summaryBullets: [
+        "7年以上教学 · 50+学生亲自指导 · 仅一对一（不设团课）",
+        "成人初学者与重拾者、儿童与进阶学员；可按目标准备考级、比赛与试音",
+        "古典训练背景 + 结构化练习方法，帮助稳定突破技术与音乐难点",
+      ],
       body:
         "拥有超过7年的教学经验，并亲自指导过50多位学生，我专注于一对一钢琴课，针对每位学生的目标、学习方式与独特的音乐表达进行定制。我不采用一刀切的教学方法，也从不且永远不会教授团体课。质量始终第一，每一节定制课程都以不牺牲艺术个性为前提，确保扎实而有意义的进步。\n\n我曾师从旧金山音乐学院湾区钢琴家Erna Gulabyan和斯坦福大学的Frank Levy，并一直与他们保持密切联系，使我的教学扎根于传统与深厚的音乐洞见之中。作为一名拥有4年硅谷经验的专业软件工程师，我也带来系统的解决问题思维，帮助学生以清晰、结构化且富有创造力的方式攻克技术与音乐难点。",
     },
@@ -333,7 +349,7 @@ export const content = {
       testimonialsTitle: "学生与家长评价",
       aboutTitle: "认识老师",
       aboutCta: "查看完整介绍",
-      approachTitle: "课程有什么不同",
+      approachTitle: "每节课您会收获什么",
       lessonHubTitle: "选择适合您的课程",
       lessonHubDescription:
         "不确定从哪开始？按您的情况选择页面—每种课程都会说明授课方式、服务区域以及如何预约免费试听。",
@@ -345,6 +361,10 @@ export const content = {
       partnershipBoardMemberBody:
         "我本人也是 MusicNBrain 的理事会成员之一，并将同样的公益服务理念带入每一节课程、每一次汇演与每一位学生的发展路径中。",
       partnershipCta: "访问 MusicNBrain 官网",
+      readMoreDetails: "展开详情",
+      midPageTrialTitle: "想先试听一节课？",
+      landingPartnerFooter:
+        "公益合作伙伴 MusicNBrain：支持青少年舞台实践与社区音乐项目。",
     },
     trial: {
       title: "预约免费试听课",
@@ -384,9 +404,9 @@ export const content = {
     ],
     seo: {
       title:
-        "圣何塞钢琴课 · 南湾湾区 | 线下与线上一对一 | 免费试听",
+        "圣何塞钢琴课 · 南湾湾区 | 一对一私教 | 免费试听 · 当日回复",
       description:
-        "圣何塞与南湾线下钢琴课，亦提供在线课程。成人与成人初学者、儿童（5岁+）一对一私教。免费试听，无需信用卡。",
+        "圣何塞/南湾线下或线上：成人、重拾者、儿童（5岁+）一对一钢琴课。每周清晰作业、技巧与音乐表现并重。免费试听；多数咨询当天回复。",
       keywords:
         "圣何塞钢琴课, 南湾钢琴课, 湾区钢琴课, 圣何塞钢琴老师, 钢琴老师, 成人钢琴课, 成人初学者, 钢琴课, 线上钢琴课, 一对一钢琴课, 钢琴老师推荐, 实惠钢琴课",
       breadcrumbLabels: {
@@ -398,19 +418,19 @@ export const content = {
       },
       pages: {
         trial: {
-          title: "免费试听钢琴课 | 圣何塞南湾 | 线下或线上",
+          title: "预约免费钢琴试听 | 圣何塞与南湾 | 可线上",
           description:
-            "预约圣何塞或线上免费一对一试听。南湾线下钢琴课或远程课程。无需信用卡。初学者与成人初学者欢迎。",
+            "预约 Eric Liu 钢琴工作室免费一对一试听：圣何塞/南湾线下或线上。无需信用卡。了解教学风格、沟通目标，并选择合适上课时间。",
         },
         about: {
-          title: "关于 Eric Liu | 圣何塞钢琴老师 | 成人与儿童一对一",
+          title: "Eric Liu | 圣何塞钢琴老师 | 成人、儿童与初学者",
           description:
-            "音乐学院水平演奏；成年后系统学习达到高阶。圣何塞与湾区私人钢琴课，成人、儿童、线下或线上一对一。8年以上教学经验。",
+            "了解 Eric Liu：湾区一对一钢琴私教，成人重拾、认真爱好者与儿童 5+。古典功底、结构化练习与中英文沟通支持。",
         },
         contact: {
-          title: "联系钢琴课预约 | 圣何塞 | 试听与费用",
+          title: "联系钢琴课 | 圣何塞 | 费用、时间与试听",
           description:
-            "联系 Eric Liu 钢琴工作室：咨询线下/线上课程、免费试听、费用与时间安排。多数咨询当日回复。",
+            "咨询课程安排、学费或最适合的上课方式（线下/线上）。多数家庭当日收到回复。",
         },
       },
     },

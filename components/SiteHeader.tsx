@@ -101,7 +101,7 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
           </a>
           <Link
             href={`/${locale}/trial`}
-            className="ml-1 rounded-full bg-[color:var(--primary)] px-4 py-2 text-xs font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
+            className="ml-1 inline-flex min-h-9 items-center justify-center rounded-full bg-[color:var(--primary)] px-4 py-2 text-center text-xs font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
           >
             {localized.nav.trial}
           </Link>

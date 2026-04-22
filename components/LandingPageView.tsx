@@ -4,6 +4,7 @@ import { content, type Locale } from "@/content/site";
 import {
   landingPages,
   type LandingPageSlug,
+  type LandingSection,
 } from "@/content/landing-pages";
 
 type LandingPageViewProps = {
@@ -11,10 +12,48 @@ type LandingPageViewProps = {
   slug: LandingPageSlug;
 };
 
+function SectionContent({
+  section,
+  readMoreLabel,
+}: {
+  section: LandingSection;
+  readMoreLabel: string;
+}) {
+  const hasBullets = Boolean(section.bullets?.length);
+  const useDetails = hasBullets || section.body.length > 260;
+
+  return (
+    <>
+      {hasBullets ? (
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-[color:var(--muted-foreground)]">
+          {section.bullets!.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      ) : null}
+      {useDetails ? (
+        <details className="mt-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-4 py-3">
+          <summary className="cursor-pointer text-sm font-semibold text-[color:var(--link)]">
+            {readMoreLabel}
+          </summary>
+          <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
+            {section.body}
+          </p>
+        </details>
+      ) : (
+        <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
+          {section.body}
+        </p>
+      )}
+    </>
+  );
+}
+
 export default function LandingPageView({ locale, slug }: LandingPageViewProps) {
   const data = landingPages[locale][slug];
   const localized = content[locale];
   const path = `/${locale}/${slug}`;
+  const readMore = localized.sections.readMoreDetails;
 
   return (
     <>
@@ -27,14 +66,24 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
           <p className="mt-4 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
             {data.intro}
           </p>
-          <a
-            href="https://www.musicnbrain.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="mt-5 inline-flex rounded-full border border-[color:var(--accent)] bg-[color:var(--tag)] px-4 py-2 text-xs font-semibold text-[color:var(--accent-foreground)]"
-          >
-            Partnered with MusicNBrain
-          </a>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href={`/${locale}/trial`}
+              data-ga-event="trial_cta_click"
+              data-ga-placement="landing_intro"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-sm font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
+            >
+              {localized.hero.primaryCta}
+            </Link>
+            <Link
+              href={`/${locale}/contact`}
+              data-ga-event="contact_cta_click"
+              data-ga-placement="landing_intro"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--border)] px-6 py-3 text-center text-sm font-semibold leading-snug transition hover:border-[color:var(--foreground)]"
+            >
+              {localized.nav.contact}
+            </Link>
+          </div>
         </section>
 
         {data.sections.map((section) => (
@@ -45,11 +94,22 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
             <h2 className="text-xl font-semibold text-[color:var(--foreground)]">
               {section.heading}
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
-              {section.body}
-            </p>
+            <SectionContent section={section} readMoreLabel={readMore} />
           </section>
         ))}
+
+        <p className="text-center text-xs leading-relaxed text-[color:var(--muted-foreground)]">
+          <a
+            href="https://www.musicnbrain.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-[color:var(--link)] underline-offset-4 hover:text-[color:var(--link-hover)] hover:underline"
+          >
+            {localized.nav.musicnbrain}
+          </a>
+          <span className="mx-1">·</span>
+          {localized.sections.landingPartnerFooter}
+        </p>
 
         <section className="rounded-3xl bg-[color:var(--surface-inverse)] px-6 py-10 text-[color:var(--surface-inverse-foreground)] shadow-xl">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -62,13 +122,17 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
             <div className="flex flex-wrap gap-3">
               <Link
                 href={`/${locale}/trial`}
-                className="inline-flex rounded-full bg-[color:var(--primary)] px-6 py-3 text-sm font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
+                data-ga-event="trial_cta_click"
+                data-ga-placement="landing_footer"
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-sm font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
               >
                 {localized.hero.primaryCta}
               </Link>
               <Link
                 href={`/${locale}/contact`}
-                className="inline-flex rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-[color:var(--surface-inverse-foreground)] transition hover:border-white/60"
+                data-ga-event="contact_cta_click"
+                data-ga-placement="landing_footer"
+                className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold leading-snug text-[color:var(--surface-inverse-foreground)] transition hover:border-white/60"
               >
                 {localized.nav.contact}
               </Link>
