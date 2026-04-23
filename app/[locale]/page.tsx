@@ -282,7 +282,7 @@ export default async function LocaleHome({
             <ul className="mt-4 space-y-2 text-sm text-[color:var(--muted-foreground)]">
               {localized.services.items.map((item) => (
                 <li key={item} className="flex items-start gap-2">
-                  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[color:var(--accent)]" />
+                  <span className="mt-1 h-2 w-2 rounded-full bg-[color:var(--accent)]" />
                   <span>{item}</span>
                 </li>
               ))}
