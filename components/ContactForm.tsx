@@ -41,6 +41,7 @@ export default function ContactForm({
       form.reset();
       setStatus("success");
       sendGaEvent("contact_submit", { placement: "contact_form" });
+      sendGaEvent("generate_lead", { source: "contact_form" });
     } else {
       setStatus("error");
     }
