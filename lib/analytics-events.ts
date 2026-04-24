@@ -14,15 +14,28 @@
 export type GaEventParams = Record<string, string | number | undefined>;
 
 type GtagFn = (...args: unknown[]) => void;
+type QueuedGaEvent = { action: string; params?: GaEventParams };
+type AnalyticsWindow = Window & {
+  gtag?: GtagFn;
+  __pendingGaEvents?: QueuedGaEvent[];
+};
 
-function getGtag(): GtagFn | undefined {
+function getAnalyticsWindow(): AnalyticsWindow | undefined {
   if (typeof window === "undefined") return undefined;
-  return (window as unknown as { gtag?: GtagFn }).gtag;
+  return window as AnalyticsWindow;
 }
 
 /** GA4 custom events — register names in GA4 as custom definitions if you want reports. */
 export function sendGaEvent(action: string, params?: GaEventParams) {
-  const gtag = getGtag();
-  if (!gtag) return;
-  gtag("event", action, params ?? {});
+  const analyticsWindow = getAnalyticsWindow();
+  if (!analyticsWindow) return;
+
+  if (analyticsWindow.gtag) {
+    analyticsWindow.gtag("event", action, params ?? {});
+    return;
+  }
+
+  const queue = analyticsWindow.__pendingGaEvents ?? [];
+  queue.push({ action, params });
+  analyticsWindow.__pendingGaEvents = queue;
 }

@@ -19,7 +19,7 @@ export default function Analytics() {
   if (!gtagLoaderId) return null;
 
   const adsConfigLine = adsTagId
-    ? `gtag('config', '${adsTagId}');`
+    ? `window.gtag('config', '${adsTagId}');`
     : "";
 
   return (
@@ -31,10 +31,16 @@ export default function Analytics() {
       <Script id="ga-ads-init" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          ${gaId ? `gtag('config', '${gaId}', { anonymize_ip: true });` : ""}
+          window.gtag = window.gtag || function gtag(){window.dataLayer.push(arguments);};
+          window.gtag('js', new Date());
+          ${gaId ? `window.gtag('config', '${gaId}', { anonymize_ip: true });` : ""}
           ${adsConfigLine}
+          if (window.__pendingGaEvents && window.__pendingGaEvents.length) {
+            for (const queuedEvent of window.__pendingGaEvents) {
+              window.gtag('event', queuedEvent.action, queuedEvent.params || {});
+            }
+            window.__pendingGaEvents = [];
+          }
         `}
       </Script>
     </>
