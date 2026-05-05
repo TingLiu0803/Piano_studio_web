@@ -5,7 +5,6 @@ import { locales, type Locale, content } from "@/content/site";
 import {
   buildLocalBusinessJsonLd,
   buildMetadata,
-  buildFaqJsonLd,
 } from "@/lib/seo";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -50,7 +49,6 @@ export default async function LocaleLayout({
   return (
     <div className="flex min-h-screen flex-col">
       <JsonLd data={buildLocalBusinessJsonLd(typedLocale)} />
-      <JsonLd data={buildFaqJsonLd(typedLocale)} />
       <GaClickCapture />
       <AbExperimentReporter variant={stickyVariant} />
       <SiteHeader locale={typedLocale} />

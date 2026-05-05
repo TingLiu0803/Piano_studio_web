@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { type Locale, content, siteConfig } from "@/content/site";
+import { getFaqItems, homeFaqIds } from "@/content/faqs";
 import { landingPageSlugs } from "@/content/landing-pages";
 import BilibiliGallery from "@/components/BilibiliGallery";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import GoogleReviewsPromo from "@/components/GoogleReviewsPromo";
-import { buildMetadata } from "@/lib/seo";
+import FaqSection from "@/components/FaqSection";
+import JsonLd from "@/components/JsonLd";
+import { buildFaqJsonLd, buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -21,11 +24,14 @@ export default async function LocaleHome({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const localized = content[locale as Locale];
+  const typedLocale = locale as Locale;
+  const localized = content[typedLocale];
+  const faqItems = getFaqItems(typedLocale, homeFaqIds);
 
   return (
     <>
       <BreadcrumbJsonLd locale={locale as Locale} path={`/${locale}`} />
+      <JsonLd data={buildFaqJsonLd(typedLocale, homeFaqIds)} />
       <div className="flex flex-col gap-20">
         <section className="rounded-[2rem] border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-xl md:p-10">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -160,6 +166,11 @@ export default async function LocaleHome({
           <h2 className="text-2xl font-semibold text-[color:var(--foreground)] md:text-3xl">
             {localized.sections.aboutTitle}
           </h2>
+          <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
+            {typedLocale === "en"
+              ? "I started serious piano study as an adult and built toward advanced repertoire over time. That lived experience shapes how I coach adult beginners, restarters, and busy professionals."
+              : "我在成年后才开始系统学习钢琴，并逐步进入高阶曲目。这段经历让我更懂成人初学者、重拾者与职场学习者的真实挑战。"}
+          </p>
           {(localized.about as { summaryBullets?: string[] }).summaryBullets
             ?.length ? (
             <ul className="mt-4 space-y-2 text-sm text-[color:var(--muted-foreground)]">
@@ -318,6 +329,19 @@ export default async function LocaleHome({
           <BilibiliGallery />
         </section>
         <GoogleReviewsPromo locale={locale as Locale} variant="featured" />
+        <FaqSection
+          title={
+            typedLocale === "en"
+              ? "Frequently asked questions from adult beginners"
+              : "成人初学者常见问题"
+          }
+          intro={
+            typedLocale === "en"
+              ? "Direct answers to the questions students ask before booking a trial lesson."
+              : "在预约试听前，学生最常问的几个问题。"
+          }
+          items={faqItems}
+        />
         <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-10 shadow-sm">
           <h2 className="text-2xl font-semibold">
             {localized.sections.testimonialsTitle}

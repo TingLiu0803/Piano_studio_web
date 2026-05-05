@@ -3,10 +3,14 @@ import type { NextRequest } from "next/server";
 
 const STICKY_AB_COOKIE = "ab_sticky_cta";
 const STICKY_AB_HEADER = "x-ab-sticky-cta";
+const LOCALE_HEADER = "x-site-locale";
 
-function withVariantHeader(request: NextRequest, variant: string) {
+function withRequestHeaders(request: NextRequest, variant: string) {
   const requestHeaders = new Headers(request.headers);
+  const localeFromPath = request.nextUrl.pathname.split("/")[1];
+  const locale = localeFromPath === "zh" ? "zh" : "en";
   requestHeaders.set(STICKY_AB_HEADER, variant);
+  requestHeaders.set(LOCALE_HEADER, locale);
   return requestHeaders;
 }
 
@@ -20,7 +24,7 @@ export function middleware(request: NextRequest) {
         : "control";
 
   const res = NextResponse.next({
-    request: { headers: withVariantHeader(request, variant) },
+    request: { headers: withRequestHeaders(request, variant) },
   });
 
   if (!existing) {

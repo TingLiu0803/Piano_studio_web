@@ -20,7 +20,8 @@ function SectionContent({
   readMoreLabel: string;
 }) {
   const hasBullets = Boolean(section.bullets?.length);
-  const useDetails = hasBullets || section.body.length > 260;
+  const isQuestionHeading = section.heading.includes("?");
+  const useDetails = !isQuestionHeading && (hasBullets || section.body.length > 260);
 
   return (
     <>
