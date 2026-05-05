@@ -77,35 +77,58 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
         },
         h1: "Private piano lessons for adults in San Jose and the Bay Area",
         intro:
-          "If you typed “private piano lessons for adults,” “piano lessons near me for adults,” or “piano lessons for adults San Jose,” you are in the right place. Many of my adults are beginners or restarters, but I also teach intermediate and advanced players who want serious coaching on technique, musicality, and repertoire—structured, patient, and goal-driven.",
+          "Yes, adults can absolutely start piano from zero and make clear progress with a structured plan. If you searched for private adult piano lessons in San Jose or nearby, this page answers the key questions directly: who this is for, how long progress takes, what to practice, and whether you need an instrument at home.",
         sections: [
           {
-            heading: "Adult beginners and “I quit as a kid” restarters",
+            heading: "Can adults really start piano from zero?",
             bullets: [
-              "Adult-paced learning: technique, reading, and phrasing without rushing a method book",
-              "Scheduling and mindset coaching from someone who started seriously after 25",
-              "Intermediate/advanced adults get repertoire, interpretation, and practice design support",
+              "Adult-paced instruction: technique, reading, and phrasing without rushing through method books",
+              "Coaching shaped by lived experience: I started serious study after age 25",
+              "Beginners, restarters, and advanced hobbyists all get one-on-one planning",
             ],
             body:
-              "I started seriously after age 25 and reached conservatory-level advanced playing as an adult, so I understand the mindset and scheduling realities of adult learners. Lessons emphasize technique, reading, and musicality—not rushing through method books. Intermediate and advanced adults get the same depth of coaching on repertoire, interpretation, and practice design.",
+              "Yes. Adult beginners are a core part of this studio, and many students start with zero background or return after years away. Lessons are built for adult schedules and goals, with clear weekly assignments so your practice feels focused instead of overwhelming.",
           },
           {
-            heading: "In-person or online",
+            heading: "How long does it take to make progress as an adult?",
             bullets: [
-              "In-person in San Jose / South Bay when you want hands-on touch and acoustics",
-              "Online when travel is tight—same curriculum, same weekly accountability",
+              "Most adults hear noticeable improvement within the first 2-3 months of consistent practice",
+              "Long-term growth is cumulative: technique, reading confidence, and repertoire depth build over time",
+              "Your timeline depends more on consistency than starting age",
             ],
             body:
-              "Choose in-person lessons in San Jose / South Bay or online lessons for flexibility. Either way, you get private 1:1 instruction tailored to your goals.",
+              "You can expect early milestones quickly when practice is steady, then deeper musical control over the long run. I help you pick repertoire and routines that match your available time so progress is sustainable.",
           },
           {
-            heading: "Try before you commit",
+            heading:
+              "What if I can already play difficult pieces but want more artistry?",
             bullets: [
-              "Free trial to confirm teaching style and fit",
-              "Most families get a same-day reply to messages",
+              "Advanced playing is not only about finishing hard notes; it is about musical language, tone hierarchy, and phrasing logic",
+              "Training combines expressive decisions with efficient, science-based touch and motion",
+              "Argerich-inspired workflow: isolate the hardest bars first, then reconnect them to the full musical line",
             ],
             body:
-              "Book a free trial lesson to see whether the teaching style fits. Most families receive a same-day reply to inquiries.",
+              "A recent adult student could already play Chopin Nocturnes and Bach French Suites, but the interpretation felt mechanical. We shifted from note completion to sound design and phrase architecture, with focused breakthroughs in difficult passages. Over time, her playing moved from \"I can play it\" to performance quality with clear artistic intent.",
+          },
+          {
+            heading: "Do I need a piano at home, and how often should I practice?",
+            bullets: [
+              "A full-size weighted keyboard is enough to begin; you do not need a grand piano to start",
+              "Best baseline for adults: 20-40 minutes, at least 5 days per week",
+              "Short, consistent sessions beat occasional long sessions",
+            ],
+            body:
+              "You can start with practical equipment and improve over time. During lessons, I translate your goals into a realistic weekly plan so practice fits your work and family schedule.",
+          },
+          {
+            heading: "Should I choose in-person or online adult piano lessons?",
+            bullets: [
+              "In-person in San Jose and South Bay for direct touch and tone feedback",
+              "Online for busy weeks or commute-heavy schedules, with the same private structure",
+              "Free trial available to test fit before committing",
+            ],
+            body:
+              "Both formats can work well when expectations are clear. We choose the format based on your schedule, goals, and learning style, then adjust over time as needed.",
           },
         ],
       },

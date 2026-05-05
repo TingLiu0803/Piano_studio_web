@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
 
@@ -20,13 +21,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headerList = await headers();
+  const locale = headerList.get("x-site-locale");
+  const htmlLang = locale === "zh" ? "zh-CN" : "en-US";
+
   return (
-    <html lang="en">
+    <html lang={htmlLang}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen text-[color:var(--foreground)] antialiased`}
       >

@@ -133,19 +133,19 @@ export const content = {
     },
     highlights: [
       {
-        title: "A weekly plan you can actually follow",
+        title: "Goal-oriented practice, not time-counting",
         description:
-          "Assignments match your schedule and goals—so home practice feels focused instead of overwhelming.",
+          "Adults get a divide-and-conquer practice system: each session targets one small component (rhythm, fingering, voicing, or phrasing) so progress stays measurable even with a busy schedule.",
       },
       {
-        title: "Technique and phrasing you keep for life",
+        title: "Adults build musical thinking from week one",
         description:
-          "Healthy mechanics, confident reading, and musical line so pieces sound like yours—not a stiff replay.",
+          "Lessons include practical theory and aesthetic decisions early, so students do more than mechanical replay. The goal is intelligent sound and clear musical intent, not just correct notes.",
       },
       {
-        title: "Parents and adults stay in the loop",
+        title: "Real progression you can hear over months",
         description:
-          "English or Chinese check-ins when you want them, with clear notes on what to practice and why.",
+          "One adult student in her 40s moved from struggling with early Thompson pieces to performing Tchaikovsky's The New Doll and a Schubert Waltz in under two years.",
       },
     ],
 
@@ -316,16 +316,19 @@ export const content = {
     },
     highlights: [
       {
-        title: "每周可执行的练习路径",
-        description: "作业与目标对齐您的时间与阶段，让在家练习更聚焦、少内耗。",
+        title: "以目标为中心，而不是只堆练习时长",
+        description:
+          "成人采用“分而治之”的练习策略：每次只攻克一个小模块（节奏、指法、声部或乐句），在忙碌生活中也能持续推进。",
       },
       {
-        title: "听得见的技巧与乐句",
-        description: "放松的发力、稳定的读谱与有表情的乐句，让曲目真正像“您的演奏”。",
+        title: "从第一周开始建立音乐理解",
+        description:
+          "课程会尽早加入实用乐理与审美判断，不是机械按键。目标是“有思考的声音”，而不只是把音弹对。",
       },
       {
-        title: "家长与成人都能跟上的沟通",
-        description: "需要时提供中英文沟通，学习目标与本周重点一目了然。",
+        title: "几个月内能听见的真实进步",
+        description:
+          "一位40多岁的护士学生，从 Thompson 初级曲目吃力起步，在不到两年内完成了《新娃娃舞曲》和舒伯特圆舞曲。",
       },
     ],
     about: {

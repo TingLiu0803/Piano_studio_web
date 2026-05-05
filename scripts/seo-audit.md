@@ -55,6 +55,22 @@
 - [ ] Anchor text is descriptive (not just "click here")
 - [ ] Links to trial/contact pages from every page
 
+## 2.5 GEO / AI Citation Readiness
+
+### Answer-First Content
+- [ ] Homepage includes a visible FAQ section with direct answers
+- [ ] `/en/adult-piano-lessons` uses question-style headings and answer-first sections
+- [ ] Key adult-intent questions are answered in the first screenful(s), not only marketing copy
+
+### Schema and Content Parity
+- [ ] FAQ JSON-LD is only used on pages that render the matching visible FAQ content
+- [ ] FAQ answers in JSON-LD match on-page wording for quoted answer blocks
+- [ ] LocalBusiness schema includes current aggregate rating and review count
+
+### Language and Sharing Signals
+- [ ] Locale pages expose correct language signals (`en-US` / `zh-CN`)
+- [ ] Open Graph and Twitter metadata include a default image
+
 ## 3. Local SEO (Critical for Piano Studio)
 
 ### Google Business Profile
