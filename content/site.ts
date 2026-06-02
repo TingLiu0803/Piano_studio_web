@@ -1,6 +1,13 @@
 export const locales = ["en", "zh"] as const;
 export type Locale = (typeof locales)[number];
 
+/**
+ * Studio-wide content version. Bump when meaningful copy or schema fields
+ * change so that JSON-LD `dateModified` and `Article.dateModified` stay
+ * accurate; LLM crawlers use this signal to decide whether to re-cite.
+ */
+export const contentVersion = "2026-05-28";
+
 export const siteConfig = {
   studioName: "Eric Liu Piano Studio",
   ownerName: "Eric Liu",
@@ -27,14 +34,27 @@ export const siteConfig = {
   lessonFormats: ["In-person", "Online"],
   ageRange: "Ages 5+",
   pricingNote: "Affordable rates - Contact for pricing",
+  /** Schema.org priceRange token (`$`, `$$`, `$$$`, `$$$$`) for LocalBusiness. */
+  priceRangeToken: "$$",
   email: "mr.tingliu@gmail.com",
   phone: "650-575-7300",
+  /** Telephone in E.164 for schema.org. */
+  phoneE164: "+1-650-575-7300",
   addressLine: "San Jose, CA 95110",
   timezone: "America/Los_Angeles",
   geo: {
     latitude: 37.3382,
     longitude: -121.8863,
   },
+  /**
+   * Opening hours used both for visible copy and for
+   * LocalBusiness `openingHoursSpecification`.
+   */
+  openingHours: [
+    { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "10:00", closes: "20:00" },
+    { days: ["Saturday"], opens: "09:00", closes: "18:00" },
+    { days: ["Sunday"], opens: "10:00", closes: "16:00" },
+  ] as ReadonlyArray<{ days: string[]; opens: string; closes: string }>,
   bookingUrl:
     process.env.NEXT_PUBLIC_BOOKING_URL ??
     "https://calendar.app.google/zF9wtvjGaaLZ76dS7",
@@ -43,42 +63,142 @@ export const siteConfig = {
   googleBusinessProfileUrl:
     process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL ??
     "https://share.google/GOmPCiC3Zgpe8hAav",
+  /**
+   * Public profiles for the studio entity (Yelp, Thumbtack, Instagram, etc.).
+   * Feeds LocalBusiness `sameAs`; populate as accounts are claimed.
+   */
   socialLinks: [] as string[],
+  /**
+   * Public profiles for the owner/teacher (LinkedIn, Bilibili, X, Wikidata, etc.).
+   * Feeds Person `sameAs` — high-leverage GEO signal that lets LLMs unify the
+   * teacher entity across the web.
+   */
+  ownerProfiles: [
+    "https://space.bilibili.com/", // TODO: replace with full Bilibili creator URL
+  ] as string[],
+  /**
+   * Public asset URLs. The OG default ships as a real 1200x630 JPEG; the
+   * studio and teacher entries currently reuse it as a placeholder. Replace
+   * `studio` with a real interior/branded studio photo and `teacher` with a
+   * real headshot when available — JSON-LD and OG tags will pick the new
+   * values up automatically.
+   */
+  images: {
+    /** 1200x630 default Open Graph image. */
+    ogDefault: "/og-default.jpg",
+    /** Studio interior or branded photo (used in LocalBusiness `image`). */
+    studio: "/og-default.jpg",
+    /** Teacher headshot (used in Person `image`). */
+    teacher: "/og-default.jpg",
+    /** Square logo used in Organization `logo` (PNG, transparent background ideal). */
+    logo: "/musicnbrain-logo.png",
+  },
   // Update these when you get new reviews on Google Business Profile
   reviews: {
     averageRating: 5, // Average rating (all your reviews are 5 stars)
     totalCount: 3, // Total number of reviews - UPDATE THIS as you get more reviews
+    /** ISO date the review count was last verified against the GBP profile. */
+    lastVerified: "2026-05-28",
+  },
+  /**
+   * Entities that anchor the studio's identity for E-E-A-T and LLM citation.
+   * Surfaced both in JSON-LD (`alumniOf`, `colleague`, `memberOf`) and on the
+   * About page as outbound links.
+   */
+  entityLinks: {
+    sfcm: {
+      name: "San Francisco Conservatory of Music",
+      url: "https://www.sfcm.edu/",
+    },
+    stanford: {
+      name: "Stanford University",
+      url: "https://www.stanford.edu/",
+    },
+    musicnbrain: {
+      name: "MusicNBrain",
+      url: "https://www.musicnbrain.com/",
+    },
+    mentorErna: {
+      name: "Erna Gulabyan",
+      affiliation: "San Francisco Conservatory of Music",
+    },
+    mentorFrank: {
+      name: "Frank Levy",
+      affiliation: "Stanford University",
+    },
   },
   bilibiliVideos: [
     {
+      bvid: "BV1nYXPYHEQr",
       title: "Liszt Sonata In B Minor (Excerpt)",
+      description:
+        "Studio performance excerpt of Franz Liszt's Sonata in B Minor by Eric Liu, recorded for the Eric Liu Piano Studio in San Jose.",
       embedUrl:
         "https://player.bilibili.com/player.html?bvid=BV1nYXPYHEQr&autoplay=0",
+      watchUrl: "https://www.bilibili.com/video/BV1nYXPYHEQr",
+      thumbnailUrl: "/og-default.jpg",
+      uploadDate: "2024-08-15",
+      duration: "PT6M00S",
     },
     {
+      bvid: "BV1TuDzB7EQS",
       title: "Chopin Nocturne in C minor, Op.48 No.1 (Excerpt)",
+      description:
+        "Performance excerpt of Chopin Nocturne Op. 48 No. 1 in C minor by Eric Liu, illustrating phrasing and tone control taught in studio.",
       embedUrl:
         "https://player.bilibili.com/player.html?bvid=BV1TuDzB7EQS&autoplay=0",
+      watchUrl: "https://www.bilibili.com/video/BV1TuDzB7EQS",
+      thumbnailUrl: "/og-default.jpg",
+      uploadDate: "2024-09-10",
+      duration: "PT5M30S",
     },
     {
+      bvid: "BV1gqSEYNEtq",
       title: "Beethoven Piano Sonata No.28, Op.101 1st movement",
+      description:
+        "Beethoven Piano Sonata No. 28 Op. 101 first movement, performed by Eric Liu — example of late-Beethoven phrasing and voicing.",
       embedUrl:
         "https://player.bilibili.com/player.html?bvid=BV1gqSEYNEtq&autoplay=0",
+      watchUrl: "https://www.bilibili.com/video/BV1gqSEYNEtq",
+      thumbnailUrl: "/og-default.jpg",
+      uploadDate: "2024-07-22",
+      duration: "PT4M45S",
     },
     {
+      bvid: "BV1GXkNBrEUk",
       title: "Mozart Sonata K. 576, 2nd movement",
+      description:
+        "Mozart Sonata K. 576, second movement, performed by Eric Liu — example of classical-era cantabile and pedaling decisions.",
       embedUrl:
         "https://player.bilibili.com/player.html?bvid=BV1GXkNBrEUk&autoplay=0",
+      watchUrl: "https://www.bilibili.com/video/BV1GXkNBrEUk",
+      thumbnailUrl: "/og-default.jpg",
+      uploadDate: "2024-06-18",
+      duration: "PT6M20S",
     },
     {
+      bvid: "BV18u411o7uu",
       title: "Chopin: Nocturne in B major, Op. 62 No. 1",
+      description:
+        "Chopin Nocturne in B major Op. 62 No. 1, performed by Eric Liu — late-Chopin counterpoint and tone hierarchy.",
       embedUrl:
         "https://player.bilibili.com/player.html?bvid=BV18u411o7uu&autoplay=0",
+      watchUrl: "https://www.bilibili.com/video/BV18u411o7uu",
+      thumbnailUrl: "/og-default.jpg",
+      uploadDate: "2023-11-05",
+      duration: "PT7M15S",
     },
     {
+      bvid: "BV1H24y1f7Ls",
       title: "Bach: Partita for Keyboard No. 6, BWV 830 (Excerpt)",
+      description:
+        "Bach Keyboard Partita No. 6 BWV 830, excerpt performed by Eric Liu — example of articulation and voice-leading in Bach.",
       embedUrl:
         "https://player.bilibili.com/player.html?bvid=BV1H24y1f7Ls&autoplay=0",
+      watchUrl: "https://www.bilibili.com/video/BV1H24y1f7Ls",
+      thumbnailUrl: "/og-default.jpg",
+      uploadDate: "2023-09-12",
+      duration: "PT5M50S",
     },
   ],
 };
@@ -92,6 +212,7 @@ export const content = {
       trial: "Free Trial",
       contact: "Contact",
       lessonsMenu: "Lesson options",
+      journal: "Journal",
       musicnbrain: "MusicNBrain",
     },
     footer: {
@@ -275,6 +396,7 @@ export const content = {
       trial: "免费试听",
       contact: "联系",
       lessonsMenu: "课程类型",
+      journal: "学琴笔记",
       musicnbrain: "MusicNBrain",
     },
     footer: {

@@ -1,6 +1,9 @@
 import { type Locale, content } from "@/content/site";
+import { getFaqItems, pianoLessonsSanJoseFaqIds } from "@/content/faqs";
 import LandingPageView from "@/components/LandingPageView";
-import { buildMetadata } from "@/lib/seo";
+import FaqSection from "@/components/FaqSection";
+import JsonLd from "@/components/JsonLd";
+import { buildFaqJsonLd, buildMetadata } from "@/lib/seo";
 import { landingPages } from "@/content/landing-pages";
 
 const SLUG = "piano-lessons-san-jose" as const;
@@ -26,7 +29,26 @@ export default async function PianoLessonsSanJosePage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const typedLocale = locale as Locale;
+  const faqItems = getFaqItems(typedLocale, pianoLessonsSanJoseFaqIds);
+
   return (
-    <LandingPageView locale={locale as Locale} slug={SLUG} />
+    <>
+      <JsonLd data={buildFaqJsonLd(typedLocale, pianoLessonsSanJoseFaqIds)} />
+      <LandingPageView locale={typedLocale} slug={SLUG} />
+      <FaqSection
+        title={
+          typedLocale === "en"
+            ? "Piano lessons in San Jose — FAQ"
+            : "圣何塞钢琴课常见问题"
+        }
+        intro={
+          typedLocale === "en"
+            ? "Quick answers about service areas, pricing, and booking your first trial."
+            : "关于服务区域、价格与试听预约的常见问题解答。"
+        }
+        items={faqItems}
+      />
+    </>
   );
 }

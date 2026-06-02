@@ -1,24 +1,26 @@
-import { siteConfig } from "@/content/site";
+import { siteConfig, type Locale } from "@/content/site";
+import VideoCard from "@/components/VideoCard";
 
-export default function BilibiliGallery() {
+type BilibiliGalleryProps = {
+  locale?: Locale;
+};
+
+export default function BilibiliGallery({ locale = "en" }: BilibiliGalleryProps) {
+  const loadLabel = locale === "en" ? "Play video" : "播放视频";
+  const openLabel = locale === "en" ? "Open on Bilibili" : "在哔哩哔哩查看";
+
   return (
     <div className="grid gap-6 md:grid-cols-2">
       {siteConfig.bilibiliVideos.map((video) => (
-        <div
-          key={video.title}
-          className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] shadow-sm"
-        >
-          <div className="aspect-video w-full">
-            <iframe
-              src={video.embedUrl}
-              title={video.title}
-              className="h-full w-full"
-              loading="lazy"
-              allowFullScreen
-            />
-          </div>
-          <div className="px-4 py-3 text-sm font-medium">{video.title}</div>
-        </div>
+        <VideoCard
+          key={video.bvid}
+          title={video.title}
+          description={video.description}
+          embedUrl={video.embedUrl}
+          watchUrl={video.watchUrl}
+          loadLabel={loadLabel}
+          openLabel={openLabel}
+        />
       ))}
     </div>
   );
