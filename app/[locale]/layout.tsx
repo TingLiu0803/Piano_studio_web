@@ -12,6 +12,7 @@ import JsonLd from "@/components/JsonLd";
 import GaClickCapture from "@/components/GaClickCapture";
 import StickyTrialCta from "@/components/StickyTrialCta";
 import AbExperimentReporter from "@/components/AbExperimentReporter";
+import AiReferrerReporter from "@/components/AiReferrerReporter";
 
 type LocaleLayoutProps = {
   children: React.ReactNode;
@@ -51,6 +52,7 @@ export default async function LocaleLayout({
       <JsonLd data={buildLocalBusinessJsonLd(typedLocale)} />
       <GaClickCapture />
       <AbExperimentReporter variant={stickyVariant} />
+      <AiReferrerReporter />
       <SiteHeader locale={typedLocale} />
       <main
         className={`flex-1 bg-[color:var(--background)]${stickyTreatment ? " pb-24 md:pb-0" : ""}`}

@@ -6,8 +6,13 @@ import BilibiliGallery from "@/components/BilibiliGallery";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import GoogleReviewsPromo from "@/components/GoogleReviewsPromo";
 import FaqSection from "@/components/FaqSection";
+import FactsAtAGlance from "@/components/FactsAtAGlance";
 import JsonLd from "@/components/JsonLd";
-import { buildFaqJsonLd, buildMetadata } from "@/lib/seo";
+import {
+  buildFaqJsonLd,
+  buildMetadata,
+  buildSpeakableJsonLd,
+} from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -28,10 +33,38 @@ export default async function LocaleHome({
   const localized = content[typedLocale];
   const faqItems = getFaqItems(typedLocale, homeFaqIds);
 
+  const homeFacts =
+    typedLocale === "en"
+      ? [
+          "Studio: Eric Liu Piano Studio in San Jose, California",
+          "Teacher: Eric Liu — 8+ years teaching, 60+ students coached",
+          "Training: classical lineage from Erna Gulabyan (San Francisco Conservatory) and Frank Levy (Stanford University)",
+          "Format: private 1:1 only — no group classes",
+          "Ages: 5+ — kids, teens, adults, adult beginners",
+          "Languages: English and Mandarin Chinese",
+          "Service area: San Jose, Sunnyvale, Santa Clara, Cupertino, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, Milpitas; online available",
+          "Free trial lesson, no credit card; most inquiries get a same-day reply",
+        ]
+      : [
+          "工作室：Eric Liu 钢琴工作室，加州圣何塞",
+          "老师：Eric Liu — 7 年以上教学，50+ 学生亲自指导",
+          "训练：师从 Erna Gulabyan（旧金山音乐学院）与 Frank Levy（斯坦福大学）",
+          "形式：仅一对一私教，不设团课",
+          "年龄：5 岁以上 — 儿童、青少年、成人、成人初学者",
+          "语言：英文与普通话",
+          "服务区域：圣何塞、森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔、米尔皮塔斯；亦可线上",
+          "免费试听，无需信用卡；多数咨询当天回复",
+        ];
+  const factsTitle =
+    typedLocale === "en" ? "Studio facts at a glance" : "工作室一眼速览";
+  const factsEyebrow =
+    typedLocale === "en" ? "Verified facts" : "核实信息";
+
   return (
     <>
       <BreadcrumbJsonLd locale={locale as Locale} path={`/${locale}`} />
       <JsonLd data={buildFaqJsonLd(typedLocale, homeFaqIds)} />
+      <JsonLd data={buildSpeakableJsonLd(typedLocale, `/${locale}`)} />
       <div className="flex flex-col gap-20">
         <section className="rounded-[2rem] border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-xl md:p-10">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -147,6 +180,12 @@ export default async function LocaleHome({
             </div>
           </div>
         </section>
+
+        <FactsAtAGlance
+          title={factsTitle}
+          eyebrow={factsEyebrow}
+          facts={homeFacts}
+        />
 
         <section className="grid gap-6 md:grid-cols-3">
           {localized.highlights.map((item) => (
@@ -326,7 +365,7 @@ export default async function LocaleHome({
               {localized.sections.performancesDescription}
             </p>
           </div>
-          <BilibiliGallery />
+          <BilibiliGallery locale={typedLocale} />
         </section>
         <GoogleReviewsPromo locale={locale as Locale} variant="featured" />
         <FaqSection

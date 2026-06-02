@@ -10,7 +10,49 @@
  * - trial_booking_click (external calendar)
  * - experiment_assign (experiment_id, variant)
  * - about_bio_click
+ * - ai_referrer_visit (referrer, source)  — fired once per session on first
+ *   load when the referrer is a known AI search engine (ChatGPT, Perplexity,
+ *   Gemini, Copilot, etc.). Use this to track AI-search-driven traffic in GA4.
  */
+
+/**
+ * Hostname suffix -> canonical source label for the `ai_referrer_visit`
+ * event. Keep this list updated as new AI search engines launch.
+ */
+export const AI_REFERRER_SOURCES: Record<string, string> = {
+  "chat.openai.com": "chatgpt",
+  "chatgpt.com": "chatgpt",
+  "perplexity.ai": "perplexity",
+  "www.perplexity.ai": "perplexity",
+  "copilot.microsoft.com": "copilot",
+  "bing.com/chat": "copilot",
+  "gemini.google.com": "gemini",
+  "bard.google.com": "gemini",
+  "you.com": "you",
+  "claude.ai": "claude",
+  "phind.com": "phind",
+  "kagi.com": "kagi",
+};
+
+export function detectAiReferrer(referrer: string): string | null {
+  if (!referrer) return null;
+  try {
+    const url = new URL(referrer);
+    const host = url.hostname.toLowerCase();
+    for (const [needle, label] of Object.entries(AI_REFERRER_SOURCES)) {
+      if (host === needle || host.endsWith(`.${needle.split("/")[0]}`)) {
+        return label;
+      }
+      if (needle.includes("/") && referrer.toLowerCase().includes(needle)) {
+        return label;
+      }
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
 export type GaEventParams = Record<string, string | number | undefined>;
 
 type GtagFn = (...args: unknown[]) => void;

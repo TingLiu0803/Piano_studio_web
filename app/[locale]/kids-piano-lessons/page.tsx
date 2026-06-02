@@ -1,6 +1,9 @@
 import { type Locale, content } from "@/content/site";
+import { getFaqItems, kidsLandingFaqIds } from "@/content/faqs";
 import LandingPageView from "@/components/LandingPageView";
-import { buildMetadata } from "@/lib/seo";
+import FaqSection from "@/components/FaqSection";
+import JsonLd from "@/components/JsonLd";
+import { buildFaqJsonLd, buildMetadata } from "@/lib/seo";
 import { landingPages } from "@/content/landing-pages";
 
 const SLUG = "kids-piano-lessons" as const;
@@ -26,7 +29,26 @@ export default async function KidsPianoLessonsPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const typedLocale = locale as Locale;
+  const faqItems = getFaqItems(typedLocale, kidsLandingFaqIds);
+
   return (
-    <LandingPageView locale={locale as Locale} slug={SLUG} />
+    <>
+      <JsonLd data={buildFaqJsonLd(typedLocale, kidsLandingFaqIds)} />
+      <LandingPageView locale={typedLocale} slug={SLUG} />
+      <FaqSection
+        title={
+          typedLocale === "en"
+            ? "Kids piano lessons FAQ"
+            : "儿童钢琴课常见问题"
+        }
+        intro={
+          typedLocale === "en"
+            ? "Common questions from parents before booking a trial lesson."
+            : "家长在预约试听前最常问的问题。"
+        }
+        items={faqItems}
+      />
+    </>
   );
 }

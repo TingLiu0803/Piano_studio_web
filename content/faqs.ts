@@ -201,6 +201,43 @@ export const adultLandingFaqIds: FaqId[] = [
   "adult-too-late",
 ];
 
+export const kidsLandingFaqIds: FaqId[] = [
+  "beginner-lessons",
+  "free-trial",
+  "need-piano-at-home",
+  "lesson-cost",
+  "areas-served",
+  "choose-teacher",
+];
+
+export const onlineLandingFaqIds: FaqId[] = [
+  "online-lessons",
+  "free-trial",
+  "need-piano-at-home",
+  "practice-frequency",
+  "lesson-cost",
+  "choose-teacher",
+];
+
+export const pianoLessonsSanJoseFaqIds: FaqId[] = [
+  "free-trial",
+  "areas-served",
+  "lesson-cost",
+  "adult-private-lessons",
+  "beginner-lessons",
+  "choose-teacher",
+  "online-lessons",
+];
+
+export const pianoTeacherSanJoseFaqIds: FaqId[] = [
+  "choose-teacher",
+  "free-trial",
+  "adult-private-lessons",
+  "beginner-lessons",
+  "areas-served",
+  "lesson-cost",
+];
+
 export function getFaqItems(locale: Locale, ids?: FaqId[]): FaqItem[] {
   const catalog = faqCatalog[locale];
   if (!ids || ids.length === 0) {
@@ -208,5 +245,7 @@ export function getFaqItems(locale: Locale, ids?: FaqId[]): FaqItem[] {
   }
 
   const allowed = new Set(ids);
-  return catalog.filter((item) => allowed.has(item.id));
+  return ids
+    .map((id) => catalog.find((item) => item.id === id))
+    .filter((item): item is FaqItem => Boolean(item) && allowed.has(item!.id));
 }
