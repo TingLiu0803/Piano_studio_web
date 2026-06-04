@@ -137,7 +137,7 @@ export const siteConfig = {
         "https://player.bilibili.com/player.html?bvid=BV1nYXPYHEQr&autoplay=0",
       watchUrl: "https://www.bilibili.com/video/BV1nYXPYHEQr",
       thumbnailUrl: "/og-default.jpg",
-      uploadDate: "2024-08-15",
+      uploadDate: "2024-08-15T12:00:00Z",
       duration: "PT6M00S",
     },
     {
@@ -149,7 +149,7 @@ export const siteConfig = {
         "https://player.bilibili.com/player.html?bvid=BV1TuDzB7EQS&autoplay=0",
       watchUrl: "https://www.bilibili.com/video/BV1TuDzB7EQS",
       thumbnailUrl: "/og-default.jpg",
-      uploadDate: "2024-09-10",
+      uploadDate: "2024-09-10T12:00:00Z",
       duration: "PT5M30S",
     },
     {
@@ -161,7 +161,7 @@ export const siteConfig = {
         "https://player.bilibili.com/player.html?bvid=BV1gqSEYNEtq&autoplay=0",
       watchUrl: "https://www.bilibili.com/video/BV1gqSEYNEtq",
       thumbnailUrl: "/og-default.jpg",
-      uploadDate: "2024-07-22",
+      uploadDate: "2024-07-22T12:00:00Z",
       duration: "PT4M45S",
     },
     {
@@ -173,7 +173,7 @@ export const siteConfig = {
         "https://player.bilibili.com/player.html?bvid=BV1GXkNBrEUk&autoplay=0",
       watchUrl: "https://www.bilibili.com/video/BV1GXkNBrEUk",
       thumbnailUrl: "/og-default.jpg",
-      uploadDate: "2024-06-18",
+      uploadDate: "2024-06-18T12:00:00Z",
       duration: "PT6M20S",
     },
     {
@@ -185,7 +185,7 @@ export const siteConfig = {
         "https://player.bilibili.com/player.html?bvid=BV18u411o7uu&autoplay=0",
       watchUrl: "https://www.bilibili.com/video/BV18u411o7uu",
       thumbnailUrl: "/og-default.jpg",
-      uploadDate: "2023-11-05",
+      uploadDate: "2023-11-05T12:00:00Z",
       duration: "PT7M15S",
     },
     {
@@ -197,7 +197,7 @@ export const siteConfig = {
         "https://player.bilibili.com/player.html?bvid=BV1H24y1f7Ls&autoplay=0",
       watchUrl: "https://www.bilibili.com/video/BV1H24y1f7Ls",
       thumbnailUrl: "/og-default.jpg",
-      uploadDate: "2023-09-12",
+      uploadDate: "2023-09-12T12:00:00Z",
       duration: "PT5M50S",
     },
   ],

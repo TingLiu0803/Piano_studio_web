@@ -28,15 +28,14 @@ export default function VideoCard({
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <article
-      itemScope
-      itemType="https://schema.org/VideoObject"
-      className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] shadow-sm"
-    >
-      <meta itemProp="name" content={title} />
-      <meta itemProp="description" content={description} />
-      <meta itemProp="embedUrl" content={embedUrl} />
-      <meta itemProp="contentUrl" content={watchUrl} />
+    <article className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] shadow-sm">
+      {/*
+        Intentionally no microdata here. A full VideoObject (with uploadDate,
+        thumbnailUrl, duration, publisher, etc.) is emitted once via JSON-LD in
+        `lib/seo.ts` → `buildVideoNodes`. Duplicating it as microdata caused
+        Google Search Console to report missing `uploadDate`/`thumbnailUrl`
+        because this card cannot supply those fields from its props.
+      */}
       <div className="aspect-video w-full bg-[color:var(--surface-muted)]">
         {loaded ? (
           <iframe
