@@ -548,7 +548,16 @@ function buildCourseNodes(locale: Locale, baseUrl: string) {
   }));
 }
 
-/** Individual Review nodes derived from on-page testimonials. */
+/**
+ * Individual Review nodes derived from on-page testimonials.
+ *
+ * NOTE: `itemReviewed` is intentionally omitted. These Review nodes are nested
+ * inside the parent `LocalBusiness.review` array, so the reviewed entity is
+ * implied by the parent. Including `itemReviewed` here creates a circular
+ * reference that Google Search Console flags as a structured-data warning
+ * ("A nested object can't contain the 'itemReviewed' field"). Same reason for
+ * omitting `publisher` — the parent context already provides it.
+ */
 function buildReviewNodes(locale: Locale, baseUrl: string) {
   const localized = content[locale];
   return localized.testimonials.map((t, idx) => ({
@@ -562,8 +571,6 @@ function buildReviewNodes(locale: Locale, baseUrl: string) {
       bestRating: "5",
       worstRating: "1",
     },
-    itemReviewed: { "@id": `${baseUrl}/#music-school` },
-    publisher: { "@id": `${baseUrl}/#music-school` },
   }));
 }
 
