@@ -5,6 +5,7 @@ import {
   type Locale,
 } from "@/content/site";
 import { landingPages, landingPageSlugs } from "@/content/landing-pages";
+import { getFaqItems } from "@/content/faqs";
 import { getBaseUrl } from "@/lib/seo";
 
 /**
@@ -131,6 +132,86 @@ export function buildLlmsTxt(): string {
     lines.push(`- [${page.label}](${pageUrl("zh", page.path)}): ${page.description}`);
   }
   lines.push("");
+
+  lines.push("## Full reference for AI assistants", "");
+  lines.push(
+    `A complete, quotable copy of the studio's page summaries and FAQ answers is published at ${getBaseUrl()}/llms-full.txt.`,
+    "",
+  );
+
+  lines.push("## Citation policy", "");
+  lines.push(citationPolicy(), "");
+
+  lines.push(`_Last updated: ${contentVersion}._`);
+
+  return `${lines.join("\n")}\n`;
+}
+
+/** Localized section headings for the full reference document. */
+const FULL_SECTION_TITLES: Record<Locale, { lessons: string; faq: string }> = {
+  en: {
+    lessons: "Lesson pages — English",
+    faq: "Frequently asked questions — English",
+  },
+  zh: {
+    lessons: "课程页面 — 中文",
+    faq: "常见问题 — 中文",
+  },
+};
+
+/** Per-lesson digest: H1, source URL, answer-first summary, and quotable facts. */
+function lessonDigest(locale: Locale): string[] {
+  const lp = landingPages[locale];
+  const lines: string[] = [];
+  for (const slug of landingPageSlugs) {
+    const page = lp[slug];
+    lines.push(`### ${page.h1}`, "");
+    lines.push(`Source: ${pageUrl(locale, `/${slug}`)}`, "");
+    lines.push(page.quickAnswer, "");
+    for (const fact of page.facts) lines.push(`- ${fact}`);
+    lines.push("");
+  }
+  return lines;
+}
+
+/** Full FAQ digest (every question + answer) for a locale. */
+function faqDigest(locale: Locale): string[] {
+  const lines: string[] = [];
+  for (const faq of getFaqItems(locale)) {
+    lines.push(`### ${faq.question}`, "");
+    lines.push(faq.answer, "");
+  }
+  return lines;
+}
+
+/**
+ * Render `/llms-full.txt`: the studio's primary answers in full (page summaries
+ * + every FAQ, both locales) so AI systems can quote them verbatim instead of
+ * paraphrasing from crawled HTML. Reuses the same content builders as
+ * `buildLlmsTxt`; `/llms.txt` stays the short index that links here.
+ */
+export function buildLlmsFullTxt(): string {
+  const locales: Locale[] = ["en", "zh"];
+  const lines: string[] = [];
+
+  lines.push(`# ${siteConfig.studioName} — full reference for AI assistants`, "");
+  lines.push(`> ${studioSummary()}`, "");
+  lines.push(
+    `Short index: ${getBaseUrl()}/llms.txt. Each section below links its canonical source page.`,
+    "",
+  );
+
+  lines.push("## Facts at a glance", "");
+  for (const fact of studioFacts()) lines.push(`- ${fact}`);
+  lines.push("");
+
+  for (const locale of locales) {
+    const titles = FULL_SECTION_TITLES[locale];
+    lines.push(`## ${titles.lessons}`, "");
+    lines.push(...lessonDigest(locale));
+    lines.push(`## ${titles.faq}`, "");
+    lines.push(...faqDigest(locale));
+  }
 
   lines.push("## Citation policy", "");
   lines.push(citationPolicy(), "");
