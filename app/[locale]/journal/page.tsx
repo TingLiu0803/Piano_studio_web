@@ -7,9 +7,10 @@ import AuthorByline from "@/components/AuthorByline";
 import { buildMetadata } from "@/lib/seo";
 
 // Journal is temporarily hidden while SEO/GEO-optimized articles are rewritten.
-// To re-enable: flip JOURNAL_ENABLED back to true, re-add `/journal` to
-// `app/sitemap.ts` and `public/llms.txt`, restore the nav link in
-// `components/SiteHeader.tsx`, and re-add `relatedLinks` in `content/landing-pages.ts`.
+// To re-enable: flip JOURNAL_ENABLED back to true, add `/journal` back to
+// `app/sitemap.ts` and to the canonical page list in `lib/llms.ts`, restore the
+// nav link in `components/SiteHeader.tsx`, and re-add `relatedLinks` in
+// `content/landing-pages.ts`.
 const JOURNAL_ENABLED = false;
 
 export async function generateMetadata({

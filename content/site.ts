@@ -34,6 +34,13 @@ export const siteConfig = {
   lessonFormats: ["In-person", "Online"],
   ageRange: "Ages 5+",
   pricingNote: "Affordable rates - Contact for pricing",
+  /**
+   * Canonical, machine-readable one-line teacher credential summary. Single
+   * source of truth for the AI-facing `/llms.txt` endpoint (see `lib/llms.ts`)
+   * so the studio's headline facts can never drift from a hand-written file.
+   */
+  teacherCredentialSummary:
+    "8+ years teaching; 60+ students personally coached; classical training under Erna Gulabyan (San Francisco Conservatory of Music) and Frank Levy (Stanford University); software engineer with four years of Silicon Valley experience.",
   /** Schema.org priceRange token (`$`, `$$`, `$$$`, `$$$$`) for LocalBusiness. */
   priceRangeToken: "$$",
   email: "mr.tingliu@gmail.com",
@@ -73,8 +80,9 @@ export const siteConfig = {
    * Feeds Person `sameAs` — high-leverage GEO signal that lets LLMs unify the
    * teacher entity across the web.
    */
+  // Add more profiles (LinkedIn, Wikidata, etc.) here as accounts are claimed.
   ownerProfiles: [
-    "https://space.bilibili.com/", // TODO: replace with full Bilibili creator URL
+    "https://space.bilibili.com/5349076", // Eric Liu — Bilibili creator profile
   ] as string[],
   /**
    * Public asset URLs. The OG default ships as a real 1200x630 JPEG; the
