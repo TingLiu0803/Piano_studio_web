@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
@@ -12,6 +12,15 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Display face for H1/H2 ("Ivory & Felt" design system). opsz axis: elegant
+// at large sizes, sturdy at small. Applied via the h1/h2 rule in globals.css.
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  axes: ["opsz"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -33,7 +42,7 @@ export default async function RootLayout({
   return (
     <html lang={htmlLang}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen text-[color:var(--foreground)] antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} min-h-screen text-[color:var(--foreground)] antialiased`}
       >
         {children}
         <Analytics />

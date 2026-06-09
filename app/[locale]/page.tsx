@@ -117,7 +117,7 @@ export default async function LocaleHome({
                   href={`/${locale}/trial`}
                   data-ga-event="trial_cta_click"
                   data-ga-placement="hero_primary"
-                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-5 py-2.5 text-center text-sm font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)] sm:px-6 sm:py-3"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-5 py-2.5 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)] sm:px-6 sm:py-3"
                 >
                   {localized.hero.primaryCta}
                 </Link>
@@ -125,13 +125,13 @@ export default async function LocaleHome({
                   href="https://www.musicnbrain.com/"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--accent)] bg-[color:var(--surface)] px-5 py-2.5 text-center text-sm font-semibold leading-snug text-[color:var(--accent-foreground)] transition hover:border-[color:var(--link)] sm:px-6 sm:py-3"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--accent)] bg-[color:var(--surface)] px-5 py-2.5 text-center text-base font-semibold leading-snug text-[color:var(--foreground)] transition hover:border-[color:var(--link)] sm:px-6 sm:py-3"
                 >
                   {localized.sections.partnershipCta}
                 </a>
                 <a
                   href="#bilibili-videos"
-                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--border)] px-5 py-2.5 text-center text-sm font-semibold leading-snug transition hover:border-[color:var(--foreground)] sm:px-6 sm:py-3"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--border)] px-5 py-2.5 text-center text-base font-semibold leading-snug transition hover:border-[color:var(--foreground)] sm:px-6 sm:py-3"
                 >
                   {localized.hero.secondaryCta}
                 </a>
@@ -139,7 +139,7 @@ export default async function LocaleHome({
                   href="#lesson-options"
                   data-ga-event="lesson_hub_nav_click"
                   data-ga-placement="hero"
-                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--accent)] bg-[color:var(--surface)] px-5 py-2.5 text-center text-sm font-semibold leading-snug text-[color:var(--foreground)] transition hover:border-[color:var(--foreground)] sm:px-6 sm:py-3"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--accent)] bg-[color:var(--surface)] px-5 py-2.5 text-center text-base font-semibold leading-snug text-[color:var(--foreground)] transition hover:border-[color:var(--foreground)] sm:px-6 sm:py-3"
                 >
                   {localized.hero.browseAllLessonTypes}
                 </Link>
@@ -281,7 +281,7 @@ export default async function LocaleHome({
               href={`/${locale}/trial`}
               data-ga-event="trial_cta_click"
               data-ga-placement="mid_page_band"
-              className="inline-flex min-h-11 w-full shrink-0 items-center justify-center rounded-full bg-[color:var(--primary)] px-5 py-2.5 text-center text-sm font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)] sm:w-auto sm:px-6 sm:py-3"
+              className="inline-flex min-h-11 w-full shrink-0 items-center justify-center rounded-full bg-[color:var(--primary)] px-5 py-2.5 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)] sm:w-auto sm:px-6 sm:py-3"
             >
               {localized.hero.primaryCta}
             </Link>
@@ -305,7 +305,7 @@ export default async function LocaleHome({
               </p>
             </div>
             <div className="rounded-2xl border border-[color:var(--accent)] bg-[color:var(--tag)] p-6">
-              <p className="text-sm font-semibold text-[color:var(--accent-foreground)]">
+              <p className="text-sm font-semibold text-[color:var(--foreground)]">
                 MusicNBrain
               </p>
               <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">
@@ -348,7 +348,7 @@ export default async function LocaleHome({
                 href={`/${locale}/trial`}
                 data-ga-event="trial_cta_click"
                 data-ga-placement="home_services_aside"
-                className="mt-4 inline-flex min-h-10 w-full items-center justify-center rounded-full bg-[color:var(--primary)] px-4 py-2 text-center text-xs font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
+                className="mt-4 inline-flex min-h-10 w-full items-center justify-center rounded-full bg-[color:var(--primary)] px-4 py-2 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
               >
                 {localized.hero.primaryCta}
               </Link>
@@ -413,7 +413,7 @@ export default async function LocaleHome({
                 href={`/${locale}/trial`}
                 data-ga-event="trial_cta_click"
                 data-ga-placement="home_footer"
-                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-sm font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
               >
                 {localized.hero.primaryCta}
               </Link>

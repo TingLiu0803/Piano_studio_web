@@ -68,7 +68,7 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
               href={`/${locale}/trial`}
               data-ga-event="trial_cta_click"
               data-ga-placement="landing_intro"
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-sm font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
             >
               {localized.hero.primaryCta}
             </Link>
@@ -76,7 +76,7 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
               href={`/${locale}/contact`}
               data-ga-event="contact_cta_click"
               data-ga-placement="landing_intro"
-              className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--border)] px-6 py-3 text-center text-sm font-semibold leading-snug transition hover:border-[color:var(--foreground)]"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--border)] px-6 py-3 text-center text-base font-semibold leading-snug transition hover:border-[color:var(--foreground)]"
             >
               {localized.nav.contact}
             </Link>
@@ -168,7 +168,7 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
               href={`/${locale}/trial`}
               data-ga-event="trial_cta_click"
               data-ga-placement="landing_next_step"
-              className="mt-4 inline-flex min-h-10 items-center justify-center rounded-full bg-[color:var(--primary)] px-5 py-2.5 text-sm font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
+              className="mt-4 inline-flex min-h-10 items-center justify-center rounded-full bg-[color:var(--primary)] px-5 py-2.5 text-base font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
             >
               {localized.hero.primaryCta}
             </Link>
@@ -224,7 +224,7 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
                 href={`/${locale}/trial`}
                 data-ga-event="trial_cta_click"
                 data-ga-placement="landing_footer"
-                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-sm font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
               >
                 {localized.hero.primaryCta}
               </Link>
@@ -232,7 +232,7 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
                 href={`/${locale}/contact`}
                 data-ga-event="contact_cta_click"
                 data-ga-placement="landing_footer"
-                className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 px-6 py-3 text-center text-sm font-semibold leading-snug text-[color:var(--surface-inverse-foreground)] transition hover:border-white/60"
+                className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 px-6 py-3 text-center text-base font-semibold leading-snug text-[color:var(--surface-inverse-foreground)] transition hover:border-white/60"
               >
                 {localized.nav.contact}
               </Link>

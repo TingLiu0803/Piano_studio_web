@@ -51,7 +51,7 @@ export default function VideoCard({
             onClick={() => setLoaded(true)}
             data-ga-event="bilibili_video_play"
             data-ga-title={title}
-            className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[color:var(--surface-muted)] to-[color:var(--tag)] text-sm font-semibold text-[color:var(--accent-foreground)] transition hover:opacity-90"
+            className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[color:var(--surface-muted)] to-[color:var(--tag)] text-sm font-semibold text-[color:var(--foreground)] transition hover:opacity-90"
             aria-label={`${loadLabel}: ${title}`}
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--accent)] bg-[color:var(--surface)] px-4 py-2 text-[color:var(--foreground)] shadow-sm">

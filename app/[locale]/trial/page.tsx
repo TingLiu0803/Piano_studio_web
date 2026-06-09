@@ -51,7 +51,7 @@ export default async function TrialPage({
                   href={bookingUrl}
                   data-ga-event="trial_booking_click"
                   data-ga-placement="trial_calendar"
-                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-sm font-semibold leading-snug text-[color:var(--primary-foreground)] shadow-sm transition hover:bg-[color:var(--primary-hover)]"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] shadow-sm transition hover:bg-[color:var(--primary-hover)]"
                   target="_blank"
                   rel="noreferrer"
                 >

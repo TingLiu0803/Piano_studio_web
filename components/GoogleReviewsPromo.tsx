@@ -35,7 +35,7 @@ function StarRow({
 }
 
 const ctaButtonClass =
-  "inline-flex shrink-0 items-center justify-center rounded-full bg-[color:var(--primary)] px-5 py-2.5 text-sm font-semibold text-[color:var(--primary-foreground)] shadow-sm transition hover:bg-[color:var(--primary-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--primary)]";
+  "inline-flex shrink-0 items-center justify-center rounded-full bg-[color:var(--primary)] px-5 py-2.5 text-base font-semibold text-[color:var(--primary-foreground)] shadow-sm transition hover:bg-[color:var(--primary-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--primary)]";
 
 type GoogleReviewsPromoProps = {
   locale: Locale;

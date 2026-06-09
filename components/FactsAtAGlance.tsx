@@ -21,10 +21,10 @@ export default function FactsAtAGlance({
   return (
     <aside
       data-facts="studio"
-      className="rounded-3xl border border-[color:var(--accent)] bg-[color:var(--tag)] px-6 py-6 text-[color:var(--accent-foreground)] shadow-sm"
+      className="rounded-3xl border border-[color:var(--accent)] bg-[color:var(--tag)] px-6 py-6 text-[color:var(--foreground)] shadow-sm"
     >
       {eyebrow ? (
-        <p className="text-[10px] font-semibold uppercase tracking-[0.25em]">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[color:var(--tag-foreground)]">
           {eyebrow}
         </p>
       ) : null}
@@ -37,7 +37,7 @@ export default function FactsAtAGlance({
           >
             <span
               aria-hidden
-              className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--accent-foreground)]"
+              className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--accent)]"
             />
             <span>{fact}</span>
           </li>

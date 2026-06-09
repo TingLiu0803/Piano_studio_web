@@ -113,8 +113,8 @@ export default async function JournalArticlePage({ params }: Params) {
         ))}
 
         {article.howTo ? (
-          <section className="rounded-3xl border border-[color:var(--accent)] bg-[color:var(--tag)] p-8 text-[color:var(--accent-foreground)] shadow-sm">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em]">
+          <section className="rounded-3xl border border-[color:var(--accent)] bg-[color:var(--tag)] p-8 text-[color:var(--foreground)] shadow-sm">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--tag-foreground)]">
               {howToTitle}
             </p>
             <h2 className="mt-1 text-xl font-semibold">{article.howTo.name}</h2>
@@ -170,7 +170,7 @@ export default async function JournalArticlePage({ params }: Params) {
               href={`/${typed}/trial`}
               data-ga-event="trial_cta_click"
               data-ga-placement="article_footer"
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-sm font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
             >
               {typed === "en" ? "Book a free trial lesson" : "预约免费试听"}
             </Link>

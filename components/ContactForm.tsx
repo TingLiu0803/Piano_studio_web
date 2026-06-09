@@ -77,7 +77,7 @@ export default function ContactForm({
       />
       <button
         type="submit"
-        className="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-sm font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)] sm:w-auto"
+        className="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-base font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)] sm:w-auto"
       >
         {submitLabel}
       </button>

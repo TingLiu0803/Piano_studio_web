@@ -317,7 +317,6 @@ export const content = {
       partnershipBoardMemberBody:
         "I serve as one of the board members at MusicNBrain, and I bring that same nonprofit service mindset into every lesson, recital, and student pathway we build together.",
       partnershipCta: "Visit MusicNBrain",
-      readMoreDetails: "Read full detail",
       midPageTrialTitle: "Ready to try a lesson?",
       landingPartnerFooter:
         "Nonprofit partner MusicNBrain supports youth performances and community pathways for students.",
@@ -499,7 +498,6 @@ export const content = {
       partnershipBoardMemberBody:
         "我本人也是 MusicNBrain 的理事会成员之一，并将同样的公益服务理念带入每一节课程、每一次汇演与每一位学生的发展路径中。",
       partnershipCta: "访问 MusicNBrain 官网",
-      readMoreDetails: "展开详情",
       midPageTrialTitle: "想先试听一节课？",
       landingPartnerFooter:
         "公益合作伙伴 MusicNBrain：支持青少年舞台实践与社区音乐项目。",
