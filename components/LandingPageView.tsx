@@ -17,40 +17,21 @@ type LandingPageViewProps = {
   slug: LandingPageSlug;
 };
 
-function SectionContent({
-  section,
-  readMoreLabel,
-}: {
-  section: LandingSection;
-  readMoreLabel: string;
-}) {
+function SectionContent({ section }: { section: LandingSection }) {
   const hasBullets = Boolean(section.bullets?.length);
-  const isQuestionHeading = section.heading.includes("?");
-  const useDetails = !isQuestionHeading && (hasBullets || section.body.length > 260);
 
   return (
     <>
       {hasBullets ? (
-        <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-[color:var(--muted-foreground)]">
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-base text-[color:var(--muted-foreground)]">
           {section.bullets!.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
       ) : null}
-      {useDetails ? (
-        <details className="mt-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-4 py-3">
-          <summary className="cursor-pointer text-sm font-semibold text-[color:var(--link)]">
-            {readMoreLabel}
-          </summary>
-          <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
-            {section.body}
-          </p>
-        </details>
-      ) : (
-        <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
-          {section.body}
-        </p>
-      )}
+      <p className="mt-3 text-base leading-relaxed text-[color:var(--muted-foreground)]">
+        {section.body}
+      </p>
     </>
   );
 }
@@ -59,7 +40,6 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
   const data = landingPages[locale][slug];
   const localized = content[locale];
   const path = `/${locale}/${slug}`;
-  const readMore = localized.sections.readMoreDetails;
 
   const quickAnswerLabel = locale === "en" ? "Quick answer" : "速答";
   const factsTitle = locale === "en" ? "Facts at a glance" : "一眼速览";
@@ -80,7 +60,7 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
           <div className="mt-3">
             <AuthorByline locale={locale} />
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
+          <p className="mt-4 text-base leading-relaxed text-[color:var(--muted-foreground)]">
             {data.intro}
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -119,7 +99,7 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
             <h2 className="text-xl font-semibold text-[color:var(--foreground)]">
               {section.heading}
             </h2>
-            <SectionContent section={section} readMoreLabel={readMore} />
+            <SectionContent section={section} />
           </section>
         ))}
 
@@ -128,11 +108,11 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
             <h2 className="text-xl font-semibold text-[color:var(--foreground)]">
               {data.neighborhoods.heading || neighborhoodsDefault}
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
+            <p className="mt-3 text-base leading-relaxed text-[color:var(--muted-foreground)]">
               {data.neighborhoods.body}
             </p>
             {data.neighborhoods.bullets?.length ? (
-              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-[color:var(--muted-foreground)]">
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-base text-[color:var(--muted-foreground)]">
                 {data.neighborhoods.bullets.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
@@ -171,7 +151,7 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
                         {item.question}
                       </a>
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
+                    <p className="mt-2 text-base leading-relaxed text-[color:var(--muted-foreground)]">
                       {item.answer}
                     </p>
                   </article>
@@ -183,7 +163,7 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
 
         {data.nextStep ? (
           <section className="rounded-3xl border border-[color:var(--accent)] bg-[color:var(--accent)] px-6 py-6 text-[color:var(--accent-foreground)] shadow-md">
-            <p className="text-sm leading-relaxed">{data.nextStep}</p>
+            <p className="text-base leading-relaxed">{data.nextStep}</p>
             <Link
               href={`/${locale}/trial`}
               data-ga-event="trial_cta_click"
@@ -235,7 +215,7 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="text-xl font-semibold">{localized.trial.title}</h2>
-              <p className="mt-2 text-sm opacity-90">
+              <p className="mt-2 text-base opacity-90">
                 {localized.trial.description}
               </p>
             </div>

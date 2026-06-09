@@ -55,7 +55,7 @@ export default function SiteFooter({ locale }: SiteFooterProps) {
           {localized.seo.description}
         </p>
         <span className="text-xs">
-          {new Date().getFullYear()} {siteConfig.studioName}. All rights
+          © {new Date().getFullYear()} {siteConfig.studioName}. All rights
           reserved.
         </span>
       </div>
