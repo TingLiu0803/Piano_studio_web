@@ -59,8 +59,8 @@ export default async function JournalListPage({
     <>
       <BreadcrumbJsonLd locale={typed} path={`/${typed}/journal`} />
       <div className="flex flex-col gap-10">
-        <header className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
-          <h1 className="text-3xl font-semibold text-[color:var(--foreground)] md:text-4xl">
+        <header className="rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
+          <h1 className="text-3xl font-black tracking-[-0.01em] text-[color:var(--foreground)] md:text-4xl">
             {sectionTitle}
           </h1>
           <div className="mt-2">
@@ -78,12 +78,12 @@ export default async function JournalListPage({
                 href={`/${typed}/journal/${article.slug}`}
                 data-ga-event="journal_card_click"
                 data-ga-slug={article.slug}
-                className="flex h-full flex-col gap-3 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-sm transition hover:border-[color:var(--foreground)] hover:shadow-md"
+                className="flex h-full flex-col gap-3 rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-sm transition hover:border-[color:var(--foreground)] hover:shadow-md"
               >
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--tag-foreground)]">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[color:var(--tag-foreground)]">
                   {article.category}
                 </span>
-                <h2 className="text-lg font-semibold text-[color:var(--foreground)]">
+                <h2 className="text-lg font-bold text-[color:var(--foreground)]">
                   {article.title}
                 </h2>
                 <p className="text-sm leading-relaxed text-[color:var(--muted-foreground)]">

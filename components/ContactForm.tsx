@@ -3,6 +3,8 @@
 import { useState } from "react";
 import type { Locale } from "@/content/site";
 import { sendGaEvent } from "@/lib/analytics-events";
+import Input from "@/components/ui/Input";
+import Button from "@/components/ui/Button";
 
 type ContactFormProps = {
   locale: Locale;
@@ -50,42 +52,26 @@ export default function ContactForm({
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="grid gap-4 md:grid-cols-2">
-        <input
-          name="name"
-          required
-          placeholder="Name / 姓名"
-          className="w-full rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted-foreground)]"
-        />
-        <input
-          name="email"
-          type="email"
-          required
-          placeholder="Email / 邮箱"
-          className="w-full rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted-foreground)]"
-        />
+        <Input id="cf-name" name="name" label="Name / 姓名" required />
+        <Input id="cf-email" name="email" type="email" label="Email / 邮箱" required />
       </div>
-      <input
-        name="phone"
-        placeholder="Phone (optional) / 电话"
-        className="w-full rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted-foreground)]"
-      />
-      <textarea
+      <Input id="cf-phone" name="phone" type="tel" label="Phone (optional) / 电话" />
+      <Input
+        id="cf-message"
         name="message"
-        rows={5}
-        placeholder="Tell us about the student / 简要说明学习需求"
-        className="w-full rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted-foreground)]"
+        multiline
+        label="Tell us about the student / 简要说明学习需求"
       />
-      <button
-        type="submit"
-        className="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-sm font-semibold text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)] sm:w-auto"
-      >
-        {submitLabel}
-      </button>
+      <div>
+        <Button type="submit" variant="primary" size="lg">
+          {submitLabel}
+        </Button>
+      </div>
       {status === "success" && (
-        <p className="text-sm text-[color:var(--success)]">{successMessage}</p>
+        <p className="text-sm font-bold text-[color:var(--success)]">{successMessage}</p>
       )}
       {status === "error" && (
-        <p className="text-sm text-[color:var(--error)]">
+        <p className="text-sm font-bold text-[color:var(--error)]">
           Something went wrong. Please try again.
         </p>
       )}

@@ -1,3 +1,5 @@
+import Icon from "@/components/ui/Icon";
+
 type QuickAnswerProps = {
   /** Localized eyebrow label (e.g. "Quick answer" / "速答"). */
   label: string;
@@ -13,15 +15,18 @@ type QuickAnswerProps = {
 export default function QuickAnswer({ label, text }: QuickAnswerProps) {
   return (
     <aside
-      className="quick-answer rounded-3xl border-l-4 border-[color:var(--accent)] bg-[color:var(--surface-muted)] px-6 py-5 shadow-sm"
+      className="quick-answer flex items-start gap-3.5 rounded-[var(--radius-md)] bg-[color:var(--status-active-bg)] px-[22px] py-5"
       aria-label={label}
     >
-      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[color:var(--tag-foreground)]">
-        {label}
-      </p>
-      <p className="mt-2 text-base leading-relaxed text-[color:var(--foreground)]">
-        {text}
-      </p>
+      <Icon name="bolt" size={24} style={{ color: "var(--status-active-text)", flexShrink: 0, marginTop: "1px" }} />
+      <div>
+        <p className="text-[length:var(--text-label)] font-bold uppercase tracking-[var(--tracking-label)] text-[color:var(--status-active-text)]">
+          {label}
+        </p>
+        <p className="mt-1.5 text-base leading-relaxed text-[color:var(--text-body,var(--foreground))]">
+          {text}
+        </p>
+      </div>
     </aside>
   );
 }

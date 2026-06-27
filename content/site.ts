@@ -6,7 +6,7 @@ export type Locale = (typeof locales)[number];
  * change so that JSON-LD `dateModified` and `Article.dateModified` stay
  * accurate; LLM crawlers use this signal to decide whether to re-cite.
  */
-export const contentVersion = "2026-05-28";
+export const contentVersion = "2026-06-26";
 
 export const siteConfig = {
   studioName: "Eric Liu Piano Studio",
@@ -139,6 +139,7 @@ export const siteConfig = {
     {
       bvid: "BV1nYXPYHEQr",
       title: "Liszt Sonata In B Minor (Excerpt)",
+      caption: "Liszt · Sonata in B minor",
       description:
         "Studio performance excerpt of Franz Liszt's Sonata in B Minor by Eric Liu, recorded for the Eric Liu Piano Studio in San Jose.",
       embedUrl:
@@ -151,6 +152,7 @@ export const siteConfig = {
     {
       bvid: "BV1TuDzB7EQS",
       title: "Chopin Nocturne in C minor, Op.48 No.1 (Excerpt)",
+      caption: "Chopin · Nocturne Op. 48 No. 1",
       description:
         "Performance excerpt of Chopin Nocturne Op. 48 No. 1 in C minor by Eric Liu, illustrating phrasing and tone control taught in studio.",
       embedUrl:
@@ -163,6 +165,7 @@ export const siteConfig = {
     {
       bvid: "BV1gqSEYNEtq",
       title: "Beethoven Piano Sonata No.28, Op.101 1st movement",
+      caption: "Beethoven · Sonata Op. 101, mvt. 1",
       description:
         "Beethoven Piano Sonata No. 28 Op. 101 first movement, performed by Eric Liu — example of late-Beethoven phrasing and voicing.",
       embedUrl:
@@ -175,6 +178,7 @@ export const siteConfig = {
     {
       bvid: "BV1GXkNBrEUk",
       title: "Mozart Sonata K. 576, 2nd movement",
+      caption: "Mozart · Sonata K. 576, mvt. 2",
       description:
         "Mozart Sonata K. 576, second movement, performed by Eric Liu — example of classical-era cantabile and pedaling decisions.",
       embedUrl:
@@ -187,6 +191,7 @@ export const siteConfig = {
     {
       bvid: "BV18u411o7uu",
       title: "Chopin: Nocturne in B major, Op. 62 No. 1",
+      caption: "Chopin · Nocturne Op. 62 No. 1",
       description:
         "Chopin Nocturne in B major Op. 62 No. 1, performed by Eric Liu — late-Chopin counterpoint and tone hierarchy.",
       embedUrl:
@@ -199,6 +204,7 @@ export const siteConfig = {
     {
       bvid: "BV1H24y1f7Ls",
       title: "Bach: Partita for Keyboard No. 6, BWV 830 (Excerpt)",
+      caption: "Bach · Partita No. 6, BWV 830",
       description:
         "Bach Keyboard Partita No. 6 BWV 830, excerpt performed by Eric Liu — example of articulation and voice-leading in Bach.",
       embedUrl:
@@ -242,7 +248,7 @@ export const content = {
         "San Jose piano teacher for adults, adult beginners, restarters, and kids 5+: in-person near San Jose & Sunnyvale or online. Private 1:1 only—clear weekly plans, strong technique, and musicality. Free trial; most inquiries get a same-day reply.",
       primaryCta: "Book a free trial lesson",
       secondaryCta: "View performances",
-      ctaNote: "Fast reply: most families get a response within the same day.",
+      ctaNote: "No credit card. Same-day reply on most inquiries.",
       lessonsPageLink: "San Jose piano lessons (private 1:1, in-person & online)",
       adultLessonsPageLink: "Private adult piano lessons in San Jose",
       teacherPageLink: "San Jose piano teacher for adults & kids",
@@ -299,7 +305,7 @@ export const content = {
       ],
     },
     sections: {
-      performancesTitle: "Example performances",
+      performancesTitle: "Hear the playing behind the teaching",
       performancesDescription:
         "I am honored to have 2k followers on Bilibili. Follow me to see more performances and videos.",
       testimonialsTitle: "Student and parent testimonials",
@@ -317,10 +323,42 @@ export const content = {
       partnershipBoardMemberBody:
         "I serve as one of the board members at MusicNBrain, and I bring that same nonprofit service mindset into every lesson, recital, and student pathway we build together.",
       partnershipCta: "Visit MusicNBrain",
-      readMoreDetails: "Read full detail",
       midPageTrialTitle: "Ready to try a lesson?",
       landingPartnerFooter:
         "Nonprofit partner MusicNBrain supports youth performances and community pathways for students.",
+    },
+    howItWorks: {
+      eyebrow: "How it works",
+      title: "From first message to weekly progress",
+      subtitle:
+        "A simple path to your first lesson—no commitment, no group classes, just a plan built around you.",
+      steps: [
+        {
+          icon: "calendar_month",
+          label: "Step 1",
+          title: "Book a free trial",
+          body: "Send your goals and availability. Most families get a same-day reply and a time that fits.",
+        },
+        {
+          icon: "person",
+          label: "Step 2",
+          title: "Meet 1:1 and set a plan",
+          body: "We talk through your level and goals, then build a private, one-on-one plan—never a group class.",
+        },
+        {
+          icon: "music_note",
+          label: "Step 3",
+          title: "Hear weekly progress",
+          body: "Clear weekly assignments target one thing at a time, so technique and musicality grow you can hear.",
+        },
+      ],
+    },
+    meetTeacher: {
+      eyebrow: "Meet your teacher",
+      title: "Eric Liu — San Jose piano teacher",
+      subtitle:
+        "Software engineer turned pianist: classical depth, an engineer's structure, and 1:1 lessons built around your goals.",
+      cta: "Read the full bio",
     },
     trial: {
       title: "Book a free trial lesson",
@@ -426,7 +464,7 @@ export const content = {
         "圣何塞钢琴老师：面向成人初学者、重拾者与儿童（5岁+）的一对一私教；圣何塞、森尼维尔及周边线下，亦可线上。每周清晰作业、扎实技巧与可感知的音乐表现。免费试听；多数咨询当天回复。",
       primaryCta: "预约免费试听",
       secondaryCta: "观看演出视频",
-      ctaNote: "快速回复：大多数家庭当天即可收到答复。",
+      ctaNote: "无需信用卡，多数咨询当天回复。",
       lessonsPageLink: "圣何塞钢琴课程（一对一私教 · 线下与线上）",
       adultLessonsPageLink: "圣何塞成人钢琴私教",
       teacherPageLink: "圣何塞钢琴老师（成人与儿童）",
@@ -481,7 +519,7 @@ export const content = {
       ],
     },
     sections: {
-      performancesTitle: "示例演出",
+      performancesTitle: "听见教学背后的演奏",
       performancesDescription:
         "我在哔哩哔哩拥有约2000名关注者，欢迎关注查看更多演出与视频。",
       testimonialsTitle: "学生与家长评价",
@@ -499,10 +537,42 @@ export const content = {
       partnershipBoardMemberBody:
         "我本人也是 MusicNBrain 的理事会成员之一，并将同样的公益服务理念带入每一节课程、每一次汇演与每一位学生的发展路径中。",
       partnershipCta: "访问 MusicNBrain 官网",
-      readMoreDetails: "展开详情",
       midPageTrialTitle: "想先试听一节课？",
       landingPartnerFooter:
         "公益合作伙伴 MusicNBrain：支持青少年舞台实践与社区音乐项目。",
+    },
+    howItWorks: {
+      eyebrow: "上课流程",
+      title: "从第一条留言到每周可见的进步",
+      subtitle:
+        "通往第一节课的简单路径——无需承诺、不设团课，只有为你量身设计的计划。",
+      steps: [
+        {
+          icon: "calendar_month",
+          label: "第一步",
+          title: "预约免费试听",
+          body: "告诉我你的目标与时间安排，大多数家庭当天即可收到答复与合适的时间。",
+        },
+        {
+          icon: "person",
+          label: "第二步",
+          title: "一对一沟通并制定计划",
+          body: "我们先了解你的程度与目标，再制定专属的一对一计划——绝不团课。",
+        },
+        {
+          icon: "music_note",
+          label: "第三步",
+          title: "听见每周的进步",
+          body: "每周清晰的作业每次只攻克一个重点，让技巧与音乐表现稳步成长、清晰可闻。",
+        },
+      ],
+    },
+    meetTeacher: {
+      eyebrow: "认识老师",
+      title: "Eric Liu — 圣何塞钢琴老师",
+      subtitle:
+        "工程师转型的钢琴家：扎实的古典功底、工程师般的结构化方法，以及围绕你目标的一对一教学。",
+      cta: "查看完整介绍",
     },
     trial: {
       title: "预约免费试听课",

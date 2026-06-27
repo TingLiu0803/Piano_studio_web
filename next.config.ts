@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Pin Turbopack's workspace root to this project directory. Without this,
+  // `next dev` (Turbopack) mis-infers the root as the parent folder
+  // (e:\MusicNBrain) and fails to resolve CSS package imports like
+  // `@import "tailwindcss"` from node_modules. `next build` was unaffected.
+  turbopack: {
+    root: __dirname,
+  },
   async redirects() {
     return [
       {
