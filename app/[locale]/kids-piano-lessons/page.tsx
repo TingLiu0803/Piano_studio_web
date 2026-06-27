@@ -37,6 +37,7 @@ export default async function KidsPianoLessonsPage({
       <JsonLd data={buildFaqJsonLd(typedLocale, kidsLandingFaqIds)} />
       <LandingPageView locale={typedLocale} slug={SLUG} />
       <FaqSection
+        banded
         title={
           typedLocale === "en"
             ? "Kids piano lessons FAQ"

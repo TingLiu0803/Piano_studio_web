@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { type Locale, content, siteConfig } from "@/content/site";
 import { getFaqItems, homeFaqIds } from "@/content/faqs";
 import { landingPageSlugs } from "@/content/landing-pages";
@@ -6,8 +7,15 @@ import BilibiliGallery from "@/components/BilibiliGallery";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import GoogleReviewsPromo from "@/components/GoogleReviewsPromo";
 import FaqSection from "@/components/FaqSection";
-import FactsAtAGlance from "@/components/FactsAtAGlance";
 import JsonLd from "@/components/JsonLd";
+import Band from "@/components/ui/Band";
+import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
+import Badge from "@/components/ui/Badge";
+import Icon, { type IconName } from "@/components/ui/Icon";
+import SectionHeading from "@/components/ui/SectionHeading";
+import StepBlock from "@/components/ui/StepBlock";
+import OctaveStrip from "@/components/ui/OctaveStrip";
 import {
   buildFaqJsonLd,
   buildMetadata,
@@ -32,343 +40,246 @@ export default async function LocaleHome({
   const typedLocale = locale as Locale;
   const localized = content[typedLocale];
   const faqItems = getFaqItems(typedLocale, homeFaqIds);
-
-  const homeFacts =
-    typedLocale === "en"
-      ? [
-          "Studio: Eric Liu Piano Studio in San Jose, California",
-          "Teacher: Eric Liu — 8+ years teaching, 60+ students coached",
-          "Training: classical lineage from Erna Gulabyan (San Francisco Conservatory) and Frank Levy (Stanford University)",
-          "Format: private 1:1 only — no group classes",
-          "Ages: 5+ — kids, teens, adults, adult beginners",
-          "Languages: English and Mandarin Chinese",
-          "Service area: San Jose, Sunnyvale, Santa Clara, Cupertino, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, Milpitas; online available",
-          "Free trial lesson, no credit card; most inquiries get a same-day reply",
-        ]
-      : [
-          "工作室：Eric Liu 钢琴工作室，加州圣何塞",
-          "老师：Eric Liu — 7 年以上教学，50+ 学生亲自指导",
-          "训练：师从 Erna Gulabyan（旧金山音乐学院）与 Frank Levy（斯坦福大学）",
-          "形式：仅一对一私教，不设团课",
-          "年龄：5 岁以上 — 儿童、青少年、成人、成人初学者",
-          "语言：英文与普通话",
-          "服务区域：圣何塞、森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔、米尔皮塔斯；亦可线上",
-          "免费试听，无需信用卡；多数咨询当天回复",
-        ];
-  const factsTitle =
-    typedLocale === "en" ? "Studio facts at a glance" : "工作室一眼速览";
-  const factsEyebrow =
-    typedLocale === "en" ? "Verified facts" : "核实信息";
+  const performersMore = typedLocale === "en" ? "More performances" : "更多演出";
 
   return (
     <>
       <BreadcrumbJsonLd locale={locale as Locale} path={`/${locale}`} />
       <JsonLd data={buildFaqJsonLd(typedLocale, homeFaqIds)} />
       <JsonLd data={buildSpeakableJsonLd(typedLocale, `/${locale}`)} />
-      <div className="flex flex-col gap-20">
-        <section className="rounded-[2rem] border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-xl md:p-10">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--tag-foreground)]">
-                <span className="rounded-full bg-[color:var(--tag)] px-3 py-1 text-[11px]">
-                  {siteConfig.city} · {siteConfig.lessonFormats.join(" / ")}
-                </span>
-                <span className="text-[color:var(--muted-foreground)]">
-                  {siteConfig.pricingNote}
-                </span>
-              </div>
-              <h1 className="text-4xl font-semibold leading-tight text-[color:var(--foreground)] md:text-6xl">
-                {localized.hero.title}
-              </h1>
-              <p className="text-lg text-[color:var(--muted-foreground)]">
-                {localized.hero.subtitle}
-              </p>
-              <div className="flex flex-col gap-2 text-sm font-semibold sm:flex-row sm:flex-wrap sm:gap-x-5">
-                <Link
-                  href={`/${locale}/piano-lessons-san-jose`}
-                  data-ga-event="lesson_hub_nav_click"
-                  data-ga-slug="piano-lessons-san-jose"
-                  data-ga-placement="hero_keyword_links"
-                  className="text-[color:var(--link)] underline-offset-4 transition hover:text-[color:var(--link-hover)] hover:underline"
-                >
-                  {localized.hero.lessonsPageLink}
-                </Link>
-                <Link
-                  href={`/${locale}/adult-piano-lessons`}
-                  data-ga-event="lesson_hub_nav_click"
-                  data-ga-slug="adult-piano-lessons"
-                  data-ga-placement="hero_keyword_links"
-                  className="text-[color:var(--link)] underline-offset-4 transition hover:text-[color:var(--link-hover)] hover:underline"
-                >
-                  {localized.hero.adultLessonsPageLink}
-                </Link>
-                <Link
-                  href={`/${locale}/piano-teacher-san-jose`}
-                  data-ga-event="lesson_hub_nav_click"
-                  data-ga-slug="piano-teacher-san-jose"
-                  data-ga-placement="hero_keyword_links"
-                  className="text-[color:var(--link)] underline-offset-4 transition hover:text-[color:var(--link-hover)] hover:underline"
-                >
-                  {localized.hero.teacherPageLink}
-                </Link>
-              </div>
-              <div className="flex flex-wrap gap-3 sm:gap-4">
-                <Link
-                  href={`/${locale}/trial`}
-                  data-ga-event="trial_cta_click"
-                  data-ga-placement="hero_primary"
-                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-5 py-2.5 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)] sm:px-6 sm:py-3"
-                >
-                  {localized.hero.primaryCta}
-                </Link>
-                <a
-                  href="https://www.musicnbrain.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--accent)] bg-[color:var(--surface)] px-5 py-2.5 text-center text-base font-semibold leading-snug text-[color:var(--foreground)] transition hover:border-[color:var(--link)] sm:px-6 sm:py-3"
-                >
-                  {localized.sections.partnershipCta}
-                </a>
-                <a
-                  href="#bilibili-videos"
-                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--border)] px-5 py-2.5 text-center text-base font-semibold leading-snug transition hover:border-[color:var(--foreground)] sm:px-6 sm:py-3"
-                >
-                  {localized.hero.secondaryCta}
-                </a>
-                <Link
-                  href="#lesson-options"
-                  data-ga-event="lesson_hub_nav_click"
-                  data-ga-placement="hero"
-                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-[color:var(--accent)] bg-[color:var(--surface)] px-5 py-2.5 text-center text-base font-semibold leading-snug text-[color:var(--foreground)] transition hover:border-[color:var(--foreground)] sm:px-6 sm:py-3"
-                >
-                  {localized.hero.browseAllLessonTypes}
-                </Link>
-              </div>
-              <p className="text-sm text-[color:var(--muted-foreground)]">
-                {localized.hero.ctaNote}
-              </p>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {localized.hero.stats.map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm shadow-sm"
-                  >
-                    <div className="text-lg font-semibold text-[color:var(--foreground)]">
-                      {item.value}
-                    </div>
-                    <div className="text-xs text-[color:var(--muted-foreground)]">
-                      {item.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <GoogleReviewsPromo locale={locale as Locale} variant="strip" />
-            </div>
-            <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-6 shadow-xl">
-              <div className="aspect-video overflow-hidden rounded-2xl border border-[color:var(--border)]">
-                <iframe
-                  src={localized.hero.video.embedUrl}
-                  title={localized.hero.video.title}
-                  className="h-full w-full"
-                  loading="eager"
-                  allowFullScreen
-                />
-              </div>
-              <p className="mt-4 text-sm text-[color:var(--muted-foreground)]">
-                {localized.hero.video.caption}
-              </p>
-            </div>
-          </div>
-        </section>
 
-        <FactsAtAGlance
-          title={factsTitle}
-          eyebrow={factsEyebrow}
-          facts={homeFacts}
-        />
-
-        <section className="grid gap-6 md:grid-cols-3">
-          {localized.highlights.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 text-sm shadow-sm"
-            >
-              <h2 className="text-base font-semibold">{item.title}</h2>
-              <p className="mt-2 text-[color:var(--muted-foreground)]">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </section>
-
-        <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-8 shadow-sm md:px-8">
-          <h2 className="text-2xl font-semibold text-[color:var(--foreground)] md:text-3xl">
-            {localized.sections.aboutTitle}
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
-            {typedLocale === "en"
-              ? "I started serious piano study as an adult and built toward advanced repertoire over time. That lived experience shapes how I coach adult beginners, restarters, and busy professionals."
-              : "我在成年后才开始系统学习钢琴，并逐步进入高阶曲目。这段经历让我更懂成人初学者、重拾者与职场学习者的真实挑战。"}
-          </p>
-          {(localized.about as { summaryBullets?: string[] }).summaryBullets
-            ?.length ? (
-            <ul className="mt-4 space-y-2 text-sm text-[color:var(--muted-foreground)]">
-              {(localized.about as { summaryBullets: string[] }).summaryBullets.map(
-                (line) => (
-                  <li key={line} className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[color:var(--accent)]" />
-                    <span>{line}</span>
-                  </li>
-                ),
-              )}
-            </ul>
-          ) : null}
-          <Link
-            href={`/${locale}/about`}
-            data-ga-event="about_bio_click"
-            data-ga-placement="home_teaser"
-            className="mt-5 inline-flex text-sm font-semibold text-[color:var(--link)] transition hover:text-[color:var(--link-hover)]"
-          >
-            {localized.sections.aboutCta}
-          </Link>
-        </section>
-
-        <section
-          id="lesson-options"
-          className="scroll-mt-28 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-6 py-10 shadow-sm"
-        >
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] md:text-3xl">
-              {localized.sections.lessonHubTitle}
-            </h2>
-            <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">
-              {localized.sections.lessonHubDescription}
+      {/* Hero */}
+      <Band tone="white" py="lg">
+        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div>
+            <Badge tone="neutral" icon="verified">
+              {siteConfig.city} · {siteConfig.lessonFormats.join(" / ")}
+            </Badge>
+            <h1 className="mt-5 text-[2.75rem] font-black leading-[1.04] tracking-[-0.01em] text-[color:var(--mnb-ink)] md:text-[3.75rem]">
+              {localized.hero.title}
+            </h1>
+            <p className="mt-5 max-w-[48ch] text-lg leading-relaxed text-[color:var(--text-muted)]">
+              {localized.hero.subtitle}
             </p>
-          </div>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {landingPageSlugs.map((slug) => (
-              <li key={slug}>
-                <Link
-                  href={`/${locale}/${slug}`}
-                  data-ga-event="lesson_hub_card_click"
-                  data-ga-slug={slug}
-                  data-ga-placement="home_lesson_hub"
-                  className="flex h-full flex-col justify-between rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-5 text-left shadow-sm transition hover:border-[color:var(--foreground)] hover:shadow-md"
-                >
-                  <span className="font-semibold text-[color:var(--foreground)]">
-                    {localized.seo.breadcrumbLabels?.[slug] ?? slug}
-                  </span>
-                  <span className="mt-3 text-xs font-medium text-[color:var(--link)]">
-                    {localized.sections.lessonHubCardCta} →
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="rounded-3xl border border-[color:var(--accent)] bg-[color:var(--accent)] px-6 py-8 text-[color:var(--accent-foreground)] shadow-lg">
-          <div className="mx-auto flex max-w-3xl flex-col items-start gap-4 text-left md:flex-row md:items-center md:justify-between">
-            <div>
-              <h2 className="text-xl font-semibold md:text-2xl">
-                {localized.sections.midPageTrialTitle}
-              </h2>
-              <p className="mt-2 text-sm opacity-95">
-                {localized.trial.description}
-              </p>
-            </div>
-            <Link
-              href={`/${locale}/trial`}
-              data-ga-event="trial_cta_click"
-              data-ga-placement="mid_page_band"
-              className="inline-flex min-h-11 w-full shrink-0 items-center justify-center rounded-full bg-[color:var(--primary)] px-5 py-2.5 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)] sm:w-auto sm:px-6 sm:py-3"
-            >
-              {localized.hero.primaryCta}
-            </Link>
-          </div>
-        </section>
-
-        <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-8 shadow-sm md:px-8">
-          <div className="grid gap-6 md:grid-cols-[1.15fr_0.85fr] md:items-center">
-            <div>
-              <h2 className="text-2xl font-semibold text-[color:var(--foreground)] md:text-3xl">
-                {localized.sections.partnershipTitle}
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
-                {localized.sections.partnershipDescription}
-              </p>
-              <h3 className="mt-5 text-lg font-semibold text-[color:var(--foreground)]">
-                {localized.sections.partnershipBoardMemberTitle}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
-                {localized.sections.partnershipBoardMemberBody}
-              </p>
-            </div>
-            <div className="rounded-2xl border border-[color:var(--accent)] bg-[color:var(--tag)] p-6">
-              <p className="text-sm font-semibold text-[color:var(--foreground)]">
-                MusicNBrain
-              </p>
-              <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">
-                Events, recitals, workshops, and community impact opportunities
-                for young performers.
-              </p>
-              <a
-                href="https://www.musicnbrain.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex min-h-10 items-center justify-center rounded-full bg-[color:var(--link)] px-5 py-2 text-center text-xs font-semibold text-white transition hover:bg-[color:var(--link-hover)]"
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Button
+                href={`/${locale}/trial`}
+                variant="primary"
+                size="lg"
+                icon="calendar_month"
+                data-ga-event="trial_cta_click"
+                data-ga-placement="hero_primary"
               >
-                Open MusicNBrain website
-              </a>
+                {localized.hero.primaryCta}
+              </Button>
+              <Button href="#bilibili-videos" variant="secondary" size="lg" icon="smart_display">
+                {localized.hero.secondaryCta}
+              </Button>
+            </div>
+            <p className="mt-3.5 text-sm text-[color:var(--text-muted)]">
+              {localized.hero.ctaNote}
+            </p>
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {localized.hero.stats.map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-[var(--radius-md)] border border-[color:var(--border)] bg-[color:var(--surface)] px-3.5 py-3"
+                >
+                  <div className="text-xl font-black text-[color:var(--mnb-ink)]">
+                    {item.value}
+                  </div>
+                  <div className="text-xs text-[color:var(--text-muted)]">
+                    {item.label}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </section>
 
-        <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold">
-              {localized.sections.approachTitle}
-            </h2>
-            <ul className="mt-4 space-y-2 text-sm text-[color:var(--muted-foreground)]">
-              {localized.services.items.map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[color:var(--accent)]" />
-                  <span>{item}</span>
+          <Card padding="md">
+            <div className="aspect-video overflow-hidden rounded-[var(--radius-md)] border border-[color:var(--border)] bg-black">
+              <iframe
+                src={localized.hero.video.embedUrl}
+                title={localized.hero.video.title}
+                className="h-full w-full"
+                loading="eager"
+                allowFullScreen
+              />
+            </div>
+            <p className="mt-3.5 px-1 text-sm text-[color:var(--text-muted)]">
+              {localized.hero.video.caption}
+            </p>
+          </Card>
+        </div>
+      </Band>
+
+      {/* How it works */}
+      <Band tone="soft" divider py="md">
+        <OctaveStrip tone="ink" height={22} style={{ marginBottom: "2rem", opacity: 0.8 }} />
+        <SectionHeading
+          align="center"
+          eyebrow={localized.howItWorks.eyebrow}
+          title={localized.howItWorks.title}
+          subtitle={localized.howItWorks.subtitle}
+        />
+        <div className="mt-11 grid gap-8 md:grid-cols-3">
+          {localized.howItWorks.steps.map((step) => (
+            <StepBlock key={step.label} icon={step.icon as IconName} step={step.label} title={step.title}>
+              {step.body}
+            </StepBlock>
+          ))}
+        </div>
+      </Band>
+
+      {/* Performances */}
+      <Band tone="white" py="lg" id="bilibili-videos" style={{ scrollMarginTop: "80px" }}>
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <SectionHeading
+            eyebrow={typedLocale === "en" ? "Performances" : "演出"}
+            title={localized.sections.performancesTitle}
+            subtitle={localized.sections.performancesDescription}
+          />
+          <Button
+            href="https://space.bilibili.com/5349076"
+            newTab
+            variant="tertiary"
+            icon="smart_display"
+            iconPosition="right"
+          >
+            {performersMore}
+          </Button>
+        </div>
+        <div className="mt-9">
+          <BilibiliGallery locale={typedLocale} />
+        </div>
+      </Band>
+
+      {/* Meet your teacher */}
+      <Band tone="soft" divider py="none" container={false}>
+        <div className="mx-auto grid w-full max-w-[var(--content-max)] items-center gap-12 px-6 md:grid-cols-[0.95fr_1.05fr]">
+          <div className="py-10">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-card)]">
+              <Image
+                src="/piano-hands.jpg"
+                alt={`Hands on the piano keys at ${siteConfig.studioName}, San Jose`}
+                fill
+                sizes="(max-width: 768px) 100vw, 45vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <div className="py-2 md:py-14">
+            <SectionHeading
+              eyebrow={localized.meetTeacher.eyebrow}
+              title={localized.meetTeacher.title}
+              subtitle={localized.meetTeacher.subtitle}
+            />
+            <ul className="mt-6 flex flex-col gap-3">
+              {localized.about.summaryBullets.map((line) => (
+                <li key={line} className="flex items-start gap-2.5 text-base leading-relaxed text-[color:var(--text-body,var(--foreground))]">
+                  <Icon name="check_circle" size={20} style={{ color: "var(--mnb-logo-green-deep)", flexShrink: 0, marginTop: "2px" }} />
+                  <span>{line}</span>
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="space-y-6">
-            <div className="rounded-3xl border border-[color:var(--accent)] bg-[color:var(--accent)] px-6 py-5 text-sm text-[color:var(--accent-foreground)]">
-              <div className="font-semibold">{localized.trial.title}</div>
-              <p className="mt-2 text-[color:var(--accent-foreground)]">
-                {localized.trial.description}
-              </p>
-              <Link
-                href={`/${locale}/trial`}
-                data-ga-event="trial_cta_click"
-                data-ga-placement="home_services_aside"
-                className="mt-4 inline-flex min-h-10 w-full items-center justify-center rounded-full bg-[color:var(--primary)] px-4 py-2 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
+            <div className="mt-7">
+              <Button
+                href={`/${locale}/about`}
+                variant="outline"
+                icon="arrow_forward"
+                iconPosition="right"
+                data-ga-event="about_bio_click"
+                data-ga-placement="home_meet_teacher"
               >
-                {localized.hero.primaryCta}
-              </Link>
+                {localized.meetTeacher.cta}
+              </Button>
             </div>
           </div>
-        </section>
+        </div>
+      </Band>
 
-        <section id="bilibili-videos" className="flex flex-col gap-6">
-          <div>
-            <h2 className="text-2xl font-semibold">
-              {localized.sections.performancesTitle}
-            </h2>
-            <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">
-              {localized.sections.performancesDescription}
-            </p>
-          </div>
-          <BilibiliGallery locale={typedLocale} />
-        </section>
+      {/* Lesson hub */}
+      <Band tone="white" py="lg" id="lesson-options" style={{ scrollMarginTop: "80px" }}>
+        <SectionHeading
+          align="center"
+          eyebrow={typedLocale === "en" ? "Lesson types" : "课程类型"}
+          title={localized.sections.lessonHubTitle}
+          subtitle={localized.sections.lessonHubDescription}
+        />
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {landingPageSlugs.map((slug) => (
+            <Card
+              key={slug}
+              href={`/${locale}/${slug}`}
+              interactive
+              padding="md"
+              data-ga-event="lesson_hub_card_click"
+              data-ga-slug={slug}
+              data-ga-placement="home_lesson_hub"
+            >
+              <div className="flex min-h-[84px] flex-col justify-between gap-3.5">
+                <span className="text-[17px] font-bold text-[color:var(--foreground)]">
+                  {localized.seo.breadcrumbLabels?.[slug] ?? slug}
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-[13px] font-bold text-[color:var(--mnb-ink)]">
+                  {localized.sections.lessonHubCardCta}
+                  <Icon name="arrow_forward" size={16} />
+                </span>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </Band>
+
+      {/* Reviews */}
+      <Band tone="soft" divider py="lg">
         <GoogleReviewsPromo locale={locale as Locale} variant="featured" />
+      </Band>
+
+      {/* Partnership */}
+      <Band tone="white" py="lg">
+        <div className="grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <SectionHeading
+              eyebrow={typedLocale === "en" ? "Nonprofit family" : "公益大家庭"}
+              title={localized.sections.partnershipTitle}
+              subtitle={localized.sections.partnershipDescription}
+            />
+            <h3 className="mt-5 text-xl font-bold text-[color:var(--foreground)]">
+              {localized.sections.partnershipBoardMemberTitle}
+            </h3>
+            <p className="mt-2 max-w-[60ch] text-base leading-relaxed text-[color:var(--text-muted)]">
+              {localized.sections.partnershipBoardMemberBody}
+            </p>
+            <div className="mt-6">
+              <Button href="https://www.musicnbrain.com/" newTab variant="primary" icon="open_in_new">
+                {localized.sections.partnershipCta}
+              </Button>
+            </div>
+          </div>
+          <Card padding="lg" style={{ background: "var(--surface-soft)" }}>
+            <Image
+              src="/musicnbrain-logo.png"
+              alt="MusicNBrain nonprofit logo"
+              width={160}
+              height={52}
+              className="h-[52px] w-auto"
+            />
+            <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--text-body,var(--foreground))]">
+              {localized.sections.landingPartnerFooter}
+            </p>
+            <div className="mt-4 inline-flex items-center gap-2 text-[13px] font-bold text-[color:var(--text-muted)]">
+              <Icon name="verified" size={18} style={{ color: "var(--mnb-logo-green-deep)" }} />
+              501(c)(3) · EIN 82-3827644
+            </div>
+          </Card>
+        </div>
+      </Band>
+
+      {/* FAQ */}
+      <Band tone="soft" divider py="lg">
         <FaqSection
+          collapsible
           title={
             typedLocale === "en"
               ? "Frequently asked questions from adult beginners"
@@ -381,47 +292,62 @@ export default async function LocaleHome({
           }
           items={faqItems}
         />
-        <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-10 shadow-sm">
-          <h2 className="text-2xl font-semibold">
-            {localized.sections.testimonialsTitle}
-          </h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            {localized.testimonials.map((item) => (
-              <blockquote
-                key={item.name}
-                className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5 text-sm text-[color:var(--muted-foreground)]"
-              >
-                <p>“{item.quote}”</p>
-                <footer className="mt-3 font-semibold text-[color:var(--foreground)]">
-                  {item.name}
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-        </section>
+        <p className="mx-auto mt-6 max-w-[820px] text-center text-[15px] text-[color:var(--text-muted)]">
+          {typedLocale === "en" ? "Still have a question? " : "还有疑问？"}
+          <Link
+            href={`/${locale}/contact`}
+            className="font-bold text-[color:var(--mnb-ink)] underline underline-offset-[3px]"
+          >
+            {localized.nav.contact}
+          </Link>
+        </p>
+      </Band>
 
-        <section className="rounded-3xl bg-[color:var(--surface-inverse)] px-6 py-10 text-[color:var(--surface-inverse-foreground)] shadow-xl">
-          <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
-            <div>
-              <h2 className="text-2xl font-semibold">{localized.trial.title}</h2>
-              <p className="mt-3 text-sm opacity-90">
-                {localized.trial.description}
+      {/* Testimonials */}
+      <Band tone="white" py="lg">
+        <SectionHeading
+          eyebrow={typedLocale === "en" ? "Reviews" : "评价"}
+          title={localized.sections.testimonialsTitle}
+        />
+        <div className="mt-9 grid gap-5 md:grid-cols-2">
+          {localized.testimonials.map((item) => (
+            <Card key={item.name} padding="lg" style={{ background: "var(--surface-soft)" }}>
+              <Icon name="format_quote" size={28} style={{ color: "var(--accent)" }} />
+              <p className="mt-2 text-base leading-relaxed text-[color:var(--text-body,var(--foreground))]">
+                {item.quote}
               </p>
-            </div>
-            <div className="flex flex-col items-start gap-3">
-              <Link
-                href={`/${locale}/trial`}
-                data-ga-event="trial_cta_click"
-                data-ga-placement="home_footer"
-                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
-              >
-                {localized.hero.primaryCta}
-              </Link>
-              <p className="text-xs opacity-75">{localized.hero.ctaNote}</p>
-            </div>
+              <div className="mt-4 text-[15px] font-bold text-[color:var(--foreground)]">
+                {item.name}
+              </div>
+            </Card>
+          ))}
+        </div>
+      </Band>
+
+      {/* Trial band (dark) */}
+      <Band tone="inverse" py="sm">
+        <div className="grid items-center gap-8 md:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <h2 className="text-[2rem] font-black">{localized.trial.title}</h2>
+            <p className="mt-3 max-w-[48ch] text-base opacity-85">
+              {localized.trial.description}
+            </p>
           </div>
-        </section>
-      </div>
+          <div className="flex flex-col items-start gap-2.5">
+            <Button
+              href={`/${locale}/trial`}
+              variant="secondary"
+              size="lg"
+              icon="calendar_month"
+              data-ga-event="trial_cta_click"
+              data-ga-placement="home_footer"
+            >
+              {localized.hero.primaryCta}
+            </Button>
+            <p className="text-xs opacity-75">{localized.hero.ctaNote}</p>
+          </div>
+        </div>
+      </Band>
     </>
   );
 }

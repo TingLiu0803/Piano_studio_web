@@ -10,7 +10,7 @@ export default function BilibiliGallery({ locale = "en" }: BilibiliGalleryProps)
   const openLabel = locale === "en" ? "Open on Bilibili" : "在哔哩哔哩查看";
 
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {siteConfig.bilibiliVideos.map((video) => (
         <VideoCard
           key={video.bvid}
@@ -20,6 +20,8 @@ export default function BilibiliGallery({ locale = "en" }: BilibiliGalleryProps)
           watchUrl={video.watchUrl}
           loadLabel={loadLabel}
           openLabel={openLabel}
+          caption={(video as { caption?: string }).caption}
+          compact
         />
       ))}
     </div>

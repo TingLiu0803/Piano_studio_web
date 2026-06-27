@@ -70,11 +70,11 @@ export default async function JournalArticlePage({ params }: Params) {
       {howToData ? <JsonLd data={howToData} /> : null}
 
       <article className="flex flex-col gap-10">
-        <header className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--tag-foreground)]">
+        <header className="rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[color:var(--tag-foreground)]">
             {article.category}
           </p>
-          <h1 className="mt-2 text-3xl font-semibold leading-tight text-[color:var(--foreground)] md:text-4xl">
+          <h1 className="mt-2 text-3xl font-black leading-[1.1] tracking-[-0.01em] text-[color:var(--foreground)] md:text-4xl">
             {article.title}
           </h1>
           <div className="mt-3">
@@ -94,9 +94,9 @@ export default async function JournalArticlePage({ params }: Params) {
         {article.sections.map((section) => (
           <section
             key={section.heading}
-            className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm"
+            className="rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm"
           >
-            <h2 className="text-xl font-semibold text-[color:var(--foreground)]">
+            <h2 className="text-xl font-bold text-[color:var(--foreground)]">
               {section.heading}
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
@@ -113,18 +113,18 @@ export default async function JournalArticlePage({ params }: Params) {
         ))}
 
         {article.howTo ? (
-          <section className="rounded-3xl border border-[color:var(--accent)] bg-[color:var(--tag)] p-8 text-[color:var(--foreground)] shadow-sm">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--tag-foreground)]">
+          <section className="rounded-lg border border-[color:var(--accent)] bg-[color:var(--tag)] p-8 text-[color:var(--foreground)] shadow-sm">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[color:var(--tag-foreground)]">
               {howToTitle}
             </p>
-            <h2 className="mt-1 text-xl font-semibold">{article.howTo.name}</h2>
+            <h2 className="mt-1 text-xl font-bold">{article.howTo.name}</h2>
             <p className="mt-2 text-sm leading-relaxed">
               {article.howTo.description}
             </p>
             <ol className="mt-4 list-decimal space-y-3 pl-5 text-sm leading-relaxed">
               {article.howTo.steps.map((step) => (
                 <li key={step.name}>
-                  <p className="font-semibold">{step.name}</p>
+                  <p className="font-bold">{step.name}</p>
                   <p className="mt-1">{step.text}</p>
                 </li>
               ))}
@@ -133,8 +133,8 @@ export default async function JournalArticlePage({ params }: Params) {
         ) : null}
 
         {article.related?.length ? (
-          <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-8 shadow-sm">
-            <h2 className="text-base font-semibold text-[color:var(--foreground)]">
+          <section className="rounded-lg border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-8 shadow-sm">
+            <h2 className="text-base font-bold text-[color:var(--foreground)]">
               {relatedTitle}
             </h2>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
@@ -154,10 +154,10 @@ export default async function JournalArticlePage({ params }: Params) {
           </section>
         ) : null}
 
-        <section className="rounded-3xl bg-[color:var(--surface-inverse)] px-6 py-10 text-[color:var(--surface-inverse-foreground)] shadow-xl">
+        <section className="rounded-lg bg-[color:var(--surface-inverse)] px-6 py-10 text-[color:var(--surface-inverse-foreground)] shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="text-xl font-semibold">
+              <h2 className="text-xl font-bold">
                 {typed === "en" ? "Try a free lesson" : "免费试听"}
               </h2>
               <p className="mt-2 text-sm opacity-90">
@@ -170,7 +170,7 @@ export default async function JournalArticlePage({ params }: Params) {
               href={`/${typed}/trial`}
               data-ga-event="trial_cta_click"
               data-ga-placement="article_footer"
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--primary)] px-6 py-3 text-center text-base font-semibold leading-snug text-[color:var(--primary-foreground)] transition hover:bg-[color:var(--primary-hover)]"
+              className="inline-flex min-h-11 items-center justify-center rounded bg-[color:var(--accent)] px-6 py-3 text-center text-base font-bold leading-snug text-[color:var(--accent-foreground)] transition hover:brightness-95"
             >
               {typed === "en" ? "Book a free trial lesson" : "预约免费试听"}
             </Link>

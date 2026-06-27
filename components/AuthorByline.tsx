@@ -42,7 +42,7 @@ export default function AuthorByline({
         <Link
           href={`/${locale}/about`}
           rel="author"
-          className="font-semibold text-[color:var(--link)] underline-offset-4 hover:underline"
+          className="font-bold text-[color:var(--link)] underline-offset-4 hover:underline"
         >
           {siteConfig.ownerName}
         </Link>

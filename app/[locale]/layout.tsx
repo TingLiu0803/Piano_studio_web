@@ -57,14 +57,7 @@ export default async function LocaleLayout({
       <main
         className={`flex-1 bg-[color:var(--background)]${stickyTreatment ? " pb-24 md:pb-0" : ""}`}
       >
-        <div className="mx-auto w-full max-w-6xl px-6 py-12 sm:py-16">
-          <div className="mb-6 flex justify-end">
-            <span className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--muted-foreground)]">
-              {localized.languageLabel}
-            </span>
-          </div>
-          {children}
-        </div>
+        {children}
       </main>
       <SiteFooter locale={typedLocale} />
       <StickyTrialCta

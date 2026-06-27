@@ -1,3 +1,5 @@
+import Icon from "@/components/ui/Icon";
+
 type FactsAtAGlanceProps = {
   /** Localized panel title (e.g. "Facts at a glance" / "一眼速览"). */
   title: string;
@@ -11,38 +13,30 @@ type FactsAtAGlanceProps = {
  * quote. Marked with `data-facts="..."` plus a stable CSS hook so the speakable
  * selector and crawlers can target the block reliably.
  */
-export default function FactsAtAGlance({
-  title,
-  facts,
-  eyebrow,
-}: FactsAtAGlanceProps) {
+export default function FactsAtAGlance({ title, facts, eyebrow }: FactsAtAGlanceProps) {
   if (facts.length === 0) return null;
 
   return (
-    <aside
-      data-facts="studio"
-      className="rounded-3xl border border-[color:var(--accent)] bg-[color:var(--tag)] px-6 py-6 text-[color:var(--foreground)] shadow-sm"
-    >
+    <section data-facts="studio">
       {eyebrow ? (
-        <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[color:var(--tag-foreground)]">
+        <p className="text-[length:var(--text-label)] font-bold uppercase tracking-[var(--tracking-label)] text-[color:var(--text-muted)]">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="mt-1 text-lg font-semibold">{title}</h2>
-      <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+      <h2 className="mt-1.5 text-[length:var(--text-h3)] font-bold text-[color:var(--foreground)]">
+        {title}
+      </h2>
+      <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {facts.map((fact) => (
           <li
             key={fact}
-            className="flex items-start gap-2 text-sm leading-relaxed"
+            className="flex items-start gap-2.5 rounded-[var(--radius-md)] border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3.5 text-[15px] leading-relaxed text-[color:var(--text-body,var(--foreground))]"
           >
-            <span
-              aria-hidden
-              className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--accent)]"
-            />
+            <Icon name="check_circle" size={20} style={{ color: "var(--mnb-logo-green-deep)", flexShrink: 0, marginTop: "1px" }} />
             <span>{fact}</span>
           </li>
         ))}
       </ul>
-    </aside>
+    </section>
   );
 }
