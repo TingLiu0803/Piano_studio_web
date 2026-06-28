@@ -29,7 +29,7 @@ export default async function ContactPage({
 
   const details: Array<[IconName, string]> = [
     ["location_on", siteConfig.addressLine],
-    ["public", siteConfig.serviceArea],
+    ["public", localized.labels.serviceArea],
     ["mail", siteConfig.email],
     ["calendar_month", siteConfig.phone],
   ];

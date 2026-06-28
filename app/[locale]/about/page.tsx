@@ -57,27 +57,26 @@ export default async function AboutPage({
     typed === "en"
       ? {
           whoTitle: "Who I teach",
-          whoAges: `${siteConfig.ageRange} · ${siteConfig.serviceArea}`,
+          whoAges: `${localized.labels.ageRange} · ${localized.labels.serviceArea}`,
           whoBody:
             "Every student receives clear highly customized lesson plans to enable meaningful progress without sacrificing artistic identity.",
           focusLabel: "Studio focus",
           focusBody: "Technique, decoding of music language, highly personalized coaching",
           formatsLabel: "Formats",
-          formatsBody: siteConfig.lessonFormats.join(" · "),
+          formatsBody: localized.labels.formatsDot,
           partnershipLabel: "Partnership",
           partnershipBody: "In collaboration with MusicNBrain performance and community programs.",
           partnershipContact: "Contact for partnership projects",
         }
       : {
           whoTitle: "授课对象",
-          whoAges:
-            "5岁以上 · 圣何塞、森尼维尔及南湾（库比蒂诺、圣克拉拉、坎贝尔、米尔皮塔斯、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加）；旧金山湾区及线上",
+          whoAges: `${localized.labels.ageRange} · ${localized.labels.serviceArea}`,
           whoBody:
             "每位学生都会获得清晰且高度定制的学习计划，在不牺牲艺术个性的前提下取得切实进步。",
           focusLabel: "教学重点",
           focusBody: "技术训练、音乐语言解读、高度个性化指导",
           formatsLabel: "授课形式",
-          formatsBody: "线下 · 线上",
+          formatsBody: localized.labels.formatsDot,
           partnershipLabel: "合作",
           partnershipBody: "与 MusicNBrain 合作，开展演出与社区音乐项目。",
           partnershipContact: "咨询合作项目",

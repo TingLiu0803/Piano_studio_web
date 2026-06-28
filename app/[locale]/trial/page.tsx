@@ -139,7 +139,7 @@ export default async function TrialPage({
               </li>
               <li className="flex items-start gap-2.5">
                 <Icon name="public" size={18} style={{ color: "var(--text-muted)", flexShrink: 0, marginTop: "2px" }} />
-                <span>{siteConfig.serviceArea}</span>
+                <span>{localized.labels.serviceArea}</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <Icon name="mail" size={18} style={{ color: "var(--text-muted)", flexShrink: 0, marginTop: "2px" }} />

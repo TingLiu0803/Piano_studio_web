@@ -235,6 +235,23 @@ export const siteConfig = {
 export const content = {
   en: {
     languageLabel: "English",
+    /**
+     * Localized display + a11y strings that would otherwise read English on the
+     * zh site. Visible-display only — siteConfig keeps the canonical English
+     * (serviceArea / city / formats) that feeds JSON-LD and /llms.txt.
+     */
+    labels: {
+      city: siteConfig.city,
+      ageRange: siteConfig.ageRange,
+      formatsSlash: siteConfig.lessonFormats.join(" / "),
+      formatsDot: siteConfig.lessonFormats.join(" · "),
+      serviceArea: siteConfig.serviceArea,
+      allRightsReserved: "All rights reserved.",
+      switchLanguage: "Switch language",
+      dismissBar: "Dismiss booking bar",
+      emailStudio: "Email the studio",
+      bilibili: "Performances on Bilibili",
+    },
     nav: {
       home: "Home",
       about: "About",
@@ -450,6 +467,19 @@ export const content = {
   },
   zh: {
     languageLabel: "中文",
+    labels: {
+      city: "圣何塞",
+      ageRange: "5岁以上",
+      formatsSlash: "线下 / 线上",
+      formatsDot: "线下 · 线上",
+      serviceArea:
+        "圣何塞、森尼维尔及南湾（库比蒂诺、圣克拉拉、坎贝尔、米尔皮塔斯、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加）；旧金山湾区及线上",
+      allRightsReserved: "保留所有权利。",
+      switchLanguage: "切换语言",
+      dismissBar: "关闭预约栏",
+      emailStudio: "给工作室发邮件",
+      bilibili: "在哔哩哔哩观看演出",
+    },
     nav: {
       home: "首页",
       about: "关于",

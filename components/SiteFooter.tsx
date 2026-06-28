@@ -26,10 +26,10 @@ export default function SiteFooter({ locale }: SiteFooterProps) {
             {localized.seo.description}
           </p>
           <div className="mt-4 flex gap-3 text-white/80">
-            <a href={`mailto:${siteConfig.email}`} aria-label="Email the studio">
+            <a href={`mailto:${siteConfig.email}`} aria-label={localized.labels.emailStudio}>
               <Icon name="mail" size={22} />
             </a>
-            <a href={siteConfig.ownerProfiles[0]} target="_blank" rel="noreferrer" aria-label="Performances on Bilibili">
+            <a href={siteConfig.ownerProfiles[0]} target="_blank" rel="noreferrer" aria-label={localized.labels.bilibili}>
               <Icon name="smart_display" size={22} />
             </a>
           </div>
@@ -76,7 +76,7 @@ export default function SiteFooter({ locale }: SiteFooterProps) {
             {localized.sections.landingPartnerFooter}
           </span>
           <span className="text-white/45">
-            © {new Date().getFullYear()} {siteConfig.studioName}. All rights reserved.
+            © {new Date().getFullYear()} {siteConfig.studioName}. {localized.labels.allRightsReserved}
           </span>
         </div>
       </div>

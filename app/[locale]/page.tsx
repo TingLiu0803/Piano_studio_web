@@ -53,7 +53,7 @@ export default async function LocaleHome({
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
             <Badge tone="neutral" icon="verified">
-              {siteConfig.city} · {siteConfig.lessonFormats.join(" / ")}
+              {localized.labels.city} · {localized.labels.formatsSlash}
             </Badge>
             <h1 className="mt-5 text-[2.75rem] font-black leading-[1.04] tracking-[-0.01em] text-[color:var(--mnb-ink)] md:text-[3.75rem]">
               {localized.hero.title}

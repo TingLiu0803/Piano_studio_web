@@ -111,7 +111,7 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
 
           <Link
             href={switchLocaleHref}
-            aria-label="Switch language"
+            aria-label={localized.labels.switchLanguage}
             className="inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] border border-[color:var(--border-strong)] px-3 py-1.5 text-[13px] font-bold text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--surface-soft)]"
           >
             <Icon name="translate" size={16} />
@@ -190,7 +190,7 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
             </Button>
             <Link
               href={switchLocaleHref}
-              aria-label="Switch language"
+              aria-label={localized.labels.switchLanguage}
               className="inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] border border-[color:var(--border-strong)] px-3 py-1.5 text-[13px] font-bold"
               onClick={() => setIsOpen(false)}
             >
