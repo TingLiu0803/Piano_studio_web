@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { content, type Locale } from "@/content/site";
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 
@@ -46,7 +47,7 @@ export default function StickyTrialCta({
           type="button"
           onClick={() => setDismissed(true)}
           className="flex h-11 w-11 shrink-0 items-center justify-center self-center rounded-[var(--radius-sm)] border border-[color:var(--border)] text-[color:var(--muted-foreground)] transition-colors hover:border-[color:var(--foreground)] hover:text-[color:var(--foreground)]"
-          aria-label="Dismiss booking bar"
+          aria-label={content[locale as Locale].labels.dismissBar}
         >
           <Icon name="close" size={20} />
         </button>

@@ -8,6 +8,7 @@ import type { CSSProperties } from "react";
  */
 export type IconName =
   | "calendar_month"
+  | "call"
   | "verified"
   | "music_note"
   | "star"
@@ -55,6 +56,13 @@ function paths(name: IconName, filled: boolean) {
           <path d="M3.5 9h17M8 3.5v3M16 3.5v3" {...STROKE} />
           <path d="M7.5 13h2M11 13h2M14.5 13h2M7.5 16.5h2M11 16.5h2" {...STROKE} />
         </>
+      );
+    case "call":
+      return (
+        <path
+          d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"
+          {...STROKE}
+        />
       );
     case "verified":
       return (
