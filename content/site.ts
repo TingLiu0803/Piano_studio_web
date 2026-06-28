@@ -8,7 +8,23 @@ export type Locale = (typeof locales)[number];
  */
 export const contentVersion = "2026-06-26";
 
+/**
+ * Single source of truth for the studio's headline numbers. Every visible stat,
+ * the About copy (both locales), and the /llms.txt credential summary derive
+ * from these at compile time — change a number here and it updates everywhere,
+ * so the EN / 中文 figures can never drift apart again.
+ */
+const teacherFacts = {
+  yearsTeaching: 8,
+  studentsCoached: 60,
+  classicalTrainingYears: 20,
+  siliconValleyYears: 4,
+  bilibiliFollowers: 2000,
+};
+
 export const siteConfig = {
+  /** Structured headline numbers (see `teacherFacts`). */
+  facts: teacherFacts,
   studioName: "Eric Liu Piano Studio",
   ownerName: "Eric Liu",
   city: "San Jose",
@@ -39,8 +55,7 @@ export const siteConfig = {
    * source of truth for the AI-facing `/llms.txt` endpoint (see `lib/llms.ts`)
    * so the studio's headline facts can never drift from a hand-written file.
    */
-  teacherCredentialSummary:
-    "8+ years teaching; 60+ students personally coached; classical training under Erna Gulabyan (San Francisco Conservatory of Music) and Frank Levy (Stanford University); software engineer with four years of Silicon Valley experience.",
+  teacherCredentialSummary: `${teacherFacts.yearsTeaching}+ years teaching; ${teacherFacts.studentsCoached}+ students personally coached; classical training under Erna Gulabyan (San Francisco Conservatory of Music) and Frank Levy (Stanford University); software engineer with four years of Silicon Valley experience.`,
   /** Schema.org priceRange token (`$`, `$$`, `$$$`, `$$$$`) for LocalBusiness. */
   priceRangeToken: "$$",
   email: "mr.tingliu@gmail.com",
@@ -254,9 +269,9 @@ export const content = {
       teacherPageLink: "San Jose piano teacher for adults & kids",
       browseAllLessonTypes: "Browse all lesson types",
       stats: [
-        { value: "8+ years teaching", label: "Engineer turned pianist" },
-        { value: "60+ students", label: "Personally coached" },
-        { value: "2k followers", label: "Bilibili followers" },
+        { value: `${teacherFacts.yearsTeaching}+ years teaching`, label: "Engineer turned pianist" },
+        { value: `${teacherFacts.studentsCoached}+ students`, label: "Personally coached" },
+        { value: `${teacherFacts.bilibiliFollowers / 1000}k followers`, label: "Bilibili followers" },
         { value: "1:1 only", label: "No group classes" },
       ],
       video: {
@@ -287,12 +302,11 @@ export const content = {
     about: {
       title: "About the teacher",
       summaryBullets: [
-        "San Jose piano teacher · 8+ years teaching · 60+ students coached · 1:1 only (no group classes)",
+        `San Jose piano teacher · ${teacherFacts.yearsTeaching}+ years teaching · ${teacherFacts.studentsCoached}+ students coached · 1:1 only (no group classes)`,
         "Adult beginners & restarters through advancing kids; auditions and exams when that fits your goals",
         "Classical training with a structured, engineer-style approach to practice and problem solving",
       ],
-      body:
-        "Software engineer turned pianist, with 20+ years of classical training under concert pianists, 8+ years of teaching experience, and 60+ students personally coached, I specialize in one-on-one piano lessons tailored to each individual’s goals, learning style, and unique musical voice. I never follow one-size-fits-all methods — and I never teach group classes. Quality always comes first, and every customized lesson is designed to ensure meaningful progress without sacrificing artistic identity.\n\nTrained under renowned Bay Area pianist Erna Gulabyan (San Francisco Conservatory) and Frank Levy (Stanford University), I continue to maintain a close relationship with them, grounding my teaching in both tradition and deep musical insight. As a professional software engineer with 4 years of Silicon Valley experience, I also bring a problem-solving mindset that helps students tackle technical and musical challenges with clarity, structure, and creativity.",
+      body: `Software engineer turned pianist, with ${teacherFacts.classicalTrainingYears}+ years of classical training under concert pianists, ${teacherFacts.yearsTeaching}+ years of teaching experience, and ${teacherFacts.studentsCoached}+ students personally coached, I specialize in one-on-one piano lessons tailored to each individual’s goals, learning style, and unique musical voice. I never follow one-size-fits-all methods — and I never teach group classes. Quality always comes first, and every customized lesson is designed to ensure meaningful progress without sacrificing artistic identity.\n\nTrained under renowned Bay Area pianist Erna Gulabyan (San Francisco Conservatory) and Frank Levy (Stanford University), I continue to maintain a close relationship with them, grounding my teaching in both tradition and deep musical insight. As a professional software engineer with ${teacherFacts.siliconValleyYears} years of Silicon Valley experience, I also bring a problem-solving mindset that helps students tackle technical and musical challenges with clarity, structure, and creativity.`,
     },
 
     services: {
@@ -470,9 +484,9 @@ export const content = {
       teacherPageLink: "圣何塞钢琴老师（成人与儿童）",
       browseAllLessonTypes: "查看全部课程类型",
       stats: [
-        { value: "7年以上", label: "教学经验" },
-        { value: "50+学生", label: "亲自指导" },
-        { value: "2000关注", label: "哔哩哔哩" },
+        { value: `${teacherFacts.yearsTeaching}年以上`, label: "教学经验" },
+        { value: `${teacherFacts.studentsCoached}+学生`, label: "亲自指导" },
+        { value: `${teacherFacts.bilibiliFollowers}关注`, label: "哔哩哔哩" },
         { value: "仅一对一", label: "不设团课" },
       ],
       video: {
@@ -502,12 +516,11 @@ export const content = {
     about: {
       title: "关于老师",
       summaryBullets: [
-        "圣何塞钢琴老师 · 7年以上教学 · 50+学生亲自指导 · 仅一对一（不设团课）",
+        `圣何塞钢琴老师 · ${teacherFacts.yearsTeaching}年以上教学 · ${teacherFacts.studentsCoached}+学生亲自指导 · 仅一对一（不设团课）`,
         "成人初学者与重拾者、儿童与进阶学员；可按目标准备考级、比赛与试音",
         "古典训练背景 + 结构化练习方法，帮助稳定突破技术与音乐难点",
       ],
-      body:
-        "拥有超过7年的教学经验，并亲自指导过50多位学生，我专注于一对一钢琴课，针对每位学生的目标、学习方式与独特的音乐表达进行定制。我不采用一刀切的教学方法，也从不且永远不会教授团体课。质量始终第一，每一节定制课程都以不牺牲艺术个性为前提，确保扎实而有意义的进步。\n\n我曾师从旧金山音乐学院湾区钢琴家Erna Gulabyan和斯坦福大学的Frank Levy，并一直与他们保持密切联系，使我的教学扎根于传统与深厚的音乐洞见之中。作为一名拥有4年硅谷经验的专业软件工程师，我也带来系统的解决问题思维，帮助学生以清晰、结构化且富有创造力的方式攻克技术与音乐难点。",
+      body: `拥有超过${teacherFacts.yearsTeaching}年的教学经验，并亲自指导过${teacherFacts.studentsCoached}多位学生，我专注于一对一钢琴课，针对每位学生的目标、学习方式与独特的音乐表达进行定制。我不采用一刀切的教学方法，也从不且永远不会教授团体课。质量始终第一，每一节定制课程都以不牺牲艺术个性为前提，确保扎实而有意义的进步。\n\n我曾师从旧金山音乐学院湾区钢琴家Erna Gulabyan和斯坦福大学的Frank Levy，并一直与他们保持密切联系，使我的教学扎根于传统与深厚的音乐洞见之中。作为一名拥有${teacherFacts.siliconValleyYears}年硅谷经验的专业软件工程师，我也带来系统的解决问题思维，帮助学生以清晰、结构化且富有创造力的方式攻克技术与音乐难点。`,
     },
     services: {
       title: "课程选项",

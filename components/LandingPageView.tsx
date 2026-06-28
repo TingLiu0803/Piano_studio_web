@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import JsonLd from "@/components/JsonLd";
 import QuickAnswer from "@/components/QuickAnswer";
@@ -23,7 +24,9 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
   const localized = content[locale];
   const path = `/${locale}/${slug}`;
 
-  const lessonEyebrow = locale === "en" ? "Piano lessons" : "钢琴课程";
+  const lessonEyebrow = locale === "en" ? "Lesson options" : "课程类型";
+  const backToLessonsLabel = locale === "en" ? "All lessons" : "全部课程";
+  const backToHomeLabel = locale === "en" ? "Back to homepage" : "返回主页";
   const quickAnswerLabel = locale === "en" ? "Quick answer" : "速答";
   const factsTitle = locale === "en" ? "Facts at a glance" : "一眼速览";
   const factsEyebrow = locale === "en" ? "Studio facts" : "工作室信息";
@@ -38,7 +41,16 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
 
       {/* Hero */}
       <Band tone="white" py="lg">
-        <Badge tone="neutral" icon="music_note">{lessonEyebrow}</Badge>
+        <Link
+          href={`/${locale}#lesson-options`}
+          className="inline-flex items-center gap-1.5 text-sm font-bold text-[color:var(--text-muted)] transition-colors hover:text-[color:var(--mnb-ink)]"
+        >
+          <Icon name="arrow_back" size={18} />
+          {backToLessonsLabel}
+        </Link>
+        <div className="mt-4">
+          <Badge tone="neutral" icon="music_note">{lessonEyebrow}</Badge>
+        </div>
         <h1 className="mt-4 max-w-[22ch] text-[2.25rem] font-black leading-[1.06] tracking-[-0.01em] text-[color:var(--mnb-ink)] md:text-[3rem]">
           {data.h1}
         </h1>
@@ -60,13 +72,13 @@ export default function LandingPageView({ locale, slug }: LandingPageViewProps) 
             {localized.hero.primaryCta}
           </Button>
           <Button
-            href={`/${locale}/contact`}
-            variant="outline"
+            href={`/${locale}`}
+            variant="secondary"
             size="lg"
-            data-ga-event="contact_cta_click"
+            data-ga-event="back_to_home_click"
             data-ga-placement="landing_intro"
           >
-            {localized.nav.contact}
+            {backToHomeLabel}
           </Button>
         </div>
       </Band>

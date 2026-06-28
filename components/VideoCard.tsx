@@ -66,10 +66,18 @@ export default function VideoCard({
   );
 
   if (compact) {
+    // Player loads directly (no click-to-load step); `loading="lazy"` keeps
+    // off-screen embeds from costing anything until they're scrolled near.
     return (
       <div>
-        <div className="overflow-hidden rounded-[var(--radius-md)] border border-[color:var(--border)] bg-black">
-          {player}
+        <div className="aspect-video w-full overflow-hidden rounded-[var(--radius-md)] border border-[color:var(--border)] bg-black">
+          <iframe
+            src={embedUrl}
+            title={title}
+            className="h-full w-full"
+            loading="lazy"
+            allowFullScreen
+          />
         </div>
         <div className="mt-3 flex items-center gap-2">
           <Icon name="music_note" size={18} style={{ color: "var(--text-muted)" }} />
