@@ -31,6 +31,29 @@ export default async function TrialPage({
     Boolean(rawBookingUrl) && !rawBookingUrl.includes("replace-this");
   const bookingUrl = hasBookingUrl ? rawBookingUrl : null;
 
+  const t =
+    typedLocale === "en"
+      ? {
+          poweredByPre: "Booking is powered by ",
+          poweredByMid: ". If you need help, you can ",
+          sendMessage: "send a message",
+          poweredByPost: ".",
+          clickBelow: "Click below to open the booking page in a new tab and reserve your trial time.",
+          bookTrial: "Book a trial lesson",
+          unavailablePre: "The booking calendar is not available yet. Please ",
+          unavailablePost: " to request a trial time.",
+        }
+      : {
+          poweredByPre: "预约由 ",
+          poweredByMid: " 提供支持。如需帮助，可以",
+          sendMessage: "给我留言",
+          poweredByPost: "。",
+          clickBelow: "点击下方按钮，在新标签页打开预约页面，选择你的试听时间。",
+          bookTrial: "预约试听课",
+          unavailablePre: "预约日历暂未开放，请",
+          unavailablePost: "以预约试听时间。",
+        };
+
   return (
     <>
       <BreadcrumbJsonLd locale={typedLocale} path={`/${typedLocale}/trial`} />
@@ -46,18 +69,18 @@ export default async function TrialPage({
             {localized.trial.description}
           </p>
           <p className="mt-3 text-sm text-[color:var(--text-muted)]">
-            Booking is powered by {siteConfig.bookingProvider}. If you need help, you can{" "}
+            {t.poweredByPre}
+            {siteConfig.bookingProvider}
+            {t.poweredByMid}
             <Link href={`/${typedLocale}/contact`} className="font-bold text-[color:var(--link)] underline underline-offset-4">
-              send a message
+              {t.sendMessage}
             </Link>
-            .
+            {t.poweredByPost}
           </p>
           <div className="mt-6">
             {bookingUrl ? (
               <>
-                <p className="text-[color:var(--text-muted)]">
-                  Click below to open the booking page in a new tab and reserve your trial time.
-                </p>
+                <p className="text-[color:var(--text-muted)]">{t.clickBelow}</p>
                 <div className="mt-5">
                   <Button
                     href={bookingUrl}
@@ -68,17 +91,17 @@ export default async function TrialPage({
                     data-ga-event="trial_booking_click"
                     data-ga-placement="trial_calendar"
                   >
-                    Book a trial lesson
+                    {t.bookTrial}
                   </Button>
                 </div>
               </>
             ) : (
               <p className="text-[color:var(--text-muted)]">
-                The booking calendar is not available yet. Please{" "}
+                {t.unavailablePre}
                 <Link href={`/${typedLocale}/contact`} className="font-bold text-[color:var(--link)] underline underline-offset-4">
-                  send a message
-                </Link>{" "}
-                to request a trial time.
+                  {t.sendMessage}
+                </Link>
+                {t.unavailablePost}
               </p>
             )}
           </div>

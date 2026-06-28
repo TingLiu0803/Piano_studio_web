@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { type Locale, content, locales, siteConfig } from "@/content/site";
 import { landingPageSlugs } from "@/content/landing-pages";
 import Logo from "@/components/ui/Logo";
@@ -18,6 +19,12 @@ const navLinkClass =
 export default function SiteHeader({ locale }: SiteHeaderProps) {
   const localized = content[locale];
   const otherLocale = locales.find((item) => item !== locale) ?? locale;
+  // Switch to the SAME page in the other locale (slugs are shared across
+  // locales — only the leading /en|/zh segment differs), not back to home.
+  const pathname = usePathname();
+  const switchLocaleHref = pathname
+    ? pathname.replace(/^\/[^/]+/, `/${otherLocale}`)
+    : `/${otherLocale}`;
   const [isOpen, setIsOpen] = useState(false);
   const [lessonsOpen, setLessonsOpen] = useState(false);
   const lessonsRef = useRef<HTMLDivElement>(null);
@@ -103,7 +110,7 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
           </a>
 
           <Link
-            href={`/${otherLocale}`}
+            href={switchLocaleHref}
             aria-label="Switch language"
             className="inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] border border-[color:var(--border-strong)] px-3 py-1.5 text-[13px] font-bold text-[color:var(--foreground)] transition-colors hover:bg-[color:var(--surface-soft)]"
           >
@@ -182,7 +189,7 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
               {localized.nav.trial}
             </Button>
             <Link
-              href={`/${otherLocale}`}
+              href={switchLocaleHref}
               aria-label="Switch language"
               className="inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] border border-[color:var(--border-strong)] px-3 py-1.5 text-[13px] font-bold"
               onClick={() => setIsOpen(false)}
