@@ -31,7 +31,7 @@ export default async function ContactPage({
     ["location_on", siteConfig.addressLine],
     ["public", localized.labels.serviceArea],
     ["mail", siteConfig.email],
-    ["calendar_month", siteConfig.phone],
+    ["call", siteConfig.phone],
   ];
 
   return (
