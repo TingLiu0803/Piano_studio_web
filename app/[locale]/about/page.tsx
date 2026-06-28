@@ -53,6 +53,36 @@ export default async function AboutPage({
     ],
   ];
 
+  const t =
+    typed === "en"
+      ? {
+          whoTitle: "Who I teach",
+          whoAges: `${siteConfig.ageRange} · ${siteConfig.serviceArea}`,
+          whoBody:
+            "Every student receives clear highly customized lesson plans to enable meaningful progress without sacrificing artistic identity.",
+          focusLabel: "Studio focus",
+          focusBody: "Technique, decoding of music language, highly personalized coaching",
+          formatsLabel: "Formats",
+          formatsBody: siteConfig.lessonFormats.join(" · "),
+          partnershipLabel: "Partnership",
+          partnershipBody: "In collaboration with MusicNBrain performance and community programs.",
+          partnershipContact: "Contact for partnership projects",
+        }
+      : {
+          whoTitle: "授课对象",
+          whoAges:
+            "5岁以上 · 圣何塞、森尼维尔及南湾（库比蒂诺、圣克拉拉、坎贝尔、米尔皮塔斯、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加）；旧金山湾区及线上",
+          whoBody:
+            "每位学生都会获得清晰且高度定制的学习计划，在不牺牲艺术个性的前提下取得切实进步。",
+          focusLabel: "教学重点",
+          focusBody: "技术训练、音乐语言解读、高度个性化指导",
+          formatsLabel: "授课形式",
+          formatsBody: "线下 · 线上",
+          partnershipLabel: "合作",
+          partnershipBody: "与 MusicNBrain 合作，开展演出与社区音乐项目。",
+          partnershipContact: "咨询合作项目",
+        };
+
   return (
     <>
       <BreadcrumbJsonLd locale={typed} path={`/${typed}/about`} />
@@ -149,12 +179,12 @@ export default async function AboutPage({
             </ul>
           </Card>
           <Card padding="lg">
-            <h2 className="text-[length:var(--text-h3)] font-bold text-[color:var(--foreground)]">Who I teach</h2>
+            <h2 className="text-[length:var(--text-h3)] font-bold text-[color:var(--foreground)]">{t.whoTitle}</h2>
             <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--text-body,var(--foreground))]">
-              {siteConfig.ageRange} · {siteConfig.serviceArea}
+              {t.whoAges}
             </p>
             <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--text-body,var(--foreground))]">
-              Every student receives clear highly customized lesson plans to enable meaningful progress without sacrificing artistic identity.
+              {t.whoBody}
             </p>
           </Card>
         </div>
@@ -162,27 +192,27 @@ export default async function AboutPage({
         <div className="mt-5 grid gap-5 text-sm text-[color:var(--text-muted)] md:grid-cols-3">
           <Card padding="md">
             <div className="text-[length:var(--text-label)] font-bold uppercase tracking-[var(--tracking-label)] text-[color:var(--text-muted)]">
-              Studio focus
+              {t.focusLabel}
             </div>
             <p className="mt-2 text-[color:var(--text-body,var(--foreground))]">
-              Technique, decoding of music language, highly personalized coaching
+              {t.focusBody}
             </p>
           </Card>
           <Card padding="md">
             <div className="text-[length:var(--text-label)] font-bold uppercase tracking-[var(--tracking-label)] text-[color:var(--text-muted)]">
-              Formats
+              {t.formatsLabel}
             </div>
-            <p className="mt-2 text-[color:var(--text-body,var(--foreground))]">{siteConfig.lessonFormats.join(" · ")}</p>
+            <p className="mt-2 text-[color:var(--text-body,var(--foreground))]">{t.formatsBody}</p>
           </Card>
           <Card padding="md">
             <div className="text-[length:var(--text-label)] font-bold uppercase tracking-[var(--tracking-label)] text-[color:var(--text-muted)]">
-              Partnership
+              {t.partnershipLabel}
             </div>
             <p className="mt-2 text-[color:var(--text-body,var(--foreground))]">
-              In collaboration with MusicNBrain performance and community programs.
+              {t.partnershipBody}
             </p>
             <Link href={`/${typed}/contact`} className="mt-2 inline-flex text-xs font-bold text-[color:var(--link)]">
-              Contact for partnership projects
+              {t.partnershipContact}
             </Link>
           </Card>
         </div>
