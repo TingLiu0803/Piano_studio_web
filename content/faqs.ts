@@ -57,7 +57,7 @@ const faqCatalog: Record<Locale, FaqItem[]> = {
       id: "areas-served",
       question: "What areas do you serve for piano lessons?",
       answer:
-        "I teach in-person in San Jose and across the South Bay, including Sunnyvale, Santa Clara, Cupertino, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, and Milpitas. I also offer online lessons.",
+        "The studio is based in Cupertino, and I teach in-person across San Jose and the South Bay, including Sunnyvale, Santa Clara, Cupertino, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, and Milpitas. I also offer online lessons.",
     },
     {
       id: "adult-private-lessons",
@@ -88,7 +88,7 @@ const faqCatalog: Record<Locale, FaqItem[]> = {
       id: "online-lessons",
       question: "Do you offer online piano lessons?",
       answer:
-        "Yes. I offer both in-person lessons in San Jose and online lessons, with the same one-on-one structure and weekly accountability.",
+        "Yes. I offer both in-person lessons from a Cupertino-based studio serving San Jose and the South Bay, and online lessons, with the same one-on-one structure and weekly accountability.",
     },
     {
       id: "choose-teacher",
@@ -138,7 +138,7 @@ const faqCatalog: Record<Locale, FaqItem[]> = {
       id: "areas-served",
       question: "你们在哪些地区提供钢琴课？",
       answer:
-        "线下课程覆盖圣何塞与南湾，包括森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔与米尔皮塔斯，也提供线上课程。",
+        "工作室位于库比蒂诺，线下课程覆盖圣何塞与南湾，包括森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔与米尔皮塔斯，也提供线上课程。",
     },
     {
       id: "adult-private-lessons",
@@ -168,7 +168,7 @@ const faqCatalog: Record<Locale, FaqItem[]> = {
       id: "online-lessons",
       question: "你们提供线上钢琴课吗？",
       answer:
-        "提供。可选圣何塞线下或线上一对一课程，教学结构和每周跟进保持一致。",
+        "提供。可选库比蒂诺/圣何塞及南湾线下或线上一对一课程，教学结构和每周跟进保持一致。",
     },
     {
       id: "choose-teacher",
