@@ -263,9 +263,10 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
         ],
         address: {
           "@type": "PostalAddress",
-          streetAddress: siteConfig.addressLine,
+          streetAddress: siteConfig.streetAddress ?? siteConfig.addressLine,
           addressLocality: siteConfig.city,
           addressRegion: siteConfig.region,
+          postalCode: siteConfig.postalCode,
           addressCountry: siteConfig.country,
         },
         geo,

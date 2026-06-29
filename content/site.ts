@@ -6,7 +6,7 @@ export type Locale = (typeof locales)[number];
  * change so that JSON-LD `dateModified` and `Article.dateModified` stay
  * accurate; LLM crawlers use this signal to decide whether to re-cite.
  */
-export const contentVersion = "2026-06-26";
+export const contentVersion = "2026-06-29";
 
 /**
  * Single source of truth for the studio's headline numbers. Every visible stat,
@@ -27,16 +27,16 @@ export const siteConfig = {
   facts: teacherFacts,
   studioName: "Eric Liu Piano Studio",
   ownerName: "Eric Liu",
-  city: "San Jose",
+  city: "Cupertino",
   region: "CA",
   country: "US",
   serviceArea:
-    "Private piano lessons in San Jose, Sunnyvale & South Bay (Cupertino, Santa Clara, Campbell, Milpitas, Mountain View, Palo Alto, Los Gatos, Saratoga); SF Bay Area & online",
+    "Private piano lessons based in Cupertino, serving San Jose, Sunnyvale & South Bay (Santa Clara, Campbell, Milpitas, Mountain View, Palo Alto, Los Gatos, Saratoga); SF Bay Area & online",
   serviceAreas: [
+    "Cupertino",
     "San Jose",
     "Sunnyvale",
     "Santa Clara",
-    "Cupertino",
     "Mountain View",
     "Palo Alto",
     "Los Gatos",
@@ -62,11 +62,13 @@ export const siteConfig = {
   phone: "650-575-7300",
   /** Telephone in E.164 for schema.org. */
   phoneE164: "+1-650-575-7300",
-  addressLine: "San Jose, CA 95110",
+  addressLine: "175 Calvert Dr, R103, Cupertino, CA 95014",
+  streetAddress: "175 Calvert Dr, R103",
+  postalCode: "95014",
   timezone: "America/Los_Angeles",
   geo: {
-    latitude: 37.3382,
-    longitude: -121.8863,
+    latitude: 37.321,
+    longitude: -121.99984,
   },
   /**
    * Opening hours used both for visible copy and for
@@ -156,7 +158,7 @@ export const siteConfig = {
       title: "Liszt Sonata In B Minor (Excerpt)",
       caption: "Liszt · Sonata in B minor",
       description:
-        "Studio performance excerpt of Franz Liszt's Sonata in B Minor by Eric Liu, recorded for the Eric Liu Piano Studio in San Jose.",
+        "Studio performance excerpt of Franz Liszt's Sonata in B Minor by Eric Liu, recorded for the Eric Liu Piano Studio in Cupertino.",
       embedUrl:
         "https://player.bilibili.com/player.html?bvid=BV1nYXPYHEQr&autoplay=0",
       watchUrl: "https://www.bilibili.com/video/BV1nYXPYHEQr",
@@ -269,15 +271,15 @@ export const content = {
       eyebrow: "Verified on Google",
       headline: "5-star rated studio",
       body:
-        "Read public reviews from students and parents in the San Jose area—then book a free trial to see if the fit is right.",
+        "Read public reviews from students and parents in San Jose and across the South Bay—then book a free trial to see if the fit is right.",
       cta: "See reviews on Google",
       ratingSummary: "{rating} out of 5 · {count} reviews",
       opensInNewTab: "Opens your Google Business profile in a new tab.",
     },
     hero: {
-      title: "Private piano lessons in San Jose — weekly progress you can hear",
+      title: "Private piano lessons in Cupertino and San Jose — weekly progress you can hear",
       subtitle:
-        "San Jose piano teacher for adults, adult beginners, restarters, and kids 5+: in-person near San Jose & Sunnyvale or online. Private 1:1 only—clear weekly plans, strong technique, and musicality. Free trial; most inquiries get a same-day reply.",
+        "Cupertino-based piano teacher for adults, adult beginners, restarters, and kids 5+: in-person in Cupertino, San Jose & Sunnyvale or online. Private 1:1 only—clear weekly plans, strong technique, and musicality. Free trial; most inquiries get a same-day reply.",
       primaryCta: "Book a free trial lesson",
       secondaryCta: "View performances",
       ctaNote: "No credit card. Same-day reply on most inquiries.",
@@ -319,7 +321,7 @@ export const content = {
     about: {
       title: "About the teacher",
       summaryBullets: [
-        `San Jose piano teacher · ${teacherFacts.yearsTeaching}+ years teaching · ${teacherFacts.studentsCoached}+ students coached · 1:1 only (no group classes)`,
+        `Cupertino-based piano teacher (serving San Jose & South Bay) · ${teacherFacts.yearsTeaching}+ years teaching · ${teacherFacts.studentsCoached}+ students coached · 1:1 only (no group classes)`,
         "Adult beginners & restarters through advancing kids; auditions and exams when that fits your goals",
         "Classical training with a structured, engineer-style approach to practice and problem solving",
       ],
@@ -329,9 +331,9 @@ export const content = {
     services: {
       title: "Lesson options",
       items: [
-        "Private piano lessons in San Jose (one student, one teacher—no group classes)",
+        "Private piano lessons based in Cupertino (one student, one teacher—no group classes)",
         "Weekly or bi-weekly schedules",
-        "In-person across San Jose, Sunnyvale & South Bay, plus online",
+        "In-person in Cupertino, San Jose, Sunnyvale & South Bay, plus online",
         "Exam prep, auditions, and competitions",
       ],
     },
@@ -345,7 +347,7 @@ export const content = {
       approachTitle: "What you get in every lesson",
       lessonHubTitle: "Choose your lesson type",
       lessonHubDescription:
-        "Private lessons in San Jose and nearby South Bay cities—not sure where to start? Pick the page that matches you; each one spells out format, neighborhoods served, and how to book a free trial.",
+        "Private lessons based in Cupertino and serving San Jose plus nearby South Bay cities—not sure where to start? Pick the page that matches you; each one spells out format, neighborhoods served, and how to book a free trial.",
       lessonHubCardCta: "Learn more",
       partnershipTitle: "Partnership with MusicNBrain",
       partnershipDescription:
@@ -386,7 +388,7 @@ export const content = {
     },
     meetTeacher: {
       eyebrow: "Meet your teacher",
-      title: "Eric Liu — San Jose piano teacher",
+      title: "Eric Liu — Cupertino piano teacher serving San Jose",
       subtitle:
         "Software engineer turned pianist: classical depth, an engineer's structure, and 1:1 lessons built around your goals.",
       cta: "Read the full bio",
@@ -433,7 +435,7 @@ export const content = {
       title:
         "Private Piano Lessons San Jose | San Jose Piano Teacher | Adults & Kids | Trial",
       description:
-        "Private piano lessons in San Jose and the South Bay: San Jose piano teacher for adults, beginners, and kids 5+ (Sunnyvale, Santa Clara, Cupertino, Campbell, and nearby). In-person or online. Weekly plans, technique & musicality. Free trial; same-day reply on most inquiries.",
+        "Private piano lessons from a Cupertino-based studio serving San Jose and the South Bay: for adults, beginners, and kids 5+ (Sunnyvale, Santa Clara, Cupertino, Campbell, and nearby). In-person or online. Weekly plans, technique & musicality. Free trial; same-day reply on most inquiries.",
       keywords:
         "piano lessons san jose, san jose piano lessons, piano teacher san jose, piano teachers san jose, in person piano lessons near me, private piano lessons for adults, piano lessons near me for adults, piano lessons for adults san jose, piano lessons for beginners sunnyvale, sunnyvale piano lessons, piano lessons south bay, piano lessons bay area, piano lessons for beginner, piano lessons for adult beginner, online piano lessons, affordable piano lessons, South Bay piano lessons, beginner piano lessons, adult piano lessons, piano classes, piano classes san jose",
       breadcrumbLabels: {
@@ -448,19 +450,19 @@ export const content = {
           title:
             "Book a Free Piano Trial | San Jose & South Bay | Online Option",
           description:
-            "Reserve a free 1:1 trial with Eric Liu Piano Studio—in San Jose, nearby South Bay cities, or online. No credit card. See teaching style, ask questions, and pick a weekly time that fits.",
+            "Reserve a free 1:1 trial with Eric Liu Piano Studio—based in Cupertino and serving San Jose, nearby South Bay cities, or online. No credit card. See teaching style, ask questions, and pick a weekly time that fits.",
         },
         about: {
           title:
             "Eric Liu | Piano Teacher San Jose & Sunnyvale | Private Lessons Adults & Kids",
           description:
-            "Meet Eric Liu: private in-person and online piano lessons from San Jose—serving Sunnyvale, Santa Clara, and the South Bay. Adult beginners, restarters, and kids 5+. Classical depth, structured practice, bilingual support. Read the full story.",
+            "Meet Eric Liu: private in-person and online piano lessons from a Cupertino-based studio serving San Jose, Sunnyvale, Santa Clara, and the South Bay. Adult beginners, restarters, and kids 5+. Classical depth, structured practice, bilingual support. Read the full story.",
         },
         contact: {
           title:
             "Contact San Jose Piano Studio | Rates, Schedule & Free Trial",
           description:
-            "Message Eric Liu Piano Studio about availability, tuition, or the best lesson format. In-person San Jose / South Bay or online. Most families hear back the same day.",
+            "Message Eric Liu Piano Studio about availability, tuition, or the best lesson format. In-person Cupertino / San Jose / South Bay or online. Most families hear back the same day.",
         },
       },
     },
@@ -468,12 +470,12 @@ export const content = {
   zh: {
     languageLabel: "中文",
     labels: {
-      city: "圣何塞",
+      city: "库比蒂诺",
       ageRange: "5岁以上",
       formatsSlash: "线下 / 线上",
       formatsDot: "线下 · 线上",
       serviceArea:
-        "圣何塞、森尼维尔及南湾（库比蒂诺、圣克拉拉、坎贝尔、米尔皮塔斯、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加）；旧金山湾区及线上",
+        "库比蒂诺工作室，服务圣何塞、森尼维尔及南湾（圣克拉拉、坎贝尔、米尔皮塔斯、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加）；旧金山湾区及线上",
       allRightsReserved: "保留所有权利。",
       switchLanguage: "切换语言",
       dismissBar: "关闭预约栏",
@@ -497,15 +499,15 @@ export const content = {
       eyebrow: "Google 真实评价",
       headline: "五星好评工作室",
       body:
-        "欢迎查看圣何塞及周边学琴家庭在 Google 上的公开评价；也可先预约免费试听，亲自感受是否合适。",
+        "欢迎查看圣何塞与南湾学琴家庭在 Google 上的公开评价；也可先预约免费试听，亲自感受是否合适。",
       cta: "在 Google 查看评价",
       ratingSummary: "{rating} 分（满分 5）· {count} 条评价",
       opensInNewTab: "将在新标签页打开 Google 商家资料。",
     },
     hero: {
-      title: "圣何塞私人钢琴课：把练习变成看得见的进步",
+      title: "库比蒂诺私人钢琴课（服务圣何塞与南湾）：把练习变成看得见的进步",
       subtitle:
-        "圣何塞钢琴老师：面向成人初学者、重拾者与儿童（5岁+）的一对一私教；圣何塞、森尼维尔及周边线下，亦可线上。每周清晰作业、扎实技巧与可感知的音乐表现。免费试听；多数咨询当天回复。",
+        "库比蒂诺工作室一对一私教：面向成人初学者、重拾者与儿童（5岁+）；服务库比蒂诺、圣何塞、森尼维尔及周边，亦可线上。每周清晰作业、扎实技巧与可感知的音乐表现。免费试听；多数咨询当天回复。",
       primaryCta: "预约免费试听",
       secondaryCta: "观看演出视频",
       ctaNote: "无需信用卡，多数咨询当天回复。",
@@ -546,7 +548,7 @@ export const content = {
     about: {
       title: "关于老师",
       summaryBullets: [
-        `圣何塞钢琴老师 · ${teacherFacts.yearsTeaching}年以上教学 · ${teacherFacts.studentsCoached}+学生亲自指导 · 仅一对一（不设团课）`,
+        `库比蒂诺钢琴老师（服务圣何塞与南湾） · ${teacherFacts.yearsTeaching}年以上教学 · ${teacherFacts.studentsCoached}+学生亲自指导 · 仅一对一（不设团课）`,
         "成人初学者与重拾者、儿童与进阶学员；可按目标准备考级、比赛与试音",
         "古典训练背景 + 结构化练习方法，帮助稳定突破技术与音乐难点",
       ],
@@ -555,9 +557,9 @@ export const content = {
     services: {
       title: "课程选项",
       items: [
-        "圣何塞私人钢琴课（仅一对一，不设团课）",
+        "库比蒂诺私人钢琴课（仅一对一，不设团课）",
         "每周或隔周安排",
-        "圣何塞、森尼维尔及南湾线下，亦可线上",
+        "库比蒂诺、圣何塞、森尼维尔及南湾线下，亦可线上",
         "考试准备、试音与比赛辅导",
       ],
     },
@@ -571,7 +573,7 @@ export const content = {
       approachTitle: "每节课您会收获什么",
       lessonHubTitle: "选择适合您的课程",
       lessonHubDescription:
-        "圣何塞与南湾私人钢琴课：不确定从哪开始？按您的情况选择页面—每种课程都会说明授课方式、服务区域以及如何预约免费试听。",
+        "库比蒂诺工作室（服务圣何塞与南湾）的私人钢琴课：不确定从哪开始？按您的情况选择页面—每种课程都会说明授课方式、服务区域以及如何预约免费试听。",
       lessonHubCardCta: "了解更多",
       partnershipTitle: "与 MusicNBrain 的合作",
       partnershipDescription:
@@ -612,7 +614,7 @@ export const content = {
     },
     meetTeacher: {
       eyebrow: "认识老师",
-      title: "Eric Liu — 圣何塞钢琴老师",
+      title: "Eric Liu — 库比蒂诺钢琴老师（服务圣何塞）",
       subtitle:
         "工程师转型的钢琴家：扎实的古典功底、工程师般的结构化方法，以及围绕你目标的一对一教学。",
       cta: "查看完整介绍",
@@ -657,7 +659,7 @@ export const content = {
       title:
         "圣何塞私人钢琴课 | 圣何塞钢琴老师 | 成人与儿童 | 免费试听",
       description:
-        "圣何塞私人钢琴课与南湾一对一教学：圣何塞钢琴老师，面向成人初学者、重拾者与儿童 5+（森尼维尔、圣克拉拉、库比蒂诺、坎贝尔等）。线下或线上；每周清晰作业，技巧与音乐表现并重。免费试听；多数咨询当天回复。",
+        "库比蒂诺工作室提供南湾一对一钢琴教学：服务圣何塞成人初学者、重拾者与儿童 5+（森尼维尔、圣克拉拉、库比蒂诺、坎贝尔等）。线下或线上；每周清晰作业，技巧与音乐表现并重。免费试听；多数咨询当天回复。",
       keywords:
         "圣何塞钢琴课, 森尼维尔钢琴课, 南湾钢琴课, 湾区钢琴课, 圣何塞钢琴老师, 成人钢琴私教, 钢琴老师, 成人初学者, 钢琴课, 线上钢琴课, 一对一钢琴课, 钢琴老师推荐, 实惠钢琴课",
       breadcrumbLabels: {
@@ -671,7 +673,7 @@ export const content = {
         trial: {
           title: "预约免费钢琴试听 | 圣何塞与南湾 | 可线上",
           description:
-            "预约 Eric Liu 钢琴工作室免费一对一试听：圣何塞/南湾线下或线上。无需信用卡。了解教学风格、沟通目标，并选择合适上课时间。",
+            "预约 Eric Liu 钢琴工作室免费一对一试听：库比蒂诺/圣何塞/南湾线下或线上。无需信用卡。了解教学风格、沟通目标，并选择合适上课时间。",
         },
         about: {
           title: "Eric Liu | 圣何塞钢琴老师 | 成人、儿童与初学者",
@@ -681,7 +683,7 @@ export const content = {
         contact: {
           title: "联系钢琴课 | 圣何塞 | 费用、时间与试听",
           description:
-            "咨询课程安排、学费或最适合的上课方式（线下/线上）。多数家庭当日收到回复。",
+            "咨询课程安排、学费或最适合的上课方式（库比蒂诺/圣何塞线下或线上）。多数家庭当日收到回复。",
         },
       },
     },
