@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getBaseUrl } from "@/lib/seo";
 import { locales, contentVersion } from "@/content/site";
 import { landingPageSlugs } from "@/content/landing-pages";
+import { articleSlugs } from "@/content/articles";
 
 /**
  * Static, stable lastModified per route family. Avoids `new Date()` per build
@@ -29,9 +30,21 @@ const landingRoutes: RouteSpec[] = landingPageSlugs.map((slug) => ({
   priority: 0.9,
 }));
 
+const journalRoutes: RouteSpec[] = [
+  { path: "/journal", changeFrequency: "weekly", priority: 0.7 },
+  ...articleSlugs.map(
+    (slug): RouteSpec => ({
+      path: `/journal/${slug}`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }),
+  ),
+];
+
 const allRoutes: RouteSpec[] = [
   ...coreRoutes,
   ...landingRoutes,
+  ...journalRoutes,
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

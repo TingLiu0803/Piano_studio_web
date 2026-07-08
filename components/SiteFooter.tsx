@@ -48,6 +48,14 @@ export default function SiteFooter({ locale }: SiteFooterProps) {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href={`/${locale}/journal`}
+                className="underline-offset-4 transition-colors hover:text-[color:var(--accent-on-dark)] hover:underline"
+              >
+                {localized.nav.journal}
+              </Link>
+            </li>
           </ul>
         </div>
 

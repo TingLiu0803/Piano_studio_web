@@ -5,6 +5,7 @@ import {
   type Locale,
 } from "@/content/site";
 import { landingPages, landingPageSlugs } from "@/content/landing-pages";
+import { getAllArticles } from "@/content/articles";
 import { getFaqItems } from "@/content/faqs";
 import { getBaseUrl } from "@/lib/seo";
 
@@ -67,8 +68,8 @@ export type LlmsPage = {
 
 /**
  * Ordered list of canonical, indexable pages for a locale, with labels and
- * descriptions pulled from the same content the pages render. The journal is
- * intentionally omitted while it is disabled (see `app/[locale]/journal`).
+ * descriptions pulled from the same content the pages render. Includes the
+ * journal list page and every article (see `app/[locale]/journal`).
  */
 export function canonicalPages(locale: Locale): LlmsPage[] {
   const c = content[locale];
@@ -80,6 +81,22 @@ export function canonicalPages(locale: Locale): LlmsPage[] {
     description: lp[slug].seo.description,
   }));
 
+  const journal: LlmsPage[] = [
+    {
+      path: "/journal",
+      label: c.nav.journal,
+      description:
+        locale === "en"
+          ? "Long-form, answer-first guides on adult piano learning, choosing a teacher, online vs in-person lessons, practice strategy, and instrument choice."
+          : "学琴长文：成人学钢琴时间线、如何选老师、线上 vs 线下、练习策略与乐器选择，每篇先给答案。",
+    },
+    ...getAllArticles(locale).map((article) => ({
+      path: `/journal/${article.slug}`,
+      label: article.title,
+      description: article.description,
+    })),
+  ];
+
   return [
     { path: "", label: c.nav.home, description: c.seo.description },
     ...landing,
@@ -90,6 +107,7 @@ export function canonicalPages(locale: Locale): LlmsPage[] {
       label: c.nav.contact,
       description: c.seo.pages.contact.description,
     },
+    ...journal,
   ];
 }
 
