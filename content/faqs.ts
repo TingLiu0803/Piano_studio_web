@@ -33,13 +33,13 @@ const faqCatalog: Record<Locale, FaqItem[]> = {
       id: "adult-beginner",
       question: "Can adults start learning piano from zero?",
       answer:
-        "Yes. I regularly coach adult beginners and restarters, and we start musical thinking early: practical theory, phrasing, and tone color, not just mechanical note pressing. For example, I coached a nurse in her 40s who began by struggling through early Thompson pieces; in less than two years, she was performing Tchaikovsky's The New Doll and a Schubert Waltz with confident musical expression.",
+        "Yes. I regularly coach adult beginners and restarters in private piano lessons, and we start musical thinking early: practical theory, phrasing, and tone color, not just mechanical note pressing. For example, I coached a nurse in her 40s who began by struggling through early Thompson pieces; in less than two years, she was performing Tchaikovsky's The New Doll and a Schubert Waltz with confident musical expression.",
     },
     {
       id: "adult-timeline",
       question: "How long does it take to learn piano as an adult?",
       answer:
-        "Most adults can hear meaningful progress within a few months when they practice consistently. Reaching advanced repertoire usually takes years, but your first milestones come much sooner with focused coaching.",
+        "Most adults can hear meaningful progress within a few months of weekly private piano lessons when they practice consistently. Reaching advanced repertoire usually takes years, but your first milestones come much sooner with focused coaching.",
     },
     {
       id: "need-piano-at-home",
@@ -57,13 +57,13 @@ const faqCatalog: Record<Locale, FaqItem[]> = {
       id: "areas-served",
       question: "What areas do you serve for piano lessons?",
       answer:
-        "The studio is based in Cupertino, and I teach in-person across San Jose and the South Bay, including Sunnyvale, Santa Clara, Cupertino, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, and Milpitas. I also offer online lessons.",
+        "The studio is based in Cupertino, and I teach in-person across San Jose and the South Bay, including Sunnyvale, Santa Clara, Cupertino, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, and Milpitas. I also offer online lessons. Lessons are taught in both English and Mandarin Chinese.",
     },
     {
       id: "adult-private-lessons",
       question: "Do you offer private piano lessons for adults?",
       answer:
-        "Yes. Adult private lessons are a core part of the studio, including complete beginners, restarters, and advanced hobbyists who want deeper control of tone, phrasing, and interpretation.",
+        "Yes. Private piano lessons for adults are a core part of the studio, including complete beginners, restarters, and advanced hobbyists who want deeper control of tone, phrasing, and interpretation. If you are comparing private piano classes nearby, note that every lesson here is one-on-one — never a group class.",
     },
     {
       id: "advanced-artistry",
@@ -114,13 +114,13 @@ const faqCatalog: Record<Locale, FaqItem[]> = {
       id: "adult-beginner",
       question: "成人零基础可以学钢琴吗？",
       answer:
-        "可以。很多学生是成人初学者或重拾者。通过一对一课程和清晰的每周练习计划，成年人同样可以从零建立扎实基础。",
+        "可以。很多学生是成人初学者或重拾者。通过成人钢琴私教和清晰的每周练习计划，成年人同样可以从零建立扎实基础。",
     },
     {
       id: "adult-timeline",
       question: "成年人学钢琴多久能看到进步？",
       answer:
-        "只要稳定练习，多数成人在几个月内就能听到明显进步。进阶到高难曲目通常需要更长时间，但早期里程碑会来得更快。",
+        "只要稳定练习，多数成人在开始每周一对一钢琴课后的几个月内就能听到明显进步。进阶到高难曲目通常需要更长时间，但早期里程碑会来得更快。",
     },
     {
       id: "need-piano-at-home",
@@ -132,19 +132,19 @@ const faqCatalog: Record<Locale, FaqItem[]> = {
       id: "practice-frequency",
       question: "成人初学者每周应练琴几次？",
       answer:
-        "建议每周至少练 5 天，每次 20-40 分钟。短而稳定的练习，通常比周末一次长练更有效。",
+        "我建议把“按时长练习”转为“按目标练习”。我采用来自编程的“分而治之”策略：把复杂的任务拆解成可管理的小模块，每次练习只专注解决其中一个。这种方法高效、阻力小——约 90% 的学员坚持上课两年以上，进步稳定而不痛苦。这对成人尤其重要：与孩子不同，成人的精力还要分配给工作、家庭和生活的方方面面。",
     },
     {
       id: "areas-served",
       question: "你们在哪些地区提供钢琴课？",
       answer:
-        "工作室位于库比蒂诺，线下课程覆盖圣何塞与南湾，包括森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔与米尔皮塔斯，也提供线上课程。",
+        "工作室位于库比蒂诺，线下课程覆盖圣何塞与南湾，包括森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔与米尔皮塔斯，也提供线上课程。课程可用普通话或英文授课（中英双语）。",
     },
     {
       id: "adult-private-lessons",
       question: "你们提供成人一对一钢琴课吗？",
       answer:
-        "提供。成人一对一课程是工作室核心服务之一，涵盖初学者、重拾者，以及希望进一步提升音色、乐句与诠释能力的进阶学员。",
+        "提供。成人钢琴私教是工作室核心服务之一，涵盖初学者、重拾者，以及希望进一步提升音色、乐句与诠释能力的进阶学员。若您在比较附近的一对一成人钢琴课，这里每节课都是一对一授课，绝不设团课。",
     },
     {
       id: "advanced-artistry",
@@ -235,6 +235,33 @@ export const pianoTeacherSanJoseFaqIds: FaqId[] = [
   "adult-private-lessons",
   "beginner-lessons",
   "areas-served",
+  "lesson-cost",
+];
+
+export const pianoLessonsSunnyvaleFaqIds: FaqId[] = [
+  "beginner-lessons",
+  "free-trial",
+  "need-piano-at-home",
+  "areas-served",
+  "lesson-cost",
+  "online-lessons",
+];
+
+export const pianoLessonsCupertinoFaqIds: FaqId[] = [
+  "free-trial",
+  "areas-served",
+  "beginner-lessons",
+  "adult-private-lessons",
+  "lesson-cost",
+  "choose-teacher",
+];
+
+export const pianoLessonsSantaClaraFaqIds: FaqId[] = [
+  "online-lessons",
+  "areas-served",
+  "free-trial",
+  "beginner-lessons",
+  "practice-frequency",
   "lesson-cost",
 ];
 

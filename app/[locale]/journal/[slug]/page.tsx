@@ -17,9 +17,9 @@ import {
   buildSpeakableJsonLd,
 } from "@/lib/seo";
 
-// Journal is temporarily hidden — see `app/[locale]/journal/page.tsx` for the
-// re-enable checklist. Setting this to `false` makes every article URL 404.
-const JOURNAL_ENABLED = false;
+// Kill switch — see `app/[locale]/journal/page.tsx` for the full checklist.
+// Setting this to `false` makes every article URL 404.
+const JOURNAL_ENABLED = true;
 
 export function generateStaticParams() {
   if (!JOURNAL_ENABLED) return [];

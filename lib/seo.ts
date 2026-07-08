@@ -210,11 +210,6 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
         name: siteConfig.studioName,
         inLanguage: locale === "en" ? "en-US" : "zh-CN",
         publisher: { "@id": `${baseUrl}/#music-school` },
-        potentialAction: {
-          "@type": "SearchAction",
-          target: `${baseUrl}/${locale}?q={search_term_string}`,
-          "query-input": "required name=search_term_string",
-        },
       },
       {
         "@type": "Organization",
@@ -592,13 +587,36 @@ function buildVideoNodes(baseUrl: string) {
   }));
 }
 
-export function buildFaqJsonLd(locale: Locale, ids?: FaqId[]) {
-  const faqs = getFaqItems(locale, ids);
+/** A visible question/answer pair (e.g. a landing page's `commonObjections`). */
+export type FaqQuestionAnswer = { question: string; answer: string };
+
+/**
+ * Single FAQPage node per page. `extraItems` lets pages fold additional
+ * visible Q&A blocks (e.g. landing-page `commonObjections`) into the same
+ * FAQPage entity instead of emitting a second one. Items are de-duplicated by
+ * exact question text so overlapping curated FAQs never produce duplicate
+ * Question entities.
+ */
+export function buildFaqJsonLd(
+  locale: Locale,
+  ids?: FaqId[],
+  extraItems?: FaqQuestionAnswer[],
+) {
+  const faqs: FaqQuestionAnswer[] = [
+    ...getFaqItems(locale, ids),
+    ...(extraItems ?? []),
+  ];
+  const seen = new Set<string>();
+  const uniqueFaqs = faqs.filter((faq) => {
+    if (seen.has(faq.question)) return false;
+    seen.add(faq.question);
+    return true;
+  });
 
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
+    mainEntity: uniqueFaqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -659,9 +677,17 @@ export function buildBreadcrumbJsonLd(locale: Locale, path: string) {
 
 /**
  * Speakable schema enabling Google Assistant and AI extraction to surface the
- * marked CSS selector as the page's primary spoken answer.
+ * marked CSS selectors as the page's primary spoken answer.
+ *
+ * `selectors` must only reference elements the page actually renders: pages
+ * with a `QuickAnswer` block keep the default `[".quick-answer", "h1"]`;
+ * pages without one (e.g. the homepage) should pass `["h1"]`.
  */
-export function buildSpeakableJsonLd(locale: Locale, path: string) {
+export function buildSpeakableJsonLd(
+  locale: Locale,
+  path: string,
+  selectors: string[] = [".quick-answer", "h1"],
+) {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -670,7 +696,7 @@ export function buildSpeakableJsonLd(locale: Locale, path: string) {
     inLanguage: locale === "en" ? "en-US" : "zh-CN",
     speakable: {
       "@type": "SpeakableSpecification",
-      cssSelector: [".quick-answer", "h1"],
+      cssSelector: selectors,
     },
   };
 }

@@ -31,10 +31,13 @@ export default async function PianoLessonsSanJosePage({
   const { locale } = await params;
   const typedLocale = locale as Locale;
   const faqItems = getFaqItems(typedLocale, pianoLessonsSanJoseFaqIds);
+  const commonObjections = landingPages[typedLocale][SLUG].commonObjections;
 
   return (
     <>
-      <JsonLd data={buildFaqJsonLd(typedLocale, pianoLessonsSanJoseFaqIds)} />
+      {/* Single FAQPage covering both the FAQ section and the visible
+          common-objections blocks (#objection-*). */}
+      <JsonLd data={buildFaqJsonLd(typedLocale, pianoLessonsSanJoseFaqIds, commonObjections)} />
       <LandingPageView locale={typedLocale} slug={SLUG} />
       <FaqSection
         banded

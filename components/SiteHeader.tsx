@@ -95,6 +95,9 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
           <Link href={`/${locale}/about`} className={navLinkClass}>
             {localized.nav.about}
           </Link>
+          <Link href={`/${locale}/journal`} className={navLinkClass}>
+            {localized.nav.journal}
+          </Link>
           <Link href={`/${locale}/contact`} className={navLinkClass}>
             {localized.nav.contact}
           </Link>
@@ -169,6 +172,9 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
           </div>
           <Link href={`/${locale}/about`} onClick={() => setIsOpen(false)}>
             {localized.nav.about}
+          </Link>
+          <Link href={`/${locale}/journal`} onClick={() => setIsOpen(false)}>
+            {localized.nav.journal}
           </Link>
           <Link href={`/${locale}/contact`} onClick={() => setIsOpen(false)}>
             {localized.nav.contact}

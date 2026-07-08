@@ -46,7 +46,8 @@ export default async function LocaleHome({
     <>
       <BreadcrumbJsonLd locale={locale as Locale} path={`/${locale}`} />
       <JsonLd data={buildFaqJsonLd(typedLocale, homeFaqIds)} />
-      <JsonLd data={buildSpeakableJsonLd(typedLocale, `/${locale}`)} />
+      {/* Home has no QuickAnswer block, so speakable targets only the H1. */}
+      <JsonLd data={buildSpeakableJsonLd(typedLocale, `/${locale}`, ["h1"])} />
 
       {/* Hero */}
       <Band tone="white" py="lg">

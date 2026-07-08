@@ -6,12 +6,11 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import AuthorByline from "@/components/AuthorByline";
 import { buildMetadata } from "@/lib/seo";
 
-// Journal is temporarily hidden while SEO/GEO-optimized articles are rewritten.
-// To re-enable: flip JOURNAL_ENABLED back to true, add `/journal` back to
-// `app/sitemap.ts` and to the canonical page list in `lib/llms.ts`, restore the
-// nav link in `components/SiteHeader.tsx`, and re-add `relatedLinks` in
-// `content/landing-pages.ts`.
-const JOURNAL_ENABLED = false;
+// Kill switch for the journal section. When set to `false`, the list page and
+// every article URL 404, and the section must also be removed from
+// `app/sitemap.ts`, `lib/llms.ts` canonicalPages(), and the nav link in
+// `components/SiteHeader.tsx` (all currently wired for enabled = true).
+const JOURNAL_ENABLED = true;
 
 export async function generateMetadata({
   params,

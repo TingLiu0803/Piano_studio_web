@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { type Locale, content, siteConfig } from "@/content/site";
 import ContactForm from "@/components/ContactForm";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
@@ -46,6 +47,20 @@ export default async function ContactPage({
             </h1>
             <p className="mt-3 text-base leading-relaxed text-[color:var(--text-muted)]">
               {localized.contact.description}
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-[color:var(--text-muted)]">
+              {localized.contact.lessonLinksIntro}{" "}
+              {localized.contact.lessonLinks.map((link, index) => (
+                <span key={link.slug}>
+                  {index > 0 ? " · " : null}
+                  <Link
+                    href={`/${typedLocale}/${link.slug}`}
+                    className="font-semibold text-[color:var(--link)] underline-offset-4 hover:underline"
+                  >
+                    {link.label}
+                  </Link>
+                </span>
+              ))}
             </p>
             <div className="mt-6">
               <ContactForm

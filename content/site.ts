@@ -6,7 +6,7 @@ export type Locale = (typeof locales)[number];
  * change so that JSON-LD `dateModified` and `Article.dateModified` stay
  * accurate; LLM crawlers use this signal to decide whether to re-cite.
  */
-export const contentVersion = "2026-06-29";
+export const contentVersion = "2026-07-08";
 
 /**
  * Single source of truth for the studio's headline numbers. Every visible stat,
@@ -408,6 +408,11 @@ export const content = {
         "Ask about availability, rates, or the best plan for your student.",
       submitLabel: "Send inquiry",
       successMessage: "Thanks! Your message has been received.",
+      lessonLinksIntro: "Looking for lesson details first?",
+      lessonLinks: [
+        { slug: "piano-lessons-san-jose", label: "Piano lessons in San Jose" },
+        { slug: "adult-piano-lessons", label: "Adult piano lessons" },
+      ],
     },
     testimonials: [
       {
@@ -444,6 +449,9 @@ export const content = {
         "kids-piano-lessons": "Kids piano lessons",
         "online-piano-lessons": "Online piano lessons",
         "piano-teacher-san-jose": "Piano teacher in San Jose",
+        "piano-lessons-sunnyvale": "Sunnyvale piano lessons",
+        "piano-lessons-cupertino": "Cupertino piano lessons",
+        "piano-lessons-santa-clara": "Santa Clara piano lessons",
       },
       pages: {
         trial: {
@@ -460,9 +468,9 @@ export const content = {
         },
         contact: {
           title:
-            "Contact San Jose Piano Studio | Rates, Schedule & Free Trial",
+            "Contact Eric Liu Piano Studio | Cupertino, CA",
           description:
-            "Message Eric Liu Piano Studio about availability, tuition, or the best lesson format. In-person Cupertino / San Jose / South Bay or online. Most families hear back the same day.",
+            "Get in touch with Eric Liu Piano Studio in Cupertino, CA. Send a message about scheduling, availability, or booking a free trial — most families hear back the same day.",
         },
       },
     },
@@ -632,6 +640,11 @@ export const content = {
       description: "欢迎咨询时间安排、费用或最适合学生的计划。",
       submitLabel: "发送咨询",
       successMessage: "谢谢！我们已收到您的留言。",
+      lessonLinksIntro: "想先了解课程详情？",
+      lessonLinks: [
+        { slug: "piano-lessons-san-jose", label: "圣何塞钢琴课程" },
+        { slug: "adult-piano-lessons", label: "成人钢琴课" },
+      ],
     },
     testimonials: [
       {
@@ -668,6 +681,9 @@ export const content = {
         "kids-piano-lessons": "儿童钢琴课",
         "online-piano-lessons": "线上钢琴课",
         "piano-teacher-san-jose": "圣何塞钢琴老师",
+        "piano-lessons-sunnyvale": "森尼维尔钢琴课",
+        "piano-lessons-cupertino": "库比蒂诺钢琴课",
+        "piano-lessons-santa-clara": "圣克拉拉钢琴课",
       },
       pages: {
         trial: {
@@ -681,9 +697,9 @@ export const content = {
             "了解 Eric Liu：湾区一对一钢琴私教，成人重拾、认真爱好者与儿童 5+。古典功底、结构化练习与中英文沟通支持。",
         },
         contact: {
-          title: "联系钢琴课 | 圣何塞 | 费用、时间与试听",
+          title: "联系 Eric Liu 钢琴工作室 | 加州库比蒂诺",
           description:
-            "咨询课程安排、学费或最适合的上课方式（库比蒂诺/圣何塞线下或线上）。多数家庭当日收到回复。",
+            "联系位于加州库比蒂诺的 Eric Liu 钢琴工作室：咨询时间安排、预约免费试听或留言提问。多数家庭当日收到回复。",
         },
       },
     },
