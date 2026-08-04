@@ -124,6 +124,7 @@ export default async function TrialPage({
                 locale={typedLocale}
                 submitLabel={localized.trial.requestCta}
                 successMessage={localized.contact.successMessage}
+                pageType="trial"
               />
             </div>
           </Card>
@@ -135,7 +136,16 @@ export default async function TrialPage({
             <ul className="mt-4 flex flex-col gap-3 text-[15px] text-[color:var(--text-body,var(--foreground))]">
               <li className="flex items-start gap-2.5">
                 <Icon name="location_on" size={18} style={{ color: "var(--text-muted)", flexShrink: 0, marginTop: "2px" }} />
-                <span>{siteConfig.addressLine}</span>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.addressLine)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline-offset-4 hover:underline"
+                  data-ga-event="directions_click"
+                  data-ga-page-type="trial"
+                >
+                  {siteConfig.addressLine}
+                </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <Icon name="public" size={18} style={{ color: "var(--text-muted)", flexShrink: 0, marginTop: "2px" }} />
@@ -143,11 +153,15 @@ export default async function TrialPage({
               </li>
               <li className="flex items-start gap-2.5">
                 <Icon name="mail" size={18} style={{ color: "var(--text-muted)", flexShrink: 0, marginTop: "2px" }} />
-                <span>{siteConfig.email}</span>
+                <a href={`mailto:${siteConfig.email}`} className="underline-offset-4 hover:underline">
+                  {siteConfig.email}
+                </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <Icon name="call" size={18} style={{ color: "var(--text-muted)", flexShrink: 0, marginTop: "2px" }} />
-                <span>{siteConfig.phone}</span>
+                <a href={`tel:${siteConfig.phoneE164}`} className="underline-offset-4 hover:underline">
+                  {siteConfig.phone}
+                </a>
               </li>
             </ul>
           </Card>

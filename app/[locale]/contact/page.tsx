@@ -27,12 +27,31 @@ export default async function ContactPage({
   const typedLocale = locale as Locale;
   const localized = content[typedLocale];
   const detailsTitle = typedLocale === "en" ? "Studio details" : "工作室信息";
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.addressLine)}`;
 
-  const details: Array<[IconName, string]> = [
-    ["location_on", siteConfig.addressLine],
-    ["public", localized.labels.serviceArea],
-    ["mail", siteConfig.email],
-    ["call", siteConfig.phone],
+  const details: Array<{
+    icon: IconName;
+    label: string;
+    href?: string;
+    gaEvent?: string;
+  }> = [
+    {
+      icon: "location_on",
+      label: siteConfig.addressLine,
+      href: mapsUrl,
+      gaEvent: "directions_click",
+    },
+    { icon: "public", label: localized.labels.serviceArea },
+    {
+      icon: "mail",
+      label: siteConfig.email,
+      href: `mailto:${siteConfig.email}`,
+    },
+    {
+      icon: "call",
+      label: siteConfig.phone,
+      href: `tel:${siteConfig.phoneE164}`,
+    },
   ];
 
   return (
@@ -67,6 +86,7 @@ export default async function ContactPage({
                 locale={typedLocale}
                 submitLabel={localized.contact.submitLabel}
                 successMessage={localized.contact.successMessage}
+                pageType="contact"
               />
             </div>
           </Card>
@@ -76,10 +96,32 @@ export default async function ContactPage({
             <Card padding="lg" style={{ background: "var(--surface-soft)" }}>
               <h2 className="text-[length:var(--text-h4)] font-bold text-[color:var(--foreground)]">{detailsTitle}</h2>
               <ul className="mt-4 flex flex-col gap-3 text-[15px] text-[color:var(--text-body,var(--foreground))]">
-                {details.map(([icon, value]) => (
-                  <li key={value} className="flex items-start gap-2.5">
-                    <Icon name={icon} size={18} style={{ color: "var(--text-muted)", flexShrink: 0, marginTop: "2px" }} />
-                    <span>{value}</span>
+                {details.map((item) => (
+                  <li key={item.label} className="flex items-start gap-2.5">
+                    <Icon
+                      name={item.icon}
+                      size={18}
+                      style={{ color: "var(--text-muted)", flexShrink: 0, marginTop: "2px" }}
+                    />
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="underline-offset-4 hover:underline"
+                        {...(item.href.startsWith("http")
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                        {...(item.gaEvent
+                          ? {
+                              "data-ga-event": item.gaEvent,
+                              "data-ga-page-type": "contact",
+                            }
+                          : {})}
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <span>{item.label}</span>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -213,7 +213,7 @@ const en: Record<ArticleSlug, Article> = {
     category: "Practice strategy",
     readingTimeMinutes: 8,
     intro:
-      "Most adult piano students practice the way they read email: linearly, without prioritization. The most expensive habit you can build is sight-reading the same passage at full tempo every day and hoping it gets better. This article describes the practice framework I teach in my San Jose studio.",
+      "Most adult piano students practice the way they read email: linearly, without prioritization. The most expensive habit you can build is sight-reading the same passage at full tempo every day and hoping it gets better. This article describes the practice framework I teach in my Cupertino studio.",
     sections: [
       {
         heading: "Why time-counting fails adults",
@@ -520,7 +520,7 @@ const zh: Record<ArticleSlug, Article> = {
     category: "练习策略",
     readingTimeMinutes: 8,
     intro:
-      "大多数成人练琴像读邮件：从头到尾、没有优先级。最昂贵的习惯是每天用原速把同一段从头到尾过一遍，然后期待自己变好。本文介绍我在圣何塞工作室教授的练习框架。",
+      "大多数成人练琴像读邮件：从头到尾、没有优先级。最昂贵的习惯是每天用原速把同一段从头到尾过一遍，然后期待自己变好。本文介绍我在库比蒂诺工作室教授的练习框架。",
     sections: [
       { heading: "为什么“数时间”对成人不奏效", body: "儿童神经系统开放性强，60 分钟不聚焦也能进步。成人不行。没有命名问题、单纯靠时长堆出来的练习，大部分都是浪费。" },
       { heading: "四步框架", body: "每次练习按以下结构：（1）找出一个瓶颈，（2）将其隔离到最小单位，（3）以集中注意力反复练习直到稳定，（4）接回完整乐句并验证。" },

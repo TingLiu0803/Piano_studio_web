@@ -25,7 +25,7 @@ export async function generateMetadata({
       : "学琴笔记 — 成人学习、练习策略、如何选老师";
   const description =
     typed === "en"
-      ? "Long-form guides on adult piano learning, choosing a teacher in the South Bay, online vs in-person lessons, practice strategy, and instrument choice. Written by San Jose piano teacher Eric Liu."
+      ? "Long-form guides on adult piano learning, choosing a teacher in the South Bay, online vs in-person lessons, practice strategy, and instrument choice. Written by Cupertino piano teacher Eric Liu."
       : "由圣何塞钢琴老师 Eric Liu 撰写：成人学钢琴时间线、南湾如何选老师、线上 vs 线下、练习策略与乐器选择等长文。";
   return buildMetadata(typed, `/${typed}/journal`, undefined, {
     title,

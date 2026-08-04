@@ -7,6 +7,13 @@ export const runtime = "nodejs";
 
 const emailRegex = /.+@.+\..+/;
 
+class SmtpConfigError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "SmtpConfigError";
+  }
+}
+
 async function sendLeadEmail(details: {
   name: string;
   email: string;
@@ -17,9 +24,11 @@ async function sendLeadEmail(details: {
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
 
+  // Never pretend success when mail cannot be delivered — silent skip was
+  // hiding lost inquiries behind a green UI + GA lead events.
   if (!smtpUser || !smtpPass) {
-    console.warn("SMTP credentials missing; skipping email notification.");
-    return;
+    console.error("SMTP credentials missing; refusing to acknowledge inquiry.");
+    throw new SmtpConfigError("SMTP credentials missing");
   }
 
   const host = process.env.SMTP_HOST ?? "smtp.gmail.com";
@@ -80,7 +89,17 @@ export async function POST(request: Request) {
     } catch (dbError) {
       console.warn("Lead database write failed; continuing", dbError);
     }
-    await sendLeadEmail({ name, email, phone, message, locale });
+
+    try {
+      await sendLeadEmail({ name, email, phone, message, locale });
+    } catch (mailError) {
+      console.error("Contact form email delivery failed", mailError);
+      const status = mailError instanceof SmtpConfigError ? 503 : 500;
+      return NextResponse.json(
+        { error: "Failed to deliver inquiry" },
+        { status },
+      );
+    }
 
     return NextResponse.json({ ok: true });
   } catch (error) {

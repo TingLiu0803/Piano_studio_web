@@ -70,17 +70,17 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
       "piano-lessons-san-jose": {
         seo: {
           title:
-            "Piano Lessons San Jose & Sunnyvale | In-Person Near Me + Online | 1:1",
+            "Piano Lessons for San Jose Families | Cupertino Studio | Free Trial",
           description:
-            "In-person piano lessons near San Jose and Sunnyvale, plus online: private 1:1 for kids 5+, adults, and beginners. If you searched piano classes or a local piano teacher, start here—weekly plans, technique & musicality. Free trial; most inquiries same day.",
+            "Private 1:1 piano lessons for San Jose & South Bay families at a Cupertino studio. Students travel from West San Jose, Sunnyvale, and Santa Clara — or learn online. Kids 5+, adults, beginners. Free trial; most inquiries same day.",
         },
         h1: "San Jose piano lessons — private, one-on-one",
         intro:
-          "Private piano lessons in San Jose and the South Bay: if you are searching for piano lessons in San Jose, piano lessons for beginners in Sunnyvale, piano classes near Campbell, or in-person piano lessons near me with a teacher who only does one-on-one, this page is the clearest summary. Lessons are in-person in San Jose and nearby communities, or online when that fits your schedule.",
+          "Private piano lessons for San Jose and South Bay families: if you searched piano lessons in San Jose, beginners in Sunnyvale, or in-person piano lessons near me, here is the direct answer. All in-person lessons happen at the Cupertino studio — students travel from West San Jose, Sunnyvale, Santa Clara, and nearby. Online lessons are available when that fits your schedule.",
         quickAnswer:
-          "Eric Liu Piano Studio offers private 1:1 piano lessons from a Cupertino-based studio serving San Jose and across the South Bay (Sunnyvale, Santa Clara, Cupertino, Campbell, Mountain View, Palo Alto, Los Gatos, Saratoga, Milpitas) for adults, adult beginners, restarters, and kids ages 5+. Lessons are taught in-person in Cupertino/San Jose areas or live online; a free trial lesson is available with no credit card.",
+          "Eric Liu Piano Studio offers private 1:1 piano lessons at a Cupertino studio for adults, adult beginners, restarters, and kids ages 5+. Students travel from San Jose, Sunnyvale, Santa Clara, and nearby South Bay cities — or learn live online. A free trial lesson is available with no credit card.",
         facts: [
-          "Location: based in Cupertino, California; serving San Jose and South Bay in-person plus online",
+          "Location: Cupertino studio (175 Calvert Dr); students travel from San Jose & South Bay; online available",
           "Format: private 1:1 only — no group classes",
           "Ages: 5 and up — kids, teens, adults, and adult beginners",
           "Languages: lessons taught in both English and Mandarin Chinese — bilingual studio",
@@ -135,7 +135,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
               "Practice strategies you can use between lessons without guesswork",
             ],
             body:
-              "Every student gets a customized plan. We focus on technique, musicality, and the “language” of music—not crowded group classes. If you want affordable piano lessons with depth, you’ll get clear practice strategies and repertoire that matches your goals.",
+              "Every student gets a customized plan. We focus on technique, musicality, and the “language” of music—not crowded group classes. You get clear practice strategies and repertoire that matches your goals — depth without group-class crowding.",
           },
           {
             heading: "Who takes lessons here",
@@ -150,26 +150,26 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           {
             heading: "Service area",
             bullets: [
-              "In-person across San Jose, Sunnyvale, Santa Clara, Cupertino, and nearby South Bay cities",
+              "In-person only at the Cupertino studio — students travel from San Jose, Sunnyvale, Santa Clara, and nearby",
               "Online lessons for busy adults and families who prefer remote learning",
             ],
             body:
-              "Students come from San Jose, Sunnyvale, Santa Clara, Cupertino, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, Milpitas, and across the SF Bay Area—including many looking for piano lessons near me for adults or piano lessons for beginners in Sunnyvale. Online piano lessons are available for busy adults and families who prefer remote learning.",
+              "Students travel to the Cupertino studio from San Jose, Sunnyvale, Santa Clara, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, Milpitas, and across the SF Bay Area—including many looking for piano lessons near me for adults or piano lessons for beginners in Sunnyvale. Online piano lessons are available for busy adults and families who prefer remote learning.",
           },
         ],
       },
       "adult-piano-lessons": {
         seo: {
           title:
-            "Private Piano Lessons for Adults | San Jose & Sunnyvale | Near Me + Online",
+            "Private Piano Lessons for Adults | Cupertino Studio | Free Trial",
           description:
-            "Piano lessons near me for adults in San Jose, Sunnyvale, and the South Bay: private 1:1 for beginners, restarters, hobbyists, and advanced players. In-person or online. Patient, structured coaching—free trial, no credit card.",
+            "Adult beginners and restarters: private 1:1 at a Cupertino studio. Students travel from Sunnyvale, Santa Clara, and West San Jose — or learn online. Structured coaching; free trial, no credit card.",
         },
         h1: "Private piano lessons for adults in San Jose and the Bay Area",
         intro:
           "Yes, adults can absolutely start piano from zero and make clear progress with a structured plan. If you searched for private piano lessons for adults in San Jose — or simply “piano lessons for adults near me” — this page answers the key questions directly: who this is for, how long progress takes, what to practice, and whether you need an instrument at home.",
         quickAnswer:
-          "Private piano lessons for adults at Eric Liu Piano Studio are 1:1 only, taught from a Cupertino base and serving in-person students across San Jose and the South Bay, or live online. Adult beginners and restarters typically hear meaningful progress within 2-3 months of practicing 20-40 minutes a day, 5 days a week, and most students stay in lessons for 2+ years. A free trial lesson is available, no credit card required.",
+          "Private piano lessons for adults at Eric Liu Piano Studio are 1:1 only, taught at the Cupertino studio for students who travel from San Jose and the South Bay, or live online. Adult beginners and restarters typically hear meaningful progress within 2-3 months of practicing 20-40 minutes a day, 5 days a week, and most students stay in lessons for 2+ years. A free trial lesson is available, no credit card required.",
         facts: [
           "Adult beginners and restarters are a core part of the studio",
           "Recommended practice: 20-40 minutes a day, 5 days a week",
@@ -266,7 +266,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           {
             heading: "Should I choose in-person or online adult piano lessons?",
             bullets: [
-              "In-person in San Jose and South Bay for direct touch and tone feedback",
+              "In-person at the Cupertino studio for direct touch and tone feedback",
               "Online for busy weeks or commute-heavy schedules, with the same private structure",
               "Free trial available to test fit before committing",
             ],
@@ -286,7 +286,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
         intro:
           "Parents searching for piano classes in San Jose, piano classes near Sunnyvale, or a private piano teacher for children often want a calm, structured teacher who communicates clearly. I teach one-on-one only—no group classes—so each student gets attention tailored to their age and learning style.",
         quickAnswer:
-          "Eric Liu Piano Studio teaches private 1:1 piano lessons for kids and teens ages 5 and up, from a Cupertino-based studio serving in-person students across San Jose and the South Bay, or live online. Lessons emphasize healthy technique, calm structured weekly assignments, and bilingual (English/Chinese) communication for families who want it. A free trial lesson is available.",
+          "Eric Liu Piano Studio teaches private 1:1 piano lessons for kids and teens ages 5 and up at the Cupertino studio — families travel from San Jose and the South Bay — or live online. Lessons emphasize healthy technique, calm structured weekly assignments, and bilingual (English/Chinese) communication for families who want it. A free trial lesson is available.",
         facts: [
           "Ages: 5 and up — kids, pre-teens, teens",
           "Format: private 1:1 only — no group classes",
@@ -344,11 +344,11 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           {
             heading: "Lesson formats",
             bullets: [
-              "Weekly or bi-weekly; in-person in San Jose / South Bay or online",
+              "Weekly or bi-weekly; in-person at the Cupertino studio or online",
               "Exam, audition, and competition support when that matches your goals",
             ],
             body:
-              "Weekly or bi-weekly schedules, in-person in San Jose / South Bay or online. Support for exam prep, auditions, and competitions when that aligns with your goals.",
+              "Weekly or bi-weekly schedules, in-person at the Cupertino studio or online. Support for exam prep, auditions, and competitions when that aligns with your goals.",
           },
           {
             heading: "Start with a trial",
@@ -372,7 +372,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
         intro:
           "Online lessons work well for busy adults, traveling families, and students who prefer learning from home. You still get the same personalized curriculum and attention—just without the commute.",
         quickAnswer:
-          "Online piano lessons at Eric Liu Piano Studio are live, private, 1:1 sessions taught from a Cupertino-based studio serving San Jose and the South Bay. Format and curriculum match in-person lessons; effectiveness depends mostly on the student's audio setup (USB microphone, wired headphones, top-down camera) and weighted-key digital piano. A free trial lesson lets you confirm setup and fit.",
+          "Online piano lessons at Eric Liu Piano Studio are live, private, 1:1 sessions taught from the Cupertino studio. Format and curriculum match in-person lessons; effectiveness depends mostly on the student's audio setup (USB microphone, wired headphones, top-down camera) and weighted-key digital piano. A free trial lesson lets you confirm setup and fit.",
         facts: [
           "Format: live 1:1 video lessons (not pre-recorded)",
           "Requirements: 88-key fully-weighted digital piano, USB microphone, wired headphones",
@@ -460,7 +460,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
         intro:
           "Whether you searched “piano teacher San Jose,” “piano teacher near me,” “piano music teachers near me,” or “San Jose piano teachers,” the goal is the same: find a teacher you trust, who teaches seriously, and who respects your time. This page covers what to look for when vetting a teacher — training lineage, teaching format, real reviews, and a trial lesson — and explains how I teach: private lessons only, no group classes, rooted in classical training and practical coaching.",
         quickAnswer:
-          "Eric Liu is a private piano teacher based in Cupertino, serving San Jose and the South Bay, with 8+ years of teaching experience and 60+ students personally coached. He trained under Erna Gulabyan (San Francisco Conservatory of Music) and Frank Levy (Stanford University), and teaches only 1:1 — no group classes — for adults, adult beginners, and kids ages 5+, in-person or live online.",
+          "Eric Liu is a private piano teacher based in Cupertino, with 8+ years of teaching experience and 60+ students personally coached. He trained under Erna Gulabyan (San Francisco Conservatory of Music) and Frank Levy (Stanford University), and teaches only 1:1 — no group classes — for adults, adult beginners, and kids ages 5+. In-person lessons are at the Cupertino studio; students travel from San Jose and the South Bay, or learn live online.",
         facts: [
           "Teacher: Eric Liu — software engineer turned pianist",
           "Experience: 8+ years teaching; 60+ students personally coached",
@@ -813,7 +813,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
         },
         h1: "圣何塞钢琴课 — 私人一对一",
         intro:
-          "圣何塞私人钢琴课与南湾教学：无论您在寻找圣何塞钢琴课、森尼维尔初学者课程、南湾钢琴老师，还是希望线上一对一，课程都以学生为中心——不使用千篇一律的教材。线下可在圣何塞及周边上课，也支持在线课程以配合日程。",
+          "圣何塞私人钢琴课与南湾教学：无论您在寻找圣何塞钢琴课、森尼维尔初学者课程、南湾钢琴老师，还是希望线上一对一，课程都以学生为中心——不使用千篇一律的教材。线下课只在库比蒂诺工作室进行，西圣何塞、森尼维尔、圣克拉拉等学员自行前来；也可线上以配合日程。",
         quickAnswer:
           "Eric Liu 钢琴工作室位于库比蒂诺，提供覆盖圣何塞与南湾（森尼维尔、圣克拉拉、库比蒂诺、坎贝尔、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、米尔皮塔斯）的一对一私人钢琴课，面向成人、成人初学者、重拾者与 5 岁以上儿童。提供库比蒂诺/圣何塞周边线下课与线上课；免费试听，无需信用卡。",
         facts: [
@@ -887,7 +887,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           {
             heading: "服务区域",
             bullets: [
-              "线下覆盖圣何塞、森尼维尔、圣克拉拉、库比蒂诺等南湾城市",
+              "线下仅在库比蒂诺工作室 — 圣何塞、森尼维尔、圣克拉拉等南湾学员自行前来",
               "亦提供线上课程，适合通勤紧张的家庭与成人",
             ],
             body:
@@ -906,7 +906,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
         intro:
           "若您在寻找成人钢琴私教、一对一成人钢琴课，或“家附近的成人钢琴课”，欢迎了解：许多成年学生是初学者或重拾者；我也教授中级与高级成人学员，在技巧、音乐性与曲目上做深度指导。课程系统、耐心、以目标为导向，而不是赶进度刷完一本教材。",
         quickAnswer:
-          "Eric Liu 钢琴工作室成人课程为一对一私教，工作室位于库比蒂诺，服务圣何塞与南湾线下或线上。稳定练习的成人初学者通常在 2-3 个月内听到明显进步（每周 5 天、每天 20-40 分钟），约 90% 的学员长期坚持 2 年以上。免费试听，无需信用卡。",
+          "Eric Liu 钢琴工作室成人课程为一对一私教，工作室位于库比蒂诺：线下课在工作室进行，南湾学员自行前来；亦可线上。稳定练习的成人初学者通常在 2-3 个月内听到明显进步（每周 5 天、每天 20-40 分钟），约 90% 的学员长期坚持 2 年以上。免费试听，无需信用卡。",
         facts: [
           "成人初学者与重拾者是工作室核心学员",
           "建议练习节奏：每周 5 天，每天 20-40 分钟",
@@ -976,7 +976,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
               "线上：更灵活的时间安排，同样一对一私教",
             ],
             body:
-              "无论您搜索的是成人钢琴私教还是一对一成人钢琴课，形式都一样：一位老师、围绕您目标的每周计划。可选择圣何塞/南湾线下课，或线上课以配合工作与家庭。",
+              "无论您搜索的是成人钢琴私教还是一对一成人钢琴课，形式都一样：一位老师、围绕您目标的每周计划。线下课在库比蒂诺工作室进行，南湾学员自行前来；也可线上以配合工作与家庭。",
           },
           {
             heading: "先试听再决定",
@@ -1000,7 +1000,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
         intro:
           "为家长提供清晰、结构化的钢琴课：注重健康手型与练习习惯，长期规划兼顾进度与兴趣。仅一对一，不授团课。可提供中英文沟通，方便家长了解进度。",
         quickAnswer:
-          "Eric Liu 钢琴工作室为 5 岁以上儿童与青少年提供一对一私人钢琴课，工作室位于库比蒂诺，服务圣何塞与南湾线下或线上。重视健康手型、清晰每周作业、可与家长进行中英文沟通。提供免费试听。",
+          "Eric Liu 钢琴工作室为 5 岁以上儿童与青少年提供一对一私人钢琴课，工作室位于库比蒂诺：线下课在工作室进行，南湾学员自行前来；亦可线上。重视健康手型、清晰每周作业、可与家长进行中英文沟通。提供免费试听。",
         facts: [
           "年龄：5 岁及以上 — 儿童、少儿、青少年",
           "形式：仅一对一私教，不设团课",
@@ -1058,11 +1058,11 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           {
             heading: "上课形式",
             bullets: [
-              "每周或隔周；圣何塞/南湾线下或线上",
+              "每周或隔周；库比蒂诺工作室线下或线上",
               "内容按家庭目标定制",
             ],
             body:
-              "每周或隔周；圣何塞/南湾线下或线上。根据家庭目标定制内容。",
+              "每周或隔周；库比蒂诺工作室线下或线上。根据家庭目标定制内容。",
           },
           {
             heading: "从试听开始",
@@ -1184,9 +1184,9 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
         neighborhoods: {
           heading: "学员来自哪里",
           body:
-            "学员来自整个南湾。线下覆盖圣何塞、森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔与米尔皮塔斯；线上学员则来自半岛、东湾及时区相近的外州。",
+            "学员来自整个南湾。线下课在库比蒂诺工作室进行；圣何塞、森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔与米尔皮塔斯的学员自行前来。线上学员则来自半岛、东湾及时区相近的外州。",
           bullets: [
-            "线下 — 圣何塞、森尼维尔、圣克拉拉、库比蒂诺、南湾各市",
+            "线下 — 南湾学员前往库比蒂诺工作室",
             "线上 — 半岛、东湾、时区相近的外州",
             "中文沟通支持 — 库比蒂诺、萨拉托加、帕洛阿尔托家庭",
           ],

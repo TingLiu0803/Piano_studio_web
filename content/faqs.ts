@@ -57,7 +57,7 @@ const faqCatalog: Record<Locale, FaqItem[]> = {
       id: "areas-served",
       question: "What areas do you serve for piano lessons?",
       answer:
-        "The studio is based in Cupertino, and I teach in-person across San Jose and the South Bay, including Sunnyvale, Santa Clara, Cupertino, Mountain View, Palo Alto, Los Gatos, Saratoga, Campbell, and Milpitas. I also offer online lessons. Lessons are taught in both English and Mandarin Chinese.",
+        "The studio is in Cupertino (175 Calvert Dr). All in-person lessons happen there — I do not travel to students' homes and I do not operate separate studios in other cities. Students travel from Sunnyvale, Santa Clara, West San Jose, Cupertino, Saratoga, Mountain View, and nearby South Bay communities. Online lessons are also available. Lessons are taught in English or Mandarin Chinese.",
     },
     {
       id: "adult-private-lessons",
@@ -138,7 +138,7 @@ const faqCatalog: Record<Locale, FaqItem[]> = {
       id: "areas-served",
       question: "你们在哪些地区提供钢琴课？",
       answer:
-        "工作室位于库比蒂诺，线下课程覆盖圣何塞与南湾，包括森尼维尔、圣克拉拉、库比蒂诺、山景城、帕洛阿尔托、洛斯加托斯、萨拉托加、坎贝尔与米尔皮塔斯，也提供线上课程。课程可用普通话或英文授课（中英双语）。",
+        "工作室位于库比蒂诺（175 Calvert Dr）。线下课只在此工作室进行——不上门家教，也没有其他城市的分店。森尼维尔、圣克拉拉、西圣何塞、萨拉托加、山景城等南湾学员自行前来；也可线上。课程可用普通话或英文授课。",
     },
     {
       id: "adult-private-lessons",
