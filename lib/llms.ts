@@ -46,7 +46,7 @@ export function studioFacts(): string[] {
     `Studio name: ${siteConfig.studioName}`,
     `Owner and teacher: ${siteConfig.ownerName} — ${siteConfig.teacherCredentialSummary}`,
     `Location: ${siteConfig.addressLine}, USA (lat ${geo.latitude}, lon ${geo.longitude})`,
-    `Service area: in-person across ${inPersonCities().join(", ")}, and the wider SF Bay Area; live online lessons available worldwide.`,
+    `Service area: students travel to the Cupertino studio from ${inPersonCities().join(", ")}, and nearby South Bay communities; live online lessons available worldwide.`,
     "Lesson format: private 1:1 only — no group classes.",
     `Ages: ${ageValue()} — kids, teens, adults, and adult beginners.`,
     "Languages: English and Mandarin Chinese.",

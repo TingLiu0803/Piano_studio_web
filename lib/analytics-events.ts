@@ -3,16 +3,18 @@
  * Register as custom events in GA4 if you want dedicated reports.
  *
  * Events emitted from the site:
- * - trial_cta_click (placement: hero_primary | sticky_bar | mid_page_band | …)
- * - lesson_hub_card_click (slug)
- * - lesson_hub_nav_click
- * - contact_submit, contact_cta_click
+ * - primary_cta_click / trial_cta_click (placement / cta_location)
+ * - contact_form_start | contact_form_submit_success | contact_form_submit_error
+ * - contact_submit, generate_lead (legacy aliases on success)
  * - trial_booking_click (external calendar)
+ * - email_click | phone_click | directions_click
+ * - lesson_hub_card_click (slug)
  * - experiment_assign (experiment_id, variant)
  * - about_bio_click
- * - ai_referrer_visit (referrer, source)  — fired once per session on first
- *   load when the referrer is a known AI search engine (ChatGPT, Perplexity,
- *   Gemini, Copilot, etc.). Use this to track AI-search-driven traffic in GA4.
+ * - ai_referrer_visit (referrer, source)
+ *
+ * Prefer params: page_path, page_type, cta_location, language.
+ * Do not send PII (name, email, phone, message body).
  */
 
 /**

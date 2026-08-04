@@ -160,17 +160,17 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
   const alternateName =
     locale === "en"
       ? [
-          "Private piano lessons in San Jose",
-          "San Jose piano lessons",
-          "San Jose piano teacher",
+          "Eric Liu Piano Studio Cupertino",
+          "Cupertino piano lessons",
+          "Private piano lessons Cupertino",
         ]
-      : ["圣何塞私人钢琴课", "圣何塞钢琴课", "圣何塞钢琴老师"];
+      : ["Eric Liu 库比蒂诺钢琴工作室", "库比蒂诺钢琴课", "库比蒂诺私人钢琴课"];
   const slogan =
     locale === "en"
-      ? "Private 1:1 piano lessons in San Jose, Sunnyvale & the South Bay"
-      : "圣何塞、森尼维尔与南湾一对一钢琴私教";
+      ? "Private 1:1 piano lessons at a Cupertino studio serving the South Bay"
+      : "库比蒂诺工作室一对一钢琴私教，服务南湾通勤学员";
   const teacherJobTitle =
-    locale === "en" ? "San Jose piano teacher" : "圣何塞钢琴老师";
+    locale === "en" ? "Cupertino piano teacher" : "库比蒂诺钢琴老师";
 
   const dayMap: Record<string, string> = {
     Monday: "Mo",
@@ -235,8 +235,8 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
         serviceArea: siteConfig.serviceArea,
         knowsAbout: [
           locale === "en"
-            ? "Private piano lessons in San Jose"
-            : "圣何塞私人钢琴课",
+            ? "Private piano lessons in Cupertino"
+            : "库比蒂诺私人钢琴课",
           locale === "en"
             ? "Adult beginner piano instruction"
             : "成人初学者钢琴教学",
@@ -421,10 +421,10 @@ function buildServiceNodes(locale: Locale, baseUrl: string) {
           },
           {
             id: "san-jose-piano-teacher",
-            name: "San Jose piano teacher (private lessons)",
+            name: "Cupertino piano teacher serving San Jose & South Bay",
             slug: "piano-teacher-san-jose",
             description:
-              "Private piano teacher in San Jose and the South Bay; classical training, structured practice, in-person or online.",
+              "Private piano teacher based in Cupertino; students travel from San Jose and the South Bay. Classical training, structured practice, in-person or online.",
           },
         ]
       : [
@@ -497,7 +497,7 @@ function buildCourseNodes(locale: Locale, baseUrl: string) {
             slug: "online-piano-lessons",
             name: "Online private piano lessons",
             description:
-              "Live online weekly 1:1 piano lessons for adults and motivated kids, taught by a San Jose-based teacher.",
+              "Live online weekly 1:1 piano lessons for adults and motivated kids, taught by a Cupertino-based teacher.",
           },
         ]
       : [
