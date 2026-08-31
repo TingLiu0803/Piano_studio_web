@@ -1,6 +1,9 @@
 import type { Locale } from "@/content/site";
+import { extraFocusMinutes } from "@/content/practice-games";
 
 export const articleSlugs = [
+  "piano-practice-games-for-kids",
+  "mianbao-studio-cat-employee-001",
   "adult-piano-learning-timeline-san-jose",
   "how-to-choose-piano-teacher-south-bay",
   "online-vs-in-person-piano-lessons-bay-area",
@@ -43,9 +46,223 @@ export type Article = {
   };
   /** Closing related-reading internal links (slug + label). */
   related?: { slug: ArticleSlug; label: string }[];
+  /** Optional in-article CTA. Internal paths start with `/` and get the locale prefix. */
+  cta?: {
+    href: string;
+    label: string;
+    note?: string;
+    newTab?: boolean;
+    gaEvent?: string;
+    gaPlacement?: string;
+  };
+  /** Visible article figures (server-rendered; also feed Article JSON-LD `image`). */
+  figures?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  }[];
+  /** Overrides the default Article JSON-LD keyword list. */
+  keywords?: string[];
 };
 
 const en: Record<ArticleSlug, Article> = {
+  "piano-practice-games-for-kids": {
+    slug: "piano-practice-games-for-kids",
+    title: "Studio music games for kids: more focused minutes, more willingness to practice",
+    description:
+      "Eric Liu Piano Studio in Cupertino regularly releases homemade music games for children's piano lessons — Beat Game and Who Am I? Follow-up observations: about 15 extra minutes of focused lesson time, and a stronger willingness to practice at home.",
+    quickAnswer: `The studio regularly releases homemade music games that support children's piano lessons rather than replacing private 1:1 teaching. Live now: Beat Game (note values and rhythm) and Who Am I? (note names, then children's songs). In parent follow-ups, focused lesson time increased by about ${extraFocusMinutes} minutes on average, and willingness to practice at home improved. New titles will land in the studio game warehouse.`,
+    datePublished: "2026-08-31",
+    dateModified: "2026-08-31",
+    category: "Studio practice",
+    readingTimeMinutes: 6,
+    keywords: [
+      "piano practice games",
+      "kids piano lessons",
+      "note names",
+      "rhythm games",
+      "cupertino piano studio",
+    ],
+    intro:
+      "Parents often ask what actually changes a child's attention in the lesson room. One practical answer at this Cupertino studio has been short, named music games built for kids — beats and note names first — sitting beside the weekly piece, not instead of it. Screenshots below are the real titles families can open today, plus Mianbao, who greets students in the room.",
+    figures: [
+      {
+        src: "/studio/games/music-theory-hub.png",
+        alt: "Music Theory Game home screen from Eric Liu Piano Studio, with Beat Game and Who Am I? and an illustrated orange-and-white cat at a piano",
+        caption: "The kids' game home: pick Beat Game or Who Am I? Mianbao is on the left.",
+      },
+      {
+        src: "/studio/games/beat-game.png",
+        alt: "Beat Game at Eric Liu Piano Studio: a child matches a note value by tapping 1, 2, 3, or 4",
+        caption: "Beat Game — learn how long a note lasts, then tap the count.",
+      },
+      {
+        src: "/studio/games/who-am-i.png",
+        alt: "Who Am I? at Eric Liu Piano Studio: animal icons mapped to piano keys from C to B",
+        caption: "Who Am I? — Cat is C. Tap the animal, then tap the key.",
+      },
+      {
+        src: "/studio/mianbao-warehouse.png",
+        alt: "Mianbao, the orange and white cat at Eric Liu Piano Studio in Cupertino, sitting on a cardboard warehouse playhouse",
+        caption: "The same cat in the room: Employee #001 on his warehouse.",
+      },
+      {
+        src: "/studio/mianbao-closeup.png",
+        alt: "Close-up of Mianbao, an orange and white studio cat at Eric Liu Piano Studio",
+        caption: "Mianbao, who likes it when students visit.",
+      },
+    ],
+    sections: [
+      {
+        heading: "Games sit beside the lesson, they do not replace it",
+        body:
+          "Every student here still gets a private one-on-one lesson with a written weekly assignment. A game is a five-to-ten-minute task with a name: tap a rhythm, name a key, then close the tab. That is closer to a technique drill than to open-ended screen time. If a child only wants to tap the game, the game is too long or the assignment was not small enough.",
+      },
+      {
+        heading: "What follow-ups have shown so far",
+        body:
+          `This is a studio observation from parent follow-ups, not a controlled study. After we started using short games in the lesson week, children's focused lesson time increased by about ${extraFocusMinutes} minutes on average. Parents also reported that the child was more willing to sit down at the piano at home. I treat those numbers as a signal to keep iterating — not as a guarantee for every family.`,
+        bullets: [
+          `About ${extraFocusMinutes} extra minutes of focused time in the lesson, on average`,
+          "Stronger willingness to start home practice, reported in follow-ups",
+          "Games stay short so attention does not collapse into browsing",
+        ],
+      },
+      {
+        heading: "What kids can play today",
+        body:
+          "The first public warehouse has two titles, both aimed at children. Beat Game teaches note values — how long a note lasts — then asks the child to tap 1, 2, 3, or 4 with the pulse. Who Am I? teaches piano note names with animals (Cat = middle C), then moves into finding keys, melody games, and simple songs such as Twinkle Twinkle. Neither game is an advanced theory quiz. More titles will be added to the same warehouse page, each with a name and a screenshot.",
+        bullets: [
+          "Beat Game: note values and tapping the rhythm",
+          "Who Am I?: note names, then children's songs",
+          "Next games will appear on the same warehouse page — no new link to hunt",
+        ],
+      },
+      {
+        heading: "How a round should look at home",
+        body:
+          "Use the game as a warm-up before the assigned piece. One short round, sound on, then close the tab. The useful residue is a sentence the child can bring to the next lesson: “the half note still feels like a quarter” or “I keep mixing F and G.” That sentence is the assignment, not a high score.",
+        bullets: [
+          "Five to ten minutes, then back to the piece",
+          "Say out loud the value or the note name before the next tap",
+          "Write one fuzzy spot and ask about it next week",
+        ],
+      },
+      {
+        heading: "Mianbao is in the room and on the screen",
+        body:
+          "The orange-and-white cat on the game home screen is the same Mianbao who sits on the cardboard warehouse between lessons. He likes students. The games are built in that same mood: short, friendly, and in service of the lesson — not a separate toy pile.",
+      },
+    ],
+    howTo: {
+      name: "How to use a studio music game in a practice week",
+      description:
+        "A four-step routine so a short kids' game supports the weekly piano assignment instead of replacing it.",
+      totalTimeIso: "PT10M",
+      steps: [
+        {
+          name: "Warm up with one short round",
+          text: "Open Beat Game or Who Am I?, turn sound on, and play one round before touching the assigned piece.",
+        },
+        {
+          name: "Say the value or the note name",
+          text: "Out loud: “this is two beats” or “Cat is C.” Unsure is allowed — say it anyway.",
+        },
+        {
+          name: "Write down one question",
+          text: "Note the value or the key that still collides. One question is enough.",
+        },
+        {
+          name: "Bring it to the next lesson",
+          text: "Ask that question in the next private lesson so the game feeds the 1:1 work instead of floating beside it.",
+        },
+      ],
+    },
+    cta: {
+      href: "/practice-games",
+      label: "Open the studio game warehouse",
+      note: "Each live title has a name, a screenshot, and a play button. Sound on.",
+      gaEvent: "practice_game_hub_click",
+      gaPlacement: "journal_games_article",
+    },
+    related: [
+      { slug: "mianbao-studio-cat-employee-001", label: "Meet Mianbao, studio Employee #001" },
+      { slug: "what-to-expect-first-piano-lesson", label: "What to expect in your first piano lesson" },
+    ],
+  },
+  "mianbao-studio-cat-employee-001": {
+    slug: "mianbao-studio-cat-employee-001",
+    title: "Mianbao, Employee #001: the studio’s lucky orange-and-white cat",
+    description:
+      "Meet Mianbao, the people-loving orange-and-white cat at Eric Liu Piano Studio in Cupertino — unofficial Employee #001, who greets students and often stays to play.",
+    quickAnswer:
+      "Mianbao is the studio's orange-and-white cat and unofficial Employee #001. He is a people-loving lucky cat who likes it when students visit, and he often stays in the room to play. Families meet him at the Cupertino studio; he is part of how the room feels, not a gimmick.",
+    datePublished: "2026-08-31",
+    dateModified: "2026-08-31",
+    category: "Studio life",
+    readingTimeMinutes: 4,
+    keywords: [
+      "piano studio cat",
+      "cupertino piano studio",
+      "eric liu piano studio",
+      "kids piano lessons",
+    ],
+    intro:
+      "Before a trial lesson, parents usually ask about technique, schedule, and whether a child will sit still. Then they notice the orange-and-white cat on the warehouse playhouse. That is Mianbao. This note introduces him properly — because he is the first employee on the roster, and students ask about him more than they ask about finger numbers.",
+    figures: [
+      {
+        src: "/studio/mianbao-warehouse.png",
+        alt: "Mianbao, the orange and white cat at Eric Liu Piano Studio in Cupertino, sitting on a cardboard warehouse playhouse",
+        caption: "Employee #001 on the warehouse — his preferred perch between lessons.",
+      },
+      {
+        src: "/studio/mianbao-carpet.png",
+        alt: "Mianbao lying on the carpet beside a mirror at Eric Liu Piano Studio in Cupertino",
+        caption: "Off duty on the studio carpet, still within greeting range of the door.",
+      },
+      {
+        src: "/studio/mianbao-closeup.png",
+        alt: "Close-up of Mianbao, an orange and white studio cat, with a small orange spot on a white paw",
+        caption: "The tell: a small orange spot on a white paw.",
+      },
+      {
+        src: "/studio/games/music-theory-hub.png",
+        alt: "Music Theory Game home with illustrated Mianbao at a piano, Beat Game and Who Am I? at Eric Liu Piano Studio",
+        caption: "The same face on the kids' games: Beat Game and Who Am I?",
+      },
+    ],
+    sections: [
+      {
+        heading: "Employee #001, on purpose",
+        body:
+          "Mianbao means “bread.” He is a short-haired orange-and-white cat — orange on the head, back, and tail; white muzzle, chest, and paws. Calling him Employee #001 is not a joke I tell once; it is how students keep track of who runs the front of house. I teach. He greets.",
+      },
+      {
+        heading: "He likes it when students come",
+        body:
+          "He is unusually people-oriented for a studio cat. When a student arrives, he often appears at the door, sits nearby during the first minutes, or parks on the warehouse while someone warms up. Children who were nervous about the new room tend to talk to him first. That is useful. A calm animal in the room is not a curriculum, but it is a real part of why the first ten minutes go more easily.",
+      },
+      {
+        heading: "What visiting families should know",
+        body:
+          "He is friendly, not a prop. If a child is allergic or uneasy around animals, say so before the trial — we will keep him out of the teaching space for that hour. If a child wants to say hello, the rule is the same as at home: let him approach, no chasing, hands gentle. He has a small orange spot on a white front paw; students like finding it.",
+        bullets: [
+          "Tell me in advance about cat allergies or fear of animals",
+          "Let Mianbao come to the student — no picking up without asking",
+          "He may sit in for part of a lesson; he may also nap through it",
+        ],
+      },
+      {
+        heading: "The same face on the practice games",
+        body:
+          "When the studio ships a new music mini-game, Mianbao is the one who invites families to try it. The warehouse playhouse is not a metaphor I invented for the website — it is where he actually sits. If you meet him at a trial and later open Beat Game or Who Am I? at home, you will recognize the cat on the screen.",
+      },
+    ],
+    related: [
+      { slug: "piano-practice-games-for-kids", label: "Studio music games for kids" },
+      { slug: "what-to-expect-first-piano-lesson", label: "What to expect in your first piano lesson" },
+    ],
+  },
   "adult-piano-learning-timeline-san-jose": {
     slug: "adult-piano-learning-timeline-san-jose",
     title: "How long does an adult take to learn piano in San Jose?",
@@ -368,6 +585,202 @@ const en: Record<ArticleSlug, Article> = {
 };
 
 const zh: Record<ArticleSlug, Article> = {
+  "piano-practice-games-for-kids": {
+    slug: "piano-practice-games-for-kids",
+    title: "工作室的音乐小游戏：孩子上课更专注，练琴也更愿意开始",
+    description:
+      "库比蒂诺 Eric Liu 钢琴工作室会定期推出给小孩玩的自制音乐游戏：节拍游戏与「我是谁」。回访观察：上课专注时间平均约多 15 分钟，在家练琴意愿有提升。",
+    quickAnswer: `工作室会定期推出给小孩玩的自制音乐小游戏，配合儿童钢琴课，而不是取代一对一私教。现在可以玩的是节拍游戏（音符时值与节奏）和「我是谁」（用小动物记音名，再弹儿歌）。根据家长回访，小孩上课专注时间平均约多了 ${extraFocusMinutes} 分钟，在家练琴的意愿也有提升。以后新游戏都会放进同一个游戏仓库。`,
+    datePublished: "2026-08-31",
+    dateModified: "2026-08-31",
+    category: "工作室实践",
+    readingTimeMinutes: 6,
+    keywords: [
+      "练琴小游戏",
+      "儿童钢琴课",
+      "节拍",
+      "音名",
+      "库比蒂诺钢琴工作室",
+    ],
+    intro:
+      "家长常问：到底怎样才能让孩子在琴房里把注意力稳住。这个库比蒂诺工作室的一个实际答案是：做短小、有名字、给小孩玩的音乐游戏——先认节拍和音名——放在每周曲目旁边用，不是用来取代曲目。下面的截图就是家里现在能打开的两款，以及教室里迎接学生的招财猫 Mianbao。",
+    figures: [
+      {
+        src: "/studio/games/music-theory-hub.png",
+        alt: "Eric Liu 钢琴工作室儿童乐理游戏首页：节拍游戏与我是谁，左侧是橘白猫插画",
+        caption: "儿童游戏首页：选节拍游戏或「我是谁」。左边是 Mianbao。",
+      },
+      {
+        src: "/studio/games/beat-game.png",
+        alt: "Eric Liu 钢琴工作室节拍游戏截图：孩子点 1、2、3、4 来匹配音符时值",
+        caption: "节拍游戏——这个音要停多久，再把它拍出来。",
+      },
+      {
+        src: "/studio/games/who-am-i.png",
+        alt: "Eric Liu 钢琴工作室「我是谁」游戏截图：小动物对应 C 到 B 的琴键",
+        caption: "我是谁——猫咪是 C。先点动物，再点琴键。",
+      },
+      {
+        src: "/studio/mianbao-warehouse.png",
+        alt: "库比蒂诺 Eric Liu 钢琴工作室的橘白猫 Mianbao，坐在纸箱仓库上",
+        caption: "教室里的同一只猫：员工 001 号坐在仓库上。",
+      },
+      {
+        src: "/studio/mianbao-closeup.png",
+        alt: "橘白招财猫 Mianbao 特写，Eric Liu 钢琴工作室",
+        caption: "Mianbao，很喜欢学生来访。",
+      },
+    ],
+    sections: [
+      {
+        heading: "游戏在课旁边，不取代课",
+        body:
+          "这里每位学生仍然上私人一对一课，并带着书面的每周作业回家。游戏是一个 5–10 分钟、有名字的任务：拍一个节奏、说出一个音名，然后关掉标签。它更接近技巧练习，而不是打开屏幕随便玩。如果孩子只想点游戏、不想碰曲子，说明游戏太长，或作业还不够小。",
+      },
+      {
+        heading: "回访目前看到的变化",
+        body:
+          `这是工作室根据家长回访做的观察，不是对照实验。开始把短游戏放进一周功课之后，小孩上课专注时间平均约多了 ${extraFocusMinutes} 分钟。家长也提到，孩子更愿意在家坐到钢琴前。我把这些数字当成继续迭代的信号，而不是对每个家庭的承诺。`,
+        bullets: [
+          `上课专注时间平均约多 ${extraFocusMinutes} 分钟`,
+          "回访里，在家开始练琴的意愿有提升",
+          "游戏保持够短，注意力才不会滑成刷屏幕",
+        ],
+      },
+      {
+        heading: "孩子现在可以玩什么",
+        body:
+          "仓库里第一批上架的是两款给小孩的游戏。节拍游戏教音符时值——这个音要停多久——然后让孩子跟着拍子点 1、2、3 或 4。「我是谁」用小动物记琴键音名（猫咪 = 中央 C），再进入找键、旋律游戏，以及小星星等儿歌。都不是进阶乐理测验。以后新游戏会加在同一层仓库里，每款都有名字和截图。",
+        bullets: [
+          "节拍游戏：音符时值与拍节奏",
+          "我是谁：音名，再弹儿歌",
+          "下一款也会出现在同一页仓库——不用再找新链接",
+        ],
+      },
+      {
+        heading: "在家一轮游戏该怎么玩",
+        body:
+          "把游戏当作曲目前的热身。短短一轮，打开声音，然后关掉标签页。真正有用的残留是孩子能带到下一节课的一句话：「二分音符对我来说还是像四分」或「F 和 G 会搞混。」这句话才是作业，不是高分。",
+        bullets: [
+          "5–10 分钟，然后回到曲子",
+          "下一次点击之前，先大声说出时值或音名",
+          "记下一个还不稳的点，下周课上问",
+        ],
+      },
+      {
+        heading: "Mianbao 在教室里，也在屏幕上",
+        body:
+          "游戏首页那只橘白猫，就是两节课之间坐在纸箱仓库上的 Mianbao。他喜欢学生。游戏也是这个脾气：短、友善、为课程服务——不是另外一堆玩具。",
+      },
+    ],
+    howTo: {
+      name: "如何把工作室小游戏放进一周练琴",
+      description: "四步流程，让给小孩的短游戏支持每周钢琴作业，而不是取代它。",
+      totalTimeIso: "PT10M",
+      steps: [
+        {
+          name: "先玩一轮短热身",
+          text: "打开节拍游戏或「我是谁」，打开声音，在碰指定曲目之前只玩一轮。",
+        },
+        {
+          name: "说出时值或音名",
+          text: "大声说：「这是两拍」或「猫咪是 C」。不确定也可以说。",
+        },
+        {
+          name: "写下同一个问题",
+          text: "记下仍然撞在一起的那个时值或那个键。一个问题就够。",
+        },
+        {
+          name: "带到下一节课",
+          text: "在下一节一对一课上问这个问题，让游戏喂回课堂，而不是漂在旁边。",
+        },
+      ],
+    },
+    cta: {
+      href: "/practice-games",
+      label: "打开工作室游戏仓库",
+      note: "每款上线游戏都有名字、截图和开始玩。建议打开声音。",
+      gaEvent: "practice_game_hub_click",
+      gaPlacement: "journal_games_article",
+    },
+    related: [
+      { slug: "mianbao-studio-cat-employee-001", label: "认识招财猫 Mianbao，员工 001 号" },
+      { slug: "what-to-expect-first-piano-lesson", label: "第一节钢琴课会发生什么" },
+    ],
+  },
+  "mianbao-studio-cat-employee-001": {
+    slug: "mianbao-studio-cat-employee-001",
+    title: "招财猫 Mianbao：工作室员工 001 号",
+    description:
+      "认识 Mianbao：库比蒂诺 Eric Liu 钢琴工作室一只非常亲人的橘白猫，非正式员工 001 号。他喜欢学生来访，也常留下来一起玩。",
+    quickAnswer:
+      "Mianbao 是工作室的橘白招财猫，也是非正式的员工 001 号。他非常亲人，喜欢学生来访，并常常留在教室里跟大家玩。试听的家庭会在库比蒂诺工作室见到他；他是这个房间气氛的一部分，不是摆拍道具。",
+    datePublished: "2026-08-31",
+    dateModified: "2026-08-31",
+    category: "工作室日常",
+    readingTimeMinutes: 4,
+    keywords: [
+      "钢琴工作室猫咪",
+      "库比蒂诺钢琴工作室",
+      "Eric Liu 钢琴工作室",
+      "儿童钢琴课",
+    ],
+    intro:
+      "试听前，家长通常会问技巧、时间，以及孩子能不能坐得住。然后他们会看见纸箱仓库上那只橘白猫。那是 Mianbao。这篇把他正式介绍一遍——因为他是花名册上的第一号员工，学生问他，比问指法编号还勤。",
+    figures: [
+      {
+        src: "/studio/mianbao-warehouse.png",
+        alt: "库比蒂诺 Eric Liu 钢琴工作室的橘白猫 Mianbao，坐在纸箱仓库造型的猫屋上",
+        caption: "员工 001 号的工位：两节课之间，他最爱坐在仓库顶上。",
+      },
+      {
+        src: "/studio/mianbao-carpet.png",
+        alt: "Mianbao 趴在库比蒂诺钢琴工作室地毯上，身旁是落地镜",
+        caption: "下班状态：趴在地毯上，但仍在门口能打招呼的范围内。",
+      },
+      {
+        src: "/studio/mianbao-closeup.png",
+        alt: "橘白招财猫 Mianbao 特写，白色前爪上有一小块橘色斑",
+        caption: "辨认标记：白爪子上那一小块橘色。",
+      },
+      {
+        src: "/studio/games/music-theory-hub.png",
+        alt: "儿童乐理游戏首页，插画里的 Mianbao 坐在钢琴前，可选节拍游戏或我是谁",
+        caption: "屏幕上同一张脸：节拍游戏和「我是谁」。",
+      },
+    ],
+    sections: [
+      {
+        heading: "员工 001 号，是认真的",
+        body:
+          "Mianbao 是「面包」的意思。他是短毛橘白：头顶、背和尾巴偏橘，嘴筒、胸口和爪子偏白。叫他员工 001 号不是讲一次的玩笑，而是学生用来记住「谁负责前台」的方式。我负责上课。他负责迎接。",
+      },
+      {
+        heading: "他很喜欢学生来访",
+        body:
+          "以工作室的猫来说，他格外亲人。学生进门时，他常常出现在门口，在开始的几分钟坐在旁边，或者在有人热身时趴在仓库上。对陌生房间紧张的孩子，往往会先跟他说话。这很有用。房间里一只冷静的动物不是课程大纲，但确实会让前十分钟容易一些。",
+      },
+      {
+        heading: "来访家庭需要知道的事",
+        body:
+          "他友善，但不是道具。如果孩子对猫过敏，或害怕动物，请在试听前告诉我——那一小时我们会让他离开教室。如果孩子想打招呼，规则和家里一样：让他走过来，不追、手轻。他白色前爪上有一小块橘色，学生很喜欢找这块斑。",
+        bullets: [
+          "对猫过敏或怕动物，请提前说",
+          "让 Mianbao 走向学生——未经询问不要抱起来",
+          "他可能旁听一部分课，也可能整节课都在睡觉",
+        ],
+      },
+      {
+        heading: "练琴小游戏也是这张脸",
+        body:
+          "工作室每推出一款新的音乐小游戏，都由 Mianbao 出面邀请家庭去试。纸箱仓库不是为网站编的隐喻——他真的坐在上面。如果你在试听时见过他，回家再打开节拍游戏或「我是谁」，会认得屏幕上那只猫。",
+      },
+    ],
+    related: [
+      { slug: "piano-practice-games-for-kids", label: "工作室的音乐小游戏" },
+      { slug: "what-to-expect-first-piano-lesson", label: "第一节钢琴课会发生什么" },
+    ],
+  },
   "adult-piano-learning-timeline-san-jose": {
     slug: "adult-piano-learning-timeline-san-jose",
     title: "圣何塞成人学钢琴需要多久？",

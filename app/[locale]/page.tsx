@@ -16,6 +16,7 @@ import Icon, { type IconName } from "@/components/ui/Icon";
 import SectionHeading from "@/components/ui/SectionHeading";
 import StepBlock from "@/components/ui/StepBlock";
 import OctaveStrip from "@/components/ui/OctaveStrip";
+import PracticeGameInvite from "@/components/PracticeGameInvite";
 import {
   buildFaqJsonLd,
   buildMetadata,
@@ -231,6 +232,8 @@ export default async function LocaleHome({
           ))}
         </div>
       </Band>
+
+      <PracticeGameInvite locale={typedLocale} placement="home_after_lessons" />
 
       {/* Reviews */}
       <Band tone="soft" divider py="lg">

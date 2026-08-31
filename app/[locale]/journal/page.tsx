@@ -23,12 +23,12 @@ export async function generateMetadata({
   const typed = locale as Locale;
   const title =
     typed === "en"
-      ? "Piano studio journal — adult learning, practice strategy, choosing a teacher"
-      : "学琴笔记 — 成人学习、练习策略、如何选老师";
+      ? "Piano studio journal — practice, teaching notes, and studio life"
+      : "学琴笔记 — 练习方法、教学笔记与工作室日常";
   const description =
     typed === "en"
-      ? "Long-form guides on adult piano learning, choosing a teacher in the South Bay, online vs in-person lessons, practice strategy, and instrument choice. Written by Cupertino piano teacher Eric Liu."
-      : "由圣何塞钢琴老师 Eric Liu 撰写：成人学钢琴时间线、南湾如何选老师、线上 vs 线下、练习策略与乐器选择等长文。";
+      ? "Long-form guides from a Cupertino piano studio: adult learning, practice strategy, choosing a teacher, studio music games for kids, and studio life. Written by piano teacher Eric Liu."
+      : "由库比蒂诺钢琴老师 Eric Liu 撰写：成人学钢琴、练习策略、如何选老师、儿童练琴小游戏与工作室日常等长文。";
   return buildMetadata(typed, `/${typed}/journal`, undefined, {
     title,
     description,
@@ -48,8 +48,8 @@ export default async function JournalListPage({
     typed === "en" ? "Studio journal" : "学琴笔记";
   const intro =
     typed === "en"
-      ? "Long-form guides written from the studio. Each article is answer-first and dated so you can cite or revisit it."
-      : "来自工作室的长文。每篇都先给答案、明确标注更新日期，方便引用与回顾。";
+      ? "Long-form guides written from the studio. Each article is answer-first and dated so you can cite or revisit it — including practice strategy, kids’ lesson games, and studio life."
+      : "来自工作室的长文。每篇都先给答案、明确标注更新日期，方便引用与回顾——包括练习策略、儿童练琴小游戏与工作室日常。";
 
   const formatter = new Intl.DateTimeFormat(
     typed === "zh" ? "zh-CN" : "en-US",

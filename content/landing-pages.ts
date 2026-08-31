@@ -1,4 +1,5 @@
 import type { Locale } from "@/content/site";
+import { extraFocusMinutes } from "@/content/practice-games";
 
 export const landingPageSlugs = [
   "piano-lessons-san-jose",
@@ -321,6 +322,11 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
             answer:
               "Yes. Exam tracks are optional and added when the student is ready. The studio supports CM and ABRSM preparation alongside the standard repertoire curriculum.",
           },
+          {
+            question: "Do you use games in piano lessons?",
+            answer:
+              `Yes. Short studio-made music games for kids sit beside the weekly assignment — they do not replace one-on-one teaching. In parent follow-ups, focused lesson time increased by about ${extraFocusMinutes} minutes on average. Live now: Beat Game and Who Am I? (beats and note names). New titles will appear in the game warehouse, each with a name and a screenshot.`,
+          },
         ],
         nextStep:
           "Bring your child to a free trial lesson — you will see the teaching style, get a specific home-practice plan for the week, and leave with a clear sense of whether the fit is right.",
@@ -329,6 +335,9 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           { href: "/piano-lessons-san-jose", label: "San Jose piano lessons (overview)" },
           { href: "/piano-teacher-san-jose", label: "Choosing a piano teacher in San Jose" },
           { href: "/piano-lessons-cupertino", label: "Piano lessons in Cupertino (at the studio)" },
+          { href: "/practice-games", label: "Piano practice games for kids" },
+          { href: "/journal/piano-practice-games-for-kids", label: "How studio games help kids stay focused" },
+          { href: "/journal/mianbao-studio-cat-employee-001", label: "Meet Mianbao, studio Employee #001" },
         ],
         sections: [
           {
@@ -358,6 +367,16 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
             ],
             body:
               "Schedule a free trial lesson to see whether the fit is right for your child before committing to ongoing lessons.",
+          },
+          {
+            heading: "Practice games used in lessons",
+            bullets: [
+              "Short, named tasks next to the weekly piece — not a replacement for 1:1 teaching",
+              `Studio follow-ups: about ${extraFocusMinutes} extra minutes of focused lesson time, on average`,
+              "First titles: Beat Game and Who Am I? — note values and note names, built for kids",
+            ],
+            body:
+              `The studio regularly releases homemade music games for kids. A round is five to ten minutes: Beat Game for note values, Who Am I? for note names, then back to the piece. In parent follow-ups, focused lesson time increased by about ${extraFocusMinutes} minutes on average and willingness to practice at home improved.`,
           },
         ],
       },
@@ -1035,6 +1054,11 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
             answer:
               "可以。考级是可选项，当学生准备好时再加入。工作室支持 CM 与 ABRSM 准备，并与常规曲目教学同步。",
           },
+          {
+            question: "课上会用小游戏吗？",
+            answer:
+              `会。工作室自制的短小音乐游戏给小孩玩，放在每周作业旁边用，不是用来取代一对一教学。根据家长回访，上课专注时间平均约多 ${extraFocusMinutes} 分钟。现在可以玩节拍游戏和「我是谁」（节拍与音名）。新游戏会进仓库页，每款都有名字和截图。`,
+          },
         ],
         nextStep:
           "带孩子来一次免费试听——你会看到教学风格、得到本周具体的家庭练习计划，并清楚地判断是否合适。",
@@ -1043,6 +1067,9 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           { href: "/piano-lessons-san-jose", label: "圣何塞钢琴课总览" },
           { href: "/piano-teacher-san-jose", label: "如何选择圣何塞钢琴老师" },
           { href: "/piano-lessons-cupertino", label: "库比蒂诺钢琴课（工作室所在市）" },
+          { href: "/practice-games", label: "儿童练琴小游戏" },
+          { href: "/journal/piano-practice-games-for-kids", label: "练琴小游戏如何帮助孩子更专注" },
+          { href: "/journal/mianbao-studio-cat-employee-001", label: "认识招财猫 Mianbao，员工 001 号" },
         ],
         sections: [
           {
@@ -1071,6 +1098,16 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
             ],
             body:
               "建议先预约免费试听，确认师生与家庭期望是否一致。",
+          },
+          {
+            heading: "课上用的练琴小游戏",
+            bullets: [
+              "放在每周曲目旁边的短任务，不替代一对一教学",
+              `回访观察：上课专注时间平均约多 ${extraFocusMinutes} 分钟`,
+              "现已上线：节拍游戏、我是谁——给小孩认时值和音名",
+            ],
+            body:
+              `工作室会定期推出给小孩玩的自制音乐小游戏。一轮大约 5–10 分钟：节拍游戏练时值，「我是谁」练音名，然后回到曲子。根据家长回访，上课专注时间平均约多 ${extraFocusMinutes} 分钟，在家练琴的意愿也有提升。`,
           },
         ],
       },

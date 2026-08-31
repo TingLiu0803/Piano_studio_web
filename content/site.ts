@@ -6,7 +6,7 @@ export type Locale = (typeof locales)[number];
  * change so that JSON-LD `dateModified` and `Article.dateModified` stay
  * accurate; LLM crawlers use this signal to decide whether to re-cite.
  */
-export const contentVersion = "2026-08-04";
+export const contentVersion = "2026-08-31";
 
 /**
  * Single source of truth for the studio's headline numbers. Every visible stat,
@@ -261,6 +261,7 @@ export const content = {
       contact: "Contact",
       lessonsMenu: "Lesson options",
       journal: "Journal",
+      practiceGames: "Games",
       musicnbrain: "MusicNBrain",
     },
     footer: {
@@ -498,6 +499,7 @@ export const content = {
       contact: "联系",
       lessonsMenu: "课程类型",
       journal: "学琴笔记",
+      practiceGames: "小游戏",
       musicnbrain: "MusicNBrain",
     },
     footer: {
