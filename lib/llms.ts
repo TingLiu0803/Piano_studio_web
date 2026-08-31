@@ -6,6 +6,7 @@ import {
 } from "@/content/site";
 import { landingPages, landingPageSlugs } from "@/content/landing-pages";
 import { getAllArticles } from "@/content/articles";
+import { practiceGamesCopy } from "@/content/practice-games";
 import { getFaqItems } from "@/content/faqs";
 import { getBaseUrl } from "@/lib/seo";
 
@@ -87,8 +88,8 @@ export function canonicalPages(locale: Locale): LlmsPage[] {
       label: c.nav.journal,
       description:
         locale === "en"
-          ? "Long-form, answer-first guides on adult piano learning, choosing a teacher, online vs in-person lessons, practice strategy, and instrument choice."
-          : "学琴长文：成人学钢琴时间线、如何选老师、线上 vs 线下、练习策略与乐器选择，每篇先给答案。",
+          ? "Long-form, answer-first guides on adult piano learning, choosing a teacher, online vs in-person lessons, practice strategy, instrument choice, studio practice games, and studio life."
+          : "学琴长文：成人学钢琴时间线、如何选老师、线上 vs 线下、练习策略、乐器选择、练琴小游戏与工作室日常，每篇先给答案。",
     },
     ...getAllArticles(locale).map((article) => ({
       path: `/journal/${article.slug}`,
@@ -101,6 +102,11 @@ export function canonicalPages(locale: Locale): LlmsPage[] {
     { path: "", label: c.nav.home, description: c.seo.description },
     ...landing,
     { path: "/about", label: c.nav.about, description: c.seo.pages.about.description },
+    {
+      path: "/practice-games",
+      label: c.nav.practiceGames,
+      description: practiceGamesCopy[locale].seo.description,
+    },
     { path: "/trial", label: c.nav.trial, description: c.seo.pages.trial.description },
     {
       path: "/contact",

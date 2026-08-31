@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { type Locale, locales, content } from "@/content/site";
 import {
   type ArticleSlug,
@@ -108,6 +109,43 @@ export default async function JournalArticlePage({ params }: Params) {
           </div>
         </Band>
 
+        {article.figures?.length ? (
+          <Band tone="white" py="none">
+            <div className="grid min-w-0 gap-6 pb-12 md:grid-cols-2">
+              {article.figures.map((figure, index) => (
+                <figure
+                  key={figure.src}
+                  className={index === 0 ? "min-w-0 md:col-span-2" : "min-w-0"}
+                >
+                  <div
+                    className={`relative w-full overflow-hidden rounded-[var(--radius-lg)] border border-[color:var(--border)] shadow-[var(--shadow-card)] ${
+                      index === 0 ? "aspect-[16/10]" : "aspect-[4/3]"
+                    }`}
+                  >
+                    <Image
+                      src={figure.src}
+                      alt={figure.alt}
+                      fill
+                      sizes={
+                        index === 0
+                          ? "(max-width: 768px) 100vw, 70vw"
+                          : "(max-width: 768px) 100vw, 35vw"
+                      }
+                      className="object-cover"
+                      priority={index === 0}
+                    />
+                  </div>
+                  {figure.caption ? (
+                    <figcaption className="mt-2.5 text-sm leading-relaxed text-[color:var(--text-muted)]">
+                      {figure.caption}
+                    </figcaption>
+                  ) : null}
+                </figure>
+              ))}
+            </div>
+          </Band>
+        ) : null}
+
         <Band tone="soft" divider py="lg">
           <div className="flex min-w-0 flex-col gap-10">
             {article.sections.map((section) => (
@@ -169,9 +207,46 @@ export default async function JournalArticlePage({ params }: Params) {
           </Band>
         ) : null}
 
-        {article.related?.length ? (
+        {article.cta ? (
           <Band tone="white" py={article.howTo ? "none" : "lg"}>
-            <div className={article.howTo ? "pb-16" : ""}>
+            <div className={article.howTo ? "pb-8" : ""}>
+              <Card padding="lg" style={{ background: "var(--surface-soft)", minWidth: 0 }}>
+                <div className="flex min-w-0 flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="min-w-0">
+                    <p className="text-base font-bold text-[color:var(--foreground)]">
+                      {article.cta.label}
+                    </p>
+                    {article.cta.note ? (
+                      <p className="mt-1 text-sm text-[color:var(--text-muted)]">
+                        {article.cta.note}
+                      </p>
+                    ) : null}
+                  </div>
+                  <Button
+                    href={
+                      article.cta.href.startsWith("http")
+                        ? article.cta.href
+                        : `/${typed}${article.cta.href}`
+                    }
+                    newTab={article.cta.newTab}
+                    variant="primary"
+                    icon={article.cta.newTab ? "open_in_new" : "arrow_forward"}
+                    iconPosition="right"
+                    data-ga-event={article.cta.gaEvent ?? "article_cta_click"}
+                    data-ga-placement={article.cta.gaPlacement ?? "article_body"}
+                    data-ga-slug={article.slug}
+                  >
+                    {article.cta.label}
+                  </Button>
+                </div>
+              </Card>
+            </div>
+          </Band>
+        ) : null}
+
+        {article.related?.length ? (
+          <Band tone="white" py={article.howTo || article.cta ? "none" : "lg"}>
+            <div className={article.howTo || article.cta ? "pb-16" : ""}>
               <SectionHeading
                 as="h2"
                 eyebrow={typed === "en" ? "Related" : "相关"}

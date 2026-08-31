@@ -1,6 +1,7 @@
 import { type Locale, content } from "@/content/site";
 import { getFaqItems, kidsLandingFaqIds } from "@/content/faqs";
 import LandingPageView from "@/components/LandingPageView";
+import PracticeGameInvite from "@/components/PracticeGameInvite";
 import FaqSection from "@/components/FaqSection";
 import JsonLd from "@/components/JsonLd";
 import { buildFaqJsonLd, buildMetadata } from "@/lib/seo";
@@ -39,6 +40,7 @@ export default async function KidsPianoLessonsPage({
           common-objections blocks (#objection-*). */}
       <JsonLd data={buildFaqJsonLd(typedLocale, kidsLandingFaqIds, commonObjections)} />
       <LandingPageView locale={typedLocale} slug={SLUG} />
+      <PracticeGameInvite locale={typedLocale} placement="kids_landing" />
       <FaqSection
         banded
         title={

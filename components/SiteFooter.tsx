@@ -56,6 +56,16 @@ export default function SiteFooter({ locale }: SiteFooterProps) {
                 {localized.nav.journal}
               </Link>
             </li>
+            <li>
+              <Link
+                href={`/${locale}/practice-games`}
+                className="underline-offset-4 transition-colors hover:text-[color:var(--accent-on-dark)] hover:underline"
+                data-ga-event="practice_game_hub_click"
+                data-ga-placement="footer"
+              >
+                {localized.nav.practiceGames}
+              </Link>
+            </li>
           </ul>
         </div>
 

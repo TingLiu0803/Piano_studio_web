@@ -1,4 +1,5 @@
 import type { Locale } from "@/content/site";
+import { extraFocusMinutes } from "@/content/practice-games";
 
 export type FaqId =
   | "free-trial"
@@ -13,7 +14,8 @@ export type FaqId =
   | "beginner-lessons"
   | "adult-timeline"
   | "need-piano-at-home"
-  | "practice-frequency";
+  | "practice-frequency"
+  | "practice-games";
 
 export type FaqItem = {
   id: FaqId;
@@ -102,6 +104,12 @@ const faqCatalog: Record<Locale, FaqItem[]> = {
       answer:
         "Yes. I teach complete beginners, adult beginners, and children ages 5+, with personalized one-on-one instruction.",
     },
+    {
+      id: "practice-games",
+      question: "Do you use games in piano lessons for kids?",
+      answer:
+        `Yes. The studio regularly releases homemade music games for children that sit beside private 1:1 lessons — they do not replace them. Live now: Beat Game (note values and rhythm) and Who Am I? (note names, then children's songs). In parent follow-ups, children's focused lesson time increased by about ${extraFocusMinutes} minutes on average, and willingness to practice at home improved. The Games page on this site is the warehouse: each live title has a name and a screenshot.`,
+    },
   ],
   zh: [
     {
@@ -182,6 +190,12 @@ const faqCatalog: Record<Locale, FaqItem[]> = {
       answer:
         "教。我们教授零基础成人、儿童（5 岁+）和不同阶段学员，课程为个性化一对一。",
     },
+    {
+      id: "practice-games",
+      question: "儿童钢琴课会用小游戏吗？",
+      answer:
+        `会。工作室定期推出给小孩玩的自制音乐小游戏，放在一对一课程旁边用，不是用来取代私教。现在可以玩节拍游戏（音符时值与节奏）和「我是谁」（用小动物记音名，再弹儿歌）。根据家长回访，小孩上课专注时间平均约多了 ${extraFocusMinutes} 分钟，在家练琴的意愿也有提升。本站「小游戏」页就是仓库：每款上线游戏都有名字和截图。`,
+    },
   ],
 };
 
@@ -208,6 +222,7 @@ export const kidsLandingFaqIds: FaqId[] = [
   "lesson-cost",
   "areas-served",
   "choose-teacher",
+  "practice-games",
 ];
 
 export const onlineLandingFaqIds: FaqId[] = [

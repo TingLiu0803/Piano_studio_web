@@ -650,6 +650,7 @@ export function buildBreadcrumbJsonLd(locale: Locale, path: string) {
     if (segment === "about") return localized.nav.about;
     if (segment === "contact") return localized.nav.contact;
     if (segment === "journal") return locale === "en" ? "Journal" : "学琴笔记";
+    if (segment === "practice-games") return localized.nav.practiceGames;
     if (breadcrumbLabels && segment in breadcrumbLabels) {
       return breadcrumbLabels[segment as keyof typeof breadcrumbLabels];
     }
@@ -708,6 +709,9 @@ export function buildSpeakableJsonLd(
 export function buildArticleJsonLd(locale: Locale, article: Article) {
   const baseUrl = getBaseUrl();
   const url = `${baseUrl}/${locale}/journal/${article.slug}`;
+  const images = article.figures?.length
+    ? article.figures.map((figure) => absoluteUrl(figure.src))
+    : [absoluteUrl(siteConfig.images.ogDefault)];
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -720,9 +724,9 @@ export function buildArticleJsonLd(locale: Locale, article: Article) {
     dateModified: article.dateModified,
     author: { "@id": `${baseUrl}/#teacher` },
     publisher: { "@id": `${baseUrl}/#music-school` },
-    image: [absoluteUrl(siteConfig.images.ogDefault)],
+    image: images,
     articleSection: article.category,
-    keywords: [
+    keywords: article.keywords ?? [
       "piano lessons",
       "san jose",
       "adult piano",

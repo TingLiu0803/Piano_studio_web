@@ -11,6 +11,7 @@
  * - lesson_hub_card_click (slug)
  * - experiment_assign (experiment_id, variant)
  * - about_bio_click
+ * - practice_game_hub_click / practice_game_play_click (placement, slug)
  * - ai_referrer_visit (referrer, source)
  *
  * Prefer params: page_path, page_type, cta_location, language.

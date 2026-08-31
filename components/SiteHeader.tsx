@@ -98,6 +98,14 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
           <Link href={`/${locale}/journal`} className={navLinkClass}>
             {localized.nav.journal}
           </Link>
+          <Link
+            href={`/${locale}/practice-games`}
+            className={navLinkClass}
+            data-ga-event="practice_game_hub_click"
+            data-ga-placement="header_nav"
+          >
+            {localized.nav.practiceGames}
+          </Link>
           <Link href={`/${locale}/contact`} className={navLinkClass}>
             {localized.nav.contact}
           </Link>
@@ -175,6 +183,14 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
           </Link>
           <Link href={`/${locale}/journal`} onClick={() => setIsOpen(false)}>
             {localized.nav.journal}
+          </Link>
+          <Link
+            href={`/${locale}/practice-games`}
+            onClick={() => setIsOpen(false)}
+            data-ga-event="practice_game_hub_click"
+            data-ga-placement="header_mobile_nav"
+          >
+            {localized.nav.practiceGames}
           </Link>
           <Link href={`/${locale}/contact`} onClick={() => setIsOpen(false)}>
             {localized.nav.contact}
