@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { type Locale } from "@/content/site";
 import { getAllArticles } from "@/content/articles";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import AuthorByline from "@/components/AuthorByline";
+import Band from "@/components/ui/Band";
+import Card from "@/components/ui/Card";
+import Badge from "@/components/ui/Badge";
 import { buildMetadata } from "@/lib/seo";
 
 // Kill switch for the journal section. When set to `false`, the list page and
@@ -57,38 +59,49 @@ export default async function JournalListPage({
   return (
     <>
       <BreadcrumbJsonLd locale={typed} path={`/${typed}/journal`} />
-      <div className="flex flex-col gap-10">
-        <header className="rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
-          <h1 className="text-3xl font-black tracking-[-0.01em] text-[color:var(--foreground)] md:text-4xl">
-            {sectionTitle}
-          </h1>
-          <div className="mt-2">
-            <AuthorByline locale={typed} />
-          </div>
-          <p className="mt-4 text-sm leading-relaxed text-[color:var(--muted-foreground)]">
-            {intro}
-          </p>
-        </header>
+      <Band tone="white" py="lg">
+        <Badge tone="neutral" icon="music_note">
+          {typed === "en" ? "Journal" : "学琴笔记"}
+        </Badge>
+        <h1 className="mt-4 text-[2.25rem] font-black leading-[1.06] tracking-[-0.01em] text-[color:var(--mnb-ink)] md:text-[2.75rem]">
+          {sectionTitle}
+        </h1>
+        <div className="mt-3">
+          <AuthorByline locale={typed} />
+        </div>
+        <p className="mt-4 max-w-[70ch] text-[length:var(--text-body-lg)] leading-relaxed text-[color:var(--text-muted)]">
+          {intro}
+        </p>
 
-        <ul className="grid gap-6 md:grid-cols-2">
+        <ul className="mt-10 grid min-w-0 gap-5 md:grid-cols-2">
           {articles.map((article) => (
-            <li key={article.slug}>
-              <Link
+            <li key={article.slug} className="min-w-0">
+              <Card
                 href={`/${typed}/journal/${article.slug}`}
+                interactive
+                padding="lg"
+                className="h-full min-w-0"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.75rem",
+                  width: "100%",
+                  height: "100%",
+                  minWidth: 0,
+                }}
                 data-ga-event="journal_card_click"
                 data-ga-slug={article.slug}
-                className="flex h-full flex-col gap-3 rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-sm transition hover:border-[color:var(--foreground)] hover:shadow-md"
               >
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[color:var(--tag-foreground)]">
+                <span className="text-[length:var(--text-label)] font-bold uppercase tracking-[var(--tracking-label)] text-[color:var(--tag-foreground)]">
                   {article.category}
                 </span>
-                <h2 className="text-lg font-bold text-[color:var(--foreground)]">
+                <h2 className="min-w-0 break-words text-[length:var(--text-h3)] font-bold leading-[var(--leading-heading)] text-[color:var(--foreground)]">
                   {article.title}
                 </h2>
-                <p className="text-sm leading-relaxed text-[color:var(--muted-foreground)]">
+                <p className="min-w-0 break-words text-[15px] leading-relaxed text-[color:var(--text-muted)]">
                   {article.quickAnswer}
                 </p>
-                <p className="text-xs text-[color:var(--muted-foreground)]">
+                <p className="mt-auto text-xs text-[color:var(--text-muted)]">
                   <time dateTime={article.dateModified}>
                     {formatter.format(new Date(article.dateModified))}
                   </time>{" "}
@@ -97,11 +110,11 @@ export default async function JournalListPage({
                     ? `${article.readingTimeMinutes} min read`
                     : `阅读约 ${article.readingTimeMinutes} 分钟`}
                 </p>
-              </Link>
+              </Card>
             </li>
           ))}
         </ul>
-      </div>
+      </Band>
     </>
   );
 }

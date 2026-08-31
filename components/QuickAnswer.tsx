@@ -15,15 +15,15 @@ type QuickAnswerProps = {
 export default function QuickAnswer({ label, text }: QuickAnswerProps) {
   return (
     <aside
-      className="quick-answer flex items-start gap-3.5 rounded-[var(--radius-md)] bg-[color:var(--status-active-bg)] px-[22px] py-5"
+      className="quick-answer flex min-w-0 max-w-full items-start gap-3.5 rounded-[var(--radius-md)] bg-[color:var(--status-active-bg)] px-[22px] py-5"
       aria-label={label}
     >
       <Icon name="bolt" size={24} style={{ color: "var(--status-active-text)", flexShrink: 0, marginTop: "1px" }} />
-      <div>
+      <div className="min-w-0">
         <p className="text-[length:var(--text-label)] font-bold uppercase tracking-[var(--tracking-label)] text-[color:var(--status-active-text)]">
           {label}
         </p>
-        <p className="mt-1.5 text-base leading-relaxed text-[color:var(--text-body,var(--foreground))]">
+        <p className="mt-1.5 break-words text-base leading-relaxed text-[color:var(--text-body,var(--foreground))]">
           {text}
         </p>
       </div>
