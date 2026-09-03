@@ -325,7 +325,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           {
             question: "Do you use games in piano lessons?",
             answer:
-              `Yes. Short studio-made music games for kids sit beside the weekly assignment — they do not replace one-on-one teaching. In parent follow-ups, focused lesson time increased by about ${extraFocusMinutes} minutes on average. Live now: Beat Game and Who Am I? (beats and note names). New titles will appear in the game warehouse, each with a name and a screenshot.`,
+              `Yes. Short studio-made music games for kids sit beside the weekly assignment — they do not replace one-on-one teaching. In parent follow-ups, focused lesson time increased by about ${extraFocusMinutes} minutes on average. Live now: Beat Game, Who Am I?, and Mianbao Practice Timer (beats, note names, and a practice clock with backyard cats). New titles will appear in the game warehouse, each with a name and a screenshot.`,
           },
         ],
         nextStep:
@@ -337,6 +337,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           { href: "/piano-lessons-cupertino", label: "Piano lessons in Cupertino (at the studio)" },
           { href: "/practice-games", label: "Piano practice games for kids" },
           { href: "/journal/piano-practice-games-for-kids", label: "How studio games help kids stay focused" },
+          { href: "/journal/mianbao-practice-timer-for-kids", label: "Mianbao Practice Timer for kids" },
           { href: "/journal/mianbao-studio-cat-employee-001", label: "Meet Mianbao, studio Employee #001" },
         ],
         sections: [
@@ -373,10 +374,10 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
             bullets: [
               "Short, named tasks next to the weekly piece — not a replacement for 1:1 teaching",
               `Studio follow-ups: about ${extraFocusMinutes} extra minutes of focused lesson time, on average`,
-              "First titles: Beat Game and Who Am I? — note values and note names, built for kids",
+              "Live now: Beat Game, Who Am I?, and Mianbao Practice Timer — values, names, and a practice clock",
             ],
             body:
-              `The studio regularly releases homemade music games for kids. A round is five to ten minutes: Beat Game for note values, Who Am I? for note names, then back to the piece. In parent follow-ups, focused lesson time increased by about ${extraFocusMinutes} minutes on average and willingness to practice at home improved.`,
+              `The studio regularly releases homemade music games for kids. A round is five to ten minutes: Beat Game for note values, Who Am I? for note names, or the practice timer to sit with the piece, then back to the assignment. In parent follow-ups, focused lesson time increased by about ${extraFocusMinutes} minutes on average and willingness to practice at home improved.`,
           },
         ],
       },
@@ -1057,7 +1058,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           {
             question: "课上会用小游戏吗？",
             answer:
-              `会。工作室自制的短小音乐游戏给小孩玩，放在每周作业旁边用，不是用来取代一对一教学。根据家长回访，上课专注时间平均约多 ${extraFocusMinutes} 分钟。现在可以玩节拍游戏和「我是谁」（节拍与音名）。新游戏会进仓库页，每款都有名字和截图。`,
+              `会。工作室自制的短小音乐游戏给小孩玩，放在每周作业旁边用，不是用来取代一对一教学。根据家长回访，上课专注时间平均约多 ${extraFocusMinutes} 分钟。现在可以玩节拍游戏、「我是谁」，以及面包练习计时（节拍、音名，加上后院猫咪的练琴钟）。新游戏会进仓库页，每款都有名字和截图。`,
           },
         ],
         nextStep:
@@ -1069,6 +1070,7 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
           { href: "/piano-lessons-cupertino", label: "库比蒂诺钢琴课（工作室所在市）" },
           { href: "/practice-games", label: "儿童练琴小游戏" },
           { href: "/journal/piano-practice-games-for-kids", label: "练琴小游戏如何帮助孩子更专注" },
+          { href: "/journal/mianbao-practice-timer-for-kids", label: "面包练习计时：孩子更主动练琴" },
           { href: "/journal/mianbao-studio-cat-employee-001", label: "认识招财猫 Mianbao，员工 001 号" },
         ],
         sections: [
@@ -1104,10 +1106,10 @@ export const landingPages: Record<Locale, Record<LandingPageSlug, LandingPageDat
             bullets: [
               "放在每周曲目旁边的短任务，不替代一对一教学",
               `回访观察：上课专注时间平均约多 ${extraFocusMinutes} 分钟`,
-              "现已上线：节拍游戏、我是谁——给小孩认时值和音名",
+              "现已上线：节拍游戏、我是谁、面包练习计时——时值、音名，加上练琴钟",
             ],
             body:
-              `工作室会定期推出给小孩玩的自制音乐小游戏。一轮大约 5–10 分钟：节拍游戏练时值，「我是谁」练音名，然后回到曲子。根据家长回访，上课专注时间平均约多 ${extraFocusMinutes} 分钟，在家练琴的意愿也有提升。`,
+              `工作室会定期推出给小孩玩的自制音乐小游戏。一轮大约 5–10 分钟：节拍游戏练时值，「我是谁」练音名，或用练琴计时跟着曲子坐住，然后回到作业。根据家长回访，上课专注时间平均约多 ${extraFocusMinutes} 分钟，在家练琴的意愿也有提升。`,
           },
         ],
       },
