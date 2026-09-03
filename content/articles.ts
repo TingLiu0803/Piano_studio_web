@@ -2,6 +2,7 @@ import type { Locale } from "@/content/site";
 import { extraFocusMinutes } from "@/content/practice-games";
 
 export const articleSlugs = [
+  "mianbao-practice-timer-for-kids",
   "piano-practice-games-for-kids",
   "mianbao-studio-cat-employee-001",
   "adult-piano-learning-timeline-san-jose",
@@ -66,14 +67,123 @@ export type Article = {
 };
 
 const en: Record<ArticleSlug, Article> = {
+  "mianbao-practice-timer-for-kids": {
+    slug: "mianbao-practice-timer-for-kids",
+    title: "Mianbao Practice Timer: kids stay focused longer and start practice on their own",
+    description:
+      "A studio-made practice Pomodoro plus a backyard of cats at Eric Liu Piano Studio in Cupertino. Students earn dried fish for practice time, then decorate the yard to attract visiting cats. Follow-ups: longer focused lesson minutes, and more willingness to start at home.",
+    quickAnswer: `Mianbao Practice Timer is a studio game for children's piano practice: a timer sits beside a backyard of cats. Practice minutes turn into dried fish; dried fish buy toys and plants that attract visiting cats. Every child who comes to a lesson can adopt one electronic cat as a practice partner — adults who want one can too. In parent follow-ups, focused lesson time increased by about ${extraFocusMinutes} minutes on average, and children started home practice more readily than before.`,
+    datePublished: "2026-09-02",
+    dateModified: "2026-09-02",
+    category: "Studio practice",
+    readingTimeMinutes: 4,
+    keywords: [
+      "piano practice timer",
+      "kids piano lessons",
+      "practice motivation",
+      "cupertino piano studio",
+      "mianbao",
+    ],
+    intro:
+      "The newest title in the studio warehouse is not another note-name drill. It is a practice clock with a backyard of cats. A child sits down, starts the timer, and the minutes become dried fish. Those fish buy a bed, a plant, a slide — things that make other cats come to visit. Screenshots below are the live game families can open today.",
+    figures: [
+      {
+        src: "/studio/games/practice-timer.png",
+        alt: "Mianbao Practice Timer at Eric Liu Piano Studio in Cupertino: a 25-minute practice clock next to an illustrated orange-and-white cat at a piano",
+        caption: "The practice clock. Start it, stay with the piece, collect dried fish.",
+      },
+      {
+        src: "/studio/games/practice-timer-adopt.png",
+        alt: "Cat adoption screen in Mianbao Practice Timer at Eric Liu Piano Studio: choose one electronic cat such as Mianbao to practice with",
+        caption: "Each student adopts one cat. After you choose, that cat stays.",
+      },
+      {
+        src: "/studio/games/practice-timer-backyard.png",
+        alt: "Backyard in Mianbao Practice Timer at Eric Liu Piano Studio: an orange-and-white cat sits in a sunny yard waiting for visiting cats",
+        caption: "The backyard. Add items, wait, and other cats come to visit.",
+      },
+      {
+        src: "/studio/games/practice-timer-shop.png",
+        alt: "Shop in Mianbao Practice Timer at Eric Liu Piano Studio: dried fish buy a cat bed, cat tree, toys, and a giant slide",
+        caption: "Dried fish from practice time buy the things that fill the yard.",
+      },
+    ],
+    sections: [
+      {
+        heading: "A timer, then a yard of visiting cats",
+        body:
+          "This is a Pomodoro for the piano bench plus a small Neko Atsume-style yard. The child starts a practice block — often twenty-five minutes — and dried fish arrive as the minutes pass. Those fish go to the shop: a bed, a scratcher, a plant, later a giant slide. Items in the yard attract other cats. The loop is simple on purpose. The score is not a high number; it is that the child sat down and stayed.",
+        bullets: [
+          "Start the timer, then play the assigned piece — not the other way around",
+          "Dried fish come from practice time, not from tapping around the yard",
+          "One adopted cat per student; visiting cats are the reason to come back",
+        ],
+      },
+      {
+        heading: "What changed in the lesson and at home",
+        body:
+          `This is a studio observation, not a controlled study. After we put the timer in the lesson week, children stayed with the piece longer in the room — focused lesson time increased by about ${extraFocusMinutes} minutes on average, in line with the other short games. The sharper change was at home: parents said the child asked to open the timer and start, instead of being walked to the bench. I treat that as a signal to keep the loop short, not as a promise for every family.`,
+        bullets: [
+          `About ${extraFocusMinutes} extra minutes of focused time in the lesson, on average`,
+          "Home practice started more often from the child's side, reported in follow-ups",
+          "The cat is a partner for the assignment — not a second activity that replaces it",
+        ],
+      },
+      {
+        heading: "How a practice block should look",
+        body:
+          "Open the timer, pick the adopted cat if it is the first visit, turn the sound on, and start. Play the weekly piece while the clock runs. When the block ends, buy one backyard thing if there are enough fish, then close the tab. If the child only wants to rearrange the yard, the block was too long or the assignment was not small enough.",
+        bullets: [
+          "One timed block, then back to closing the laptop",
+          "Say out loud what the assignment was before hitting start",
+          "Bring one fuzzy bar or one stubborn note to the next lesson",
+        ],
+      },
+    ],
+    howTo: {
+      name: "How to use Mianbao Practice Timer in a practice week",
+      description:
+        "A four-step routine so the timer and the backyard support the weekly piano assignment instead of replacing it.",
+      totalTimeIso: "PT25M",
+      steps: [
+        {
+          name: "Adopt one cat, then start the clock",
+          text: "The first visit, choose a practice partner. After that, open the timer and press start before touching the piece.",
+        },
+        {
+          name: "Play the assigned piece while it runs",
+          text: "The clock is for the bench, not for browsing the shop. Sound on helps; a microphone is optional and stays on the device.",
+        },
+        {
+          name: "Spend fish on one backyard item",
+          text: "If there are enough dried fish, buy one thing. Then stop. The yard can wait until the next block.",
+        },
+        {
+          name: "Bring one question to the next lesson",
+          text: "Write the bar or the note that still collides. Ask it in the private lesson so the timer feeds the 1:1 work.",
+        },
+      ],
+    },
+    cta: {
+      href: "/practice-games",
+      label: "Open the studio game warehouse",
+      note: "Mianbao Practice Timer is on the same shelf as Beat Game and Who Am I? — name, screenshot, play button.",
+      gaEvent: "practice_game_hub_click",
+      gaPlacement: "journal_practice_timer_article",
+    },
+    related: [
+      { slug: "piano-practice-games-for-kids", label: "Studio music games for kids" },
+      { slug: "mianbao-studio-cat-employee-001", label: "Meet Mianbao, studio Employee #001" },
+    ],
+  },
   "piano-practice-games-for-kids": {
     slug: "piano-practice-games-for-kids",
     title: "Studio music games for kids: more focused minutes, more willingness to practice",
     description:
-      "Eric Liu Piano Studio in Cupertino regularly releases homemade music games for children's piano lessons — Beat Game and Who Am I? Follow-up observations: about 15 extra minutes of focused lesson time, and a stronger willingness to practice at home.",
-    quickAnswer: `The studio regularly releases homemade music games that support children's piano lessons rather than replacing private 1:1 teaching. Live now: Beat Game (note values and rhythm) and Who Am I? (note names, then children's songs). In parent follow-ups, focused lesson time increased by about ${extraFocusMinutes} minutes on average, and willingness to practice at home improved. New titles will land in the studio game warehouse.`,
+      "Eric Liu Piano Studio in Cupertino regularly releases homemade music games for children's piano lessons — Beat Game, Who Am I?, and Mianbao Practice Timer. Follow-up observations: about 15 extra minutes of focused lesson time, and a stronger willingness to practice at home.",
+    quickAnswer: `The studio regularly releases homemade music games that support children's piano lessons rather than replacing private 1:1 teaching. Live now: Beat Game (note values and rhythm), Who Am I? (note names, then children's songs), and Mianbao Practice Timer (a practice clock plus a backyard of cats). In parent follow-ups, focused lesson time increased by about ${extraFocusMinutes} minutes on average, and willingness to practice at home improved. New titles will land in the studio game warehouse.`,
     datePublished: "2026-08-31",
-    dateModified: "2026-08-31",
+    dateModified: "2026-09-02",
     category: "Studio practice",
     readingTimeMinutes: 6,
     keywords: [
@@ -84,7 +194,7 @@ const en: Record<ArticleSlug, Article> = {
       "cupertino piano studio",
     ],
     intro:
-      "Parents often ask what actually changes a child's attention in the lesson room. One practical answer at this Cupertino studio has been short, named music games built for kids — beats and note names first — sitting beside the weekly piece, not instead of it. Screenshots below are the real titles families can open today, plus Mianbao, who greets students in the room.",
+      "Parents often ask what actually changes a child's attention in the lesson room. One practical answer at this Cupertino studio has been short, named music games built for kids — beats, note names, and a practice timer — sitting beside the weekly piece, not instead of it. Screenshots below are the real titles families can open today, plus Mianbao, who greets students in the room.",
     figures: [
       {
         src: "/studio/games/music-theory-hub.png",
@@ -131,11 +241,11 @@ const en: Record<ArticleSlug, Article> = {
       {
         heading: "What kids can play today",
         body:
-          "The first public warehouse has two titles, both aimed at children. Beat Game teaches note values — how long a note lasts — then asks the child to tap 1, 2, 3, or 4 with the pulse. Who Am I? teaches piano note names with animals (Cat = middle C), then moves into finding keys, melody games, and simple songs such as Twinkle Twinkle. Neither game is an advanced theory quiz. More titles will be added to the same warehouse page, each with a name and a screenshot.",
+          "The public warehouse now has three titles, all aimed at children. Beat Game teaches note values — how long a note lasts — then asks the child to tap 1, 2, 3, or 4 with the pulse. Who Am I? teaches piano note names with animals (Cat = middle C), then moves into finding keys, melody games, and simple songs such as Twinkle Twinkle. Mianbao Practice Timer is a practice clock plus a backyard of cats: minutes become dried fish, and fish attract visiting cats. None of these is an advanced theory quiz. More titles will be added to the same warehouse page, each with a name and a screenshot.",
         bullets: [
           "Beat Game: note values and tapping the rhythm",
           "Who Am I?: note names, then children's songs",
-          "Next games will appear on the same warehouse page — no new link to hunt",
+          "Mianbao Practice Timer: sit down, stay with the piece, grow the backyard",
         ],
       },
       {
@@ -186,8 +296,8 @@ const en: Record<ArticleSlug, Article> = {
       gaPlacement: "journal_games_article",
     },
     related: [
+      { slug: "mianbao-practice-timer-for-kids", label: "Mianbao Practice Timer for kids" },
       { slug: "mianbao-studio-cat-employee-001", label: "Meet Mianbao, studio Employee #001" },
-      { slug: "what-to-expect-first-piano-lesson", label: "What to expect in your first piano lesson" },
     ],
   },
   "mianbao-studio-cat-employee-001": {
@@ -255,12 +365,12 @@ const en: Record<ArticleSlug, Article> = {
       {
         heading: "The same face on the practice games",
         body:
-          "When the studio ships a new music mini-game, Mianbao is the one who invites families to try it. The warehouse playhouse is not a metaphor I invented for the website — it is where he actually sits. If you meet him at a trial and later open Beat Game or Who Am I? at home, you will recognize the cat on the screen.",
+          "When the studio ships a new music mini-game, Mianbao is the one who invites families to try it. The warehouse playhouse is not a metaphor I invented for the website — it is where he actually sits. If you meet him at a trial and later open Beat Game, Who Am I?, or the practice timer at home, you will recognize the cat on the screen.",
       },
     ],
     related: [
+      { slug: "mianbao-practice-timer-for-kids", label: "Mianbao Practice Timer for kids" },
       { slug: "piano-practice-games-for-kids", label: "Studio music games for kids" },
-      { slug: "what-to-expect-first-piano-lesson", label: "What to expect in your first piano lesson" },
     ],
   },
   "adult-piano-learning-timeline-san-jose": {
@@ -585,14 +695,122 @@ const en: Record<ArticleSlug, Article> = {
 };
 
 const zh: Record<ArticleSlug, Article> = {
+  "mianbao-practice-timer-for-kids": {
+    slug: "mianbao-practice-timer-for-kids",
+    title: "面包练习计时：孩子上课更能坐住，回家也更主动练",
+    description:
+      "库比蒂诺 Eric Liu 钢琴工作室的自制练琴番茄钟，加上后院猫咪。练琴换小鱼干，小鱼干给后院添东西，吸引别的猫来访。回访观察：上课专注更久，在家也更愿意自己开始练。",
+    quickAnswer: `面包练习计时是给小孩练琴用的工作室游戏：一边是计时，一边是后院猫咪。练琴分钟换成小鱼干，小鱼干买玩具和植物，用来吸引来访的猫。每一个来上课的小朋友都可以领养一只电子猫陪练——大朋友愿意的话也可以。根据家长回访，上课专注时间平均约多了 ${extraFocusMinutes} 分钟，孩子在家也比以前更主动坐到琴前。`,
+    datePublished: "2026-09-02",
+    dateModified: "2026-09-02",
+    category: "工作室实践",
+    readingTimeMinutes: 4,
+    keywords: [
+      "练琴计时",
+      "儿童钢琴课",
+      "练琴动力",
+      "库比蒂诺钢琴工作室",
+      "面包",
+    ],
+    intro:
+      "仓库里最新的一款，不是又一个音名练习。它是一只练琴计时器，外加一个猫咪后院。孩子坐下、按下开始，分钟变成小鱼干。小鱼干换一张床、一盆植物、一座滑梯——用来让别的猫来做客。下面的截图就是家里现在能打开的游戏。",
+    figures: [
+      {
+        src: "/studio/games/practice-timer.png",
+        alt: "库比蒂诺 Eric Liu 钢琴工作室的面包练习计时：25 分钟练琴钟，旁边是橘白猫坐在钢琴前的插画",
+        caption: "练琴计时。按下开始，跟着曲子坐住，收集小鱼干。",
+      },
+      {
+        src: "/studio/games/practice-timer-adopt.png",
+        alt: "Eric Liu 钢琴工作室面包练习计时的领养页：选一只电子猫当练琴伙伴，例如 Mianbao",
+        caption: "每个学生领养一只猫。选定之后，这只猫就留下。",
+      },
+      {
+        src: "/studio/games/practice-timer-backyard.png",
+        alt: "Eric Liu 钢琴工作室面包练习计时的后院：橘白猫坐在阳光院子里，等其他猫来访",
+        caption: "后院。添上物品，等一等，就会有别的猫来做客。",
+      },
+      {
+        src: "/studio/games/practice-timer-shop.png",
+        alt: "Eric Liu 钢琴工作室面包练习计时的商店：小鱼干可买猫窝、猫爬架、玩具和巨型滑梯",
+        caption: "练琴换来的小鱼干，用来把院子装满。",
+      },
+    ],
+    sections: [
+      {
+        heading: "先计时，再等后院来客",
+        body:
+          "这是给琴凳用的番茄钟，加上一个有点像猫咪后院收集的小院子。孩子开始一段练琴——常常是二十五分钟——分钟走过，小鱼干就到账。小鱼干拿去商店：一张床、一个抓板、一盆植物，再往后是一座大滑梯。院子里的东西会吸引别的猫。回路故意做得很简单。分数不是一个高数字，而是孩子坐下并且坐住了。",
+        bullets: [
+          "先开计时，再弹这周的曲子——不要反过来",
+          "小鱼干来自练琴时间，不是来自在院子里点来点去",
+          "每位学生领养一只猫；来访的猫，才是下次还想打开的理由",
+        ],
+      },
+      {
+        heading: "课上和家里实际看到的变化",
+        body:
+          `这是工作室观察，不是对照实验。把计时放进一周功课之后，孩子在琴房里更能跟着曲子坐住——上课专注时间平均约多了 ${extraFocusMinutes} 分钟，和另外两款短游戏的观察一致。更明显的变化在家里：家长说孩子会自己要求打开计时开始练，而不是被带到琴凳前。我把这当成把回路保持够短的信号，而不是对每个家庭的承诺。`,
+        bullets: [
+          `上课专注时间平均约多 ${extraFocusMinutes} 分钟`,
+          "回访里，在家开始练琴更多是孩子自己提出来的",
+          "猫是作业的伙伴，不是取代作业的第二个活动",
+        ],
+      },
+      {
+        heading: "一轮练琴该怎么用",
+        body:
+          "打开计时，第一次来先领养一只猫，打开声音，按下开始。计时走着的时候弹这周的曲子。这一段结束，如果小鱼干够，就给后院买一样东西，然后关掉标签。如果孩子只想摆院子、不想碰曲子，说明这一段太长，或作业还不够小。",
+        bullets: [
+          "只计时一轮，然后合上电脑",
+          "按下开始之前，先大声说出今天的作业是什么",
+          "把还卡住的那一小段，或那个顽固的音，带到下一节课",
+        ],
+      },
+    ],
+    howTo: {
+      name: "如何把面包练习计时放进一周练琴",
+      description: "四步流程，让计时和后院支持每周钢琴作业，而不是取代它。",
+      totalTimeIso: "PT25M",
+      steps: [
+        {
+          name: "领养一只猫，然后开计时",
+          text: "第一次来先选练琴伙伴。之后每次先打开计时、按下开始，再碰曲子。",
+        },
+        {
+          name: "计时走着的时候弹指定曲目",
+          text: "钟是给琴凳用的，不是给逛商店用的。建议打开声音；麦克风可选，声音只留在这台设备上。",
+        },
+        {
+          name: "用小鱼干买一样后院物品",
+          text: "如果小鱼干够，就买一样。然后停。院子可以等到下一轮。",
+        },
+        {
+          name: "带一个问题到下一节课",
+          text: "记下仍然撞在一起的那一小段或那个音。在一对一课上问，让计时喂回课堂。",
+        },
+      ],
+    },
+    cta: {
+      href: "/practice-games",
+      label: "打开工作室游戏仓库",
+      note: "面包练习计时和节拍游戏、「我是谁」在同一层货架上——名字、截图、开始玩。",
+      gaEvent: "practice_game_hub_click",
+      gaPlacement: "journal_practice_timer_article",
+    },
+    related: [
+      { slug: "piano-practice-games-for-kids", label: "工作室的音乐小游戏" },
+      { slug: "mianbao-studio-cat-employee-001", label: "认识招财猫 Mianbao，员工 001 号" },
+    ],
+  },
   "piano-practice-games-for-kids": {
     slug: "piano-practice-games-for-kids",
     title: "工作室的音乐小游戏：孩子上课更专注，练琴也更愿意开始",
     description:
-      "库比蒂诺 Eric Liu 钢琴工作室会定期推出给小孩玩的自制音乐游戏：节拍游戏与「我是谁」。回访观察：上课专注时间平均约多 15 分钟，在家练琴意愿有提升。",
-    quickAnswer: `工作室会定期推出给小孩玩的自制音乐小游戏，配合儿童钢琴课，而不是取代一对一私教。现在可以玩的是节拍游戏（音符时值与节奏）和「我是谁」（用小动物记音名，再弹儿歌）。根据家长回访，小孩上课专注时间平均约多了 ${extraFocusMinutes} 分钟，在家练琴的意愿也有提升。以后新游戏都会放进同一个游戏仓库。`,
+      "库比蒂诺 Eric Liu 钢琴工作室会定期推出给小孩玩的自制音乐游戏：节拍游戏、「我是谁」与面包练习计时。回访观察：上课专注时间平均约多 15 分钟，在家练琴意愿有提升。",
+    quickAnswer: `工作室会定期推出给小孩玩的自制音乐小游戏，配合儿童钢琴课，而不是取代一对一私教。现在可以玩的是节拍游戏（音符时值与节奏）、「我是谁」（用小动物记音名，再弹儿歌），以及面包练习计时（练琴计时加上后院猫咪）。根据家长回访，小孩上课专注时间平均约多了 ${extraFocusMinutes} 分钟，在家练琴的意愿也有提升。以后新游戏都会放进同一个游戏仓库。`,
     datePublished: "2026-08-31",
-    dateModified: "2026-08-31",
+    dateModified: "2026-09-02",
     category: "工作室实践",
     readingTimeMinutes: 6,
     keywords: [
@@ -603,7 +821,7 @@ const zh: Record<ArticleSlug, Article> = {
       "库比蒂诺钢琴工作室",
     ],
     intro:
-      "家长常问：到底怎样才能让孩子在琴房里把注意力稳住。这个库比蒂诺工作室的一个实际答案是：做短小、有名字、给小孩玩的音乐游戏——先认节拍和音名——放在每周曲目旁边用，不是用来取代曲目。下面的截图就是家里现在能打开的两款，以及教室里迎接学生的招财猫 Mianbao。",
+      "家长常问：到底怎样才能让孩子在琴房里把注意力稳住。这个库比蒂诺工作室的一个实际答案是：做短小、有名字、给小孩玩的音乐游戏——先认节拍和音名，再加上练琴计时——放在每周曲目旁边用，不是用来取代曲目。下面的截图就是家里现在能打开的游戏，以及教室里迎接学生的招财猫 Mianbao。",
     figures: [
       {
         src: "/studio/games/music-theory-hub.png",
@@ -650,11 +868,11 @@ const zh: Record<ArticleSlug, Article> = {
       {
         heading: "孩子现在可以玩什么",
         body:
-          "仓库里第一批上架的是两款给小孩的游戏。节拍游戏教音符时值——这个音要停多久——然后让孩子跟着拍子点 1、2、3 或 4。「我是谁」用小动物记琴键音名（猫咪 = 中央 C），再进入找键、旋律游戏，以及小星星等儿歌。都不是进阶乐理测验。以后新游戏会加在同一层仓库里，每款都有名字和截图。",
+          "仓库里现在有三款给小孩的游戏。节拍游戏教音符时值——这个音要停多久——然后让孩子跟着拍子点 1、2、3 或 4。「我是谁」用小动物记琴键音名（猫咪 = 中央 C），再进入找键、旋律游戏，以及小星星等儿歌。面包练习计时是练琴钟加上后院猫咪：分钟换成小鱼干，小鱼干吸引来访的猫。都不是进阶乐理测验。以后新游戏会加在同一层仓库里，每款都有名字和截图。",
         bullets: [
           "节拍游戏：音符时值与拍节奏",
           "我是谁：音名，再弹儿歌",
-          "下一款也会出现在同一页仓库——不用再找新链接",
+          "面包练习计时：坐下、跟着曲子坐住，把后院养起来",
         ],
       },
       {
@@ -704,8 +922,8 @@ const zh: Record<ArticleSlug, Article> = {
       gaPlacement: "journal_games_article",
     },
     related: [
+      { slug: "mianbao-practice-timer-for-kids", label: "面包练习计时：孩子更主动练琴" },
       { slug: "mianbao-studio-cat-employee-001", label: "认识招财猫 Mianbao，员工 001 号" },
-      { slug: "what-to-expect-first-piano-lesson", label: "第一节钢琴课会发生什么" },
     ],
   },
   "mianbao-studio-cat-employee-001": {
@@ -773,12 +991,12 @@ const zh: Record<ArticleSlug, Article> = {
       {
         heading: "练琴小游戏也是这张脸",
         body:
-          "工作室每推出一款新的音乐小游戏，都由 Mianbao 出面邀请家庭去试。纸箱仓库不是为网站编的隐喻——他真的坐在上面。如果你在试听时见过他，回家再打开节拍游戏或「我是谁」，会认得屏幕上那只猫。",
+          "工作室每推出一款新的音乐小游戏，都由 Mianbao 出面邀请家庭去试。纸箱仓库不是为网站编的隐喻——他真的坐在上面。如果你在试听时见过他，回家再打开节拍游戏、「我是谁」或练琴计时，会认得屏幕上那只猫。",
       },
     ],
     related: [
+      { slug: "mianbao-practice-timer-for-kids", label: "面包练习计时：孩子更主动练琴" },
       { slug: "piano-practice-games-for-kids", label: "工作室的音乐小游戏" },
-      { slug: "what-to-expect-first-piano-lesson", label: "第一节钢琴课会发生什么" },
     ],
   },
   "adult-piano-learning-timeline-san-jose": {
