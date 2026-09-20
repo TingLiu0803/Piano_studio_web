@@ -2,6 +2,7 @@ import type { Locale } from "@/content/site";
 import { extraFocusMinutes } from "@/content/practice-games";
 
 export const articleSlugs = [
+  "practice-companion-backyard-update-september-2026",
   "mianbao-practice-timer-for-kids",
   "piano-practice-games-for-kids",
   "mianbao-studio-cat-employee-001",
@@ -67,6 +68,82 @@ export type Article = {
 };
 
 const en: Record<ArticleSlug, Article> = {
+  "practice-companion-backyard-update-september-2026": {
+    slug: "practice-companion-backyard-update-september-2026",
+    title: "Practice Companion update: a livelier backyard, a real slide, and a laser pointer chase",
+    description:
+      "A September 2026 preview of the Practice Companion backyard update: interactive slide play, freer decorating, a laser pointer chase, and the student feedback guiding the work.",
+    quickAnswer:
+      "The next Practice Companion update makes the backyard more playful without changing its purpose: practice first, then spend a little time with the cats. The preview adds an interactive premium slide, freer placement for every item except the slide, and a laser pointer that cats can chase after it is tried or bought. The work is in pull requests awaiting the user's review and merge; it is not being presented here as live or released.",
+    datePublished: "2026-09-19",
+    dateModified: "2026-09-19",
+    category: "Studio practice",
+    readingTimeMinutes: 5,
+    keywords: [
+      "Practice Companion update",
+      "piano practice motivation",
+      "kids piano practice",
+      "Mianbao practice timer",
+      "Cupertino piano studio",
+    ],
+    intro:
+      "A useful practice tool needs somewhere for earned rewards to go. This week, the Practice Companion backyard became more expressive: cats can use a larger slide, furniture can be arranged more freely, and a laser pointer turns a few quiet minutes in the yard into a small chase. These are preview-build notes. The associated pull requests have been created and still await the user's review and merge; this is not a production-release announcement.",
+    figures: [
+      {
+        src: "/studio/games/practice-companion-slide-update.png",
+        alt: "Practice Companion preview at Eric Liu Piano Studio showing a cat using the interactive backyard slide",
+        caption:
+          "Preview build: the larger slide gives each cat a visible trip down the ramp while the yard keeps a believable front-to-back order.",
+      },
+      {
+        src: "/studio/games/practice-companion-laser-pointer.png",
+        alt: "Practice Companion preview at Eric Liu Piano Studio showing cats chasing the interactive laser pointer",
+        caption:
+          "Preview build: move the laser dot around the backyard and the cats follow with their own chase animation.",
+      },
+    ],
+    sections: [
+      {
+        heading: "The slide now feels like part of the yard",
+        body:
+          "The premium slide is no longer only a decoration. Cats approach it, take their own sliding pose, and travel through a fuller interaction before returning to the yard. Animal movement and depth sorting were refined at the same time, so a chasing or sliding cat stays in the right visual layer instead of cutting awkwardly in front of or behind nearby objects.",
+        bullets: [
+          "A larger, interactive slide with animal-specific sliding poses",
+          "Smoother movement and front-to-back depth handling for yard animals",
+          "Free placement for every backyard item except the slide, whose interaction path stays anchored",
+        ],
+      },
+      {
+        heading: "A laser pointer joins the practice economy",
+        body:
+          "The laser pointer is designed as a reward inside the same earn-and-spend loop as the rest of the yard. It can be identified in the shop, tried before purchase, bought with dried fish, found again in the backpack, and used in the backyard. When the dot moves, cats follow it with a chase animation; depth order is preserved as they cross the scene. Labels, keyboard-friendly controls, reduced-motion behavior, and status announcements make the interaction understandable beyond a purely visual cue.",
+        bullets: [
+          "Shop purchase, backpack access, and an in-yard chase interaction",
+          "A short trial flow so a student can understand the toy before spending fish",
+          "Visible shop markers for interactive items, plus animation and accessibility support",
+        ],
+      },
+      {
+        heading: "What students told us — and what that does not prove",
+        body:
+          "The encouraging part came from lessons, not an analytics dashboard. Five students independently asked when the next update would arrive because they had practiced enough to save many dried fish and had little left to spend them on. One adult student who had previously practiced infrequently used the Companion more actively for two weeks and finished a Schubert waltz. Those are specific student reports, not a controlled study or a measured causal effect. They do, however, suggest that a gentle reward loop can make the next practice session feel worth starting.",
+        bullets: [
+          "Five students asked for the update after accumulating dried fish they could not yet use",
+          "One adult student finished a Schubert waltz after two weeks of more active Companion use",
+          "These observations are qualitative feedback; no additional student counts or outcome claims are inferred",
+        ],
+      },
+      {
+        heading: "Preview status",
+        body:
+          "The slide, placement, and laser-pointer work is documented here from local preview builds. The relevant pull requests have been created, but the user still needs to review and merge them. Until that happens and a separate release decision is made, none of these notes should be read as a claim that the update is live.",
+      },
+    ],
+    related: [
+      { slug: "mianbao-practice-timer-for-kids", label: "How Mianbao Practice Timer supports a practice week" },
+      { slug: "piano-practice-games-for-kids", label: "Studio music games for kids" },
+    ],
+  },
   "mianbao-practice-timer-for-kids": {
     slug: "mianbao-practice-timer-for-kids",
     title: "Mianbao Practice Timer: kids stay focused longer and start practice on their own",
@@ -695,6 +772,82 @@ const en: Record<ArticleSlug, Article> = {
 };
 
 const zh: Record<ArticleSlug, Article> = {
+  "practice-companion-backyard-update-september-2026": {
+    slug: "practice-companion-backyard-update-september-2026",
+    title: "Practice Companion 更新：更有生命力的后院、真正能玩的滑梯与激光笔追逐",
+    description:
+      "2026 年 9 月 Practice Companion 后院更新预览：可互动滑梯、更自由的布置、激光笔追逐，以及推动这次更新的真实学生反馈。",
+    quickAnswer:
+      "下一次 Practice Companion 更新让后院更好玩，但不改变它的核心顺序：先练琴，再和猫咪玩一会儿。预览加入可互动的高级滑梯、除滑梯外所有物品的自由摆放，以及可先试玩或购买、再让猫咪追逐的激光笔。相关工作已经整理进 PR，仍待用户审阅与合并；本文不会把它写成已经上线或发布。",
+    datePublished: "2026-09-19",
+    dateModified: "2026-09-19",
+    category: "工作室练习",
+    readingTimeMinutes: 5,
+    keywords: [
+      "Practice Companion 更新",
+      "钢琴练习动力",
+      "儿童练琴",
+      "面包练习计时器",
+      "库比蒂诺钢琴工作室",
+    ],
+    intro:
+      "一款有用的练习工具，也需要给努力赚来的奖励一个去处。本周，Practice Companion 的后院变得更有表现力：猫咪能使用更大的滑梯，家具可以更自由地摆放，激光笔则把几分钟安静的后院时间变成一场小追逐。以下内容来自本地预览版本。相关 PR 已创建，仍待用户审阅与合并；这不是一次正式上线公告。",
+    figures: [
+      {
+        src: "/studio/games/practice-companion-slide-update.png",
+        alt: "Eric Liu 钢琴工作室 Practice Companion 预览：猫咪正在使用后院互动滑梯",
+        caption:
+          "预览版本：更大的滑梯让每只猫完整滑下，同时保持后院前后景关系自然。",
+      },
+      {
+        src: "/studio/games/practice-companion-laser-pointer.png",
+        alt: "Eric Liu 钢琴工作室 Practice Companion 预览：猫咪正在追逐互动激光笔",
+        caption:
+          "预览版本：在后院移动激光点，猫咪会用专属追逐动画跟上。",
+      },
+    ],
+    sections: [
+      {
+        heading: "滑梯现在真正属于后院",
+        body:
+          "高级滑梯不再只是装饰。猫咪会靠近它，进入各自的滑行姿势，完成一段更完整的互动，再回到后院。动物移动与景深排序也同步优化，因此无论追逐还是滑行，猫咪都会留在正确的视觉层级，不会突兀地穿到附近物品的前面或后面。",
+        bullets: [
+          "更大、可互动的滑梯，并为不同猫咪提供相应的滑行姿势",
+          "更顺畅的动物移动与前后景深处理",
+          "除滑梯外，所有后院物品都可自由摆放；滑梯因需要稳定互动路径而保持固定",
+        ],
+      },
+      {
+        heading: "激光笔加入练习奖励循环",
+        body:
+          "激光笔被设计为同一套“练习—获得—使用”循环中的奖励。学生可以在商店认出它，购买前先试玩，用小鱼干买下，在背包中再次找到，然后带到后院使用。激光点移动时，猫咪会以追逐动画跟上；穿过场景时仍保持正确景深。清晰标签、键盘操作、减少动画设置和状态播报，也让这项互动不只依赖视觉提示。",
+        bullets: [
+          "支持商店购买、背包取用和后院追光互动",
+          "提供短暂试玩，让学生花小鱼干前先理解玩法",
+          "商店中的互动标识，以及动画与可访问性支持",
+        ],
+      },
+      {
+        heading: "学生告诉我们的事，以及这些反馈不能证明的事",
+        body:
+          "最令人鼓舞的部分来自课堂，而不是数据面板。五位学生分别主动问下一次更新什么时候到，因为他们通过练琴积攒了许多小鱼干，却暂时没有足够的新物品可用。另有一位此前练琴较少的成人学生，积极使用 Companion 两周后完成了一首舒伯特圆舞曲。这些是具体的学生反馈，不是对照实验，也不是可量化的因果证明；但它们确实提示我们，温和的奖励循环可能让“开始下一次练琴”变得更值得期待。",
+        bullets: [
+          "五位学生因积攒了暂时用不掉的小鱼干，主动询问更新进度",
+          "一位成人学生积极使用 Companion 两周后完成了一首舒伯特圆舞曲",
+          "这些是定性反馈；本文不会推导更多学生数量或结果结论",
+        ],
+      },
+      {
+        heading: "当前仍是预览",
+        body:
+          "滑梯、自由摆放与激光笔更新目前记录自本地预览版本。相关 PR 已创建，但仍需要用户审阅与合并。在合并以及另行决定发布之前，本文不会把这些内容描述为已经上线。",
+      },
+    ],
+    related: [
+      { slug: "mianbao-practice-timer-for-kids", label: "面包练习计时器如何支持一周练琴" },
+      { slug: "piano-practice-games-for-kids", label: "工作室儿童音乐小游戏" },
+    ],
+  },
   "mianbao-practice-timer-for-kids": {
     slug: "mianbao-practice-timer-for-kids",
     title: "面包练习计时：孩子上课更能坐住，回家也更主动练",

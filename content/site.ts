@@ -6,7 +6,7 @@ export type Locale = (typeof locales)[number];
  * change so that JSON-LD `dateModified` and `Article.dateModified` stay
  * accurate; LLM crawlers use this signal to decide whether to re-cite.
  */
-export const contentVersion = "2026-09-02";
+export const contentVersion = "2026-09-19";
 
 /**
  * Single source of truth for the studio's headline numbers. Every visible stat,
