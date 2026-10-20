@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getBaseUrl } from "@/lib/seo";
-import { locales, contentVersion } from "@/content/site";
+import { locales, contentVersion, siteConfig } from "@/content/site";
 import { landingPageSlugs } from "@/content/landing-pages";
 import { articleSlugs } from "@/content/articles";
 
@@ -56,6 +56,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
+      images:
+        route.path === "" || route.path === "/about"
+          ? [
+              `${baseUrl}${siteConfig.images.teacher}`,
+              `${baseUrl}${siteConfig.images.withTeacher}`,
+              `${baseUrl}${siteConfig.images.ogDefault}`,
+            ]
+          : undefined,
       alternates: {
         languages: {
           en: `${baseUrl}/en${route.path}`,

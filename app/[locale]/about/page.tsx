@@ -8,7 +8,8 @@ import Badge from "@/components/ui/Badge";
 import Icon from "@/components/ui/Icon";
 import Image from "next/image";
 import Link from "next/link";
-import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildAboutProfileJsonLd, buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -85,17 +86,22 @@ export default async function AboutPage({
   return (
     <>
       <BreadcrumbJsonLd locale={typed} path={`/${typed}/about`} />
+      <JsonLd data={buildAboutProfileJsonLd(typed)} />
 
       {/* Hero */}
       <Band tone="white" py="lg">
         <div className="grid items-start gap-10 md:grid-cols-[0.85fr_1.15fr]">
           <div className="relative aspect-square w-full overflow-hidden rounded-[var(--radius-lg)] border border-[color:var(--border)] shadow-[var(--shadow-card)]">
             <Image
-              src={siteConfig.images.teacher}
-              alt={`${siteConfig.ownerName}, ${siteConfig.city} piano teacher`}
+              src={siteConfig.images.withTeacher}
+              alt={
+                typed === "en"
+                  ? `${siteConfig.ownerName}, the younger man on the left in a grey sweatshirt, with his piano teacher`
+                  : `${siteConfig.ownerName}（左边、浅灰色卫衣的年轻人）和他的钢琴老师。右边年长的那位不是 ${siteConfig.ownerName}`
+              }
               fill
               sizes="(min-width: 768px) 40vw, 100vw"
-              className="object-cover"
+              className="object-cover object-top"
               priority
             />
           </div>

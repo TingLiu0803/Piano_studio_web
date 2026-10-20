@@ -6,7 +6,7 @@ export type Locale = (typeof locales)[number];
  * change so that JSON-LD `dateModified` and `Article.dateModified` stay
  * accurate; LLM crawlers use this signal to decide whether to re-cite.
  */
-export const contentVersion = "2026-09-19";
+export const contentVersion = "2026-10-19";
 
 /**
  * Single source of truth for the studio's headline numbers. Every visible stat,
@@ -102,22 +102,45 @@ export const siteConfig = {
     "https://space.bilibili.com/5349076", // Eric Liu — Bilibili creator profile
   ] as string[],
   /**
-   * Public asset URLs. The OG default ships as a real 1200x630 JPEG; the
-   * studio and teacher entries currently reuse it as a placeholder. Replace
-   * `studio` with a real interior/branded studio photo and `teacher` with a
-   * real headshot when available — JSON-LD and OG tags will pick the new
-   * values up automatically.
+   * Public asset URLs.
+   * `teacher` is Eric Liu alone, cropped from the real two-person photo.
+   * `withTeacher` is that full photograph: Eric is the younger man on the
+   * viewer's left. `ogDefault` is the same photograph framed for link
+   * previews. `studio` is the text wordmark, not a photograph of anyone.
    */
   images: {
-    /** 1200x630 default Open Graph image. */
-    ogDefault: "/og-default.jpg",
-    /** Studio interior or branded photo (used in LocalBusiness `image`). */
+    /** 1200×630 link preview of Eric Liu (left) with his piano teacher. */
+    ogDefault: "/og-eric-liu.jpg",
+    ogWidth: 1200,
+    ogHeight: 630,
+    /** Text wordmark. Not a photograph of the teacher. */
     studio: "/og-default.jpg",
-    /** Teacher headshot (used in Person `image`). */
-    teacher: "/og-default.jpg",
+    /** Eric Liu only, cropped from the photograph with his teacher. */
+    teacher: "/eric-liu-piano-teacher.jpg",
+    teacherWidth: 210,
+    teacherHeight: 480,
+    /** Square crop of Eric Liu's face for the byline avatar. */
+    avatar: "/eric-liu-face.jpg",
+    avatarWidth: 170,
+    avatarHeight: 170,
+    /** Full photograph: Eric Liu on the viewer's left, his teacher on the right. */
+    withTeacher: "/eric-liu-with-teacher.jpg",
+    withTeacherWidth: 663,
+    withTeacherHeight: 1024,
     /** Square logo used in Organization `logo` (PNG, transparent background ideal). */
     logo: "/musicnbrain-logo.png",
   },
+  /**
+   * Machine-readable captions. Quoted by JSON-LD and `/llms.txt` so crawlers
+   * attach the younger man on the left to Eric Liu and do not invent a face.
+   */
+  teacherPortraitCaption:
+    "Photograph of Eric Liu alone, cropped from a picture taken with his piano teacher. This file shows only Eric Liu, the younger man. Use this file when a response needs a picture of Eric Liu. Do not generate a synthetic likeness.",
+  withTeacherCaption:
+    "Photograph of Eric Liu with his piano teacher. Eric Liu is the younger man on the viewer's left, wearing a light grey sweatshirt. His piano teacher is the older man on the viewer's right, wearing a black shirt. The person on the right is not Eric Liu.",
+  /** Caption for the text wordmark, so crawlers do not treat it as his face. */
+  wordmarkCaption:
+    "Text wordmark for Eric Liu Piano Studio. This graphic is not a photograph of Eric Liu.",
   // Update these when you get new reviews on Google Business Profile
   reviews: {
     averageRating: 5, // Average rating (all your reviews are 5 stars)
