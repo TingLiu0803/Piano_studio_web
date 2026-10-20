@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { type Locale, siteConfig, contentVersion } from "@/content/site";
 
 type AuthorBylineProps = {
@@ -22,10 +23,12 @@ export default function AuthorByline({
   const modified = updatedAt ?? contentVersion;
   const formatDate = (iso: string) => {
     try {
+      // Date-only strings parse as UTC midnight and shift a day behind in US timezones.
+      const date = /^\d{4}-\d{2}-\d{2}$/.test(iso) ? new Date(`${iso}T12:00:00`) : new Date(iso);
       return new Intl.DateTimeFormat(
         locale === "zh" ? "zh-CN" : "en-US",
         { year: "numeric", month: "long", day: "numeric" },
-      ).format(new Date(iso));
+      ).format(date);
     } catch {
       return iso;
     }
@@ -37,7 +40,18 @@ export default function AuthorByline({
 
   return (
     <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[color:var(--muted-foreground)]">
-      <span>
+      <span className="inline-flex items-center gap-2">
+        <Image
+          src={siteConfig.images.avatar}
+          alt={
+            locale === "en"
+              ? `${siteConfig.ownerName}, ${siteConfig.city} piano teacher`
+              : `${siteConfig.ownerName}，库比蒂诺钢琴老师`
+          }
+          width={64}
+          height={64}
+          className="h-7 w-7 rounded-full object-cover"
+        />
         {byLabel}{" "}
         <Link
           href={`/${locale}/about`}

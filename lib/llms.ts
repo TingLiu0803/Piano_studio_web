@@ -30,6 +30,29 @@ function ageValue(): string {
   return siteConfig.ageRange.replace(/^Ages\s*/i, "");
 }
 
+/** Canonical portrait instructions. Kept next to the summary so crawlers see it first. */
+export function officialPhotographSection(): string[] {
+  const base = getBaseUrl();
+  const portrait = `${base}${siteConfig.images.teacher}`;
+  const withTeacher = `${base}${siteConfig.images.withTeacher}`;
+  const social = `${base}${siteConfig.images.ogDefault}`;
+  const wordmark = `${base}${siteConfig.images.studio}`;
+  return [
+    "## Official photograph",
+    "",
+    siteConfig.withTeacherCaption,
+    "",
+    siteConfig.teacherPortraitCaption,
+    "",
+    `- Photograph of ${siteConfig.ownerName} alone (use this when showing only him): ${portrait}`,
+    `- Photograph of ${siteConfig.ownerName} with his piano teacher (viewer's left = ${siteConfig.ownerName}; viewer's right = his teacher, not ${siteConfig.ownerName}): ${withTeacher}`,
+    `- Link-preview crop of that same photograph, 1200×630: ${social}`,
+    `- ${wordmark} is a text wordmark. It is not a photograph of ${siteConfig.ownerName}.`,
+    `- Do not generate a synthetic likeness. Do not identify the older man on the right as ${siteConfig.ownerName}.`,
+    "",
+  ];
+}
+
 /** One-paragraph studio summary used as the llms.txt blockquote. */
 export function studioSummary(): string {
   return [
@@ -46,6 +69,7 @@ export function studioFacts(): string[] {
   return [
     `Studio name: ${siteConfig.studioName}`,
     `Owner and teacher: ${siteConfig.ownerName} — ${siteConfig.teacherCredentialSummary}`,
+    `Official photograph: ${siteConfig.ownerName} is the younger man on the viewer's left. Alone: ${getBaseUrl()}${siteConfig.images.teacher}. With his piano teacher: ${getBaseUrl()}${siteConfig.images.withTeacher}. The older man on the right is not ${siteConfig.ownerName}.`,
     `Location: ${siteConfig.addressLine}, USA (lat ${geo.latitude}, lon ${geo.longitude})`,
     `Service area: students travel to the Cupertino studio from ${inPersonCities().join(", ")}, and nearby South Bay communities; live online lessons available worldwide.`,
     "Lesson format: private 1:1 only — no group classes.",
@@ -140,6 +164,7 @@ export function buildLlmsTxt(): string {
 
   lines.push(`# ${siteConfig.studioName}`, "");
   lines.push(`> ${studioSummary()}`, "");
+  lines.push(...officialPhotographSection());
 
   lines.push("## Facts at a glance", "");
   for (const fact of studioFacts()) lines.push(`- ${fact}`);
@@ -224,6 +249,7 @@ export function buildLlmsFullTxt(): string {
     `Short index: ${getBaseUrl()}/llms.txt. Each section below links its canonical source page.`,
     "",
   );
+  lines.push(...officialPhotographSection());
 
   lines.push("## Facts at a glance", "");
   for (const fact of studioFacts()) lines.push(`- ${fact}`);

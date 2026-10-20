@@ -56,7 +56,27 @@ export function buildMetadata(
   overrides?: MetadataOverrides
 ): Metadata {
   const baseUrl = getBaseUrl();
+  const photoAlt = siteConfig.withTeacherCaption;
   const socialImage = absoluteUrl(overrides?.image ?? siteConfig.images.ogDefault);
+  const portraitImage = absoluteUrl(siteConfig.images.teacher);
+  const ogImages = [
+    {
+      url: socialImage,
+      width: overrides?.image ? 1200 : siteConfig.images.ogWidth,
+      height: overrides?.image ? 630 : siteConfig.images.ogHeight,
+      alt: photoAlt,
+    },
+    ...(socialImage === portraitImage
+      ? []
+      : [
+          {
+            url: portraitImage,
+            width: siteConfig.images.teacherWidth,
+            height: siteConfig.images.teacherHeight,
+            alt: siteConfig.teacherPortraitCaption,
+          },
+        ]),
+  ];
   const localized = content[locale];
   const url = new URL(path, baseUrl);
   const alternates = {
@@ -81,20 +101,19 @@ export function buildMetadata(
     keywords,
     alternates,
     openGraph: {
-      type: "website",
+      ...(pageType === "about"
+        ? {
+            type: "profile" as const,
+            firstName: siteConfig.ownerName.split(" ")[0],
+            lastName: siteConfig.ownerName.split(" ").slice(1).join(" "),
+          }
+        : { type: "website" as const }),
       locale: locale === "en" ? "en_US" : "zh_CN",
       url: url.toString(),
       title,
       description,
       siteName: siteConfig.studioName,
-      images: [
-        {
-          url: socialImage,
-          width: 1200,
-          height: 630,
-          alt: `${siteConfig.studioName} - ${siteConfig.city} piano lessons`,
-        },
-      ],
+      images: ogImages,
     },
     twitter: {
       card: "summary_large_image",
@@ -115,7 +134,44 @@ export function buildMetadata(
     },
     other: {
       "content-language": locale,
+      thumbnail: portraitImage,
     },
+  };
+}
+
+/** Eric Liu alone. Same `@id` on every page. */
+function teacherPortraitImage(baseUrl: string) {
+  const url = absoluteUrl(siteConfig.images.teacher);
+  return {
+    "@type": "ImageObject",
+    "@id": `${baseUrl}/#teacher-portrait`,
+    url,
+    contentUrl: url,
+    width: siteConfig.images.teacherWidth,
+    height: siteConfig.images.teacherHeight,
+    encodingFormat: "image/jpeg",
+    name: `${siteConfig.ownerName}, ${siteConfig.city} piano teacher`,
+    caption: siteConfig.teacherPortraitCaption,
+    creditText: siteConfig.studioName,
+    representativeOfPage: true,
+    creator: { "@id": `${baseUrl}/#teacher` },
+  };
+}
+
+/** Full photograph. Eric Liu is the younger man on the viewer's left. */
+function teacherWithMentorImage(baseUrl: string) {
+  const url = absoluteUrl(siteConfig.images.withTeacher);
+  return {
+    "@type": "ImageObject",
+    "@id": `${baseUrl}/#teacher-with-mentor`,
+    url,
+    contentUrl: url,
+    width: siteConfig.images.withTeacherWidth,
+    height: siteConfig.images.withTeacherHeight,
+    encodingFormat: "image/jpeg",
+    name: `${siteConfig.ownerName} with his piano teacher`,
+    caption: siteConfig.withTeacherCaption,
+    creditText: siteConfig.studioName,
   };
 }
 
@@ -229,7 +285,23 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
         alternateName,
         slogan,
         description: localized.seo.description,
-        image: [absoluteUrl(siteConfig.images.studio)],
+        image: [
+          teacherPortraitImage(baseUrl),
+          teacherWithMentorImage(baseUrl),
+          {
+            "@type": "ImageObject",
+            url: absoluteUrl(siteConfig.images.ogDefault),
+            width: siteConfig.images.ogWidth,
+            height: siteConfig.images.ogHeight,
+            encodingFormat: "image/jpeg",
+            caption: siteConfig.withTeacherCaption,
+          },
+          {
+            "@type": "ImageObject",
+            url: absoluteUrl(siteConfig.images.studio),
+            caption: siteConfig.wordmarkCaption,
+          },
+        ],
         logo: absoluteUrl(siteConfig.images.logo),
         areaServed,
         serviceArea: siteConfig.serviceArea,
@@ -322,7 +394,7 @@ export function buildLocalBusinessJsonLd(locale: Locale) {
         familyName: siteConfig.ownerName.split(" ").slice(1).join(" "),
         jobTitle: teacherJobTitle,
         description: aboutSnippet,
-        image: absoluteUrl(siteConfig.images.teacher),
+        image: [teacherPortraitImage(baseUrl), teacherWithMentorImage(baseUrl)],
         url: `${baseUrl}/${locale}/about`,
         availableLanguage: ["en", "zh"],
         knowsLanguage: ["en", "zh"],
@@ -624,6 +696,27 @@ export function buildFaqJsonLd(
         text: faq.answer,
       },
     })),
+  };
+}
+
+/**
+ * ProfilePage for `/about`. Points `primaryImageOfPage` at the canonical
+ * portrait so AI citation cards use that file instead of inventing a face.
+ */
+export function buildAboutProfileJsonLd(locale: Locale) {
+  const baseUrl = getBaseUrl();
+  const url = `${baseUrl}/${locale}/about`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${url}#profile`,
+    url,
+    name: content[locale].about.title,
+    mainEntity: { "@id": `${baseUrl}/#teacher` },
+    primaryImageOfPage: teacherWithMentorImage(baseUrl),
+    image: [teacherPortraitImage(baseUrl), teacherWithMentorImage(baseUrl)],
+    inLanguage: locale === "en" ? "en-US" : "zh-CN",
+    dateModified: contentVersion,
   };
 }
 

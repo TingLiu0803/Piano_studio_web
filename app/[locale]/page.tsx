@@ -162,11 +162,15 @@ export default async function LocaleHome({
           <div className="py-10">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-card)]">
               <Image
-                src="/piano-hands.jpg"
-                alt={`Hands on the piano keys at ${siteConfig.studioName}, San Jose`}
+                src={siteConfig.images.withTeacher}
+                alt={
+                  typedLocale === "en"
+                    ? `${siteConfig.ownerName}, the younger man on the left in a grey sweatshirt, with his piano teacher at ${siteConfig.studioName}`
+                    : `${siteConfig.ownerName}（左边、浅灰色卫衣的年轻人）和他的钢琴老师。右边年长的那位不是 ${siteConfig.ownerName}`
+                }
                 fill
                 sizes="(max-width: 768px) 100vw, 45vw"
-                className="object-cover"
+                className="object-cover object-[center_15%]"
               />
             </div>
           </div>
